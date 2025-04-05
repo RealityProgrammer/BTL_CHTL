@@ -117,7 +117,141 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="kryptonButton5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="kryptonButton5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 457</value>
+  </data>
+  <data name="kryptonButton5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 48</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="kryptonButton5.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="kryptonButton5.Values.Text" xml:space="preserve">
+    <value>kryptonButton5</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton5.Name" xml:space="preserve">
+    <value>kryptonButton5</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton5.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton5.Parent" xml:space="preserve">
+    <value>kryptonPanel1</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="kryptonButton4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="kryptonButton4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 375</value>
+  </data>
+  <data name="kryptonButton4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 48</value>
+  </data>
+  <data name="kryptonButton4.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="kryptonButton4.Values.Text" xml:space="preserve">
+    <value>kryptonButton4</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton4.Name" xml:space="preserve">
+    <value>kryptonButton4</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton4.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton4.Parent" xml:space="preserve">
+    <value>kryptonPanel1</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="kryptonButton3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="kryptonButton3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 299</value>
+  </data>
+  <data name="kryptonButton3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 48</value>
+  </data>
+  <data name="kryptonButton3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="kryptonButton3.Values.Text" xml:space="preserve">
+    <value>kryptonButton3</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton3.Name" xml:space="preserve">
+    <value>kryptonButton3</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton3.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton3.Parent" xml:space="preserve">
+    <value>kryptonPanel1</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="kryptonButton2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="kryptonButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 219</value>
+  </data>
+  <data name="kryptonButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 48</value>
+  </data>
+  <data name="kryptonButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="kryptonButton2.Values.Text" xml:space="preserve">
+    <value>kryptonButton2</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton2.Name" xml:space="preserve">
+    <value>kryptonButton2</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton2.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton2.Parent" xml:space="preserve">
+    <value>kryptonPanel1</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="kryptonButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 148</value>
+  </data>
+  <data name="kryptonButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 48</value>
+  </data>
+  <data name="kryptonButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="kryptonButton1.Values.Text" xml:space="preserve">
+    <value>kryptonButton1</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton1.Name" xml:space="preserve">
+    <value>kryptonButton1</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton1.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton1.Parent" xml:space="preserve">
+    <value>kryptonPanel1</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABQAAAATuCAIAAAAdvxnmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1572,11 +1706,9 @@
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 65</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -1590,7 +1722,7 @@
     <value>kryptonPanel1</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="kryptonLabel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>52, 83</value>
@@ -1614,7 +1746,7 @@
     <value>kryptonPanel1</value>
   </data>
   <data name="&gt;&gt;kryptonLabel1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="kryptonPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
