@@ -19,5 +19,6 @@ git clone git@github.com:RealityProgrammer/BTL_CHTL.git
 4. Enjoy.
 
 ### Giấy phép
+<hr/>
 Dự án mã nguồn mở theo giấy phép [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
