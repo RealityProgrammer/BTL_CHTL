@@ -6,8 +6,8 @@
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{27197D35-DA9C-41AF-8078-D07870A7BFFF}</ProjectGuid>
         <OutputType>WinExe</OutputType>
-        <RootNamespace>CHTL</RootNamespace>
-        <AssemblyName>CHTL</AssemblyName>
+        <RootNamespace>CHTL.GUI</RootNamespace>
+        <AssemblyName>CHTL.GUI</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -93,6 +93,16 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config"/>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\BUS\BUS.csproj">
+        <Project>{3ce401a9-319c-4fd5-ac64-3bb1ff30906f}</Project>
+        <Name>BUS</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\DAL\DAL.csproj">
+        <Project>{0eb6b6ca-e26c-4575-a25f-069e39cd76aa}</Project>
+        <Name>DAL</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>

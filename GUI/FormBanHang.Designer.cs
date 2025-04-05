@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace CHTL {
+namespace CHTL.GUI {
     partial class FormBanHang {
         /// <summary>
         /// Required designer variable.

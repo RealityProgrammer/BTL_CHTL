@@ -1,11 +1,9 @@
-﻿using System.ComponentModel;
-
-namespace CHTL {
-    partial class FormQuanLySanPham {
+﻿namespace CHTL.GUI {
+    partial class FormDangNhap {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,7 +27,7 @@ namespace CHTL {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormQuanLySanPham";
+            this.Text = "Form1";
         }
 
         #endregion
