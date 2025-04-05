@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTL_CHTL", "BTL_CHTL\BTL_CHTL.csproj", "{27197D35-DA9C-41AF-8078-D07870A7BFFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{0EB6B6CA-E26C-4575-A25F-069E39CD76AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{3CE401A9-319C-4FD5-AC64-3BB1FF30906F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{27197D35-DA9C-41AF-8078-D07870A7BFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27197D35-DA9C-41AF-8078-D07870A7BFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27197D35-DA9C-41AF-8078-D07870A7BFFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB6B6CA-E26C-4575-A25F-069E39CD76AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB6B6CA-E26C-4575-A25F-069E39CD76AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB6B6CA-E26C-4575-A25F-069E39CD76AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB6B6CA-E26C-4575-A25F-069E39CD76AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CE401A9-319C-4FD5-AC64-3BB1FF30906F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CE401A9-319C-4FD5-AC64-3BB1FF30906F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CE401A9-319C-4FD5-AC64-3BB1FF30906F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CE401A9-319C-4FD5-AC64-3BB1FF30906F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
