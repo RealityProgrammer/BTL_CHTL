@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace CHTL.GUI {
     static class Program {
@@ -10,7 +11,8 @@ namespace CHTL.GUI {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDangNhap());
+            Application.Run(new FormMain());
+           
         }
     }
 }
