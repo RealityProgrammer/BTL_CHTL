@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace CHTL.GUI
 {
-    public partial class FromNguoiDung : Form
+    public partial class FormNguoiDung : KryptonForm
     {
-        public FromNguoiDung()
+        public FormNguoiDung()
         {
             InitializeComponent();
         }

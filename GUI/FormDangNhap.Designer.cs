@@ -145,6 +145,7 @@
             this.btn_dang_nhap.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_dang_nhap.TabIndex = 6;
             this.btn_dang_nhap.Values.Text = "Đăng nhập";
+            this.btn_dang_nhap.Click += new System.EventHandler(this.btn_dang_nhap_Click);
             // 
             // btn_huy
             // 

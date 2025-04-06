@@ -20,6 +20,21 @@ namespace CHTL.GUI
             this.PaletteMode = PaletteMode.Custom;
         }
 
-        
+        private void ShowFormInPanel(KryptonForm childForm)
+        {
+            kryptonPanel2.Controls.Clear();
+            childForm.TopLevel = false;
+            childForm.Dock = DockStyle.Fill;
+
+            kryptonPanel2.Controls.Add(childForm);
+            kryptonPanel2.Tag = childForm;
+            childForm.Show();
+        }
+
+        private void btn_nguoi_dung_Click(object sender, EventArgs e)
+        {
+            FormNguoiDung formNguoiDung = new FormNguoiDung();
+            ShowFormInPanel(formNguoiDung);
+        }
     }
 }
