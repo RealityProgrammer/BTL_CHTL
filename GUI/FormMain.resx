@@ -135,7 +135,7 @@
   <data name="btn_dang_xuat.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="kryptonButton7.Values.Text" xml:space="preserve">
+  <data name="btn_dang_xuat.Values.Text" xml:space="preserve">
     <value>Đăng xuất</value>
   </data>
   <data name="&gt;&gt;btn_dang_xuat.Name" xml:space="preserve">
@@ -165,7 +165,7 @@
   <data name="btn_ai_tips.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="kryptonButton6.Values.Text" xml:space="preserve">
+  <data name="btn_ai_tips.Values.Text" xml:space="preserve">
     <value>AI TIPS</value>
   </data>
   <data name="&gt;&gt;btn_ai_tips.Name" xml:space="preserve">
@@ -195,7 +195,7 @@
   <data name="btn_bao_cao.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="kryptonButton5.Values.Text" xml:space="preserve">
+  <data name="btn_bao_cao.Values.Text" xml:space="preserve">
     <value>Báo cáo</value>
   </data>
   <data name="&gt;&gt;btn_bao_cao.Name" xml:space="preserve">
@@ -225,7 +225,7 @@
   <data name="btn_ban_hang.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="kryptonButton4.Values.Text" xml:space="preserve">
+  <data name="btn_ban_hang.Values.Text" xml:space="preserve">
     <value>Bán hàng</value>
   </data>
   <data name="&gt;&gt;btn_ban_hang.Name" xml:space="preserve">
@@ -255,7 +255,7 @@
   <data name="btn_san_pham.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="kryptonButton3.Values.Text" xml:space="preserve">
+  <data name="btn_san_pham.Values.Text" xml:space="preserve">
     <value>Sản phẩm</value>
   </data>
   <data name="&gt;&gt;btn_san_pham.Name" xml:space="preserve">
@@ -285,7 +285,7 @@
   <data name="btn_phan_loai.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="kryptonButton2.Values.Text" xml:space="preserve">
+  <data name="btn_phan_loai.Values.Text" xml:space="preserve">
     <value>Phân loại</value>
   </data>
   <data name="&gt;&gt;btn_phan_loai.Name" xml:space="preserve">
@@ -312,7 +312,7 @@
   <data name="btn_nguoi_dung.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="kryptonButton1.Values.Text" xml:space="preserve">
+  <data name="btn_nguoi_dung.Values.Text" xml:space="preserve">
     <value>Người dùng</value>
   </data>
   <data name="&gt;&gt;btn_nguoi_dung.Name" xml:space="preserve">
@@ -1830,7 +1830,7 @@
     <value>0, 0</value>
   </data>
   <data name="kryptonPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 650</value>
+    <value>246, 804</value>
   </data>
   <data name="kryptonPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1854,7 +1854,7 @@
     <value>246, 0</value>
   </data>
   <data name="kryptonPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>749, 650</value>
+    <value>1172, 804</value>
   </data>
   <data name="kryptonPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1884,7 +1884,10 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>995, 650</value>
+    <value>1418, 804</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Trang chủ</value>

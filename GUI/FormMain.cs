@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CHTL.GUI.NguoiDung;
 using ComponentFactory.Krypton.Toolkit;
 
 namespace CHTL.GUI
@@ -33,7 +34,7 @@ namespace CHTL.GUI
 
         private void btn_nguoi_dung_Click(object sender, EventArgs e)
         {
-            FormNguoiDung formNguoiDung = new FormNguoiDung();
+            FormNguoiDungView formNguoiDung = new FormNguoiDungView();
             ShowFormInPanel(formNguoiDung);
         }
     }

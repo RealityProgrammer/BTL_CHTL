@@ -79,7 +79,7 @@
             this.btn_dang_xuat.StateCommon.Border.Rounding = 18;
             this.btn_dang_xuat.StateCommon.Border.Width = 1;
             this.btn_dang_xuat.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_dang_xuat.Values.Text = resources.GetString("kryptonButton7.Values.Text");
+            this.btn_dang_xuat.Values.Text = resources.GetString("btn_dang_xuat.Values.Text");
             // 
             // btn_ai_tips
             // 
@@ -95,7 +95,7 @@
             this.btn_ai_tips.StateCommon.Border.Rounding = 18;
             this.btn_ai_tips.StateCommon.Border.Width = 1;
             this.btn_ai_tips.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ai_tips.Values.Text = resources.GetString("kryptonButton6.Values.Text");
+            this.btn_ai_tips.Values.Text = resources.GetString("btn_ai_tips.Values.Text");
             // 
             // btn_bao_cao
             // 
@@ -111,7 +111,7 @@
             this.btn_bao_cao.StateCommon.Border.Rounding = 18;
             this.btn_bao_cao.StateCommon.Border.Width = 1;
             this.btn_bao_cao.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_bao_cao.Values.Text = resources.GetString("kryptonButton5.Values.Text");
+            this.btn_bao_cao.Values.Text = resources.GetString("btn_bao_cao.Values.Text");
             // 
             // btn_ban_hang
             // 
@@ -127,7 +127,7 @@
             this.btn_ban_hang.StateCommon.Border.Rounding = 18;
             this.btn_ban_hang.StateCommon.Border.Width = 1;
             this.btn_ban_hang.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ban_hang.Values.Text = resources.GetString("kryptonButton4.Values.Text");
+            this.btn_ban_hang.Values.Text = resources.GetString("btn_ban_hang.Values.Text");
             // 
             // btn_san_pham
             // 
@@ -143,7 +143,7 @@
             this.btn_san_pham.StateCommon.Border.Rounding = 18;
             this.btn_san_pham.StateCommon.Border.Width = 1;
             this.btn_san_pham.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_san_pham.Values.Text = resources.GetString("kryptonButton3.Values.Text");
+            this.btn_san_pham.Values.Text = resources.GetString("btn_san_pham.Values.Text");
             // 
             // btn_phan_loai
             // 
@@ -159,7 +159,7 @@
             this.btn_phan_loai.StateCommon.Border.Rounding = 18;
             this.btn_phan_loai.StateCommon.Border.Width = 1;
             this.btn_phan_loai.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_phan_loai.Values.Text = resources.GetString("kryptonButton2.Values.Text");
+            this.btn_phan_loai.Values.Text = resources.GetString("btn_phan_loai.Values.Text");
             // 
             // btn_nguoi_dung
             // 
@@ -175,7 +175,7 @@
             this.btn_nguoi_dung.StateCommon.Border.Rounding = 18;
             this.btn_nguoi_dung.StateCommon.Border.Width = 1;
             this.btn_nguoi_dung.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_nguoi_dung.Values.Text = resources.GetString("kryptonButton1.Values.Text");
+            this.btn_nguoi_dung.Values.Text = resources.GetString("btn_nguoi_dung.Values.Text");
             this.btn_nguoi_dung.Click += new System.EventHandler(this.btn_nguoi_dung_Click);
             // 
             // pictureBox1
@@ -212,7 +212,6 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormMain";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();

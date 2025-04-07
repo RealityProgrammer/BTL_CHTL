@@ -196,7 +196,7 @@
             // 
             // lbl_dang_nhap
             // 
-            this.lbl_dang_nhap.Location = new System.Drawing.Point(558, 49);
+            this.lbl_dang_nhap.Location = new System.Drawing.Point(560, 49);
             this.lbl_dang_nhap.Name = "lbl_dang_nhap";
             this.lbl_dang_nhap.Size = new System.Drawing.Size(374, 59);
             this.lbl_dang_nhap.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
