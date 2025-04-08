@@ -167,6 +167,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DanhMuc\FormDanhMucAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FormDanhMucAdd.Designer.cs">
+      <DependentUpon>FormDanhMucAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\FormDanhMucEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FormDanhMucEdit.Designer.cs">
+      <DependentUpon>FormDanhMucEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\FormDanhMucView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FormDanhMucView.Designer.cs">
+      <DependentUpon>FormDanhMucView.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +254,9 @@
     <Compile Include="Sample_Form\SampleView.Designer.cs">
       <DependentUpon>SampleView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DanhMuc\FormDanhMucView.resx">
+      <DependentUpon>FormDanhMucView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBanHang.resx">
       <DependentUpon>FormBanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,7 +327,6 @@
   <ItemGroup>
     <Folder Include="BanHang\" />
     <Folder Include="BaoCao\" />
-    <Folder Include="PhanLoai\" />
     <Folder Include="Resources\" />
     <Folder Include="SanPham\" />
   </ItemGroup>

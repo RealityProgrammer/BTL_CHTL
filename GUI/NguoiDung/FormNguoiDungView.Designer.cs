@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgv_nguoi_dung;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+           
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.colMaNguoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +89,14 @@
             this.dgv_nguoi_dung.Name = "dgv_nguoi_dung";
             this.dgv_nguoi_dung.RowHeadersWidth = 51;
             this.dgv_nguoi_dung.Size = new System.Drawing.Size(811, 410);
+            this.dgv_nguoi_dung.StateCommon.Background.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgv_nguoi_dung.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dgv_nguoi_dung.StateCommon.DataCell.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgv_nguoi_dung.StateCommon.DataCell.Content.Color2 = System.Drawing.Color.MidnightBlue;
+            this.dgv_nguoi_dung.StateCommon.HeaderColumn.Content.Color1 = System.Drawing.Color.Black;
+            this.dgv_nguoi_dung.StateCommon.HeaderColumn.Content.Color2 = System.Drawing.Color.Black;
+            this.dgv_nguoi_dung.StateCommon.HeaderRow.Content.Color1 = System.Drawing.Color.Black;
+            this.dgv_nguoi_dung.StateCommon.HeaderRow.Content.Color2 = System.Drawing.Color.Black;
             this.dgv_nguoi_dung.TabIndex = 5;
             this.dgv_nguoi_dung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nguoi_dung_CellClick);
             // 
@@ -126,9 +134,9 @@
             // 
             // colEdit
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "Sửa";
-            this.colEdit.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "Sửa";
+            this.colEdit.DefaultCellStyle = dataGridViewCellStyle1;
             this.colEdit.HeaderText = "Sửa";
             this.colEdit.MinimumWidth = 6;
             this.colEdit.Name = "colEdit";
@@ -138,9 +146,9 @@
             // 
             // colDelete
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = "Xóa";
-            this.colDelete.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = "Xóa";
+            this.colDelete.DefaultCellStyle = dataGridViewCellStyle2;
             this.colDelete.HeaderText = "Xóa";
             this.colDelete.MinimumWidth = 6;
             this.colDelete.Name = "colDelete";
@@ -173,12 +181,12 @@
         }
 
         #endregion
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgv_nguoi_dung;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaNguoiDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDangNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVaiTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colEdit;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colDelete;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgv_nguoi_dung;
     }
 }

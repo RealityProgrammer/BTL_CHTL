@@ -36,7 +36,7 @@
             this.btn_bao_cao = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btn_ban_hang = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btn_san_pham = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btn_phan_loai = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btn_danh_muc = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btn_nguoi_dung = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -55,7 +55,7 @@
             this.kryptonPanel1.Controls.Add(this.btn_bao_cao);
             this.kryptonPanel1.Controls.Add(this.btn_ban_hang);
             this.kryptonPanel1.Controls.Add(this.btn_san_pham);
-            this.kryptonPanel1.Controls.Add(this.btn_phan_loai);
+            this.kryptonPanel1.Controls.Add(this.btn_danh_muc);
             this.kryptonPanel1.Controls.Add(this.btn_nguoi_dung);
             this.kryptonPanel1.Controls.Add(this.pictureBox1);
             this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
@@ -96,6 +96,7 @@
             this.btn_ai_tips.StateCommon.Border.Width = 1;
             this.btn_ai_tips.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ai_tips.Values.Text = resources.GetString("btn_ai_tips.Values.Text");
+            this.btn_ai_tips.Click += new System.EventHandler(this.btn_ai_tips_Click);
             // 
             // btn_bao_cao
             // 
@@ -112,6 +113,7 @@
             this.btn_bao_cao.StateCommon.Border.Width = 1;
             this.btn_bao_cao.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_bao_cao.Values.Text = resources.GetString("btn_bao_cao.Values.Text");
+            this.btn_bao_cao.Click += new System.EventHandler(this.btn_bao_cao_Click);
             // 
             // btn_ban_hang
             // 
@@ -128,6 +130,7 @@
             this.btn_ban_hang.StateCommon.Border.Width = 1;
             this.btn_ban_hang.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ban_hang.Values.Text = resources.GetString("btn_ban_hang.Values.Text");
+            this.btn_ban_hang.Click += new System.EventHandler(this.btn_ban_hang_Click);
             // 
             // btn_san_pham
             // 
@@ -144,22 +147,24 @@
             this.btn_san_pham.StateCommon.Border.Width = 1;
             this.btn_san_pham.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_san_pham.Values.Text = resources.GetString("btn_san_pham.Values.Text");
+            this.btn_san_pham.Click += new System.EventHandler(this.btn_san_pham_Click);
             // 
-            // btn_phan_loai
+            // btn_danh_muc
             // 
-            resources.ApplyResources(this.btn_phan_loai, "btn_phan_loai");
-            this.btn_phan_loai.Name = "btn_phan_loai";
-            this.btn_phan_loai.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btn_phan_loai.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btn_phan_loai.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_phan_loai.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_phan_loai.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            resources.ApplyResources(this.btn_danh_muc, "btn_danh_muc");
+            this.btn_danh_muc.Name = "btn_danh_muc";
+            this.btn_danh_muc.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btn_danh_muc.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btn_danh_muc.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_danh_muc.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_danh_muc.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_phan_loai.StateCommon.Border.Rounding = 18;
-            this.btn_phan_loai.StateCommon.Border.Width = 1;
-            this.btn_phan_loai.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_phan_loai.Values.Text = resources.GetString("btn_phan_loai.Values.Text");
+            this.btn_danh_muc.StateCommon.Border.Rounding = 18;
+            this.btn_danh_muc.StateCommon.Border.Width = 1;
+            this.btn_danh_muc.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_danh_muc.Values.Text = resources.GetString("btn_phan_loai.Values.Text");
+            this.btn_danh_muc.Click += new System.EventHandler(this.btn_danh_muc_Click);
             // 
             // btn_nguoi_dung
             // 
@@ -230,7 +235,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_bao_cao;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_ban_hang;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_san_pham;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_phan_loai;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_danh_muc;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_nguoi_dung;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_ai_tips;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_dang_xuat;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CHTL.GUI.DanhMuc;
 using CHTL.GUI.NguoiDung;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -36,6 +37,32 @@ namespace CHTL.GUI
         {
             FormNguoiDungView formNguoiDung = new FormNguoiDungView();
             ShowFormInPanel(formNguoiDung);
+        }
+
+        private void btn_danh_muc_Click(object sender, EventArgs e)
+        {
+            FormDanhMucView formDanhMuc = new FormDanhMucView();
+            ShowFormInPanel(formDanhMuc);
+        }
+
+        private void btn_san_pham_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ban_hang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_bao_cao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ai_tips_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

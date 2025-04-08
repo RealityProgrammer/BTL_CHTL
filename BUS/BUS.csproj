@@ -43,6 +43,7 @@
     <Compile Include="XuLyHoaDon.cs" />
     <Compile Include="XuLyNguoiDung.cs" />
     <Compile Include="XuLySanPham.cs" />
+    <Compile Include="XuLyDanhMuc.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
