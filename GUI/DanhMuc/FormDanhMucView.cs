@@ -40,6 +40,7 @@ namespace CHTL.GUI.DanhMuc
             LoadData();
         }
 
+
         private void dgv_danh_muc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -49,10 +50,10 @@ namespace CHTL.GUI.DanhMuc
                 // Xử lý khi click vào cột "Sửa"
                 if (e.ColumnIndex == dgv_danh_muc.Columns["colEdit"].Index)
                 {
-                    //FormDanhMucEdit frmEdit = new FormDanhMucEdit();
-                    //frmEdit.DanhMucEdit = danhMuc;
-                    //frmEdit.ShowDialog();
-                    //LoadData();
+                    FormDanhMucEdit frmEdit = new FormDanhMucEdit();
+                    frmEdit.DanhMucEdit = danhMuc;
+                    frmEdit.ShowDialog();
+                    LoadData();
                 }
 
                 // Xử lý khi click vào cột "Xóa"

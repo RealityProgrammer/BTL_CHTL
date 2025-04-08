@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CHTL.GUI.BanHang;
 using CHTL.GUI.DanhMuc;
 using CHTL.GUI.NguoiDung;
+using CHTL.GUI.SanPham;
 using ComponentFactory.Krypton.Toolkit;
 
 namespace CHTL.GUI
@@ -47,12 +49,14 @@ namespace CHTL.GUI
 
         private void btn_san_pham_Click(object sender, EventArgs e)
         {
-
+            FormSanPhamView formSanPham = new FormSanPhamView();
+            ShowFormInPanel(formSanPham);
         }
 
         private void btn_ban_hang_Click(object sender, EventArgs e)
         {
-
+            FormBanHangView formBanHang = new FormBanHangView();
+            ShowFormInPanel(formBanHang);
         }
 
         private void btn_bao_cao_Click(object sender, EventArgs e)

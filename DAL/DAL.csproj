@@ -162,7 +162,7 @@
     <Compile Include="TruyCapDanhMuc.cs" />
     <Compile Include="TruyCapNguoiDung.cs" />
     <Compile Include="TruyCapSanPham.cs" />
-    <Compile Include="TryCapHoaDon.cs" />
+    <Compile Include="TruyCapHoaDon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

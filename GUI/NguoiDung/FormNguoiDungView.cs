@@ -21,7 +21,6 @@ namespace CHTL.GUI.NguoiDung
             LoadData();
            
         }
-        
 
         private void LoadData()
         {

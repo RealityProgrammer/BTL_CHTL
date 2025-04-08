@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel1_1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -63,7 +63,7 @@
             this.kryptonPanel2.Controls.Add(this.kryptonLabel4);
             this.kryptonPanel2.Controls.Add(this.kryptonLabel3);
             this.kryptonPanel2.Controls.Add(this.kryptonLabel2);
-            this.kryptonPanel2.Controls.Add(this.kryptonLabel1);
+            this.kryptonPanel2.Controls.Add(this.kryptonLabel1_1);
             this.kryptonPanel2.Size = new System.Drawing.Size(767, 407);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
             // 
@@ -73,13 +73,13 @@
             this.kryptonPanel3.Size = new System.Drawing.Size(767, 107);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
-            // kryptonLabel1
+            // kryptonLabel1_1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(75, 67);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(117, 24);
-            this.kryptonLabel1.TabIndex = 0;
-            this.kryptonLabel1.Values.Text = "Mã người dùng";
+            this.kryptonLabel1_1.Location = new System.Drawing.Point(75, 67);
+            this.kryptonLabel1_1.Name = "kryptonLabel1";
+            this.kryptonLabel1_1.Size = new System.Drawing.Size(117, 24);
+            this.kryptonLabel1_1.TabIndex = 0;
+            this.kryptonLabel1_1.Values.Text = "Mã người dùng";
             // 
             // kryptonLabel2
             // 
@@ -178,7 +178,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1_1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txt_ho_ten;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txt_mat_khau;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txt_ten_dang_nhap;

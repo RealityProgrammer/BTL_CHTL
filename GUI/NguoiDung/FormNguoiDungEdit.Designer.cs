@@ -37,7 +37,7 @@
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel1_1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
@@ -49,16 +49,7 @@
             // 
             // kryptonButton1
             // 
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.DeepPink;
-            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.DeepPink;
-            this.kryptonButton1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateCommon.Border.Rounding = 19;
-            this.kryptonButton1.StateCommon.Border.Width = 1;
-            this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButton1.Values.Text = "Header";
+           
             // 
             // kryptonPanel1
             // 
@@ -76,7 +67,7 @@
             this.kryptonPanel2.Controls.Add(this.kryptonLabel4);
             this.kryptonPanel2.Controls.Add(this.kryptonLabel3);
             this.kryptonPanel2.Controls.Add(this.kryptonLabel2);
-            this.kryptonPanel2.Controls.Add(this.kryptonLabel1);
+            this.kryptonPanel2.Controls.Add(this.kryptonLabel1_1);
             this.kryptonPanel2.Size = new System.Drawing.Size(803, 360);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
             // 
@@ -157,13 +148,13 @@
             this.kryptonLabel2.TabIndex = 17;
             this.kryptonLabel2.Values.Text = "Tên đăng nhập";
             // 
-            // kryptonLabel1
+            // kryptonLabel1_1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(88, 52);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(117, 24);
-            this.kryptonLabel1.TabIndex = 16;
-            this.kryptonLabel1.Values.Text = "Mã người dùng";
+            this.kryptonLabel1_1.Location = new System.Drawing.Point(88, 52);
+            this.kryptonLabel1_1.Name = "kryptonLabel1";
+            this.kryptonLabel1_1.Size = new System.Drawing.Size(117, 24);
+            this.kryptonLabel1_1.TabIndex = 16;
+            this.kryptonLabel1_1.Values.Text = "Mã người dùng";
             // 
             // FormNguoiDungEdit
             // 
@@ -196,6 +187,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1_1;
     }
 }

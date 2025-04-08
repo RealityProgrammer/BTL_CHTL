@@ -98,6 +98,17 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=7.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Tokens.7.5.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=112.1.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.112.1.0\lib\net48\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -144,11 +155,11 @@
     <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Json, Version=6.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Json.6.0.10\lib\net461\System.Text.Json.dll</HintPath>
+    <Reference Include="System.Text.Json, Version=8.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.4\lib\net462\System.Text.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
@@ -156,6 +167,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -165,8 +177,23 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHang\ApiRequest.cs" />
+    <Compile Include="BanHang\ApiResponse.cs" />
+    <Compile Include="BanHang\FormBanHangView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\FormBanHangView.Designer.cs">
+      <DependentUpon>FormBanHangView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang\FormQRPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\FormQRPayment.Designer.cs">
+      <DependentUpon>FormQRPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\FormDanhMucAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,12 +211,6 @@
     </Compile>
     <Compile Include="DanhMuc\FormDanhMucView.Designer.cs">
       <DependentUpon>FormDanhMucView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormBanHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormBanHang.Designer.cs">
-      <DependentUpon>FormBanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBaoCao.cs">
       <SubType>Form</SubType>
@@ -254,11 +275,38 @@
     <Compile Include="Sample_Form\SampleView.Designer.cs">
       <DependentUpon>SampleView.cs</DependentUpon>
     </Compile>
+    <Compile Include="SanPham\FormSanPhamAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SanPham\FormSanPhamAdd.Designer.cs">
+      <DependentUpon>FormSanPhamAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SanPham\FormSanPhamEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SanPham\FormSanPhamEdit.Designer.cs">
+      <DependentUpon>FormSanPhamEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SanPham\FormSanPhamView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SanPham\FormSanPhamView.Designer.cs">
+      <DependentUpon>FormSanPhamView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BanHang\FormBanHangView.resx">
+      <DependentUpon>FormBanHangView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\FormQRPayment.resx">
+      <DependentUpon>FormQRPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FormDanhMucAdd.resx">
+      <DependentUpon>FormDanhMucAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FormDanhMucEdit.resx">
+      <DependentUpon>FormDanhMucEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FormDanhMucView.resx">
       <DependentUpon>FormDanhMucView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormBanHang.resx">
-      <DependentUpon>FormBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
@@ -296,6 +344,15 @@
     <EmbeddedResource Include="Sample_Form\SampleView.resx">
       <DependentUpon>SampleView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SanPham\FormSanPhamAdd.resx">
+      <DependentUpon>FormSanPhamAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SanPham\FormSanPhamEdit.resx">
+      <DependentUpon>FormSanPhamEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SanPham\FormSanPhamView.resx">
+      <DependentUpon>FormSanPhamView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -325,10 +382,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BanHang\" />
     <Folder Include="BaoCao\" />
     <Folder Include="Resources\" />
-    <Folder Include="SanPham\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
