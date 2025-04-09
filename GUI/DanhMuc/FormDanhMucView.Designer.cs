@@ -85,15 +85,15 @@
             this.colEdit,
             this.colDelete});
             this.dgv_danh_muc.GridColor = System.Drawing.Color.Gray;
-            this.dgv_danh_muc.Location = new System.Drawing.Point(23, 185);
+            this.dgv_danh_muc.Location = new System.Drawing.Point(23, 167);
             this.dgv_danh_muc.Name = "dgv_danh_muc";
             this.dgv_danh_muc.RowHeadersWidth = 51;
             this.dgv_danh_muc.RowTemplate.Height = 24;
-            this.dgv_danh_muc.Size = new System.Drawing.Size(814, 366);
+            this.dgv_danh_muc.Size = new System.Drawing.Size(814, 410);
             this.dgv_danh_muc.TabIndex = 5;
             this.dgv_danh_muc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danh_muc_CellClick);
-            this.dgv_danh_muc.ForeColor = System.Drawing.Color.Black;
-            this.dgv_danh_muc.GridColor = System.Drawing.Color.Gray;
+            this.dgv_danh_muc.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danh_muc_CellMouseEnter);
+            this.dgv_danh_muc.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danh_muc_CellMouseLeave);
             // 
             // colMaDanhMuc
             // 
@@ -119,6 +119,7 @@
             this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colEdit.Text = "Sửa";
+            this.colEdit.Width = 50;
             this.colEdit.UseColumnTextForButtonValue = true;
             // 
             // colDelete
@@ -127,12 +128,13 @@
             this.colDelete.MinimumWidth = 6;
             this.colDelete.Name = "colDelete";
             this.colDelete.Text = "Xóa";
+            this.colDelete.Width = 50;
             this.colDelete.UseColumnTextForButtonValue = true;
             // 
             // FormDanhMucView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(889, 616);
+            this.ClientSize = new System.Drawing.Size(861, 616);
             this.Controls.Add(this.dgv_danh_muc);
             this.Name = "FormDanhMucView";
             this.Text = "FormDanhMucView";

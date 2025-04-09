@@ -2,14 +2,11 @@
 {
     partial class FormNguoiDungView
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+    
         private System.ComponentModel.IContainer components = null;
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+
+
+    
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,22 +18,19 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+      
         private void InitializeComponent()
         {
-           
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+           
             this.colMaNguoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEdit = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
-            this.colDelete = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
-            this.dgv_nguoi_dung = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgv_nguoi_dung = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_add)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nguoi_dung)).BeginInit();
@@ -73,32 +67,6 @@
             this.kryptonSeparator1.StateCommon.Back.Color2 = System.Drawing.Color.Navy;
             this.kryptonSeparator1.StateCommon.Separator.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.kryptonSeparator1.StateCommon.Separator.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            // 
-            // dgv_nguoi_dung
-            // 
-            this.dgv_nguoi_dung.AllowUserToResizeColumns = false;
-            this.dgv_nguoi_dung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_nguoi_dung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaNguoiDung,
-            this.colTenDangNhap,
-            this.colVaiTro,
-            this.colHoTen,
-            this.colEdit,
-            this.colDelete});
-            this.dgv_nguoi_dung.Location = new System.Drawing.Point(39, 197);
-            this.dgv_nguoi_dung.Name = "dgv_nguoi_dung";
-            this.dgv_nguoi_dung.RowHeadersWidth = 51;
-            this.dgv_nguoi_dung.Size = new System.Drawing.Size(811, 410);
-            this.dgv_nguoi_dung.StateCommon.Background.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgv_nguoi_dung.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.dgv_nguoi_dung.StateCommon.DataCell.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgv_nguoi_dung.StateCommon.DataCell.Content.Color2 = System.Drawing.Color.MidnightBlue;
-            this.dgv_nguoi_dung.StateCommon.HeaderColumn.Content.Color1 = System.Drawing.Color.Black;
-            this.dgv_nguoi_dung.StateCommon.HeaderColumn.Content.Color2 = System.Drawing.Color.Black;
-            this.dgv_nguoi_dung.StateCommon.HeaderRow.Content.Color1 = System.Drawing.Color.Black;
-            this.dgv_nguoi_dung.StateCommon.HeaderRow.Content.Color2 = System.Drawing.Color.Black;
-            this.dgv_nguoi_dung.TabIndex = 5;
-            this.dgv_nguoi_dung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nguoi_dung_CellClick);
             // 
             // colMaNguoiDung
             // 
@@ -156,6 +124,25 @@
             this.colDelete.UseColumnTextForButtonValue = true;
             this.colDelete.Width = 125;
             // 
+            // dgv_nguoi_dung
+            // 
+            this.dgv_nguoi_dung.AllowUserToResizeColumns = false;
+            this.dgv_nguoi_dung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_nguoi_dung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaNguoiDung,
+            this.colTenDangNhap,
+            this.colVaiTro,
+            this.colHoTen,
+            this.colEdit,
+            this.colDelete});
+            this.dgv_nguoi_dung.Location = new System.Drawing.Point(31, 155);
+            this.dgv_nguoi_dung.Name = "dgv_nguoi_dung";
+            this.dgv_nguoi_dung.RowHeadersWidth = 51;
+            this.dgv_nguoi_dung.Size = new System.Drawing.Size(819, 475);
+            this.dgv_nguoi_dung.TabIndex = 5;
+            this.dgv_nguoi_dung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nguoi_dung_CellClick);
+            this.dgv_nguoi_dung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            // 
             // FormNguoiDungView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -185,8 +172,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDangNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVaiTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colEdit;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colDelete;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgv_nguoi_dung;
+        private System.Windows.Forms.DataGridViewButtonColumn colEdit; // Thay đổi thành DataGridViewButtonColumn
+        private System.Windows.Forms.DataGridViewButtonColumn colDelete; // Thay đổi thành DataGridViewButtonColumn
+        private System.Windows.Forms.DataGridView dgv_nguoi_dung; // Thay đổi thành DataGridView
     }
 }
