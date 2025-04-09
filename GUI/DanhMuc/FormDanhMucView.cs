@@ -61,7 +61,7 @@ namespace CHTL.GUI.DanhMuc
                     column.DefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219); // Màu nền nút xanh dương
                     column.DefaultCellStyle.ForeColor = Color.White; // Chữ trắng
                     column.DefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-                    column.Width = 100; // Đặt chiều rộng cố định cho cột nút
+                    column.Width = 50; // Đặt chiều rộng cố định cho cột nút
                 }
             }
 

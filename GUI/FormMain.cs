@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CHTL.GUI.BanHang;
+using CHTL.GUI.BaoCao;
 using CHTL.GUI.DanhMuc;
 using CHTL.GUI.NguoiDung;
 using CHTL.GUI.SanPham;
@@ -61,7 +62,8 @@ namespace CHTL.GUI
 
         private void btn_bao_cao_Click(object sender, EventArgs e)
         {
-
+            FormBaoCaoView formBaoCao = new FormBaoCaoView();
+            ShowFormInPanel(formBaoCao);
         }
 
         private void btn_ai_tips_Click(object sender, EventArgs e)
