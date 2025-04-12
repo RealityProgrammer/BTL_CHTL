@@ -18,10 +18,12 @@ namespace CHTL.GUI.BaoCao
         private PrintDocument printDocument = new PrintDocument();
         private int currentHoaDonIndex = 0; // Theo dõi chỉ số hóa đơn hiện tại khi in
         private int currentSanPhamIndex = 0; // Theo dõi chỉ số sản phẩm hiện tại trong hóa đơn
+        private ChiTietHoaDon selectedHoaDon; // Lưu hóa đơn được chọn để in chi tiết
         public FormBaoCaoView()
         {
             InitializeComponent();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
+
             CustomizeForm();
         }
 
