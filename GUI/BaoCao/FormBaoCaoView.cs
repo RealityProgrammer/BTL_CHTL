@@ -7,7 +7,7 @@ using System.Linq;
 using CHTL.BUS;
 using CHTL.Models;
 using System.Drawing.Printing;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 
 namespace CHTL.GUI.BaoCao
 {

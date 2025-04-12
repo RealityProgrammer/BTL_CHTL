@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbVaiTro = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.txt_ho_ten = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txt_mat_khau = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txt_ten_dang_nhap = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txt_ma_nguoi_dung = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel1_1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.cbVaiTro = new Krypton.Toolkit.KryptonComboBox();
+            this.txt_ho_ten = new Krypton.Toolkit.KryptonTextBox();
+            this.txt_mat_khau = new Krypton.Toolkit.KryptonTextBox();
+            this.txt_ten_dang_nhap = new Krypton.Toolkit.KryptonTextBox();
+            this.txt_ma_nguoi_dung = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel4 = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel1_1 = new Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
@@ -178,15 +178,15 @@
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbVaiTro;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txt_ho_ten;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txt_mat_khau;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txt_ten_dang_nhap;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txt_ma_nguoi_dung;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1_1;
+        private Krypton.Toolkit.KryptonComboBox cbVaiTro;
+        private Krypton.Toolkit.KryptonTextBox txt_ho_ten;
+        private Krypton.Toolkit.KryptonTextBox txt_mat_khau;
+        private Krypton.Toolkit.KryptonTextBox txt_ten_dang_nhap;
+        private Krypton.Toolkit.KryptonTextBox txt_ma_nguoi_dung;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel5;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1_1;
     }
 }

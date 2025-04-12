@@ -142,7 +142,7 @@
     <value>btn_dang_xuat</value>
   </data>
   <data name="&gt;&gt;btn_dang_xuat.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonButton, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;btn_dang_xuat.Parent" xml:space="preserve">
     <value>kryptonPanel1</value>
@@ -172,7 +172,7 @@
     <value>btn_ai_tips</value>
   </data>
   <data name="&gt;&gt;btn_ai_tips.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonButton, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;btn_ai_tips.Parent" xml:space="preserve">
     <value>kryptonPanel1</value>
@@ -202,7 +202,7 @@
     <value>btn_bao_cao</value>
   </data>
   <data name="&gt;&gt;btn_bao_cao.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonButton, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;btn_bao_cao.Parent" xml:space="preserve">
     <value>kryptonPanel1</value>
@@ -232,7 +232,7 @@
     <value>btn_ban_hang</value>
   </data>
   <data name="&gt;&gt;btn_ban_hang.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonButton, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;btn_ban_hang.Parent" xml:space="preserve">
     <value>kryptonPanel1</value>
@@ -262,7 +262,7 @@
     <value>btn_san_pham</value>
   </data>
   <data name="&gt;&gt;btn_san_pham.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonButton, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;btn_san_pham.Parent" xml:space="preserve">
     <value>kryptonPanel1</value>
@@ -292,7 +292,7 @@
     <value>btn_danh_muc</value>
   </data>
   <data name="&gt;&gt;btn_danh_muc.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonButton, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;btn_danh_muc.Parent" xml:space="preserve">
     <value>kryptonPanel1</value>
@@ -319,7 +319,7 @@
     <value>btn_nguoi_dung</value>
   </data>
   <data name="&gt;&gt;btn_nguoi_dung.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonButton, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonButton, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;btn_nguoi_dung.Parent" xml:space="preserve">
     <value>kryptonPanel1</value>
@@ -1815,7 +1815,7 @@
     <value>kryptonLabel1</value>
   </data>
   <data name="&gt;&gt;kryptonLabel1.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonLabel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonLabel, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;kryptonLabel1.Parent" xml:space="preserve">
     <value>kryptonPanel1</value>
@@ -1839,7 +1839,7 @@
     <value>kryptonPanel1</value>
   </data>
   <data name="&gt;&gt;kryptonPanel1.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonPanel, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;kryptonPanel1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1863,7 +1863,7 @@
     <value>kryptonPanel2</value>
   </data>
   <data name="&gt;&gt;kryptonPanel2.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonPanel, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;kryptonPanel2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1896,12 +1896,12 @@
     <value>kryptonPalette1</value>
   </data>
   <data name="&gt;&gt;kryptonPalette1.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonPalette, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonCustomPaletteBase, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonForm, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+    <value>Krypton.Toolkit.KryptonForm, Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
 </root>

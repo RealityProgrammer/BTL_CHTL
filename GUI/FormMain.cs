@@ -12,7 +12,7 @@ using CHTL.GUI.BaoCao;
 using CHTL.GUI.DanhMuc;
 using CHTL.GUI.NguoiDung;
 using CHTL.GUI.SanPham;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 
 namespace CHTL.GUI
 {
@@ -21,8 +21,8 @@ namespace CHTL.GUI
         public FormMain()
         {
             InitializeComponent();
-            this.Palette = GlobalPalette.Palette;
-            this.PaletteMode = PaletteMode.Custom;
+            LocalCustomPalette = GlobalPalette.Palette;
+            PaletteMode = PaletteMode.Custom;
         }
 
         private void ShowFormInPanel(KryptonForm childForm)

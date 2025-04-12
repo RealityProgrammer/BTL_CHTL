@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.btn_dang_xuat = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btn_ai_tips = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btn_bao_cao = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btn_ban_hang = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btn_san_pham = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btn_danh_muc = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btn_nguoi_dung = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            this.btn_dang_xuat = new Krypton.Toolkit.KryptonButton();
+            this.btn_ai_tips = new Krypton.Toolkit.KryptonButton();
+            this.btn_bao_cao = new Krypton.Toolkit.KryptonButton();
+            this.btn_ban_hang = new Krypton.Toolkit.KryptonButton();
+            this.btn_san_pham = new Krypton.Toolkit.KryptonButton();
+            this.btn_danh_muc = new Krypton.Toolkit.KryptonButton();
+            this.btn_nguoi_dung = new Krypton.Toolkit.KryptonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
+            this.kryptonPalette1 = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +61,7 @@
             this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
             resources.ApplyResources(this.kryptonPanel1, "kryptonPanel1");
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.InputControlCustom1;
+            this.kryptonPanel1.PanelBackStyle = Krypton.Toolkit.PaletteBackStyle.InputControlCustom1;
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.White;
             // 
@@ -73,9 +73,9 @@
             this.btn_dang_xuat.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btn_dang_xuat.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_dang_xuat.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_dang_xuat.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_dang_xuat.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_dang_xuat.StateCommon.Border.Rounding = 18;
             this.btn_dang_xuat.StateCommon.Border.Width = 1;
             this.btn_dang_xuat.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,9 +89,9 @@
             this.btn_ai_tips.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btn_ai_tips.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_ai_tips.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_ai_tips.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_ai_tips.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_ai_tips.StateCommon.Border.Rounding = 18;
             this.btn_ai_tips.StateCommon.Border.Width = 1;
             this.btn_ai_tips.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -106,9 +106,9 @@
             this.btn_bao_cao.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btn_bao_cao.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_bao_cao.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_bao_cao.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_bao_cao.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_bao_cao.StateCommon.Border.Rounding = 18;
             this.btn_bao_cao.StateCommon.Border.Width = 1;
             this.btn_bao_cao.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,9 +123,9 @@
             this.btn_ban_hang.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btn_ban_hang.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_ban_hang.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_ban_hang.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_ban_hang.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_ban_hang.StateCommon.Border.Rounding = 18;
             this.btn_ban_hang.StateCommon.Border.Width = 1;
             this.btn_ban_hang.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,9 +140,9 @@
             this.btn_san_pham.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btn_san_pham.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_san_pham.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_san_pham.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_san_pham.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_san_pham.StateCommon.Border.Rounding = 18;
             this.btn_san_pham.StateCommon.Border.Width = 1;
             this.btn_san_pham.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,9 +157,9 @@
             this.btn_danh_muc.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btn_danh_muc.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_danh_muc.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_danh_muc.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_danh_muc.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_danh_muc.StateCommon.Border.Rounding = 18;
             this.btn_danh_muc.StateCommon.Border.Width = 1;
             this.btn_danh_muc.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,9 +174,9 @@
             this.btn_nguoi_dung.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btn_nguoi_dung.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_nguoi_dung.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_nguoi_dung.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_nguoi_dung.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_nguoi_dung.StateCommon.Border.Rounding = 18;
             this.btn_nguoi_dung.StateCommon.Border.Width = 1;
             this.btn_nguoi_dung.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,7 +206,7 @@
             // 
             // kryptonPalette1
             // 
-            this.kryptonPalette1.PanelStyles.PanelCommon.StateCommon.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
+            this.kryptonPalette1.PanelStyles.PanelCommon.StateCommon.Draw = Krypton.Toolkit.InheritBool.True;
             // 
             // FormMain
             // 
@@ -227,17 +227,17 @@
         }
 
         #endregion
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel2;
-        public ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
+        private Krypton.Toolkit.KryptonPanel kryptonPanel2;
+        public Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private Krypton.Toolkit.KryptonCustomPaletteBase kryptonPalette1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_bao_cao;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_ban_hang;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_san_pham;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_danh_muc;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_nguoi_dung;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_ai_tips;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_dang_xuat;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonButton btn_bao_cao;
+        private Krypton.Toolkit.KryptonButton btn_ban_hang;
+        private Krypton.Toolkit.KryptonButton btn_san_pham;
+        private Krypton.Toolkit.KryptonButton btn_danh_muc;
+        private Krypton.Toolkit.KryptonButton btn_nguoi_dung;
+        private Krypton.Toolkit.KryptonButton btn_ai_tips;
+        private Krypton.Toolkit.KryptonButton btn_dang_xuat;
     }
 }

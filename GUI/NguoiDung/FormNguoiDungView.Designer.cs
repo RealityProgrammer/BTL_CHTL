@@ -18,19 +18,20 @@
 
         #region Windows Form Designer generated code
 
-      
-        private void InitializeComponent()
-        {
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-           
+            this.dgv_nguoi_dung = new System.Windows.Forms.DataGridView();
             this.colMaNguoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgv_nguoi_dung = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_add)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nguoi_dung)).BeginInit();
@@ -46,10 +47,8 @@
             // 
             this.txt_search.Location = new System.Drawing.Point(590, 65);
             this.txt_search.Size = new System.Drawing.Size(260, 42);
-            this.txt_search.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txt_search.StateCommon.Border.Rounding = 12;
+            this.txt_search.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txt_search.StateCommon.Border.Rounding = 12F;
             this.txt_search.StateCommon.Content.Color1 = System.Drawing.Color.Navy;
             this.txt_search.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -68,13 +67,28 @@
             this.kryptonSeparator1.StateCommon.Separator.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.kryptonSeparator1.StateCommon.Separator.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
+            // dgv_nguoi_dung
+            // 
+            this.dgv_nguoi_dung.AllowUserToResizeColumns = false;
+            this.dgv_nguoi_dung.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_nguoi_dung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_nguoi_dung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_nguoi_dung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                this.colMaNguoiDung, this.colTenDangNhap, this.colVaiTro, this.colHoTen, this.colEdit, this.colDelete
+            });
+            this.dgv_nguoi_dung.Location = new System.Drawing.Point(31, 155);
+            this.dgv_nguoi_dung.Name = "dgv_nguoi_dung";
+            this.dgv_nguoi_dung.RowHeadersWidth = 51;
+            this.dgv_nguoi_dung.Size = new System.Drawing.Size(796, 475);
+            this.dgv_nguoi_dung.TabIndex = 5;
+            this.dgv_nguoi_dung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nguoi_dung_CellClick);
+            // 
             // colMaNguoiDung
             // 
             this.colMaNguoiDung.DataPropertyName = "MaNguoiDung";
             this.colMaNguoiDung.HeaderText = "Mã Người Dùng";
             this.colMaNguoiDung.MinimumWidth = 6;
             this.colMaNguoiDung.Name = "colMaNguoiDung";
-            this.colMaNguoiDung.Width = 125;
             // 
             // colTenDangNhap
             // 
@@ -82,7 +96,6 @@
             this.colTenDangNhap.HeaderText = "Tên Đăng Nhập";
             this.colTenDangNhap.MinimumWidth = 6;
             this.colTenDangNhap.Name = "colTenDangNhap";
-            this.colTenDangNhap.Width = 125;
             // 
             // colVaiTro
             // 
@@ -90,7 +103,6 @@
             this.colVaiTro.HeaderText = "Vai Trò";
             this.colVaiTro.MinimumWidth = 6;
             this.colVaiTro.Name = "colVaiTro";
-            this.colVaiTro.Width = 125;
             // 
             // colHoTen
             // 
@@ -98,7 +110,6 @@
             this.colHoTen.HeaderText = "Họ Tên";
             this.colHoTen.MinimumWidth = 6;
             this.colHoTen.Name = "colHoTen";
-            this.colHoTen.Width = 125;
             // 
             // colEdit
             // 
@@ -110,7 +121,6 @@
             this.colEdit.Name = "colEdit";
             this.colEdit.Text = "Sửa";
             this.colEdit.UseColumnTextForButtonValue = true;
-            this.colEdit.Width = 125;
             // 
             // colDelete
             // 
@@ -122,35 +132,15 @@
             this.colDelete.Name = "colDelete";
             this.colDelete.Text = "Xóa";
             this.colDelete.UseColumnTextForButtonValue = true;
-            this.colDelete.Width = 125;
-            // 
-            // dgv_nguoi_dung
-            // 
-            this.dgv_nguoi_dung.AllowUserToResizeColumns = false;
-            this.dgv_nguoi_dung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_nguoi_dung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaNguoiDung,
-            this.colTenDangNhap,
-            this.colVaiTro,
-            this.colHoTen,
-            this.colEdit,
-            this.colDelete});
-            this.dgv_nguoi_dung.Location = new System.Drawing.Point(31, 155);
-            this.dgv_nguoi_dung.Name = "dgv_nguoi_dung";
-            this.dgv_nguoi_dung.RowHeadersWidth = 51;
-            this.dgv_nguoi_dung.Size = new System.Drawing.Size(819, 475);
-            this.dgv_nguoi_dung.TabIndex = 5;
-            this.dgv_nguoi_dung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nguoi_dung_CellClick);
-            this.dgv_nguoi_dung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             // 
             // FormNguoiDungView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 663);
+            this.ClientSize = new System.Drawing.Size(837, 617);
             this.Controls.Add(this.dgv_nguoi_dung);
             this.Name = "FormNguoiDungView";
-            this.Text = "FormNguoiDungView";
+            this.Text = "";
             this.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.Load += new System.EventHandler(this.FormNguoiDungView_Load);
             this.Controls.SetChildIndex(this.kryptonLabel1, 0);
@@ -164,8 +154,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nguoi_dung)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+        private System.Windows.Forms.DataGridView dgv_nguoi_dung;
 
         #endregion
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaNguoiDung;
@@ -174,6 +164,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit; // Thay đổi thành DataGridViewButtonColumn
         private System.Windows.Forms.DataGridViewButtonColumn colDelete; // Thay đổi thành DataGridViewButtonColumn
-        private System.Windows.Forms.DataGridView dgv_nguoi_dung; // Thay đổi thành DataGridView
     }
 }

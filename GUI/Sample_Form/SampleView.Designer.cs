@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SampleView));
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.txt_search = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.txt_search = new Krypton.Toolkit.KryptonTextBox();
             this.btn_add = new System.Windows.Forms.PictureBox();
-            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonSeparator1 = new ComponentFactory.Krypton.Toolkit.KryptonSeparator();
+            this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonSeparator1 = new Krypton.Toolkit.KryptonSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.btn_add)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSeparator1)).BeginInit();
             this.SuspendLayout();
@@ -52,9 +52,9 @@
             this.txt_search.Location = new System.Drawing.Point(706, 71);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(269, 42);
-            this.txt_search.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txt_search.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txt_search.StateCommon.Border.Rounding = 12;
             this.txt_search.StateCommon.Content.Color1 = System.Drawing.Color.Navy;
             this.txt_search.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,10 +117,10 @@
 
         #endregion
 
-        public ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        public ComponentFactory.Krypton.Toolkit.KryptonTextBox txt_search;
-        public ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        public ComponentFactory.Krypton.Toolkit.KryptonSeparator kryptonSeparator1;
+        public Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        public Krypton.Toolkit.KryptonTextBox txt_search;
+        public Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        public Krypton.Toolkit.KryptonSeparator kryptonSeparator1;
         public System.Windows.Forms.PictureBox btn_add;
     }
 }

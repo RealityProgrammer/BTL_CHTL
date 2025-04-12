@@ -22,17 +22,17 @@
             this.colGiaBanCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.txtSearch = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.dtpNgayBan = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
-            this.cbNguoiBan = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnClear = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnAddNew = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.lblSearch = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lblNgayBan = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lblNguoiBan = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lblGrandTotalTitle = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lblGrandTotal = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txtSearch = new Krypton.Toolkit.KryptonTextBox();
+            this.dtpNgayBan = new Krypton.Toolkit.KryptonDateTimePicker();
+            this.cbNguoiBan = new Krypton.Toolkit.KryptonComboBox();
+            this.btnSave = new Krypton.Toolkit.KryptonButton();
+            this.btnClear = new Krypton.Toolkit.KryptonButton();
+            this.btnAddNew = new Krypton.Toolkit.KryptonButton();
+            this.lblSearch = new Krypton.Toolkit.KryptonLabel();
+            this.lblNgayBan = new Krypton.Toolkit.KryptonLabel();
+            this.lblNguoiBan = new Krypton.Toolkit.KryptonLabel();
+            this.lblGrandTotalTitle = new Krypton.Toolkit.KryptonLabel();
+            this.lblGrandTotal = new Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNguoiBan)).BeginInit();
             this.SuspendLayout();
@@ -104,9 +104,9 @@
             this.txtSearch.Location = new System.Drawing.Point(30, 68);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(200, 40);
-            this.txtSearch.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSearch.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearch.StateCommon.Border.Rounding = 10;
             this.txtSearch.StateCommon.Content.Color1 = System.Drawing.Color.Black;
             this.txtSearch.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -117,9 +117,9 @@
             this.dtpNgayBan.Location = new System.Drawing.Point(310, 68);
             this.dtpNgayBan.Name = "dtpNgayBan";
             this.dtpNgayBan.Size = new System.Drawing.Size(150, 39);
-            this.dtpNgayBan.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpNgayBan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.dtpNgayBan.StateCommon.Border.Rounding = 10;
             this.dtpNgayBan.StateCommon.Content.Color1 = System.Drawing.Color.Black;
             this.dtpNgayBan.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -134,9 +134,9 @@
             this.cbNguoiBan.Location = new System.Drawing.Point(530, 68);
             this.cbNguoiBan.Name = "cbNguoiBan";
             this.cbNguoiBan.Size = new System.Drawing.Size(150, 38);
-            this.cbNguoiBan.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbNguoiBan.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.cbNguoiBan.StateCommon.ComboBox.Border.Rounding = 10;
             this.cbNguoiBan.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.Black;
             this.cbNguoiBan.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -265,16 +265,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiaBanCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn colThanhTien;
         private System.Windows.Forms.DataGridViewButtonColumn colDelete;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearch;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpNgayBan;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbNguoiBan;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnClear;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAddNew;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblSearch;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblNgayBan;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblNguoiBan;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblGrandTotalTitle;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblGrandTotal;
+        private Krypton.Toolkit.KryptonTextBox txtSearch;
+        private Krypton.Toolkit.KryptonDateTimePicker dtpNgayBan;
+        private Krypton.Toolkit.KryptonComboBox cbNguoiBan;
+        private Krypton.Toolkit.KryptonButton btnSave;
+        private Krypton.Toolkit.KryptonButton btnClear;
+        private Krypton.Toolkit.KryptonButton btnAddNew;
+        private Krypton.Toolkit.KryptonLabel lblSearch;
+        private Krypton.Toolkit.KryptonLabel lblNgayBan;
+        private Krypton.Toolkit.KryptonLabel lblNguoiBan;
+        private Krypton.Toolkit.KryptonLabel lblGrandTotalTitle;
+        private Krypton.Toolkit.KryptonLabel lblGrandTotal;
     }
 }

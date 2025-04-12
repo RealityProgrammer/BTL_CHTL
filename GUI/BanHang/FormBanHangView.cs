@@ -7,7 +7,7 @@ using CHTL.Models;
 using System.Drawing;
 using System.Linq;
 using CHTL.DAL;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 
 namespace CHTL.GUI.BanHang
 {

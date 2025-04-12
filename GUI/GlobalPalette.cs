@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 
 namespace CHTL.GUI
 {
     public static class GlobalPalette
     {
-        public static KryptonPalette Palette { get; } = CreatePalette();
-        private static KryptonPalette CreatePalette()
+        public static KryptonCustomPaletteBase Palette { get; } = CreatePalette();
+        private static KryptonCustomPaletteBase CreatePalette()
         {
-            var palette = new KryptonPalette();
+            var palette = new KryptonCustomPaletteBase();
 
             // Ví dụ định dạng form:
             palette.FormStyles.FormMain.StateCommon.Back.Color1 = Color.White;

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 using CHTL.BUS;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 using CHTL.Models;
 
 namespace CHTL.GUI {
@@ -39,11 +39,9 @@ namespace CHTL.GUI {
                formMain.Show();
         }
 
-        private void ShowErrorMessage(string message)
-        {
-            KryptonMessageBox.Show(message, "Lỗi đăng nhập",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error); // Removed showCtrlCopy parameter
+        private void ShowErrorMessage(string message) {
+            KryptonMessageBox.Show(message, "Lỗi đăng nhập", KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button1, 0, null, false, null);
+            // KryptonMessageBox.Show(message, "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error); // Removed showCtrlCopy parameter
         }
 
         private void txt_mat_khau_KeyDown(object sender, KeyEventArgs e)

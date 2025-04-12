@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 
 namespace CHTL.GUI.Sample_Form
 {
@@ -16,8 +16,8 @@ namespace CHTL.GUI.Sample_Form
         public SampleView()
         {
             InitializeComponent();
-            this.Palette = GlobalPalette.Palette;
-            this.PaletteMode = PaletteMode.Custom;
+            LocalCustomPalette = GlobalPalette.Palette;
+            PaletteMode = PaletteMode.Custom;
         }
 
         public virtual void txt_search_TextChanged(object sender, EventArgs e)

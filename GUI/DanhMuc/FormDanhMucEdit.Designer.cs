@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_ma_danh_muc = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbl_ten_danh_muc = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.txt_ma_danh_muc = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txt_ten_danh_muc = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.lbl_ma_danh_muc = new Krypton.Toolkit.KryptonLabel();
+            this.lbl_ten_danh_muc = new Krypton.Toolkit.KryptonLabel();
+            this.txt_ma_danh_muc = new Krypton.Toolkit.KryptonTextBox();
+            this.txt_ten_danh_muc = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
@@ -119,9 +119,9 @@
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbl_ten_danh_muc;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbl_ma_danh_muc;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txt_ten_danh_muc;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txt_ma_danh_muc;
+        private Krypton.Toolkit.KryptonLabel lbl_ten_danh_muc;
+        private Krypton.Toolkit.KryptonLabel lbl_ma_danh_muc;
+        private Krypton.Toolkit.KryptonTextBox txt_ten_danh_muc;
+        private Krypton.Toolkit.KryptonTextBox txt_ma_danh_muc;
     }
 }

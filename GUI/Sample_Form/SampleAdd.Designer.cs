@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonPanel3 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.btn_close = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btn_save = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
+            this.kryptonPanel3 = new Krypton.Toolkit.KryptonPanel();
+            this.btn_close = new Krypton.Toolkit.KryptonButton();
+            this.btn_save = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,9 +102,9 @@
             this.btn_close.Size = new System.Drawing.Size(139, 50);
             this.btn_close.StateCommon.Back.Color1 = System.Drawing.Color.Red;
             this.btn_close.StateCommon.Back.Color2 = System.Drawing.Color.Red;
-            this.btn_close.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_close.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_close.StateCommon.Border.Rounding = 19;
             this.btn_close.StateCommon.Border.Width = 1;
             this.btn_close.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
@@ -121,9 +121,9 @@
             this.btn_save.Size = new System.Drawing.Size(139, 50);
             this.btn_save.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_save.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_save.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_save.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_save.StateCommon.Border.Rounding = 19;
             this.btn_save.StateCommon.Border.Width = 1;
             this.btn_save.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
@@ -159,11 +159,11 @@
 
         #endregion
         public System.Windows.Forms.PictureBox pictureBox1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_close;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_save;
-        public ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        public ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel2;
-        public ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel3;
-        public ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonButton btn_close;
+        private Krypton.Toolkit.KryptonButton btn_save;
+        public Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        public Krypton.Toolkit.KryptonPanel kryptonPanel2;
+        public Krypton.Toolkit.KryptonPanel kryptonPanel3;
+        public Krypton.Toolkit.KryptonLabel kryptonLabel1;
     }
 }
