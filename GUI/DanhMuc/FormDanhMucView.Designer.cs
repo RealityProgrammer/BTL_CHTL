@@ -26,16 +26,15 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
-            this.dgv_danh_muc = new System.Windows.Forms.DataGridView();
+        private void InitializeComponent() {
+            this.dgvDanhMuc = new System.Windows.Forms.DataGridView();
             this.colMaDanhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenDanhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_add)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_danh_muc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhMuc)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonLabel1
@@ -47,10 +46,8 @@
             // txt_search
             // 
             this.txt_search.Location = new System.Drawing.Point(568, 80);
-            this.txt_search.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txt_search.StateCommon.Border.Rounding = 12;
+            this.txt_search.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txt_search.StateCommon.Border.Rounding = 12F;
             this.txt_search.StateCommon.Content.Color1 = System.Drawing.Color.Navy;
             this.txt_search.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -74,26 +71,24 @@
             // 
             this.btn_add.Location = new System.Drawing.Point(33, 58);
             // 
-            // dgv_danh_muc
+            // dgvDanhMuc
             // 
-            this.dgv_danh_muc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_danh_muc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgv_danh_muc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_danh_muc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaDanhMuc,
-            this.colTenDanhMuc,
-            this.colEdit,
-            this.colDelete});
-            this.dgv_danh_muc.GridColor = System.Drawing.Color.Gray;
-            this.dgv_danh_muc.Location = new System.Drawing.Point(23, 167);
-            this.dgv_danh_muc.Name = "dgv_danh_muc";
-            this.dgv_danh_muc.RowHeadersWidth = 51;
-            this.dgv_danh_muc.RowTemplate.Height = 24;
-            this.dgv_danh_muc.Size = new System.Drawing.Size(814, 410);
-            this.dgv_danh_muc.TabIndex = 5;
-            this.dgv_danh_muc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danh_muc_CellClick);
-            this.dgv_danh_muc.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danh_muc_CellMouseEnter);
-            this.dgv_danh_muc.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danh_muc_CellMouseLeave);
+            this.dgvDanhMuc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDanhMuc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgvDanhMuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhMuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                this.colMaDanhMuc, this.colTenDanhMuc, this.colEdit, this.colDelete
+            });
+            this.dgvDanhMuc.GridColor = System.Drawing.Color.Gray;
+            this.dgvDanhMuc.Location = new System.Drawing.Point(23, 167);
+            this.dgvDanhMuc.Name = "dgvDanhMuc";
+            this.dgvDanhMuc.RowHeadersWidth = 51;
+            this.dgvDanhMuc.RowTemplate.Height = 24;
+            this.dgvDanhMuc.Size = new System.Drawing.Size(814, 410);
+            this.dgvDanhMuc.TabIndex = 5;
+            this.dgvDanhMuc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danh_muc_CellClick);
+            this.dgvDanhMuc.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danh_muc_CellMouseEnter);
+            this.dgvDanhMuc.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danh_muc_CellMouseLeave);
             // 
             // colMaDanhMuc
             // 
@@ -119,7 +114,6 @@
             this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colEdit.Text = "Sửa";
-            this.colEdit.Width = 50;
             this.colEdit.UseColumnTextForButtonValue = true;
             // 
             // colDelete
@@ -128,17 +122,16 @@
             this.colDelete.MinimumWidth = 6;
             this.colDelete.Name = "colDelete";
             this.colDelete.Text = "Xóa";
-            this.colDelete.Width = 50;
             this.colDelete.UseColumnTextForButtonValue = true;
             // 
             // FormDanhMucView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(861, 616);
-            this.Controls.Add(this.dgv_danh_muc);
+            this.ClientSize = new System.Drawing.Size(824, 564);
+            this.Controls.Add(this.dgvDanhMuc);
             this.Name = "FormDanhMucView";
             this.Text = "FormDanhMucView";
-            this.Controls.SetChildIndex(this.dgv_danh_muc, 0);
+            this.Controls.SetChildIndex(this.dgvDanhMuc, 0);
             this.Controls.SetChildIndex(this.kryptonLabel1, 0);
             this.Controls.SetChildIndex(this.txt_search, 0);
             this.Controls.SetChildIndex(this.btn_add, 0);
@@ -146,15 +139,14 @@
             this.Controls.SetChildIndex(this.kryptonSeparator1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_add)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_danh_muc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhMuc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgv_danh_muc;
+        private System.Windows.Forms.DataGridView dgvDanhMuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDanhMuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDanhMuc;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
