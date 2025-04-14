@@ -13,8 +13,11 @@
             base.Dispose(disposing);
         }
 
-        private void InitializeComponent()
-        {
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent() {
             this.flpSanPham = new System.Windows.Forms.FlowLayoutPanel();
             this.dgvChiTietHoaDon = new System.Windows.Forms.DataGridView();
             this.colTenSanPhamCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,11 +53,8 @@
             this.dgvChiTietHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colTenSanPhamCT,
-            this.colSoLuongCT,
-            this.colGiaBanCT,
-            this.colThanhTien,
-            this.colDelete});
+                this.colTenSanPhamCT, this.colSoLuongCT, this.colGiaBanCT, this.colThanhTien, this.colDelete
+            });
             this.dgvChiTietHoaDon.Location = new System.Drawing.Point(390, 120);
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.RowHeadersWidth = 51;
@@ -104,10 +104,8 @@
             this.txtSearch.Location = new System.Drawing.Point(30, 68);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(200, 40);
-            this.txtSearch.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtSearch.StateCommon.Border.Rounding = 10;
+            this.txtSearch.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSearch.StateCommon.Border.Rounding = 10F;
             this.txtSearch.StateCommon.Content.Color1 = System.Drawing.Color.Black;
             this.txtSearch.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtSearch.TabIndex = 7;
@@ -117,10 +115,8 @@
             this.dtpNgayBan.Location = new System.Drawing.Point(310, 68);
             this.dtpNgayBan.Name = "dtpNgayBan";
             this.dtpNgayBan.Size = new System.Drawing.Size(150, 39);
-            this.dtpNgayBan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dtpNgayBan.StateCommon.Border.Rounding = 10;
+            this.dtpNgayBan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpNgayBan.StateCommon.Border.Rounding = 10F;
             this.dtpNgayBan.StateCommon.Content.Color1 = System.Drawing.Color.Black;
             this.dtpNgayBan.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.dtpNgayBan.TabIndex = 6;
@@ -130,14 +126,13 @@
             this.cbNguoiBan.DropDownWidth = 144;
             this.cbNguoiBan.Enabled = false;
             this.cbNguoiBan.Items.AddRange(new object[] {
-            "Nguyen Van A (ND001)"});
+                "Nguyen Van A (ND001)"
+            });
             this.cbNguoiBan.Location = new System.Drawing.Point(530, 68);
             this.cbNguoiBan.Name = "cbNguoiBan";
-            this.cbNguoiBan.Size = new System.Drawing.Size(150, 38);
-            this.cbNguoiBan.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cbNguoiBan.StateCommon.ComboBox.Border.Rounding = 10;
+            this.cbNguoiBan.Size = new System.Drawing.Size(150, 39);
+            this.cbNguoiBan.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbNguoiBan.StateCommon.ComboBox.Border.Rounding = 10F;
             this.cbNguoiBan.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.Black;
             this.cbNguoiBan.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbNguoiBan.TabIndex = 5;
@@ -152,6 +147,7 @@
             this.btnSave.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.TabIndex = 4;
+            this.btnSave.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnSave.Values.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -165,6 +161,7 @@
             this.btnClear.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnClear.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnClear.TabIndex = 3;
+            this.btnClear.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnClear.Values.Text = "Xóa";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -178,6 +175,7 @@
             this.btnAddNew.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnAddNew.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnAddNew.TabIndex = 2;
+            this.btnAddNew.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnAddNew.Values.Text = "Thêm mới";
             // 
             // lblSearch
@@ -234,7 +232,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(901, 600);
+            this.ClientSize = new System.Drawing.Size(869, 568);
             this.Controls.Add(this.lblGrandTotal);
             this.Controls.Add(this.lblGrandTotalTitle);
             this.Controls.Add(this.btnAddNew);
@@ -255,7 +253,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbNguoiBan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.FlowLayoutPanel flpSanPham;

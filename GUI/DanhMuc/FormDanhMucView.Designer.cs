@@ -130,7 +130,7 @@
             this.ClientSize = new System.Drawing.Size(824, 564);
             this.Controls.Add(this.dgvDanhMuc);
             this.Name = "FormDanhMucView";
-            this.Text = "FormDanhMucView";
+            this.Text = "";
             this.Controls.SetChildIndex(this.dgvDanhMuc, 0);
             this.Controls.SetChildIndex(this.kryptonLabel1, 0);
             this.Controls.SetChildIndex(this.txt_search, 0);

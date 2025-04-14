@@ -39,13 +39,13 @@
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(590, 23);
+            this.kryptonLabel1.Location = new System.Drawing.Point(567, 23);
             this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabel1.Values.Text = "Tìm kiếm";
             // 
             // txt_search
             // 
-            this.txt_search.Location = new System.Drawing.Point(590, 65);
+            this.txt_search.Location = new System.Drawing.Point(567, 65);
             this.txt_search.Size = new System.Drawing.Size(260, 42);
             this.txt_search.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txt_search.StateCommon.Border.Rounding = 12F;

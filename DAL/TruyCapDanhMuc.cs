@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CHTL.Models;
 using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace CHTL.DAL
 {
@@ -81,8 +82,7 @@ namespace CHTL.DAL
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@TuKhoa", "%" + tuKhoa + "%");
                 SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
+                while (reader.Read()) {
                     danhSach.Add(new DanhMucSanPham
                     {
                         MaDanhMuc = reader["MaDanhMuc"].ToString(),

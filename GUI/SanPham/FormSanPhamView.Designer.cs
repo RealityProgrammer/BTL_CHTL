@@ -13,8 +13,11 @@
             base.Dispose(disposing);
         }
 
-        private void InitializeComponent()
-        {
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent() {
             this.dgv_san_pham = new System.Windows.Forms.DataGridView();
             this.colMaSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,10 +43,8 @@
             // 
             this.txt_search.Location = new System.Drawing.Point(587, 80);
             this.txt_search.Size = new System.Drawing.Size(261, 42);
-            this.txt_search.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txt_search.StateCommon.Border.Rounding = 12;
+            this.txt_search.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txt_search.StateCommon.Border.Rounding = 12F;
             this.txt_search.StateCommon.Content.Color1 = System.Drawing.Color.Navy;
             this.txt_search.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -57,8 +58,8 @@
             // 
             // kryptonSeparator1
             // 
-            this.kryptonSeparator1.Location = new System.Drawing.Point(23, 138);
-            this.kryptonSeparator1.Size = new System.Drawing.Size(825, 11);
+            this.kryptonSeparator1.Location = new System.Drawing.Point(8, 138);
+            this.kryptonSeparator1.Size = new System.Drawing.Size(829, 11);
             this.kryptonSeparator1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.kryptonSeparator1.StateCommon.Back.Color2 = System.Drawing.Color.Navy;
             this.kryptonSeparator1.StateCommon.Separator.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -75,20 +76,14 @@
             this.dgv_san_pham.BackgroundColor = System.Drawing.Color.White;
             this.dgv_san_pham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_san_pham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaSanPham,
-            this.colTenSanPham,
-            this.colGiaBan,
-            this.colMaDanhMuc,
-            this.colSoLuongTon,
-            this.colNgayHetHan,
-            this.colEdit,
-            this.colDelete});
+                this.colMaSanPham, this.colTenSanPham, this.colGiaBan, this.colMaDanhMuc, this.colSoLuongTon, this.colNgayHetHan, this.colEdit, this.colDelete
+            });
             this.dgv_san_pham.GridColor = System.Drawing.Color.Gray;
-            this.dgv_san_pham.Location = new System.Drawing.Point(23, 155);
+            this.dgv_san_pham.Location = new System.Drawing.Point(8, 155);
             this.dgv_san_pham.Name = "dgv_san_pham";
             this.dgv_san_pham.RowHeadersWidth = 51;
             this.dgv_san_pham.RowTemplate.Height = 24;
-            this.dgv_san_pham.Size = new System.Drawing.Size(825, 450);
+            this.dgv_san_pham.Size = new System.Drawing.Size(829, 450);
             this.dgv_san_pham.TabIndex = 5;
             this.dgv_san_pham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_san_pham_CellClick);
             // 
@@ -157,7 +152,7 @@
             // FormSanPhamView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(876, 616);
+            this.ClientSize = new System.Drawing.Size(844, 592);
             this.Controls.Add(this.dgv_san_pham);
             this.Name = "FormSanPhamView";
             this.Text = "FormSanPhamView";
@@ -172,9 +167,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_san_pham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         private System.Windows.Forms.DataGridView dgv_san_pham;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaSanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenSanPham;

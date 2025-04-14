@@ -17,8 +17,6 @@ namespace CHTL.GUI.NguoiDung
         private XuLyNguoiDung xuLy = new XuLyNguoiDung();
         public FormNguoiDungView()
         {
-            
-            
             InitializeComponent();
             LoadData();
             CustomizeDataGridView(); // Gọi phương thức tùy chỉnh giao diện

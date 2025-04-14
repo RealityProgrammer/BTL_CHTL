@@ -34,7 +34,7 @@ namespace CHTL.GUI.BaoCao
 
             // Đặt màu nền tím nhạt cho form
             this.BackColor = Color.FromArgb(230, 220, 255); // Màu tím nhạt
-
+            
             // Tùy chỉnh nút Xem Báo Cáo
             btnXemBaoCao.FlatAppearance.BorderSize = 0;
             btnXemBaoCao.BackColor = Color.Red; // Màu tím trung bình

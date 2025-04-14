@@ -1,21 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CHTL.BUS;
+using CHTL.DAL;
 using CHTL.GUI.Sample_Form;
 using CHTL.Models;
+using Krypton.Toolkit;
+using Microsoft.Data.SqlClient;
 
 namespace CHTL.GUI.DanhMuc
 {
     public partial class FormDanhMucView : SampleView
     {
-        private CHTL.BUS.XuLyDanhMuc xuLy = new XuLyDanhMuc();
+        private XuLyDanhMuc xuLy = new XuLyDanhMuc();
         public FormDanhMucView()
         {
             InitializeComponent();
@@ -80,9 +78,11 @@ namespace CHTL.GUI.DanhMuc
         }
 
         // Hiệu ứng hover cho nút "Sửa" và "Xóa"
-        private void dgv_danh_muc_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvDanhMuc.Rows.Count && (dgvDanhMuc.Columns[e.ColumnIndex].Name == "colEdit" || dgvDanhMuc.Columns[e.ColumnIndex].Name == "colDelete"))
+        private void dgv_danh_muc_CellMouseEnter(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex < 0 || e.RowIndex >= dgvDanhMuc.Rows.Count) return;
+            if (e.ColumnIndex < 0 || e.ColumnIndex >= dgvDanhMuc.Columns.Count) return;
+            
+            if (dgvDanhMuc.Columns[e.ColumnIndex].Name == "colEdit" || dgvDanhMuc.Columns[e.ColumnIndex].Name == "colDelete")
             {
                 dgvDanhMuc.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(41, 128, 185); // Màu xanh đậm hơn khi hover
             }
@@ -90,7 +90,10 @@ namespace CHTL.GUI.DanhMuc
 
         private void dgv_danh_muc_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvDanhMuc.Rows.Count && (dgvDanhMuc.Columns[e.ColumnIndex].Name == "colEdit" || dgvDanhMuc.Columns[e.ColumnIndex].Name == "colDelete"))
+            if (e.RowIndex < 0 || e.RowIndex >= dgvDanhMuc.Rows.Count) return;
+            if (e.ColumnIndex < 0 || e.ColumnIndex >= dgvDanhMuc.Columns.Count) return;
+            
+            if (dgvDanhMuc.Columns[e.ColumnIndex].Name == "colEdit" || dgvDanhMuc.Columns[e.ColumnIndex].Name == "colDelete")
             {
                 dgvDanhMuc.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(52, 152, 219); // Màu gốc
             }

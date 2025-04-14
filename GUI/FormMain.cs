@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CHTL.GUI.AI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,7 +69,8 @@ namespace CHTL.GUI
 
         private void btn_ai_tips_Click(object sender, EventArgs e)
         {
-
+            FormChat formChat = new FormChat();
+            ShowFormInPanel(formChat);
         }
     }
 }
