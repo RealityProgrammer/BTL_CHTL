@@ -15,8 +15,11 @@
 
         #region Windows Form Designer generated code
 
-        private void InitializeComponent()
-        {
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent() {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabThongKe = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -256,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 705);
+            this.ClientSize = new System.Drawing.Size(1061, 609);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInBaoCao);
@@ -266,7 +269,6 @@
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBaoCaoView";
-            this.Text = "Báo Cáo Doanh Thu";
             this.Load += new System.EventHandler(this.FormBaoCaoView_Load);
             this.tabControl.ResumeLayout(false);
             this.tabThongKe.ResumeLayout(false);
@@ -277,7 +279,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

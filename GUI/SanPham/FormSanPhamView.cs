@@ -49,6 +49,8 @@ namespace CHTL.GUI.SanPham
 
             // Cấu hình màu sắc cho các ô button
             dgv_san_pham.CellFormatting += dgv_san_pham_CellFormatting;
+
+            dgv_san_pham.AutoGenerateColumns = false;
         }
 
         private void LoadData()

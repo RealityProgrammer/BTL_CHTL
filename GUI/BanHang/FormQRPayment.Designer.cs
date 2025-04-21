@@ -28,7 +28,7 @@ namespace CHTL.GUI.BanHang
             // 
             // pbQRCode
             // 
-            this.pbQRCode.Location = new System.Drawing.Point(101, 45);
+            this.pbQRCode.Location = new System.Drawing.Point(88, 29);
             this.pbQRCode.Name = "pbQRCode";
             this.pbQRCode.Size = new System.Drawing.Size(200, 200);
             this.pbQRCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -48,7 +48,7 @@ namespace CHTL.GUI.BanHang
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(151, 295);
+            this.btnClose.Location = new System.Drawing.Point(149, 297);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 30);
             this.btnClose.TabIndex = 2;

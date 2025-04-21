@@ -45,7 +45,7 @@
             this.flpSanPham.AutoScroll = true;
             this.flpSanPham.Location = new System.Drawing.Point(30, 120);
             this.flpSanPham.Name = "flpSanPham";
-            this.flpSanPham.Size = new System.Drawing.Size(335, 450);
+            this.flpSanPham.Size = new System.Drawing.Size(335, 410);
             this.flpSanPham.TabIndex = 0;
             // 
             // dgvChiTietHoaDon
@@ -59,7 +59,7 @@
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.RowHeadersWidth = 51;
             this.dgvChiTietHoaDon.RowTemplate.Height = 24;
-            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(453, 350);
+            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(435, 350);
             this.dgvChiTietHoaDon.TabIndex = 1;
             this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellClick);
             // 
@@ -112,9 +112,9 @@
             // 
             // dtpNgayBan
             // 
-            this.dtpNgayBan.Location = new System.Drawing.Point(310, 68);
+            this.dtpNgayBan.Location = new System.Drawing.Point(267, 68);
             this.dtpNgayBan.Name = "dtpNgayBan";
-            this.dtpNgayBan.Size = new System.Drawing.Size(150, 39);
+            this.dtpNgayBan.Size = new System.Drawing.Size(214, 39);
             this.dtpNgayBan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.dtpNgayBan.StateCommon.Border.Rounding = 10F;
             this.dtpNgayBan.StateCommon.Content.Color1 = System.Drawing.Color.Black;
@@ -130,7 +130,7 @@
             });
             this.cbNguoiBan.Location = new System.Drawing.Point(530, 68);
             this.cbNguoiBan.Name = "cbNguoiBan";
-            this.cbNguoiBan.Size = new System.Drawing.Size(150, 39);
+            this.cbNguoiBan.Size = new System.Drawing.Size(201, 39);
             this.cbNguoiBan.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.cbNguoiBan.StateCommon.ComboBox.Border.Rounding = 10F;
             this.cbNguoiBan.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.Black;
@@ -190,7 +190,7 @@
             // 
             // lblNgayBan
             // 
-            this.lblNgayBan.Location = new System.Drawing.Point(310, 30);
+            this.lblNgayBan.Location = new System.Drawing.Point(267, 30);
             this.lblNgayBan.Name = "lblNgayBan";
             this.lblNgayBan.Size = new System.Drawing.Size(106, 32);
             this.lblNgayBan.StateCommon.ShortText.Color1 = System.Drawing.Color.Navy;
@@ -232,7 +232,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(869, 568);
+            this.ClientSize = new System.Drawing.Size(805, 504);
             this.Controls.Add(this.lblGrandTotal);
             this.Controls.Add(this.lblGrandTotalTitle);
             this.Controls.Add(this.btnAddNew);
@@ -248,7 +248,6 @@
             this.Controls.Add(this.flpSanPham);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBanHangView";
-            this.Text = "Bán hàng";
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNguoiBan)).EndInit();
             this.ResumeLayout(false);

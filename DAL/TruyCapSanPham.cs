@@ -23,9 +23,10 @@ namespace CHTL.DAL {
                         MaSanPham = reader["MaSanPham"].ToString(),
                         TenSanPham = reader["TenSanPham"].ToString(),
                         GiaBan = Convert.ToDecimal(reader["GiaBan"]),
+                        GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
                         MaDanhMuc = reader["MaDanhMuc"].ToString(),
                         SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
-                        NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"]
+                        NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"],
                     });
                 }
             }
@@ -39,12 +40,13 @@ namespace CHTL.DAL {
             using (SqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "INSERT INTO SanPham (MaSanPham, TenSanPham, GiaBan, MaDanhMuc, SoLuongTon, NgayHetHan) " +
-                               "VALUES (@MaSanPham, @TenSanPham, @GiaBan, @MaDanhMuc, @SoLuongTon, @NgayHetHan)";
+                string query = "INSERT INTO SanPham (MaSanPham, TenSanPham, GiaBan, GiamGia, MaDanhMuc, SoLuongTon, NgayHetHan) " +
+                               "VALUES (@MaSanPham, @TenSanPham, @GiaBan, @GiamGia, @MaDanhMuc, @SoLuongTon, @NgayHetHan)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
                 cmd.Parameters.AddWithValue("@TenSanPham", sp.TenSanPham);
                 cmd.Parameters.AddWithValue("@GiaBan", sp.GiaBan);
+                cmd.Parameters.AddWithValue("@GiamGia", sp.GiamGia);
                 cmd.Parameters.AddWithValue("@MaDanhMuc", sp.MaDanhMuc);
                 cmd.Parameters.AddWithValue("@SoLuongTon", sp.SoLuongTon);
                 cmd.Parameters.AddWithValue("@NgayHetHan", sp.NgayHetHan.HasValue ? (object)sp.NgayHetHan.Value : DBNull.Value);
@@ -57,12 +59,13 @@ namespace CHTL.DAL {
             using (SqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE SanPham SET TenSanPham = @TenSanPham, GiaBan = @GiaBan, MaDanhMuc = @MaDanhMuc, " +
+                string query = "UPDATE SanPham SET TenSanPham = @TenSanPham, GiaBan = @GiaBan, GiamGia = @GiamGia, MaDanhMuc = @MaDanhMuc, " +
                                "SoLuongTon = @SoLuongTon, NgayHetHan = @NgayHetHan WHERE MaSanPham = @MaSanPham";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
                 cmd.Parameters.AddWithValue("@TenSanPham", sp.TenSanPham);
                 cmd.Parameters.AddWithValue("@GiaBan", sp.GiaBan);
+                cmd.Parameters.AddWithValue("@GiamGia", sp.GiamGia);
                 cmd.Parameters.AddWithValue("@MaDanhMuc", sp.MaDanhMuc);
                 cmd.Parameters.AddWithValue("@SoLuongTon", sp.SoLuongTon);
                 cmd.Parameters.AddWithValue("@NgayHetHan", sp.NgayHetHan.HasValue ? (object)sp.NgayHetHan.Value : DBNull.Value);
@@ -99,6 +102,7 @@ namespace CHTL.DAL {
                         MaSanPham = reader["MaSanPham"].ToString(),
                         TenSanPham = reader["TenSanPham"].ToString(),
                         GiaBan = Convert.ToDecimal(reader["GiaBan"]),
+                        GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
                         MaDanhMuc = reader["MaDanhMuc"].ToString(),
                         SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
                         NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"]
@@ -138,6 +142,7 @@ namespace CHTL.DAL {
                         MaSanPham = reader["MaSanPham"].ToString(),
                         TenSanPham = reader["TenSanPham"].ToString(),
                         GiaBan = Convert.ToDecimal(reader["GiaBan"]),
+                        GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
                         MaDanhMuc = reader["MaDanhMuc"].ToString(),
                         SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
                         NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"]

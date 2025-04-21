@@ -8,5 +8,7 @@ namespace CHTL.Models {
         public string MaDanhMuc { get; set; }
         public int SoLuongTon { get; set; }
         public DateTime? NgayHetHan { get; set; }
+        public decimal GiamGia { get; set; }
+        public decimal GiaBanCuoiCung => GiaBan - GiamGia < 0 ? 0 : GiaBan - GiamGia;
     }
 }

@@ -1,122 +1,118 @@
-﻿using System;
-using System.Windows.Forms;
-using CHTL.GUI.Sample_Form;
-using CHTL.BUS;
-using CHTL.Models;
+﻿using CHTL.BUS;
 using CHTL.DAL;
+using System.Windows.Forms;
+using CHTL.Models;
+using Krypton.Toolkit;
+using System;
+using System.Globalization;
 
-namespace CHTL.GUI.SanPham
-{
-    public partial class FormSanPhamEdit : SampleEdit
-    {
+namespace CHTL.GUI.SanPham {
+    public partial class FormSanPhamEdit : KryptonForm {
         private XuLySanPham xuLy = new XuLySanPham();
         private TruyCapDanhMuc truyCapDanhMuc = new TruyCapDanhMuc();
-
-        private CHTL.Models.SanPham sanPhamEdit;
-        public CHTL.Models.SanPham SanPhamEdit
-        {
-            get { return sanPhamEdit; }
-            set
-            {
-                sanPhamEdit = value;
-                LoadDataToForm();
+        
+        private Models.SanPham edittingProduct;
+        
+        public Models.SanPham SanPhamEdit {
+            get => edittingProduct;
+            set {
+                edittingProduct = value;
+                LoadControlsData();
             }
         }
-
-        public FormSanPhamEdit()
-        {
+        
+        public FormSanPhamEdit() {
             InitializeComponent();
-            LoadDanhMuc();
-            InitializeControls();
+            LocalCustomPalette = GlobalPalette.Palette;
+            PaletteMode = PaletteMode.Custom;
+            LoadCategories();
         }
-
-        private void LoadDanhMuc()
-        {
+        
+        private void LoadCategories() {
             var danhMucList = truyCapDanhMuc.LayDanhSachDanhMuc();
-            cbMaDanhMuc.DataSource = danhMucList;
-            cbMaDanhMuc.DisplayMember = "MaDanhMuc";
-            cbMaDanhMuc.ValueMember = "MaDanhMuc";
-            cbMaDanhMuc.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCategoryId.DataSource = danhMucList;
+            cbCategoryId.DisplayMember = "MaDanhMuc";
+            cbCategoryId.ValueMember = "MaDanhMuc";
+            cbCategoryId.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void InitializeControls()
-        {
-            // Không cho phép sửa MaSanPham
-            txt_ma_san_pham.ReadOnly = true;
-        }
-
-        private void LoadDataToForm()
-        {
-            if (sanPhamEdit != null)
+        private void LoadControlsData() {
+            textboxID.Text = edittingProduct.MaSanPham;
+            textboxName.Text = edittingProduct.TenSanPham;
+            textboxPrice.Text = edittingProduct.GiaBan.ToString(CultureInfo.CurrentCulture);
+            cbCategoryId.SelectedValue = edittingProduct.MaDanhMuc;
+            textboxInventoryAmount.Text = edittingProduct.SoLuongTon.ToString();
+            textboxSale.Text = edittingProduct.GiamGia.ToString(CultureInfo.CurrentCulture);
+            
+            if (edittingProduct.NgayHetHan.HasValue)
             {
-                txt_ma_san_pham.Text = sanPhamEdit.MaSanPham;
-                txt_ten_san_pham.Text = sanPhamEdit.TenSanPham;
-                txt_gia_ban.Text = sanPhamEdit.GiaBan.ToString();
-                cbMaDanhMuc.SelectedValue = sanPhamEdit.MaDanhMuc;
-                txt_so_luong_ton.Text = sanPhamEdit.SoLuongTon.ToString();
-                if (sanPhamEdit.NgayHetHan.HasValue)
-                {
-                    dtp_ngay_het_han.Value = sanPhamEdit.NgayHetHan.Value;
-                    dtp_ngay_het_han.Checked = true;
-                }
-                else
-                {
-                    dtp_ngay_het_han.Checked = false;
-                }
+                dtpExpiration.Value = edittingProduct.NgayHetHan.Value;
+                dtpExpiration.Checked = true;
+            }
+            else
+            {
+                dtpExpiration.Checked = false;
             }
         }
-
-        public override void btn_save_Click(object sender, EventArgs e)
-        {
+        
+        private void btn_save_Click(object sender, EventArgs e) {
             try
             {
                 // Kiểm tra dữ liệu đầu vào
-                if (string.IsNullOrWhiteSpace(txt_ten_san_pham.Text))
+                if (string.IsNullOrWhiteSpace(textboxName.Text))
                 {
                     MessageBox.Show("Tên sản phẩm không được để trống!", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (!decimal.TryParse(txt_gia_ban.Text, out decimal giaBan) || giaBan < 0)
+                if (!decimal.TryParse(textboxPrice.Text, out decimal giaBan) || giaBan < 0)
                 {
                     MessageBox.Show("Giá bán không hợp lệ! Vui lòng nhập số không âm.", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                
+                if (!decimal.TryParse(textboxSale.Text, out decimal giamGia) || giaBan < 0 || giamGia > giaBan)
+                {
+                    MessageBox.Show("Giảm giá không hợp lệ! Vui lòng nhập số không âm và không lớn hơn giá bán.", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                if (cbMaDanhMuc.SelectedValue == null)
+                if (cbCategoryId.SelectedValue == null)
                 {
                     MessageBox.Show("Vui lòng chọn mã danh mục!", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (!int.TryParse(txt_so_luong_ton.Text, out int soLuongTon) || soLuongTon < 0)
+                if (!int.TryParse(textboxInventoryAmount.Text, out int soLuongTon) || soLuongTon < 0)
                 {
                     MessageBox.Show("Số lượng tồn không hợp lệ! Vui lòng nhập số không âm.", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                DateTime? ngayHetHan = dtp_ngay_het_han.Checked ? (DateTime?)dtp_ngay_het_han.Value : null;
+                DateTime? ngayHetHan = dtpExpiration.Checked ? (DateTime?)dtpExpiration.Value : null;
 
                 // Cập nhật thông tin sản phẩm
-                sanPhamEdit.TenSanPham = txt_ten_san_pham.Text.Trim();
-                sanPhamEdit.GiaBan = giaBan;
-                sanPhamEdit.MaDanhMuc = cbMaDanhMuc.SelectedValue.ToString();
-                sanPhamEdit.SoLuongTon = soLuongTon;
-                sanPhamEdit.NgayHetHan = ngayHetHan;
+                edittingProduct.TenSanPham = textboxName.Text.Trim();
+                edittingProduct.GiaBan = giaBan;
+                edittingProduct.MaDanhMuc = cbCategoryId.SelectedValue.ToString();
+                edittingProduct.SoLuongTon = soLuongTon;
+                edittingProduct.NgayHetHan = ngayHetHan;
+                edittingProduct.GiamGia = giamGia;
 
                 // Gọi phương thức sửa sản phẩm
-                xuLy.SuaSanPham(sanPhamEdit);
+                xuLy.SuaSanPham(edittingProduct);
 
                 // Thông báo thành công
                 MessageBox.Show("Cập nhật sản phẩm thành công!", "Thành công",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Đóng form
-                this.Close();
+                Close();
             }
             catch (Exception ex)
             {
@@ -124,10 +120,9 @@ namespace CHTL.GUI.SanPham
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        public override void btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        
+        private void btn_close_Click(object sender, EventArgs e) {
+            Close();
         }
     }
 }
