@@ -4,7 +4,8 @@ using System.Data;
 
 namespace CHTL.DAL {
     public class Database {
-        private string connectionString = "Data Source=(local);Initial Catalog=CuaHangTienLoi;Integrated Security=true;Trust Server Certificate=true";
+        // TODO: Move connection string to appsettings.local.json
+        private string connectionString = "Data Source=DESKTOP-OD1QLPU\\SQLEXPRESS;Initial Catalog=CuaHangTienLoi;User ID=sa;Password=ndc132;Encrypt=True;Trust Server Certificate=True";
 
         public SqlConnection GetConnection()
         {

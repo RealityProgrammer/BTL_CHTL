@@ -14,13 +14,12 @@ using CHTL.GUI.DanhMuc;
 using CHTL.GUI.NguoiDung;
 using CHTL.GUI.SanPham;
 using Krypton.Toolkit;
-using CHTL.Models.Auth;
 
 namespace CHTL.GUI
 {
-    public partial class FormMain : KryptonForm
+    public partial class FormNhanVien : KryptonForm
     {
-        public FormMain()
+        public FormNhanVien()
         {
             InitializeComponent();
             LocalCustomPalette = GlobalPalette.Palette;
@@ -76,9 +75,6 @@ namespace CHTL.GUI
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-           
-    CHTL.Models.Auth.Session.MaNguoiDung = null;
-
             // Hiển thị lại form đăng nhập
             FormDangNhap formLogin = new FormDangNhap();
             formLogin.Show();
