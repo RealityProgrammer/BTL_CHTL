@@ -282,6 +282,12 @@
     <Compile Include="BaoCao\FormBaoCaoView.Designer.cs">
       <DependentUpon>FormBaoCaoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\FormChiTietHoaDonView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\FormChiTietHoaDonView.Designer.cs">
+      <DependentUpon>FormChiTietHoaDonView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configurations.cs" />
     <Compile Include="DanhMuc\FormDanhMucAdd.cs">
       <SubType>Form</SubType>
@@ -381,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\FormBaoCaoView.resx">
       <DependentUpon>FormBaoCaoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\FormChiTietHoaDonView.resx">
+      <DependentUpon>FormChiTietHoaDonView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FormDanhMucAdd.resx">
       <DependentUpon>FormDanhMucAdd.cs</DependentUpon>

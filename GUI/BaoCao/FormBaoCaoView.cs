@@ -71,7 +71,7 @@ namespace CHTL.GUI.BaoCao
             dtpNgayKetThuc.Value = DateTime.Now;
             LoadBaoCao();
         }
-
+        
         private void LoadBaoCao()
         {
             baoCao = xuLy.LayBaoCao(dtpNgayBatDau.Value, dtpNgayKetThuc.Value);
@@ -81,9 +81,18 @@ namespace CHTL.GUI.BaoCao
             lblTongHoaDon.Text = baoCao.TongSoHoaDon.ToString();
             lblSanPhamBanChay.Text = baoCao.SanPhamBanChay ?? "Không có";
             lblSoLuongBanChay.Text = baoCao.SoLuongBanChay.ToString();
-
+            
             // Hiển thị chi tiết hóa đơn
             dgvChiTiet.DataSource = baoCao.ChiTietHoaDon;
+
+            // if (dgvChiTiet.Columns["ViewDetails"] == null) {
+            //     DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            //     buttonColumn.Name = "ViewDetails";
+            //     buttonColumn.Text = "Xem chi tiết";
+            //
+            //     dgvChiTiet.Columns.Add(buttonColumn);
+            // }
+            
             CustomizeDataGridView();
 
             // Vẽ biểu đồ doanh thu theo danh mục
@@ -251,7 +260,6 @@ namespace CHTL.GUI.BaoCao
             currentSanPhamIndex = 0; // Reset chỉ số sản phẩm
             e.HasMorePages = false;
         }
-        
 
         // Hiệu ứng hover cho nút Xem Báo Cáo
         private void btnXemBaoCao_MouseEnter(object sender, EventArgs e)
@@ -273,6 +281,27 @@ namespace CHTL.GUI.BaoCao
         private void btnInBaoCao_MouseLeave(object sender, EventArgs e)
         {
             btnInBaoCao.BackColor = Color.FromArgb(138, 43, 226); // Màu gốc
+        }
+        
+        private void dtpNgayBatDau_ValueChanged(object sender, EventArgs e) {
+            LoadBaoCao();
+        }
+        
+        private void dtpNgayKetThuc_ValueChanged(object sender, EventArgs e) {
+            LoadBaoCao();
+        }
+
+        private void dgvChiTiet_CellClick(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvChiTiet.Columns["colDetails"].Index) {
+                ChiTietBaoCao report = dgvChiTiet.Rows[e.RowIndex].DataBoundItem as ChiTietBaoCao;
+                var products = report.SanPham;
+                
+                FormChiTietHoaDonView frmEdit = new FormChiTietHoaDonView();
+                frmEdit.SoldProducts = report.SanPham;
+                frmEdit.ReceiptId = report.MaHoaDon;
+                
+                frmEdit.ShowDialog();
+            }
         }
     }
 }

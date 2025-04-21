@@ -1,4 +1,6 @@
-﻿namespace CHTL.GUI.BaoCao
+﻿using System.Windows.Forms;
+
+namespace CHTL.GUI.BaoCao
 {
     partial class FormBaoCaoView
     {
@@ -32,6 +34,11 @@
             this.lblSoLuongBanChay = new System.Windows.Forms.Label();
             this.tabChiTiet = new System.Windows.Forms.TabPage();
             this.dgvChiTiet = new System.Windows.Forms.DataGridView();
+            this.colMaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenNguoiBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabBieuDo = new System.Windows.Forms.TabPage();
             this.chartDoanhThu = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
@@ -40,12 +47,16 @@
             this.btnInBaoCao = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl.SuspendLayout();
             this.tabThongKe.SuspendLayout();
             this.tabChiTiet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTiet)).BeginInit();
             this.tabBieuDo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -53,10 +64,11 @@
             this.tabControl.Controls.Add(this.tabThongKe);
             this.tabControl.Controls.Add(this.tabChiTiet);
             this.tabControl.Controls.Add(this.tabBieuDo);
-            this.tabControl.Location = new System.Drawing.Point(30, 120);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(0, 10);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1093, 552);
+            this.tabControl.Size = new System.Drawing.Size(827, 318);
             this.tabControl.TabIndex = 0;
             // 
             // tabThongKe
@@ -72,7 +84,7 @@
             this.tabThongKe.Location = new System.Drawing.Point(4, 25);
             this.tabThongKe.Name = "tabThongKe";
             this.tabThongKe.Padding = new System.Windows.Forms.Padding(3);
-            this.tabThongKe.Size = new System.Drawing.Size(1085, 523);
+            this.tabThongKe.Size = new System.Drawing.Size(835, 305);
             this.tabThongKe.TabIndex = 0;
             this.tabThongKe.Text = "Thống Kê";
             // 
@@ -158,7 +170,7 @@
             this.tabChiTiet.Location = new System.Drawing.Point(4, 25);
             this.tabChiTiet.Name = "tabChiTiet";
             this.tabChiTiet.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChiTiet.Size = new System.Drawing.Size(1085, 523);
+            this.tabChiTiet.Size = new System.Drawing.Size(819, 289);
             this.tabChiTiet.TabIndex = 1;
             this.tabChiTiet.Text = "Chi Tiết Hóa Đơn";
             // 
@@ -166,53 +178,96 @@
             // 
             this.dgvChiTiet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChiTiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChiTiet.Location = new System.Drawing.Point(20, 20);
+            this.dgvChiTiet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                this.colMaHoaDon, this.colNgayBan, this.colTenNguoiBan, this.colTongTien, this.colDetails
+            });
+            this.dgvChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvChiTiet.Location = new System.Drawing.Point(3, 3);
             this.dgvChiTiet.Name = "dgvChiTiet";
             this.dgvChiTiet.RowHeadersWidth = 51;
-            this.dgvChiTiet.Size = new System.Drawing.Size(1047, 483);
+            this.dgvChiTiet.Size = new System.Drawing.Size(813, 283);
             this.dgvChiTiet.TabIndex = 9;
+            this.dgvChiTiet.CellClick += new DataGridViewCellEventHandler(dgvChiTiet_CellClick);
+            // 
+            // colMaHoaDon
+            // 
+            this.colMaHoaDon.DataPropertyName = "MaHoaDon";
+            this.colMaHoaDon.HeaderText = "Mã hóa đơn";
+            this.colMaHoaDon.Name = "colMaHoaDon";
+            this.colMaHoaDon.ReadOnly = true;
+            // 
+            // colNgayBan
+            // 
+            this.colNgayBan.DataPropertyName = "NgayBan";
+            this.colNgayBan.HeaderText = "Ngày bán";
+            this.colNgayBan.Name = "colNgayBan";
+            this.colNgayBan.ReadOnly = true;
+            // 
+            // colTenNguoiBan
+            // 
+            this.colTenNguoiBan.DataPropertyName = "TenNguoiDung";
+            this.colTenNguoiBan.HeaderText = "Tên người bán";
+            this.colTenNguoiBan.Name = "colTenNguoiBan";
+            this.colTenNguoiBan.ReadOnly = true;
+            // 
+            // colTongTien
+            // 
+            this.colTongTien.DataPropertyName = "TongTien";
+            this.colTongTien.HeaderText = "Tổng tiền";
+            this.colTongTien.Name = "colTongTien";
+            this.colTongTien.ReadOnly = true;
+            // 
+            // colDetails
+            // 
+            this.colDetails.HeaderText = "Chi tiết";
+            this.colDetails.Name = "colDetails";
+            this.colDetails.Text = "Xem";
+            this.colDetails.UseColumnTextForButtonValue = true;
             // 
             // tabBieuDo
             // 
             this.tabBieuDo.Controls.Add(this.chartDoanhThu);
             this.tabBieuDo.Location = new System.Drawing.Point(4, 25);
             this.tabBieuDo.Name = "tabBieuDo";
-            this.tabBieuDo.Size = new System.Drawing.Size(1085, 523);
+            this.tabBieuDo.Size = new System.Drawing.Size(851, 321);
             this.tabBieuDo.TabIndex = 2;
             this.tabBieuDo.Text = "Biểu Đồ";
             // 
             // chartDoanhThu
             // 
-            this.chartDoanhThu.Location = new System.Drawing.Point(20, 20);
+            this.chartDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartDoanhThu.Location = new System.Drawing.Point(0, 0);
             this.chartDoanhThu.Name = "chartDoanhThu";
-            this.chartDoanhThu.Size = new System.Drawing.Size(1045, 482);
+            this.chartDoanhThu.Size = new System.Drawing.Size(851, 321);
             this.chartDoanhThu.TabIndex = 10;
             this.chartDoanhThu.Text = "chartDoanhThu";
             // 
             // dtpNgayBatDau
             // 
             this.dtpNgayBatDau.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.dtpNgayBatDau.Location = new System.Drawing.Point(204, 47);
+            this.dtpNgayBatDau.Location = new System.Drawing.Point(113, 5);
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
             this.dtpNgayBatDau.Size = new System.Drawing.Size(180, 32);
             this.dtpNgayBatDau.TabIndex = 1;
+            this.dtpNgayBatDau.ValueChanged += new System.EventHandler(this.dtpNgayBatDau_ValueChanged);
             // 
             // dtpNgayKetThuc
             // 
             this.dtpNgayKetThuc.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.dtpNgayKetThuc.Location = new System.Drawing.Point(501, 50);
+            this.dtpNgayKetThuc.Location = new System.Drawing.Point(113, 52);
             this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
             this.dtpNgayKetThuc.Size = new System.Drawing.Size(180, 32);
             this.dtpNgayKetThuc.TabIndex = 2;
+            this.dtpNgayKetThuc.ValueChanged += new System.EventHandler(this.dtpNgayKetThuc_ValueChanged);
             // 
             // btnXemBaoCao
             // 
             this.btnXemBaoCao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnXemBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXemBaoCao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnXemBaoCao.Location = new System.Drawing.Point(765, 47);
+            this.btnXemBaoCao.Location = new System.Drawing.Point(533, 25);
             this.btnXemBaoCao.Name = "btnXemBaoCao";
-            this.btnXemBaoCao.Size = new System.Drawing.Size(120, 35);
+            this.btnXemBaoCao.Size = new System.Drawing.Size(157, 40);
             this.btnXemBaoCao.TabIndex = 3;
             this.btnXemBaoCao.Text = "Xem Báo Cáo";
             this.btnXemBaoCao.UseVisualStyleBackColor = false;
@@ -225,9 +280,9 @@
             this.btnInBaoCao.BackColor = System.Drawing.Color.Red;
             this.btnInBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInBaoCao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInBaoCao.Location = new System.Drawing.Point(934, 47);
+            this.btnInBaoCao.Location = new System.Drawing.Point(708, 25);
             this.btnInBaoCao.Name = "btnInBaoCao";
-            this.btnInBaoCao.Size = new System.Drawing.Size(120, 35);
+            this.btnInBaoCao.Size = new System.Drawing.Size(169, 40);
             this.btnInBaoCao.TabIndex = 4;
             this.btnInBaoCao.Text = "In Báo Cáo";
             this.btnInBaoCao.UseVisualStyleBackColor = false;
@@ -239,7 +294,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(76, 50);
+            this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 28);
             this.label1.TabIndex = 11;
@@ -249,26 +304,46 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(414, 50);
+            this.label2.Location = new System.Drawing.Point(3, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 28);
             this.label2.TabIndex = 12;
             this.label2.Text = "Đến";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnInBaoCao);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnXemBaoCao);
+            this.panel1.Controls.Add(this.dtpNgayBatDau);
+            this.panel1.Controls.Add(this.dtpNgayKetThuc);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(10, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(827, 89);
+            this.panel1.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tabControl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(10, 99);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel2.Size = new System.Drawing.Size(827, 328);
+            this.panel2.TabIndex = 14;
+            // 
             // FormBaoCaoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 609);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnInBaoCao);
-            this.Controls.Add(this.btnXemBaoCao);
-            this.Controls.Add(this.dtpNgayKetThuc);
-            this.Controls.Add(this.dtpNgayBatDau);
-            this.Controls.Add(this.tabControl);
+            this.ClientSize = new System.Drawing.Size(847, 437);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBaoCaoView";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Load += new System.EventHandler(this.FormBaoCaoView_Load);
             this.tabControl.ResumeLayout(false);
             this.tabThongKe.ResumeLayout(false);
@@ -277,9 +352,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTiet)).EndInit();
             this.tabBieuDo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
+        private System.Windows.Forms.DataGridViewButtonColumn colDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenNguoiBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTongTien;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
 
         #endregion
 
