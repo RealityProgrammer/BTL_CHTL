@@ -30,7 +30,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
-            this.kryptonWrapLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonWrapLabel();
+            this.kryptonWrapLabel1 = new Krypton.Toolkit.KryptonWrapLabel();
             this.btnDangXuat = new Krypton.Toolkit.KryptonButton();
             this.btnBaoCao = new Krypton.Toolkit.KryptonButton();
             this.btnBanHang = new Krypton.Toolkit.KryptonButton();
@@ -194,6 +194,6 @@
         private Krypton.Toolkit.KryptonButton btnBanHang;
         private Krypton.Toolkit.KryptonButton btnSanPham;
         private Krypton.Toolkit.KryptonButton btnDangXuat;
-        private ComponentFactory.Krypton.Toolkit.KryptonWrapLabel kryptonWrapLabel1;
+        private Krypton.Toolkit.KryptonWrapLabel kryptonWrapLabel1;
     }
 }
