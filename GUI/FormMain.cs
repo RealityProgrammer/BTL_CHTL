@@ -14,6 +14,7 @@ using CHTL.GUI.DanhMuc;
 using CHTL.GUI.NguoiDung;
 using CHTL.GUI.SanPham;
 using Krypton.Toolkit;
+using CHTL.Models.Auth;
 
 namespace CHTL.GUI
 {
@@ -71,6 +72,19 @@ namespace CHTL.GUI
         {
             FormChat formChat = new FormChat();
             ShowFormInPanel(formChat);
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+           
+    CHTL.Models.Auth.Session.MaNguoiDung = null;
+
+            // Hiển thị lại form đăng nhập
+            FormDangNhap formLogin = new FormDangNhap();
+            formLogin.Show();
+
+            // Đóng form hiện tại (FormMain)
+            this.Close();
         }
     }
 }

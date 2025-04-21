@@ -187,6 +187,20 @@ namespace CHTL.GUI.BanHang
                 dgvChiTietHoaDon.Columns.Add(colDelete);
             }
 
+            // Đảm bảo cột "Giảm" ở vị trí trước cột "Xóa"
+            if (!dgvChiTietHoaDon.Columns.Contains("colReduce"))
+            {
+                var colReduce = new DataGridViewButtonColumn
+                {
+                    Name = "colReduce",
+                    HeaderText = "",
+                    Text = "Giảm",
+                    UseColumnTextForButtonValue = true,
+                    Width = 50
+                };
+                dgvChiTietHoaDon.Columns.Add(colReduce);
+            }
+
             // Tính tổng tiền
             grandTotal = chiTietHoaDonList.Sum(x => x.DonGia);
             lblGrandTotal.Text = grandTotal.ToString("N2");
@@ -273,6 +287,22 @@ namespace CHTL.GUI.BanHang
                     var cthd = chiTietHoaDonList[e.RowIndex];
                     chiTietHoaDonList.Remove(cthd);
                     UpdateChiTietHoaDon();
+                }
+            }
+            else if (e.ColumnIndex == dgvChiTietHoaDon.Columns["colReduce"].Index)
+            {
+                var cthd = chiTietHoaDonList[e.RowIndex];
+                var sanPham = truyCapSanPham.LaySanPhamTheoMa(cthd.MaSanPham);
+                if (cthd.SoLuong > 1)
+                {
+                    cthd.SoLuong--;
+                    cthd.DonGia = sanPham.GiaBan * cthd.SoLuong;
+                    UpdateChiTietHoaDon();
+                }
+                else
+                {
+                    MessageBox.Show($"Số lượng đã là 1. Vui lòng sử dụng nút 'Xóa' để xóa sản phẩm {sanPham.TenSanPham}.",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

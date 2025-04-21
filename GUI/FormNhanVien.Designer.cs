@@ -30,6 +30,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            this.kryptonWrapLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonWrapLabel();
             this.btnDangXuat = new Krypton.Toolkit.KryptonButton();
             this.btnBaoCao = new Krypton.Toolkit.KryptonButton();
             this.btnBanHang = new Krypton.Toolkit.KryptonButton();
@@ -38,7 +39,6 @@
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
-            this.kryptonWrapLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonWrapLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,6 +60,14 @@
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.White;
             // 
+            // kryptonWrapLabel1
+            // 
+            resources.ApplyResources(this.kryptonWrapLabel1, "kryptonWrapLabel1");
+            this.kryptonWrapLabel1.ForeColor = System.Drawing.Color.White;
+            this.kryptonWrapLabel1.Name = "kryptonWrapLabel1";
+            this.kryptonWrapLabel1.StateCommon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonWrapLabel1.StateCommon.TextColor = System.Drawing.Color.White;
+            // 
             // btnDangXuat
             // 
             resources.ApplyResources(this.btnDangXuat, "btnDangXuat");
@@ -76,6 +84,7 @@
             this.btnDangXuat.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangXuat.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnDangXuat.Values.Text = resources.GetString("btnDangXuat.Values.Text");
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnBaoCao
             // 
@@ -156,14 +165,6 @@
             // 
             this.kryptonPalette1.PanelStyles.PanelCommon.StateCommon.Draw = Krypton.Toolkit.InheritBool.True;
             this.kryptonPalette1.UseThemeFormChromeBorderWidth = Krypton.Toolkit.InheritBool.True;
-            // 
-            // kryptonWrapLabel1
-            // 
-            resources.ApplyResources(this.kryptonWrapLabel1, "kryptonWrapLabel1");
-            this.kryptonWrapLabel1.ForeColor = System.Drawing.Color.White;
-            this.kryptonWrapLabel1.Name = "kryptonWrapLabel1";
-            this.kryptonWrapLabel1.StateCommon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonWrapLabel1.StateCommon.TextColor = System.Drawing.Color.White;
             // 
             // FormNhanVien
             // 

@@ -72,5 +72,15 @@ namespace CHTL.GUI
             FormChat formChat = new FormChat();
             ShowFormInPanel(formChat);
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            // Hiển thị lại form đăng nhập
+            FormDangNhap formLogin = new FormDangNhap();
+            formLogin.Show();
+
+            // Đóng form hiện tại (FormMain)
+            this.Close();
+        }
     }
 }

@@ -80,6 +80,7 @@
             this.btnDangXuat.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangXuat.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnDangXuat.Values.Text = resources.GetString("btnDangXuat.Values.Text");
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnAITips
             // 
