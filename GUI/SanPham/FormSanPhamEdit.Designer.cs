@@ -178,7 +178,7 @@ namespace CHTL.GUI.SanPham {
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(820, 103);
+            this.kryptonPanel1.Size = new System.Drawing.Size(822, 103);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.kryptonPanel1.TabIndex = 2;
             // 
@@ -195,9 +195,9 @@ namespace CHTL.GUI.SanPham {
             this.kryptonPanel3.Controls.Add(this.btn_close);
             this.kryptonPanel3.Controls.Add(this.btn_save);
             this.kryptonPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.kryptonPanel3.Location = new System.Drawing.Point(0, 360);
+            this.kryptonPanel3.Location = new System.Drawing.Point(0, 353);
             this.kryptonPanel3.Name = "kryptonPanel3";
-            this.kryptonPanel3.Size = new System.Drawing.Size(820, 107);
+            this.kryptonPanel3.Size = new System.Drawing.Size(822, 107);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.kryptonPanel3.TabIndex = 3;
             // 
@@ -209,7 +209,9 @@ namespace CHTL.GUI.SanPham {
             this.btn_close.Size = new System.Drawing.Size(139, 50);
             this.btn_close.StateCommon.Back.Color1 = System.Drawing.Color.Red;
             this.btn_close.StateCommon.Back.Color2 = System.Drawing.Color.Red;
-            this.btn_close.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_close.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_close.StateCommon.Border.Rounding = 19F;
             this.btn_close.StateCommon.Border.Width = 1;
             this.btn_close.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
@@ -227,7 +229,9 @@ namespace CHTL.GUI.SanPham {
             this.btn_save.Size = new System.Drawing.Size(139, 50);
             this.btn_save.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_save.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_save.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_save.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_save.StateCommon.Border.Rounding = 19F;
             this.btn_save.StateCommon.Border.Width = 1;
             this.btn_save.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
@@ -306,7 +310,7 @@ namespace CHTL.GUI.SanPham {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 467);
+            this.ClientSize = new System.Drawing.Size(822, 460);
             this.Controls.Add(this.cbCategoryId);
             this.Controls.Add(this.dtpExpiration);
             this.Controls.Add(this.textboxSale);
@@ -337,6 +341,7 @@ namespace CHTL.GUI.SanPham {
             ((System.ComponentModel.ISupportInitialize)(this.cbCategoryId)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         private Krypton.Toolkit.KryptonComboBox cbCategoryId;
         private Krypton.Toolkit.KryptonTextBox textboxID;

@@ -45,7 +45,9 @@
             // 
             this.txt_search.Location = new System.Drawing.Point(547, 80);
             this.txt_search.Size = new System.Drawing.Size(261, 42);
-            this.txt_search.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txt_search.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txt_search.StateCommon.Border.Rounding = 12F;
             this.txt_search.StateCommon.Content.Color1 = System.Drawing.Color.Navy;
             this.txt_search.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,8 +80,16 @@
             this.dgv_san_pham.BackgroundColor = System.Drawing.Color.White;
             this.dgv_san_pham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_san_pham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-                this.colMaSanPham, this.colTenSanPham, this.colMaDanhMuc, this.colSoLuongTon, this.colNgayHetHan, this.colGiaBan, this.colGiamGia, this.colGiaBanCuoiCung, this.colEdit, this.colDelete
-            });
+            this.colMaSanPham,
+            this.colTenSanPham,
+            this.colMaDanhMuc,
+            this.colSoLuongTon,
+            this.colNgayHetHan,
+            this.colGiaBan,
+            this.colGiamGia,
+            this.colGiaBanCuoiCung,
+            this.colEdit,
+            this.colDelete});
             this.dgv_san_pham.GridColor = System.Drawing.Color.Gray;
             this.dgv_san_pham.Location = new System.Drawing.Point(8, 155);
             this.dgv_san_pham.Name = "dgv_san_pham";
@@ -96,6 +106,7 @@
             this.colMaSanPham.HeaderText = "Mã sản phẩm";
             this.colMaSanPham.MinimumWidth = 6;
             this.colMaSanPham.Name = "colMaSanPham";
+            this.colMaSanPham.Width = 125;
             // 
             // colTenSanPham
             // 
@@ -136,12 +147,14 @@
             // 
             this.colGiamGia.DataPropertyName = "GiamGia";
             this.colGiamGia.HeaderText = "Giảm giá";
+            this.colGiamGia.MinimumWidth = 6;
             this.colGiamGia.Name = "colGiamGia";
             // 
             // colGiaBanCuoiCung
             // 
             this.colGiaBanCuoiCung.DataPropertyName = "GiaBanCuoiCung";
             this.colGiaBanCuoiCung.HeaderText = "Giá bán cuối cùng";
+            this.colGiaBanCuoiCung.MinimumWidth = 6;
             this.colGiaBanCuoiCung.Name = "colGiaBanCuoiCung";
             this.colGiaBanCuoiCung.ReadOnly = true;
             // 
@@ -181,6 +194,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_san_pham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         private System.Windows.Forms.DataGridView dgv_san_pham;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaSanPham;

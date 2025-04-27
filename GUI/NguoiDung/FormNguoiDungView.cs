@@ -20,6 +20,11 @@ namespace CHTL.GUI.NguoiDung
             InitializeComponent();
             LoadData();
             CustomizeDataGridView(); // Gọi phương thức tùy chỉnh giao diện
+
+            // Thêm hiệu ứng hover cho btn_add
+            btn_add.BackColor = Color.FromArgb(243, 156, 18); // Cam
+            btn_add.MouseEnter += (s, e) => btn_add.BackColor = Color.FromArgb(230, 126, 34); // Cam đậm hơn
+            btn_add.MouseLeave += (s, e) => btn_add.BackColor = Color.FromArgb(243, 156, 18); // Quay lại cam
         }
 
         private void LoadData()
@@ -33,41 +38,49 @@ namespace CHTL.GUI.NguoiDung
         private void CustomizeDataGridView()
         {
             // Tùy chỉnh màu nền và viền
-            dgv_nguoi_dung.BackgroundColor = Color.FromArgb(245, 245, 245); // Màu nền sáng
+            dgv_nguoi_dung.BackgroundColor = Color.FromArgb(236, 240, 241); // Xám nhạt
             dgv_nguoi_dung.BorderStyle = BorderStyle.Fixed3D; // Bỏ viền mặc định
             dgv_nguoi_dung.EnableHeadersVisualStyles = false; // Tắt kiểu mặc định của header
 
             // Tùy chỉnh header
-            dgv_nguoi_dung.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 0, 64); // Navy
+            dgv_nguoi_dung.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219); // Xanh dương
             dgv_nguoi_dung.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Chữ trắng
             dgv_nguoi_dung.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             dgv_nguoi_dung.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             // Tùy chỉnh hàng
             dgv_nguoi_dung.RowsDefaultCellStyle.BackColor = Color.White; // Màu nền hàng
-            dgv_nguoi_dung.RowsDefaultCellStyle.ForeColor = Color.FromArgb(0, 0, 64); // Màu chữ xanh navy
+            dgv_nguoi_dung.RowsDefaultCellStyle.ForeColor = Color.FromArgb(44, 62, 80); // Xám đậm
             dgv_nguoi_dung.RowsDefaultCellStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
-            dgv_nguoi_dung.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Màu chọn xanh dương
+            dgv_nguoi_dung.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(46, 204, 113);
             dgv_nguoi_dung.RowsDefaultCellStyle.SelectionForeColor = Color.White; // Chữ trắng khi chọn
 
             // Tùy chỉnh hàng xen kẽ
-            dgv_nguoi_dung.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 250); // Màu nền xen kẽ
+            dgv_nguoi_dung.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245); // Màu nền xen kẽ
 
             // Tùy chỉnh cột "Sửa" và "Xóa"
             foreach (DataGridViewColumn column in dgv_nguoi_dung.Columns)
             {
-                if (column.Name == "colEdit" || column.Name == "colDelete")
+                if (column.Name == "colEdit")
                 {
-                    column.DefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219); // Màu nền nút xanh dương
-                    column.DefaultCellStyle.ForeColor = Color.White; // Chữ trắng
+                    column.DefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219); // Xanh dương
+                    column.DefaultCellStyle.ForeColor = Color.White;
+                    column.DefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+                }
+                if (column.Name == "colDelete")
+                {
+                    column.DefaultCellStyle.BackColor = Color.FromArgb(231, 76, 60); // Đỏ
+                    column.DefaultCellStyle.ForeColor = Color.White;
                     column.DefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
                 }
             }
 
-            // Tắt đường lưới
-            dgv_nguoi_dung.GridColor = Color.FromArgb(200, 200, 200); // Màu lưới nhạt
-            dgv_nguoi_dung.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal; // Chỉ hiển thị đường ngang
+            // Tùy chỉnh lưới
+            dgv_nguoi_dung.GridColor = Color.FromArgb(189, 195, 199); // Xám nhạt
+            dgv_nguoi_dung.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
+
+
 
         public override void txt_search_TextChanged(object sender, EventArgs e)
         {
@@ -127,6 +140,7 @@ namespace CHTL.GUI.NguoiDung
 
         private void FormNguoiDungView_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

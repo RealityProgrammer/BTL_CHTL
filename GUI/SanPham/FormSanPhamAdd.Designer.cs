@@ -51,7 +51,7 @@
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Size = new System.Drawing.Size(800, 103);
+            this.kryptonPanel1.Size = new System.Drawing.Size(802, 103);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
             // kryptonPanel2
@@ -68,13 +68,13 @@
             this.kryptonPanel2.Controls.Add(this.kryptonLabel4);
             this.kryptonPanel2.Controls.Add(this.kryptonLabel3);
             this.kryptonPanel2.Controls.Add(this.kryptonLabel2);
-            this.kryptonPanel2.Size = new System.Drawing.Size(800, 347);
+            this.kryptonPanel2.Size = new System.Drawing.Size(802, 340);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
             // 
             // kryptonPanel3
             // 
-            this.kryptonPanel3.Location = new System.Drawing.Point(0, 343);
-            this.kryptonPanel3.Size = new System.Drawing.Size(800, 107);
+            this.kryptonPanel3.Location = new System.Drawing.Point(0, 336);
+            this.kryptonPanel3.Size = new System.Drawing.Size(802, 107);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
             // kryptonLabel1
@@ -165,7 +165,7 @@
             this.cbMaDanhMuc.DropDownWidth = 138;
             this.cbMaDanhMuc.Location = new System.Drawing.Point(488, 38);
             this.cbMaDanhMuc.Name = "cbMaDanhMuc";
-            this.cbMaDanhMuc.Size = new System.Drawing.Size(138, 25);
+            this.cbMaDanhMuc.Size = new System.Drawing.Size(138, 26);
             this.cbMaDanhMuc.TabIndex = 11;
             // 
             // dtp_ngay_het_han
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(802, 443);
             this.Name = "FormSanPhamAdd";
             this.Text = "FormSanPhamAdd";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

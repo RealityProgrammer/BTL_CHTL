@@ -20,6 +20,7 @@ namespace CHTL.GUI.Sample_Form
             PaletteMode = PaletteMode.Custom;
         }
 
+
         public virtual void txt_search_TextChanged(object sender, EventArgs e)
         {
 

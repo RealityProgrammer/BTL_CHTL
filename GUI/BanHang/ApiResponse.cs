@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CHTL.GUI.BanHang
 {
+    // TODO: Rename when merging with main
     public class ApiResponse
     {
         public string code { get; set; }

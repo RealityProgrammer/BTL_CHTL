@@ -40,7 +40,7 @@ namespace CHTL.GUI.AI {
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textboxTinNhan.Location = new System.Drawing.Point(3, 7);
             this.textboxTinNhan.Name = "textboxTinNhan";
-            this.textboxTinNhan.Size = new System.Drawing.Size(886, 27);
+            this.textboxTinNhan.Size = new System.Drawing.Size(854, 27);
             this.textboxTinNhan.TabIndex = 0;
             // 
             // panel1
@@ -48,16 +48,16 @@ namespace CHTL.GUI.AI {
             this.panel1.Controls.Add(this.btnGui);
             this.panel1.Controls.Add(this.textboxTinNhan);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(10, 362);
+            this.panel1.Location = new System.Drawing.Point(10, 330);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(970, 43);
+            this.panel1.Size = new System.Drawing.Size(938, 43);
             this.panel1.TabIndex = 1;
             // 
             // btnGui
             // 
             this.btnGui.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnGui.Location = new System.Drawing.Point(896, 4);
+            this.btnGui.Location = new System.Drawing.Point(864, 4);
             this.btnGui.Name = "btnGui";
             this.btnGui.Size = new System.Drawing.Size(70, 35);
             this.btnGui.TabIndex = 2;
@@ -72,20 +72,19 @@ namespace CHTL.GUI.AI {
             this.containerConversation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.containerConversation.Location = new System.Drawing.Point(10, 10);
             this.containerConversation.Name = "containerConversation";
-            this.containerConversation.Size = new System.Drawing.Size(970, 352);
+            this.containerConversation.Size = new System.Drawing.Size(938, 320);
             this.containerConversation.TabIndex = 4;
             // 
             // FormChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 415);
+            this.ClientSize = new System.Drawing.Size(958, 383);
             this.Controls.Add(this.containerConversation);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormChat";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Text = "FormChat";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormChat_FormClosing);
             this.Load += new System.EventHandler(this.FormChat_Load);
             this.panel1.ResumeLayout(false);

@@ -39,22 +39,27 @@
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(567, 23);
+            this.kryptonLabel1.Location = new System.Drawing.Point(600, 23);
             this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabel1.Values.Text = "Tìm kiếm";
             // 
             // txt_search
             // 
-            this.txt_search.Location = new System.Drawing.Point(567, 65);
+            this.txt_search.Location = new System.Drawing.Point(600, 65);
             this.txt_search.Size = new System.Drawing.Size(260, 42);
-            this.txt_search.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txt_search.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.txt_search.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.txt_search.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txt_search.StateCommon.Border.Rounding = 12F;
-            this.txt_search.StateCommon.Content.Color1 = System.Drawing.Color.Navy;
+            this.txt_search.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.txt_search.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // kryptonLabel2
             // 
             this.kryptonLabel2.Size = new System.Drawing.Size(149, 42);
+            this.kryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabel2.Values.Text = "Nhân viên";
             // 
@@ -62,24 +67,29 @@
             // 
             this.kryptonSeparator1.Location = new System.Drawing.Point(31, 139);
             this.kryptonSeparator1.Size = new System.Drawing.Size(819, 10);
-            this.kryptonSeparator1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.kryptonSeparator1.StateCommon.Back.Color2 = System.Drawing.Color.Navy;
-            this.kryptonSeparator1.StateCommon.Separator.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.kryptonSeparator1.StateCommon.Separator.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.kryptonSeparator1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.kryptonSeparator1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.kryptonSeparator1.StateCommon.Separator.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.kryptonSeparator1.StateCommon.Separator.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             // 
             // dgv_nguoi_dung
             // 
             this.dgv_nguoi_dung.AllowUserToResizeColumns = false;
-            this.dgv_nguoi_dung.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_nguoi_dung.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_nguoi_dung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_nguoi_dung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_nguoi_dung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-                this.colMaNguoiDung, this.colTenDangNhap, this.colVaiTro, this.colHoTen, this.colEdit, this.colDelete
-            });
+            this.colMaNguoiDung,
+            this.colTenDangNhap,
+            this.colVaiTro,
+            this.colHoTen,
+            this.colEdit,
+            this.colDelete});
             this.dgv_nguoi_dung.Location = new System.Drawing.Point(31, 155);
             this.dgv_nguoi_dung.Name = "dgv_nguoi_dung";
             this.dgv_nguoi_dung.RowHeadersWidth = 51;
-            this.dgv_nguoi_dung.Size = new System.Drawing.Size(796, 475);
+            this.dgv_nguoi_dung.Size = new System.Drawing.Size(806, 475);
             this.dgv_nguoi_dung.TabIndex = 5;
             this.dgv_nguoi_dung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nguoi_dung_CellClick);
             // 
@@ -137,10 +147,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 617);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.ClientSize = new System.Drawing.Size(847, 617);
             this.Controls.Add(this.dgv_nguoi_dung);
             this.Name = "FormNguoiDungView";
-            this.Text = "";
             this.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.Load += new System.EventHandler(this.FormNguoiDungView_Load);
             this.Controls.SetChildIndex(this.kryptonLabel1, 0);
@@ -154,6 +164,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nguoi_dung)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         private System.Windows.Forms.DataGridView dgv_nguoi_dung;
 
