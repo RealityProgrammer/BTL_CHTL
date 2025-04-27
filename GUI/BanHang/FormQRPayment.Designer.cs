@@ -24,12 +24,13 @@ namespace CHTL.GUI.BanHang
             this.lblInstruction = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.labelLoading = new System.Windows.Forms.Label();
+            this.btnOk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbQRCode)).BeginInit();
             this.SuspendLayout();
             // 
             // pbQRCode
             // 
-            this.pbQRCode.Location = new System.Drawing.Point(88, 29);
+            this.pbQRCode.Location = new System.Drawing.Point(91, 29);
             this.pbQRCode.Name = "pbQRCode";
             this.pbQRCode.Size = new System.Drawing.Size(200, 200);
             this.pbQRCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -49,7 +50,7 @@ namespace CHTL.GUI.BanHang
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(149, 297);
+            this.btnClose.Location = new System.Drawing.Point(75, 297);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 30);
             this.btnClose.TabIndex = 2;
@@ -67,12 +68,23 @@ namespace CHTL.GUI.BanHang
             this.labelLoading.Text = "Mã QR đang được tạo...";
             this.labelLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnOk
+            // 
+            this.btnOk.Location = new System.Drawing.Point(203, 297);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(100, 30);
+            this.btnOk.TabIndex = 4;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
             // FormQRPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 350);
             this.Controls.Add(this.labelLoading);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.pbQRCode);
@@ -87,15 +99,11 @@ namespace CHTL.GUI.BanHang
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+        private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label labelLoading;
 
         private System.Windows.Forms.PictureBox pbQRCode;
         private System.Windows.Forms.Label lblInstruction;
         private System.Windows.Forms.Button btnClose;
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

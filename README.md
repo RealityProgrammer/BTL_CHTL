@@ -16,20 +16,7 @@ git clone https://github.com/RealityProgrammer/BTL_CHTL.git
 git clone git@github.com:RealityProgrammer/BTL_CHTL.git
 ```
 3. Tạo cơ sở dữ liệu (TODO).
-4. Tạo file appsettings.local.json tại gốc dự án DAL:
-```
-DAL
- ╚═══ appsettings.local.json
-```
-chứa nội dung như sau:
-```json
-{
-    "Database": {
-        "ConnectionString": "<Chuỗi kết nối cơ sở dữ liệu>"
-    }
-}
-```
-5. (Tuỳ chọn) Tạo file appsettings.local.json tại gốc dự án GUI:
+4. Tạo file appsettings.local.json tại gốc dự án GUI:
 ```
 GUI
  ╚═══ appsettings.local.json
@@ -38,7 +25,10 @@ chứa nội dung như sau:
 ```json
 {
     "AI": {
-        "GeminiKey": "<Gemini Key>"
+        "GeminiKey": "<Key Gemini>"
+    },
+    "Database": {
+        "ConnectionString": "<Chuỗi kết nối cơ sở dữ liệu>"
     }
 }
 ```

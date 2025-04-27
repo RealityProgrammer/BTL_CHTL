@@ -24,7 +24,7 @@ namespace CHTL.GUI.AI {
 
             LocalCustomPalette = GlobalPalette.Palette;
             PaletteMode = PaletteMode.Custom;
-
+            
             _ai = new GoogleAI(Configurations.GetValue("AI:GeminiKey"));
             _model = _ai.GenerativeModel(Model.Gemini20Flash001);
             

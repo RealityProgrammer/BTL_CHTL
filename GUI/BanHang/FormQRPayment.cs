@@ -118,5 +118,15 @@ namespace CHTL.GUI.BanHang
             _generateQRTask.Wait();
             _cancellationTokenSource.Dispose();
         }
+        
+        private void btnOk_Click(object sender, EventArgs e) {
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+        
+        private void btnClose_Click(object sender, EventArgs e) {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
     }
 }
