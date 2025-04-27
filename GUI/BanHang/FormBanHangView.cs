@@ -234,18 +234,20 @@ namespace CHTL.GUI.BanHang
                 {
                     cthd.MaHoaDon = maHoaDon;
                 }
-
+                
+                // Hiển thị form QR để thanh toán
+                using (var formQR = new FormQRPayment(maHoaDon, grandTotal))
+                {
+                    formQR.ShowDialog(); // Hiển thị form QR dưới dạng modal
+                }
+                
                 // Lưu hóa đơn và cập nhật số lượng tồn
                 xuLyHoaDon.LuuHoaDon(hoaDon, chiTietHoaDonList);
 
                 // Thông báo thành công
                 MessageBox.Show("Lưu hóa đơn thành công!", "Thành công",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Hiển thị form QR để thanh toán
-                using (var formQR = new FormQRPayment(maHoaDon, grandTotal))
-                {
-                    formQR.ShowDialog(); // Hiển thị form QR dưới dạng modal
-                }
+                
                 // Reset giao diện
                 chiTietHoaDonList.Clear();
                 UpdateChiTietHoaDon();
