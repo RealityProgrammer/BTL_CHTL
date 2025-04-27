@@ -25,6 +25,8 @@ namespace CHTL.GUI
             InitializeComponent();
             LocalCustomPalette = GlobalPalette.Palette;
             PaletteMode = PaletteMode.Custom;
+            FormBanHangView formBanHang = new FormBanHangView();
+            ShowFormInPanel(formBanHang);
         }
 
         private void ShowFormInPanel(KryptonForm childForm)
@@ -77,7 +79,7 @@ namespace CHTL.GUI
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
            
-    CHTL.Models.Auth.Session.MaNguoiDung = null;
+  
 
             // Hiển thị lại form đăng nhập
             FormDangNhap formLogin = new FormDangNhap();

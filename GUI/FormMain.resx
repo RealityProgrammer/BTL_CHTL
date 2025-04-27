@@ -1812,7 +1812,7 @@
     <value>0, 0</value>
   </data>
   <data name="kryptonPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 729</value>
+    <value>246, 792</value>
   </data>
   <data name="kryptonPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1836,7 +1836,7 @@
     <value>246, 0</value>
   </data>
   <data name="kryptonPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1166, 729</value>
+    <value>1170, 792</value>
   </data>
   <data name="kryptonPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1866,7 +1866,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1412, 729</value>
+    <value>1416, 792</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
