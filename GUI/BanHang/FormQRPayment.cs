@@ -41,8 +41,6 @@ namespace CHTL.GUI.BanHang
 
         private async Task GenerateAndDisplayQRCode(CancellationToken cancellationToken) {
             try {
-                await Task.Delay(10000, cancellationToken);
-                
                 // Tạo yêu cầu API VietQR
                 var apiRequest = new ApiRequest
                 {
