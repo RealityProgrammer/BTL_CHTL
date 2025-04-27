@@ -23,6 +23,7 @@ namespace CHTL.GUI.BanHang
             this.pbQRCode = new System.Windows.Forms.PictureBox();
             this.lblInstruction = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.labelLoading = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbQRCode)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +57,22 @@ namespace CHTL.GUI.BanHang
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // labelLoading
+            // 
+            this.labelLoading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelLoading.Location = new System.Drawing.Point(0, 0);
+            this.labelLoading.Name = "labelLoading";
+            this.labelLoading.Size = new System.Drawing.Size(394, 350);
+            this.labelLoading.TabIndex = 3;
+            this.labelLoading.Text = "Mã QR đang được tạo...";
+            this.labelLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormQRPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 350);
+            this.Controls.Add(this.labelLoading);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.pbQRCode);
@@ -70,10 +82,12 @@ namespace CHTL.GUI.BanHang
             this.Name = "FormQRPayment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thanh toán qua mã QR";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormQRPayment_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pbQRCode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+        private System.Windows.Forms.Label labelLoading;
 
         private System.Windows.Forms.PictureBox pbQRCode;
         private System.Windows.Forms.Label lblInstruction;

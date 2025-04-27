@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +12,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using QRCoder;
 using RestSharp;
+using System.Threading;
 
 namespace CHTL.GUI.BanHang
 {
@@ -19,18 +21,28 @@ namespace CHTL.GUI.BanHang
         private decimal amount;
         private string maHoaDon;
 
-        public FormQRPayment(string maHoaDon, decimal amount)
-        {
+        private CancellationTokenSource _cancellationTokenSource;
+        private Task _generateQRTask;
+
+        public FormQRPayment(string maHoaDon, decimal amount) {
+            _cancellationTokenSource = new CancellationTokenSource();
+            
             InitializeComponent();
             this.maHoaDon = maHoaDon;
             this.amount = amount;
-            GenerateAndDisplayQRCode();
+
+            _generateQRTask = GenerateAndDisplayQRCode(_cancellationTokenSource.Token);
+
+            labelLoading.Visible = true;
+            pbQRCode.Visible = false;
+            lblInstruction.Visible = false;
+            btnClose.Visible = false;
         }
 
-        private void GenerateAndDisplayQRCode()
-        {
-            try
-            {
+        private async Task GenerateAndDisplayQRCode(CancellationToken cancellationToken) {
+            try {
+                await Task.Delay(10000, cancellationToken);
+                
                 // Tạo yêu cầu API VietQR
                 var apiRequest = new ApiRequest
                 {
@@ -55,7 +67,7 @@ namespace CHTL.GUI.BanHang
                 request.AddHeader("Accept", "application/json");
                 request.AddParameter("application/json", jsonRequest, ParameterType.RequestBody);
 
-                var response = client.Execute(request);
+                var response = await client.ExecuteAsync(request, cancellationToken);
                 if (response.StatusCode != System.Net.HttpStatusCode.OK)
                 {
                     MessageBox.Show($"Lỗi khi gọi API VietQR: {response.StatusDescription}", "Lỗi",
@@ -71,26 +83,42 @@ namespace CHTL.GUI.BanHang
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
+                
                 // Chuyển base64 thành hình ảnh và hiển thị
-                var image = Base64ToImage(dataResult.data.qrDataURL.Replace("data:image/png;base64,", ""));
-                pbQRCode.Image = image;
+                var image = await Base64ToImage(dataResult.data.qrDataURL.Replace("data:image/png;base64,", ""), cancellationToken);
+                
+                BeginInvoke((Action)(() => {
+                    labelLoading.Visible = false;
+                    pbQRCode.Visible = true;
+                    lblInstruction.Visible = true;
+                    btnClose.Visible = true;
+                
+                    pbQRCode.Image = image;
+                }));
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi tạo mã QR: {ex.Message}", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (OperationCanceledException) {}
+            catch (Exception ex) {
+                BeginInvoke((Action<string>)(msg => {
+                    MessageBox.Show($"Lỗi khi tạo mã QR: {ex.Message}", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }), ex.Message);
             }
         }
 
-        private Image Base64ToImage(string base64String)
+        private async Task<Image> Base64ToImage(string base64String, CancellationToken cancellationToken)
         {
             byte[] imageBytes = Convert.FromBase64String(base64String);
             using (MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length))
             {
-                ms.Write(imageBytes, 0, imageBytes.Length);
+                await ms.WriteAsync(imageBytes, 0, imageBytes.Length, cancellationToken);
                 return Image.FromStream(ms, true);
             }
+        }
+        
+        private void FormQRPayment_FormClosed(object sender, FormClosedEventArgs e) {
+            _cancellationTokenSource.Cancel();
+            _generateQRTask.Wait();
+            _cancellationTokenSource.Dispose();
         }
     }
 }

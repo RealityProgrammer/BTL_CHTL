@@ -24,24 +24,24 @@ namespace CHTL.GUI {
             }
 
             CHTL.Models.NguoiDung nguoiDung = xuLy.DangNhap(taiKhoan, matKhau);
-            if (nguoiDung != null)
-            {
+            if (nguoiDung != null) {
                 this.Hide();
-                if (nguoiDung.VaiTro == "Admin")
-                {
-                    FormMain formMain = new FormMain();
-                    formMain.Show();
 
-                }
-                else if (nguoiDung.VaiTro == "NhanVien")
-                {
-                    FormNhanVien formNhanVien = new FormNhanVien();
-                    formNhanVien.Show();
-                }
-                else
-                {
-                    ShowErrorMessage("Vai trò không hợp lệ!");
-                    this.Show();
+                switch (nguoiDung.VaiTro) {
+                    case "Admin":
+                        FormMain formMain = new FormMain();
+                        formMain.Show();
+                        break;
+
+                    case "NhanVien":
+                        FormNhanVien formNhanVien = new FormNhanVien();
+                        formNhanVien.Show();
+                        break;
+
+                    default:
+                        ShowErrorMessage("Vai trò không hợp lệ!");
+                        this.Show();
+                        break;
                 }
             }
             else
