@@ -286,7 +286,7 @@ namespace CHTL.GUI.BanHang
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvChiTietHoaDon.Columns["colDelete"].Index)
             {
-                var tenSanPham = dgvChiTietHoaDon.Rows[e.RowIndex].Cells["TenSanPham"].Value.ToString();
+                var tenSanPham = dgvChiTietHoaDon.Rows[e.RowIndex].Cells["colTenSanPhamCT"].Value.ToString();
                 var result = MessageBox.Show($"Bạn có chắc muốn xóa sản phẩm {tenSanPham} khỏi hóa đơn?",
                     "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
