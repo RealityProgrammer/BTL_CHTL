@@ -47,7 +47,7 @@ namespace CHTL.GUI.DanhMuc
             dgvDanhMuc.RowsDefaultCellStyle.BackColor = Color.White;
             dgvDanhMuc.RowsDefaultCellStyle.ForeColor = Color.FromArgb(44, 62, 80); // Xám đậm
             dgvDanhMuc.RowsDefaultCellStyle.Font = new Font("Segoe UI", 11F);
-            dgvDanhMuc.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219);
+            dgvDanhMuc.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(46, 204, 113); 
             dgvDanhMuc.RowsDefaultCellStyle.SelectionForeColor = Color.White;
 
             // Tùy chỉnh hàng xen kẽ
@@ -115,6 +115,7 @@ namespace CHTL.GUI.DanhMuc
                 pictureBox.MouseEnter += (s, e) =>
                 {
                     pictureBox.BackColor = Color.FromArgb(41, 128, 185); // Xanh đậm  
+                    
                 };
                 pictureBox.MouseLeave += (s, e) =>
                 {

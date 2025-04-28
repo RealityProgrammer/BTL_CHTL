@@ -4,6 +4,7 @@ using CHTL.GUI.Sample_Form;
 using CHTL.BUS;
 using CHTL.Models;
 using System.Drawing;
+using Krypton.Toolkit;
 
 namespace CHTL.GUI.SanPham
 {
@@ -16,41 +17,134 @@ namespace CHTL.GUI.SanPham
             InitializeComponent();
             ConfigureDataGridView();
             LoadData();
+            SetupSearchBox();
+            SetupButtonHover();
         }
 
         private void ConfigureDataGridView()
         {
-            //// Cấu hình kích thước và thanh cuộn
-            //dgv_san_pham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // Tắt AutoSize để tự điều chỉnh
-            dgv_san_pham.ScrollBars = ScrollBars.Both; // Hiển thị cả thanh cuộn ngang và dọc
-
-            // Cấu hình màu sắc cho DataGridView
-            dgv_san_pham.ForeColor = Color.Black;
-            dgv_san_pham.BackColor = Color.White;
-            dgv_san_pham.BackgroundColor = Color.White;
-            dgv_san_pham.GridColor = Color.FromArgb(128, 128, 255); // Màu đường lưới tím nhạt
-
-            // Cấu hình màu sắc cho header
-            dgv_san_pham.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 0, 64); // Xanh navy
-            dgv_san_pham.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv_san_pham.ScrollBars = ScrollBars.Both;
+            dgv_san_pham.BackgroundColor = Color.FromArgb(236, 240, 241); // Xám nhạt
+            dgv_san_pham.BorderStyle = BorderStyle.None;
             dgv_san_pham.EnableHeadersVisualStyles = false;
 
-            // Cấu hình font chữ
-            dgv_san_pham.DefaultCellStyle.Font = new Font("Segoe UI", 12F);
+            // Header
+            dgv_san_pham.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219); // Xanh dương
+            dgv_san_pham.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv_san_pham.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            dgv_san_pham.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_san_pham.ColumnHeadersHeight = 40;
 
-            // Cấu hình màu xen kẽ cho các hàng
-            dgv_san_pham.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 255); // Màu tím rất nhạt cho hàng xen kẽ
-            dgv_san_pham.DefaultCellStyle.BackColor = Color.White; // Màu trắng cho hàng chính
+            // Hàng
+            dgv_san_pham.RowsDefaultCellStyle.BackColor = Color.White;
+            dgv_san_pham.RowsDefaultCellStyle.ForeColor = Color.FromArgb(44, 62, 80); // Xám đậm
+            dgv_san_pham.RowsDefaultCellStyle.Font = new Font("Segoe UI", 11F);
+            dgv_san_pham.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(46, 204, 113);
+            dgv_san_pham.RowsDefaultCellStyle.SelectionForeColor = Color.White;
 
-            // Cấu hình màu sắc khi chọn hàng
-            dgv_san_pham.DefaultCellStyle.SelectionBackColor = Color.FromArgb(128, 128, 255); // Tím nhạt khi chọn
-            dgv_san_pham.DefaultCellStyle.SelectionForeColor = Color.White;
+            // Hàng xen kẽ
+            dgv_san_pham.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(247, 249, 250); // Xám rất nhạt
 
-            // Cấu hình màu sắc cho các ô button
-            dgv_san_pham.CellFormatting += dgv_san_pham_CellFormatting;
+            // Lưới
+            dgv_san_pham.GridColor = Color.FromArgb(189, 195, 199); // Xám nhạt
+            dgv_san_pham.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+
+            // Cột
+            foreach (DataGridViewColumn column in dgv_san_pham.Columns)
+            {
+                if (column.Name == "colMaSanPham")
+                {
+                    column.Width = 120;
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                }
+                else if (column.Name == "colEdit" || column.Name == "colDelete")
+                {
+                    column.Width = 80;
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                }
+                else
+                {
+                    column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+            }
 
             dgv_san_pham.AutoGenerateColumns = false;
+
+            // Sự kiện hover
+            dgv_san_pham.CellMouseEnter += dgv_san_pham_CellMouseEnter;
+            dgv_san_pham.CellMouseLeave += dgv_san_pham_CellMouseLeave;
+        }
+
+        private void SetupSearchBox()
+        {
+            txt_search.Text = "Nhập mã hoặc tên sản phẩm...";
+            txt_search.StateCommon.Content.Color1 = Color.FromArgb(149, 165, 166); // Xám nhạt
+            txt_search.Enter += (s, e) =>
+            {
+                if (txt_search.Text == "Nhập mã hoặc tên sản phẩm...")
+                {
+                    txt_search.Text = "";
+                    txt_search.StateCommon.Content.Color1 = Color.FromArgb(44, 62, 80); // Xám đậm
+                    txt_search.StateCommon.Border.Color1 = Color.FromArgb(52, 152, 219); // Viền xanh dương
+                }
+            };
+            txt_search.Leave += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(txt_search.Text))
+                {
+                    txt_search.Text = "Nhập mã hoặc tên sản phẩm...";
+                    txt_search.StateCommon.Content.Color1 = Color.FromArgb(149, 165, 166);
+                    txt_search.StateCommon.Border.Color1 = Color.FromArgb(189, 195, 199); // Viền xám nhạt
+                }
+            };
+        }
+
+        private void SetupButtonHover()
+        {
+            //btn_add.MouseEnter += (s, e) =>
+            //{
+            //    btn_add.StateCommon.Back.Color1 = Color.FromArgb(41, 128, 185); // Xanh đậm
+            //    btn_add.StateCommon.Back.Color2 = Color.FromArgb(41, 128, 185);
+            //};
+            //btn_add.MouseLeave += (s, e) =>
+            //{
+            //    btn_add.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
+            //    btn_add.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
+            //};
+        }
+
+        private void dgv_san_pham_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+            if (dgv_san_pham.Columns[e.ColumnIndex].Name == "colEdit")
+            {
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(41, 128, 185); // Xanh đậm
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            }
+            else if (dgv_san_pham.Columns[e.ColumnIndex].Name == "colDelete")
+            {
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(192, 57, 43); // Đỏ đậm
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            }
+        }
+
+        private void dgv_san_pham_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+            if (dgv_san_pham.Columns[e.ColumnIndex].Name == "colEdit")
+            {
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(52, 152, 219); // Xanh dương
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            }
+            else if (dgv_san_pham.Columns[e.ColumnIndex].Name == "colDelete")
+            {
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(231, 76, 60); // Đỏ nhạt
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                dgv_san_pham.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            }
         }
 
         private void LoadData()
@@ -62,6 +156,7 @@ namespace CHTL.GUI.SanPham
         public override void txt_search_TextChanged(object sender, EventArgs e)
         {
             string tuKhoa = txt_search.Text.Trim();
+            if (tuKhoa == "Nhập mã hoặc tên sản phẩm...") tuKhoa = "";
             var danhSach = xuLy.TimKiemSanPham(tuKhoa);
             dgv_san_pham.DataSource = danhSach;
         }
@@ -89,42 +184,25 @@ namespace CHTL.GUI.SanPham
 
                 if (e.ColumnIndex == dgv_san_pham.Columns["colDelete"].Index)
                 {
-                    var result = MessageBox.Show($"Bạn có chắc muốn xóa sản phẩm {sanPham.TenSanPham}?",
-                        "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    var result = KryptonMessageBox.Show($"Bạn có chắc muốn xóa sản phẩm {sanPham.TenSanPham}?",
+                        "Xác nhận", KryptonMessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
                         try
                         {
                             xuLy.XoaSanPham(sanPham.MaSanPham);
-                            MessageBox.Show("Xóa sản phẩm thành công!", "Thành công",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            KryptonMessageBox.Show("Xóa sản phẩm thành công!", "Thành công",
+                                KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
                             LoadData();
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            KryptonMessageBox.Show($"Lỗi: {ex.Message}", "Lỗi",
+                                KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
                         }
                     }
                 }
-            }
-        }
-
-        private void dgv_san_pham_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            // Cấu hình màu sắc cho các ô button
-            if (e.ColumnIndex == dgv_san_pham.Columns["colEdit"].Index)
-            {
-                e.CellStyle.BackColor = Color.FromArgb(0, 0, 64); // Xanh navy
-                e.CellStyle.ForeColor = Color.White;
-                e.CellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            }
-            else if (e.ColumnIndex == dgv_san_pham.Columns["colDelete"].Index)
-            {
-                e.CellStyle.BackColor = Color.FromArgb(255, 99, 71); // Màu đỏ nhạt (tomato)
-                e.CellStyle.ForeColor = Color.White;
-                e.CellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             }
         }
     }

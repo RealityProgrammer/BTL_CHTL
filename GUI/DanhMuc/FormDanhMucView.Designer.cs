@@ -69,8 +69,9 @@ namespace CHTL.GUI.DanhMuc
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(30, 90);
+            this.btn_add.Location = new System.Drawing.Point(30, 70);
             this.btn_add.Name = "btn_add";
+            
             //this.btn_add.Size = new System.Drawing.Size(150, 40);
             //this.btn_add.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
             //this.btn_add.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);

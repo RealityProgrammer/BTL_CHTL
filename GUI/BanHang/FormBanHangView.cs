@@ -25,27 +25,57 @@ namespace CHTL.GUI.BanHang
             ConfigureDataGridView();
             LoadSanPham();
             dtpNgayBan.Value = DateTime.Now;
+            SetupSearchBox();
+            SetupButtonHover();
         }
 
         private void ConfigureDataGridView()
         {
-            // Cấu hình dgvChiTietHoaDon
-            dgvChiTietHoaDon.ScrollBars = ScrollBars.Both; // Thêm thanh cuộn
-            dgvChiTietHoaDon.AutoGenerateColumns = false; // Tắt tự động tạo cột
-            dgvChiTietHoaDon.ForeColor = Color.Black;
-            dgvChiTietHoaDon.BackColor = Color.White;
-            dgvChiTietHoaDon.BackgroundColor = Color.White;
-            dgvChiTietHoaDon.GridColor = Color.FromArgb(128, 128, 255);
-            dgvChiTietHoaDon.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 0, 64);
-            dgvChiTietHoaDon.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvChiTietHoaDon.ScrollBars = ScrollBars.Both;
+            dgvChiTietHoaDon.AutoGenerateColumns = false;
+            dgvChiTietHoaDon.BackgroundColor = Color.FromArgb(236, 240, 241); // Xám nhạt
+            dgvChiTietHoaDon.BorderStyle = BorderStyle.None;
             dgvChiTietHoaDon.EnableHeadersVisualStyles = false;
-            dgvChiTietHoaDon.DefaultCellStyle.Font = new Font("Segoe UI", 12F);
+
+            // Header
+            dgvChiTietHoaDon.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219); // Xanh dương
+            dgvChiTietHoaDon.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvChiTietHoaDon.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            dgvChiTietHoaDon.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 255);
-            dgvChiTietHoaDon.DefaultCellStyle.BackColor = Color.White;
-            dgvChiTietHoaDon.DefaultCellStyle.SelectionBackColor = Color.FromArgb(128, 128, 255);
-            dgvChiTietHoaDon.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgvChiTietHoaDon.CellFormatting += dgvChiTietHoaDon_CellFormatting;
+            dgvChiTietHoaDon.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvChiTietHoaDon.ColumnHeadersHeight = 40;
+
+            // Hàng
+            dgvChiTietHoaDon.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvChiTietHoaDon.RowsDefaultCellStyle.ForeColor = Color.FromArgb(44, 62, 80); // Xám đậm
+            dgvChiTietHoaDon.RowsDefaultCellStyle.Font = new Font("Segoe UI", 11F);
+            dgvChiTietHoaDon.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(46, 204, 113);
+            dgvChiTietHoaDon.RowsDefaultCellStyle.SelectionForeColor = Color.White;
+
+            // Hàng xen kẽ
+            dgvChiTietHoaDon.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(247, 249, 250); // Xám rất nhạt
+
+            // Lưới
+            dgvChiTietHoaDon.GridColor = Color.FromArgb(189, 195, 199); // Xám nhạt
+            dgvChiTietHoaDon.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+
+            // Cột
+            foreach (DataGridViewColumn column in dgvChiTietHoaDon.Columns)
+            {
+                if (column.Name == "colTenSanPhamCT")
+                {
+                    column.Width = 150;
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                }
+                else if (column.Name == "colReduce" || column.Name == "colDelete")
+                {
+                    column.Width = 80;
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                }
+                else
+                {
+                    column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+            }
         }
 
         private void LoadSanPham()
@@ -56,47 +86,60 @@ namespace CHTL.GUI.BanHang
             {
                 var panel = new Panel
                 {
-                    Size = new Size(150, 120),
-                    BorderStyle = BorderStyle.FixedSingle,
-                    BackColor = Color.White
+                    Size = new Size(180, 140),
+                    BackColor = Color.White,
+                    Margin = new Padding(10)
                 };
+                panel.MouseEnter += (s, e) => panel.BackColor = Color.FromArgb(234, 242, 251); // Xanh nhạt  
+                panel.MouseLeave += (s, e) => panel.BackColor = Color.White;
 
                 var lblTen = new Label
                 {
                     Text = sp.TenSanPham,
-                    Location = new Point(5, 5),
-                    Size = new Size(140, 30),
+                    Location = new Point(10, 10),
+                    Size = new Size(160, 40),
                     Font = new Font("Segoe UI", 10F, FontStyle.Bold),
-                    ForeColor = Color.Navy
+                    ForeColor = Color.FromArgb(44, 62, 80) // Xám đậm  
                 };
 
                 var lblGia = new Label
                 {
                     Text = $"Giá: {sp.GiaBan:N2}",
-                    Location = new Point(5, 40),
-                    Size = new Size(140, 20),
+                    Location = new Point(10, 50),
+                    Size = new Size(160, 20),
                     Font = new Font("Segoe UI", 9F),
-                    ForeColor = Color.Black
+                    ForeColor = Color.FromArgb(127, 140, 141) // Xám trung  
                 };
 
                 var lblTon = new Label
                 {
                     Text = $"Tồn: {sp.SoLuongTon}",
-                    Location = new Point(5, 60),
-                    Size = new Size(140, 20),
+                    Location = new Point(10, 70),
+                    Size = new Size(160, 20),
                     Font = new Font("Segoe UI", 9F),
-                    ForeColor = Color.Black
+                    ForeColor = Color.FromArgb(127, 140, 141)
                 };
 
-                var btnThem = new Button
+                var btnThem = new KryptonButton
                 {
                     Text = "Thêm",
-                    Location = new Point(5, 85),
-                    Size = new Size(140, 30),
-                    BackColor = Color.FromArgb(0, 0, 64),
-                    ForeColor = Color.White,
-                    Font = new Font("Segoe UI", 9F, FontStyle.Bold),
-                    Tag = sp
+                    Location = new Point(10, 95),
+                    Size = new Size(160, 35)
+                };
+                btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương  
+                btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
+                btnThem.StateCommon.Content.ShortText.Color1 = Color.White;
+                btnThem.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+                btnThem.Tag = sp;
+                btnThem.MouseEnter += (s, e) =>
+                {
+                    btnThem.StateCommon.Back.Color1 = Color.FromArgb(41, 128, 185); // Xanh đậm  
+                    btnThem.StateCommon.Back.Color2 = Color.FromArgb(41, 128, 185);
+                };
+                btnThem.MouseLeave += (s, e) =>
+                {
+                    btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
+                    btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
                 };
                 btnThem.Click += BtnThem_Click;
 
@@ -108,30 +151,161 @@ namespace CHTL.GUI.BanHang
             }
         }
 
+        private void SetupSearchBox()
+        {
+            txtSearch.Text = "Tìm kiếm sản phẩm...";
+            txtSearch.StateCommon.Content.Color1 = Color.FromArgb(149, 165, 166); // Xám nhạt
+            txtSearch.Enter += (s, e) =>
+            {
+                if (txtSearch.Text == "Tìm kiếm sản phẩm...")
+                {
+                    txtSearch.Text = "";
+                    txtSearch.StateCommon.Content.Color1 = Color.FromArgb(44, 62, 80); // Xám đậm
+                    txtSearch.StateCommon.Border.Color1 = Color.FromArgb(52, 152, 219); // Viền xanh dương
+                }
+            };
+            txtSearch.Leave += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(txtSearch.Text))
+                {
+                    txtSearch.Text = "Tìm kiếm sản phẩm...";
+                    txtSearch.StateCommon.Content.Color1 = Color.FromArgb(149, 165, 166);
+                    txtSearch.StateCommon.Border.Color1 = Color.FromArgb(189, 195, 199); // Viền xám nhạt
+                }
+            };
+            txtSearch.TextChanged += (s, e) =>
+            {
+                string tuKhoa = txtSearch.Text.Trim();
+                if (tuKhoa == "Tìm kiếm sản phẩm...") tuKhoa = "";
+                var danhSach = xuLySanPham.TimKiemSanPham(tuKhoa);
+                flpSanPham.Controls.Clear();
+                foreach (var sp in danhSach)
+                {
+                    var panel = new Panel
+                    {
+                        Size = new Size(180, 140),
+                        BackColor = Color.White,
+                        Margin = new Padding(10)
+                    };
+                    panel.MouseEnter += (s2, e2) => panel.BackColor = Color.FromArgb(234, 242, 251);
+                    panel.MouseLeave += (s2, e2) => panel.BackColor = Color.White;
+
+                    var lblTen = new Label
+                    {
+                        Text = sp.TenSanPham,
+                        Location = new Point(10, 10),
+                        Size = new Size(160, 40),
+                        Font = new Font("Segoe UI", 10F, FontStyle.Bold),
+                        ForeColor = Color.FromArgb(44, 62, 80)
+                    };
+
+                    var lblGia = new Label
+                    {
+                        Text = $"Giá: {sp.GiaBan:N2}",
+                        Location = new Point(10, 50),
+                        Size = new Size(160, 20),
+                        Font = new Font("Segoe UI", 9F),
+                        ForeColor = Color.FromArgb(127, 140, 141)
+                    };
+
+                    var lblTon = new Label
+                    {
+                        Text = $"Tồn: {sp.SoLuongTon}",
+                        Location = new Point(10, 70),
+                        Size = new Size(160, 20),
+                        Font = new Font("Segoe UI", 9F),
+                        ForeColor = Color.FromArgb(127, 140, 141)
+                    };
+
+                    var btnThem = new KryptonButton
+                    {
+                        Text = "Thêm",
+                        Location = new Point(10, 95),
+                        Size = new Size(160, 35),
+                        //StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219),
+                        //StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219),
+                        //StateCommon.Content.ShortText.Color1 = Color.White,
+                        //StateCommon.Content.ShortText.Font = new Font("Segoe UI", 9F, FontStyle.Bold),
+                        Tag = sp
+                    };
+                    btnThem.MouseEnter += (s2, e2) =>
+                    {
+                        btnThem.StateCommon.Back.Color1 = Color.FromArgb(41, 128, 185);
+                        btnThem.StateCommon.Back.Color2 = Color.FromArgb(41, 128, 185);
+                    };
+                    btnThem.MouseLeave += (s2, e2) =>
+                    {
+                        btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
+                        btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
+                    };
+                    btnThem.Click += BtnThem_Click;
+
+                    panel.Controls.Add(lblTen);
+                    panel.Controls.Add(lblGia);
+                    panel.Controls.Add(lblTon);
+                    panel.Controls.Add(btnThem);
+                    flpSanPham.Controls.Add(panel);
+                }
+            };
+        }
+
+        private void SetupButtonHover()
+        {
+            btnSave.MouseEnter += (s, e) =>
+            {
+                btnSave.StateCommon.Back.Color1 = Color.FromArgb(41, 128, 185); // Xanh đậm
+                btnSave.StateCommon.Back.Color2 = Color.FromArgb(41, 128, 185);
+            };
+            btnSave.MouseLeave += (s, e) =>
+            {
+                btnSave.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
+                btnSave.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
+            };
+
+            btnClear.MouseEnter += (s, e) =>
+            {
+                btnClear.StateCommon.Back.Color1 = Color.FromArgb(192, 57, 43); // Đỏ đậm
+                btnClear.StateCommon.Back.Color2 = Color.FromArgb(192, 57, 43);
+            };
+            btnClear.MouseLeave += (s, e) =>
+            {
+                btnClear.StateCommon.Back.Color1 = Color.FromArgb(231, 76, 60); // Đỏ nhạt
+                btnClear.StateCommon.Back.Color2 = Color.FromArgb(231, 76, 60);
+            };
+
+            btnAddNew.MouseEnter += (s, e) =>
+            {
+                btnAddNew.StateCommon.Back.Color1 = Color.FromArgb(149, 165, 166); // Xám đậm
+                btnAddNew.StateCommon.Back.Color2 = Color.FromArgb(149, 165, 166);
+            };
+            btnAddNew.MouseLeave += (s, e) =>
+            {
+                btnAddNew.StateCommon.Back.Color1 = Color.FromArgb(189, 195, 199); // Xám nhạt
+                btnAddNew.StateCommon.Back.Color2 = Color.FromArgb(189, 195, 199);
+            };
+        }
+
         private void BtnThem_Click(object sender, EventArgs e)
         {
-            var btn = sender as Button;
+            var btn = sender as KryptonButton;
             var sanPham = btn.Tag as CHTL.Models.SanPham;
             if (sanPham != null)
             {
-                // Kiểm tra số lượng tồn
                 if (sanPham.SoLuongTon <= 0)
                 {
-                    MessageBox.Show($"Sản phẩm {sanPham.TenSanPham} đã hết hàng!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    KryptonMessageBox.Show($"Sản phẩm {sanPham.TenSanPham} đã hết hàng!", "Thông báo",
+                        KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Warning);
                     return;
                 }
 
-                // Kiểm tra xem sản phẩm đã có trong hóa đơn chưa
                 var existingItem = chiTietHoaDonList.FirstOrDefault(x => x.MaSanPham == sanPham.MaSanPham);
                 if (existingItem != null)
                 {
-                    // Tăng số lượng nếu sản phẩm đã có
                     existingItem.SoLuong++;
                     if (existingItem.SoLuong > sanPham.SoLuongTon)
                     {
-                        MessageBox.Show($"Sản phẩm {sanPham.TenSanPham} không đủ số lượng tồn (còn {sanPham.SoLuongTon})!",
-                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        KryptonMessageBox.Show($"Sản phẩm {sanPham.TenSanPham} không đủ số lượng tồn (còn {sanPham.SoLuongTon})!",
+                            "Thông báo", KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Warning);
                         existingItem.SoLuong--;
                         return;
                     }
@@ -139,11 +313,10 @@ namespace CHTL.GUI.BanHang
                 }
                 else
                 {
-                    // Thêm sản phẩm mới vào hóa đơn
                     var cthd = new ChiTietHoaDon
                     {
                         MaChiTiet = Guid.NewGuid().ToString(),
-                        MaHoaDon = "", // Sẽ cập nhật sau khi lưu hóa đơn
+                        MaHoaDon = "",
                         MaSanPham = sanPham.MaSanPham,
                         SoLuong = 1,
                         DonGia = sanPham.GiaBan
@@ -151,14 +324,12 @@ namespace CHTL.GUI.BanHang
                     chiTietHoaDonList.Add(cthd);
                 }
 
-                // Cập nhật danh sách chi tiết hóa đơn và tổng tiền
                 UpdateChiTietHoaDon();
             }
         }
 
         private void UpdateChiTietHoaDon()
         {
-            // Cập nhật DataGridView chi tiết hóa đơn
             var displayList = chiTietHoaDonList.Select(cthd =>
             {
                 var sp = truyCapSanPham.LaySanPhamTheoMa(cthd.MaSanPham);
@@ -170,24 +341,8 @@ namespace CHTL.GUI.BanHang
                     ThanhTien = cthd.DonGia
                 };
             }).ToList();
-            //dgvChiTietHoaDon.DataSource = null;
             dgvChiTietHoaDon.DataSource = displayList;
 
-            // Đảm bảo cột "Xóa" ở vị trí cuối
-            if (!dgvChiTietHoaDon.Columns.Contains("colDelete"))
-            {
-                var colDelete = new DataGridViewButtonColumn
-                {
-                    Name = "colDelete",
-                    HeaderText = "",
-                    Text = "Xóa",
-                    UseColumnTextForButtonValue = true,
-                    Width = 50
-                };
-                dgvChiTietHoaDon.Columns.Add(colDelete);
-            }
-
-            // Đảm bảo cột "Giảm" ở vị trí trước cột "Xóa"
             if (!dgvChiTietHoaDon.Columns.Contains("colReduce"))
             {
                 var colReduce = new DataGridViewButtonColumn
@@ -196,12 +351,24 @@ namespace CHTL.GUI.BanHang
                     HeaderText = "",
                     Text = "Giảm",
                     UseColumnTextForButtonValue = true,
-                    Width = 50
+                    Width = 80
                 };
                 dgvChiTietHoaDon.Columns.Add(colReduce);
             }
 
-            // Tính tổng tiền
+            if (!dgvChiTietHoaDon.Columns.Contains("colDelete"))
+            {
+                var colDelete = new DataGridViewButtonColumn
+                {
+                    Name = "colDelete",
+                    HeaderText = "",
+                    Text = "Xóa",
+                    UseColumnTextForButtonValue = true,
+                    Width = 80
+                };
+                dgvChiTietHoaDon.Columns.Add(colDelete);
+            }
+
             grandTotal = chiTietHoaDonList.Sum(x => x.DonGia);
             lblGrandTotal.Text = grandTotal.ToString("N2");
         }
@@ -210,59 +377,51 @@ namespace CHTL.GUI.BanHang
         {
             if (chiTietHoaDonList.Count == 0)
             {
-                MessageBox.Show("Hóa đơn trống! Vui lòng thêm sản phẩm.", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                KryptonMessageBox.Show("Hóa đơn trống! Vui lòng thêm sản phẩm.", "Thông báo",
+                    KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Warning);
                 return;
             }
 
             try
             {
-                // Tạo mã hóa đơn (ví dụ: HD + timestamp)
                 string maHoaDon = "HD" + DateTime.Now.ToString("yyyyMMddHHmmss");
 
-                // Tạo hóa đơn
                 var hoaDon = new HoaDon
                 {
                     MaHoaDon = maHoaDon,
-                    MaNguoiDung = CHTL.Models.Auth.Session.MaNguoiDung, // Lấy từ phiên đăng nhập
+                    MaNguoiDung = CHTL.Models.Auth.Session.MaNguoiDung,
                     NgayBan = dtpNgayBan.Value,
                     TongTien = grandTotal
                 };
 
-                // Cập nhật MaHoaDon cho chi tiết hóa đơn
                 foreach (var cthd in chiTietHoaDonList)
                 {
                     cthd.MaHoaDon = maHoaDon;
                 }
 
                 bool saveReceipt = false;
-                
-                // Hiển thị form QR để thanh toán
+
                 using (var formQR = new FormQRPayment(maHoaDon, grandTotal))
                 {
-                    saveReceipt = formQR.ShowDialog() == DialogResult.OK; // Hiển thị form QR dưới dạng modal
+                    saveReceipt = formQR.ShowDialog() == DialogResult.OK;
                 }
 
-                if (saveReceipt) {
-                    // Lưu hóa đơn và cập nhật số lượng tồn
+                if (saveReceipt)
+                {
                     xuLyHoaDon.LuuHoaDon(hoaDon, chiTietHoaDonList);
 
-                    // Thông báo thành công
-                    MessageBox.Show("Lưu hóa đơn thành công!", "Thành công",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
-                    UpdateChiTietHoaDon();
-                }
-                
+                    KryptonMessageBox.Show("Lưu hóa đơn thành công!", "Thành công",
+                        KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
 
-                // Reset giao diện
-                chiTietHoaDonList.Clear();
-                LoadSanPham();
+                    chiTietHoaDonList.Clear();
+                    UpdateChiTietHoaDon();
+                    LoadSanPham();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                KryptonMessageBox.Show($"Lỗi: {ex.Message}", "Lỗi",
+                    KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
             }
         }
 
@@ -272,45 +431,82 @@ namespace CHTL.GUI.BanHang
             UpdateChiTietHoaDon();
         }
 
-        private void dgvChiTietHoaDon_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void btnAddNew_Click(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == dgvChiTietHoaDon.Columns["colDelete"].Index)
+            chiTietHoaDonList.Clear();
+            UpdateChiTietHoaDon();
+            txtSearch.Text = "Tìm kiếm sản phẩm...";
+            txtSearch.StateCommon.Content.Color1 = Color.FromArgb(149, 165, 166);
+            dtpNgayBan.Value = DateTime.Now;
+            LoadSanPham();
+        }
+
+        private void dgvChiTietHoaDon_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+            if (dgvChiTietHoaDon.Columns[e.ColumnIndex].Name == "colReduce")
             {
-                e.CellStyle.BackColor = Color.FromArgb(255, 99, 71); // Màu đỏ nhạt
-                e.CellStyle.ForeColor = Color.White;
-                e.CellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(230, 126, 34); // Cam đậm
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            }
+            else if (dgvChiTietHoaDon.Columns[e.ColumnIndex].Name == "colDelete")
+            {
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(192, 57, 43); // Đỏ đậm
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            }
+        }
+
+        private void dgvChiTietHoaDon_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+            if (dgvChiTietHoaDon.Columns[e.ColumnIndex].Name == "colReduce")
+            {
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(243, 156, 18); // Cam nhạt
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            }
+            else if (dgvChiTietHoaDon.Columns[e.ColumnIndex].Name == "colDelete")
+            {
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(231, 76, 60); // Đỏ nhạt
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                dgvChiTietHoaDon.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             }
         }
 
         private void dgvChiTietHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvChiTietHoaDon.Columns["colDelete"].Index)
+            if (e.RowIndex >= 0)
             {
-                var tenSanPham = dgvChiTietHoaDon.Rows[e.RowIndex].Cells["colTenSanPhamCT"].Value.ToString();
-                var result = MessageBox.Show($"Bạn có chắc muốn xóa sản phẩm {tenSanPham} khỏi hóa đơn?",
-                    "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (e.ColumnIndex == dgvChiTietHoaDon.Columns["colDelete"].Index)
+                {
+                    var tenSanPham = dgvChiTietHoaDon.Rows[e.RowIndex].Cells["colTenSanPhamCT"].Value.ToString();
+                    var result = KryptonMessageBox.Show($"Bạn có chắc muốn xóa sản phẩm {tenSanPham} khỏi hóa đơn?",
+                        "Xác nhận", KryptonMessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question);
 
-                if (result == DialogResult.Yes)
+                    if (result == DialogResult.Yes)
+                    {
+                        var cthd = chiTietHoaDonList[e.RowIndex];
+                        chiTietHoaDonList.Remove(cthd);
+                        UpdateChiTietHoaDon();
+                    }
+                }
+                else if (e.ColumnIndex == dgvChiTietHoaDon.Columns["colReduce"].Index)
                 {
                     var cthd = chiTietHoaDonList[e.RowIndex];
-                    chiTietHoaDonList.Remove(cthd);
-                    UpdateChiTietHoaDon();
-                }
-            }
-            else if (e.ColumnIndex == dgvChiTietHoaDon.Columns["colReduce"].Index)
-            {
-                var cthd = chiTietHoaDonList[e.RowIndex];
-                var sanPham = truyCapSanPham.LaySanPhamTheoMa(cthd.MaSanPham);
-                if (cthd.SoLuong > 1)
-                {
-                    cthd.SoLuong--;
-                    cthd.DonGia = sanPham.GiaBan * cthd.SoLuong;
-                    UpdateChiTietHoaDon();
-                }
-                else
-                {
-                    MessageBox.Show($"Số lượng đã là 1. Vui lòng sử dụng nút 'Xóa' để xóa sản phẩm {sanPham.TenSanPham}.",
-                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var sanPham = truyCapSanPham.LaySanPhamTheoMa(cthd.MaSanPham);
+                    if (cthd.SoLuong > 1)
+                    {
+                        cthd.SoLuong--;
+                        cthd.DonGia = sanPham.GiaBan * cthd.SoLuong;
+                        UpdateChiTietHoaDon();
+                    }
+                    else
+                    {
+                        KryptonMessageBox.Show($"Số lượng đã là 1. Vui lòng sử dụng nút 'Xóa' để xóa sản phẩm {sanPham.TenSanPham}.",
+                            "Thông báo", KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                    }
                 }
             }
         }

@@ -16,53 +16,66 @@ namespace CHTL.GUI.BaoCao
         private XuLyBaoCao xuLy = new XuLyBaoCao();
         private CHTL.Models.BaoCao baoCao;
         private PrintDocument printDocument = new PrintDocument();
-        private int currentHoaDonIndex = 0; // Theo dõi chỉ số hóa đơn hiện tại khi in
-        private int currentSanPhamIndex = 0; // Theo dõi chỉ số sản phẩm hiện tại trong hóa đơn
-        //private ChiTietHoaDon selectedHoaDon; // Lưu hóa đơn được chọn để in chi tiết
+        private int currentHoaDonIndex = 0;
+        private int currentSanPhamIndex = 0;
+
         public FormBaoCaoView()
         {
             InitializeComponent();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
-
             CustomizeForm();
         }
 
         private void CustomizeForm()
         {
-            // Đặt FormBorderStyle thành None
-            this.FormBorderStyle = FormBorderStyle.None;
-
-            // Đặt màu nền tím nhạt cho form
-            this.BackColor = Color.FromArgb(230, 220, 255); // Màu tím nhạt
-            
-            // Tùy chỉnh nút Xem Báo Cáo
-            btnXemBaoCao.FlatAppearance.BorderSize = 0;
-            btnXemBaoCao.BackColor = Color.Red; // Màu tím trung bình
-            btnXemBaoCao.ForeColor = Color.White;
-            btnXemBaoCao.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-
-            // Tùy chỉnh nút In Báo Cáo
-            btnInBaoCao.FlatAppearance.BorderSize = 0;
-            btnInBaoCao.BackColor = Color.Green; // Màu tím đậm
-            btnInBaoCao.ForeColor = Color.White;
-            btnInBaoCao.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            this.BackColor = Color.FromArgb(236, 240, 241); // Xám nhạt
 
             // Tùy chỉnh TabControl
-            tabControl.BackColor = Color.FromArgb(245, 240, 255); // Màu nền tab tím nhạt hơn
-            tabControl.Font = new Font("Segoe UI", 12F, FontStyle.Underline);
+            tabControl.DrawMode = TabDrawMode.OwnerDrawFixed;
+            tabControl.SizeMode = TabSizeMode.Fixed;
+            tabControl.ItemSize = new Size(150, 30);
+            tabControl.DrawItem += (s, e) =>
+            {
+                var tab = tabControl.TabPages[e.Index];
+                var g = e.Graphics;
+                var textSize = g.MeasureString(tab.Text, new Font("Segoe UI", 12F, FontStyle.Bold));
+                var rect = e.Bounds;
+                var isSelected = e.Index == tabControl.SelectedIndex;
 
-            // Tùy chỉnh các label trong tab Thống Kê
-            label1.ForeColor = Color.Black;// Màu tím đậm cho chữ
-            label2.ForeColor = Color.Black;
-            label3.ForeColor = Color.Black;
-            label4.ForeColor = Color.Black;
-            label5.ForeColor = Color.Black;
-            label6.ForeColor = Color.Black;
+                // Nền tab
+                using (var brush = new SolidBrush(isSelected ? Color.FromArgb(52, 152, 219) : Color.FromArgb(189, 195, 199)))
+                {
+                    g.FillRectangle(brush, rect);
+                }
 
-            lblTongDoanhThu.ForeColor = Color.FromArgb(106, 90, 205); // Màu tím nhạt hơn cho giá trị
-            lblTongHoaDon.ForeColor = Color.FromArgb(106, 90, 205);
-            lblSanPhamBanChay.ForeColor = Color.FromArgb(106, 90, 205);
-            lblSoLuongBanChay.ForeColor = Color.FromArgb(106, 90, 205);
+                // Viền tab
+                using (var pen = new Pen(Color.FromArgb(189, 195, 199), 1))
+                {
+                    g.DrawRectangle(pen, rect);
+                }
+
+                // Văn bản
+                using (var brush = new SolidBrush(isSelected ? Color.White : Color.FromArgb(44, 62, 80)))
+                {
+                    g.DrawString(tab.Text, new Font("Segoe UI", 12F, FontStyle.Bold), brush,
+                        rect.X + (rect.Width - textSize.Width) / 2,
+                        rect.Y + (rect.Height - textSize.Height) / 2);
+                }
+            };
+
+            // Tùy chỉnh nhãn trong tab Thống Kê
+            label3.ForeColor = Color.FromArgb(44, 62, 80); // Xám đậm
+            label4.ForeColor = Color.FromArgb(44, 62, 80);
+            label5.ForeColor = Color.FromArgb(44, 62, 80);
+            label6.ForeColor = Color.FromArgb(44, 62, 80);
+            lblTongDoanhThu.ForeColor = Color.FromArgb(52, 152, 219); // Xanh dương
+            lblTongHoaDon.ForeColor = Color.FromArgb(52, 152, 219);
+            lblSanPhamBanChay.ForeColor = Color.FromArgb(52, 152, 219);
+            lblSoLuongBanChay.ForeColor = Color.FromArgb(52, 152, 219);
+
+            // Tùy chỉnh DateTimePicker
+            dtpNgayBatDau.Font = new Font("Segoe UI", 12F);
+            dtpNgayKetThuc.Font = new Font("Segoe UI", 12F);
         }
 
         private void FormBaoCaoView_Load(object sender, EventArgs e)
@@ -71,7 +84,7 @@ namespace CHTL.GUI.BaoCao
             dtpNgayKetThuc.Value = DateTime.Now;
             LoadBaoCao();
         }
-        
+
         private void LoadBaoCao()
         {
             baoCao = xuLy.LayBaoCao(dtpNgayBatDau.Value, dtpNgayKetThuc.Value);
@@ -81,73 +94,92 @@ namespace CHTL.GUI.BaoCao
             lblTongHoaDon.Text = baoCao.TongSoHoaDon.ToString();
             lblSanPhamBanChay.Text = baoCao.SanPhamBanChay ?? "Không có";
             lblSoLuongBanChay.Text = baoCao.SoLuongBanChay.ToString();
-            
+
             // Hiển thị chi tiết hóa đơn
             dgvChiTiet.DataSource = baoCao.ChiTietHoaDon;
-
-            // if (dgvChiTiet.Columns["ViewDetails"] == null) {
-            //     DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-            //     buttonColumn.Name = "ViewDetails";
-            //     buttonColumn.Text = "Xem chi tiết";
-            //
-            //     dgvChiTiet.Columns.Add(buttonColumn);
-            // }
-            
             CustomizeDataGridView();
 
             // Vẽ biểu đồ doanh thu theo danh mục
             chartDoanhThu.Series.Clear();
+            chartDoanhThu.ChartAreas.Clear();
+            chartDoanhThu.ChartAreas.Add(new ChartArea());
+            chartDoanhThu.BackColor = Color.FromArgb(236, 240, 241); // Xám nhạt
+            chartDoanhThu.ChartAreas[0].BackColor = Color.FromArgb(236, 240, 241);
+            chartDoanhThu.Titles.Clear();
+            chartDoanhThu.Titles.Add(new Title("Doanh Thu Theo Danh Mục", Docking.Top, new Font("Segoe UI", 14F, FontStyle.Bold), Color.FromArgb(44, 62, 80)));
+
             Series series = new Series("DoanhThu")
             {
-                ChartType = SeriesChartType.Pie
+                ChartType = SeriesChartType.Pie,
+                IsValueShownAsLabel = true,
+                LabelForeColor = Color.FromArgb(44, 62, 80),
+                Font = new Font("Segoe UI", 10F)
             };
+
+            Color[] colors = new Color[]
+            {
+                Color.FromArgb(52, 152, 219), // Xanh dương
+                Color.FromArgb(231, 76, 60),  // Đỏ nhạt
+                Color.FromArgb(243, 156, 18), // Cam nhạt
+                Color.FromArgb(149, 165, 166), // Xám đậm
+                Color.FromArgb(46, 204, 113)  // Xanh lá nhạt
+            };
+
+            int colorIndex = 0;
             foreach (var item in baoCao.DoanhThuTheoDanhMuc)
             {
-                series.Points.AddXY(item.Key, item.Value);
+                var point = series.Points.AddXY(item.Key, item.Value);
+                series.Points[point].Color = colors[colorIndex % colors.Length];
+                colorIndex++;
             }
+
             chartDoanhThu.Series.Add(series);
-
-            // Ensure there is at least one ChartArea
-            if (chartDoanhThu.ChartAreas.Count == 0)
-            {
-                chartDoanhThu.ChartAreas.Add(new ChartArea());
-            }
-
             chartDoanhThu.ChartAreas[0].Area3DStyle.Enable3D = true;
-            chartDoanhThu.BackColor = Color.FromArgb(245, 240, 255); // Màu nền biểu đồ tím nhạt
         }
 
         private void CustomizeDataGridView()
         {
-            //dgvChiTiet.BackgroundColor = Color.FromArgb(245, 240, 255); // Màu nền tím nhạt
-            dgvChiTiet.BackgroundColor = Color.White; // Màu nền tím nhạt
+            dgvChiTiet.BackgroundColor = Color.FromArgb(236, 240, 241); // Xám nhạt
             dgvChiTiet.BorderStyle = BorderStyle.None;
             dgvChiTiet.EnableHeadersVisualStyles = false;
 
             // Tùy chỉnh header
-            dgvChiTiet.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 0, 64);
+            dgvChiTiet.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219); // Xanh dương
             dgvChiTiet.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvChiTiet.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             dgvChiTiet.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvChiTiet.ColumnHeadersHeight = 40;
 
             // Tùy chỉnh hàng
             dgvChiTiet.RowsDefaultCellStyle.BackColor = Color.White;
-            dgvChiTiet.RowsDefaultCellStyle.ForeColor = Color.FromArgb(75, 0, 130); // Màu tím đậm
-            dgvChiTiet.RowsDefaultCellStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
-            dgvChiTiet.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(186, 85, 211); // Màu tím nhạt khi chọn
+            dgvChiTiet.RowsDefaultCellStyle.ForeColor = Color.FromArgb(44, 62, 80); // Xám đậm
+            dgvChiTiet.RowsDefaultCellStyle.Font = new Font("Segoe UI", 11F);
+            dgvChiTiet.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219);
             dgvChiTiet.RowsDefaultCellStyle.SelectionForeColor = Color.White;
 
             // Hàng xen kẽ
-            dgvChiTiet.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 235, 255); // Màu tím nhạt hơn
+            dgvChiTiet.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(247, 249, 250); // Xám rất nhạt
 
             // Tùy chỉnh cột
-            for (int i = 0; i < dgvChiTiet.Columns.Count; i++)
+            foreach (DataGridViewColumn column in dgvChiTiet.Columns)
             {
-                DataGridViewColumn column = dgvChiTiet.Columns[i];
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                if (column.Name == "colMaHoaDon")
+                {
+                    column.Width = 150;
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                }
+                else if (column.Name == "colDetails")
+                {
+                    column.Width = 100;
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                }
+                else
+                {
+                    column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
             }
 
-            dgvChiTiet.GridColor = Color.FromArgb(200, 200, 200);
+            dgvChiTiet.GridColor = Color.FromArgb(189, 195, 199); // Xám nhạt
             dgvChiTiet.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
 
@@ -158,7 +190,6 @@ namespace CHTL.GUI.BaoCao
 
         private void btnInBaoCao_Click(object sender, EventArgs e)
         {
-            // Reset các chỉ số trước khi in
             currentHoaDonIndex = 0;
             currentSanPhamIndex = 0;
             PrintPreviewDialog previewDialog = new PrintPreviewDialog
@@ -175,25 +206,24 @@ namespace CHTL.GUI.BaoCao
             Font fontHeader = new Font("Segoe UI", 12, FontStyle.Bold);
             Font fontBody = new Font("Segoe UI", 10);
             int y = 50;
-            int pageHeight = e.PageBounds.Height - 50; // Chừa lề dưới
+            int pageHeight = e.PageBounds.Height - 50;
 
             // Tiêu đề báo cáo
-            g.DrawString("BÁO CÁO DOANH THU", fontTitle, Brushes.Black, new PointF(300, y));
+            g.DrawString("BÁO CÁO DOANH THU", fontTitle, new SolidBrush(Color.FromArgb(44, 62, 80)), new PointF(300, y));
             y += 40;
-            g.DrawString($"Từ ngày: {baoCao.NgayBatDau:dd/MM/yyyy} - Đến ngày: {baoCao.NgayKetThuc:dd/MM/yyyy}", fontBody, Brushes.Black, new PointF(50, y));
+            g.DrawString($"Từ ngày: {baoCao.NgayBatDau:dd/MM/yyyy} - Đến ngày: {baoCao.NgayKetThuc:dd/MM/yyyy}", fontBody, new SolidBrush(Color.FromArgb(44, 62, 80)), new PointF(50, y));
             y += 30;
 
             // Thống kê
-            g.DrawString("THỐNG KÊ CHUNG", fontHeader, Brushes.Black, new PointF(50, y));
+            g.DrawString("THỐNG KÊ CHUNG", fontHeader, new SolidBrush(Color.FromArgb(44, 62, 80)), new PointF(50, y));
             y += 30;
-            g.DrawString($"Tổng doanh thu: {baoCao.TongDoanhThu:N0} VNĐ", fontBody, Brushes.Black, new PointF(50, y));
+            g.DrawString($"Tổng doanh thu: {baoCao.TongDoanhThu:N0} VNĐ", fontBody, new SolidBrush(Color.FromArgb(52, 152, 219)), new PointF(50, y));
             y += 20;
-            g.DrawString($"Tổng số hóa đơn: {baoCao.TongSoHoaDon}", fontBody, Brushes.Black, new PointF(50, y));
+            g.DrawString($"Tổng số hóa đơn: {baoCao.TongSoHoaDon}", fontBody, new SolidBrush(Color.FromArgb(52, 152, 219)), new PointF(50, y));
             y += 20;
-            g.DrawString($"Sản phẩm bán chạy: {baoCao.SanPhamBanChay} ({baoCao.SoLuongBanChay} sản phẩm)", fontBody, Brushes.Black, new PointF(50, y));
+            g.DrawString($"Sản phẩm bán chạy: {baoCao.SanPhamBanChay} ({baoCao.SoLuongBanChay} sản phẩm)", fontBody, new SolidBrush(Color.FromArgb(52, 152, 219)), new PointF(50, y));
             y += 40;
 
-            // Kiểm tra nếu vượt quá chiều cao trang
             if (y > pageHeight)
             {
                 e.HasMorePages = true;
@@ -201,106 +231,101 @@ namespace CHTL.GUI.BaoCao
             }
 
             // Chi tiết hóa đơn
-            g.DrawString("CHI TIẾT HÓA ĐƠN", fontHeader, Brushes.Black, new PointF(50, y));
+            g.DrawString("CHI TIẾT HÓA ĐƠN", fontHeader, new SolidBrush(Color.FromArgb(44, 62, 80)), new PointF(50, y));
             y += 30;
 
-            // In các hóa đơn từ chỉ số hiện tại
             for (int i = currentHoaDonIndex; i < baoCao.ChiTietHoaDon.Count; i++)
             {
                 var chiTiet = baoCao.ChiTietHoaDon[i];
-
-                // In thông tin hóa đơn
-                g.DrawString($"Hóa đơn: {chiTiet.MaHoaDon} - Ngày: {chiTiet.NgayBan:dd/MM/yyyy HH:mm} - Nhân viên: {chiTiet.TenNguoiDung}", fontBody, Brushes.Black, new PointF(50, y));
+                g.DrawString($"Hóa đơn: {chiTiet.MaHoaDon} - Ngày: {chiTiet.NgayBan:dd/MM/yyyy HH:mm} - Nhân viên: {chiTiet.TenNguoiDung}", fontBody, new SolidBrush(Color.FromArgb(44, 62, 80)), new PointF(50, y));
                 y += 20;
-                g.DrawString($"Tổng tiền: {chiTiet.TongTien:N0} VNĐ", fontBody, Brushes.Black, new PointF(70, y));
+                g.DrawString($"Tổng tiền: {chiTiet.TongTien:N0} VNĐ", fontBody, new SolidBrush(Color.FromArgb(52, 152, 219)), new PointF(70, y));
                 y += 20;
 
-                // Kiểm tra nếu vượt quá chiều cao trang
                 if (y > pageHeight)
                 {
-                    currentHoaDonIndex = i; // Lưu lại chỉ số hóa đơn hiện tại
-                    currentSanPhamIndex = 0; // Reset chỉ số sản phẩm
+                    currentHoaDonIndex = i;
+                    currentSanPhamIndex = 0;
                     e.HasMorePages = true;
                     return;
                 }
 
-                // In danh sách sản phẩm
                 for (int j = currentSanPhamIndex; j < chiTiet.SanPham.Count; j++)
                 {
                     var sp = chiTiet.SanPham[j];
-                    g.DrawString($"- {sp.TenSanPham}: {sp.SoLuong} x {sp.DonGia:N0} = {sp.ThanhTien:N0} VNĐ", fontBody, Brushes.Black, new PointF(90, y));
+                    g.DrawString($"- {sp.TenSanPham}: {sp.SoLuong} x {sp.DonGia:N0} = {sp.ThanhTien:N0} VNĐ", fontBody, new SolidBrush(Color.FromArgb(44, 62, 80)), new PointF(90, y));
                     y += 20;
 
-                    // Kiểm tra nếu vượt quá chiều cao trang
                     if (y > pageHeight)
                     {
-                        currentHoaDonIndex = i; // Lưu lại chỉ số hóa đơn hiện tại
-                        currentSanPhamIndex = j + 1; // Lưu lại chỉ số sản phẩm tiếp theo
+                        currentHoaDonIndex = i;
+                        currentSanPhamIndex = j + 1;
                         e.HasMorePages = true;
                         return;
                     }
                 }
 
-                // Reset chỉ số sản phẩm sau khi in hết sản phẩm của hóa đơn
                 currentSanPhamIndex = 0;
                 y += 10;
 
-                // Kiểm tra nếu vượt quá chiều cao trang
                 if (y > pageHeight)
                 {
-                    currentHoaDonIndex = i + 1; // Chuyển sang hóa đơn tiếp theo
+                    currentHoaDonIndex = i + 1;
                     currentSanPhamIndex = 0;
                     e.HasMorePages = true;
                     return;
                 }
             }
 
-            // Nếu đã in hết dữ liệu, không cần trang mới
-            currentHoaDonIndex = 0; // Reset chỉ số hóa đơn
-            currentSanPhamIndex = 0; // Reset chỉ số sản phẩm
+            currentHoaDonIndex = 0;
+            currentSanPhamIndex = 0;
             e.HasMorePages = false;
         }
 
-        // Hiệu ứng hover cho nút Xem Báo Cáo
-        private void btnXemBaoCao_MouseEnter(object sender, EventArgs e)
+        private void dtpNgayBatDau_ValueChanged(object sender, EventArgs e)
         {
-            btnXemBaoCao.BackColor = Color.FromArgb(138, 43, 226); // Màu tím đậm hơn khi hover
-        }
-
-        private void btnXemBaoCao_MouseLeave(object sender, EventArgs e)
-        {
-            btnXemBaoCao.BackColor = Color.FromArgb(147, 112, 219); // Màu gốc
-        }
-
-        // Hiệu ứng hover cho nút In Báo Cáo
-        private void btnInBaoCao_MouseEnter(object sender, EventArgs e)
-        {
-            btnInBaoCao.BackColor = Color.FromArgb(147, 112, 219); // Màu tím nhạt hơn khi hover
-        }
-
-        private void btnInBaoCao_MouseLeave(object sender, EventArgs e)
-        {
-            btnInBaoCao.BackColor = Color.FromArgb(138, 43, 226); // Màu gốc
-        }
-        
-        private void dtpNgayBatDau_ValueChanged(object sender, EventArgs e) {
-            LoadBaoCao();
-        }
-        
-        private void dtpNgayKetThuc_ValueChanged(object sender, EventArgs e) {
             LoadBaoCao();
         }
 
-        private void dgvChiTiet_CellClick(object sender, DataGridViewCellEventArgs e) {
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvChiTiet.Columns["colDetails"].Index) {
+        private void dtpNgayKetThuc_ValueChanged(object sender, EventArgs e)
+        {
+            LoadBaoCao();
+        }
+
+        private void dgvChiTiet_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvChiTiet.Columns["colDetails"].Index)
+            {
                 ChiTietBaoCao report = dgvChiTiet.Rows[e.RowIndex].DataBoundItem as ChiTietBaoCao;
                 var products = report.SanPham;
-                
+
                 FormChiTietHoaDonView frmEdit = new FormChiTietHoaDonView();
                 frmEdit.SoldProducts = report.SanPham;
                 frmEdit.ReceiptId = report.MaHoaDon;
-                
+
                 frmEdit.ShowDialog();
+            }
+        }
+
+        private void dgvChiTiet_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+            if (dgvChiTiet.Columns[e.ColumnIndex].Name == "colDetails")
+            {
+                dgvChiTiet.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(41, 128, 185); // Xanh đậm
+                dgvChiTiet.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                dgvChiTiet.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            }
+        }
+
+        private void dgvChiTiet_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+            if (dgvChiTiet.Columns[e.ColumnIndex].Name == "colDetails")
+            {
+                dgvChiTiet.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.FromArgb(52, 152, 219); // Xanh dương
+                dgvChiTiet.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                dgvChiTiet.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             }
         }
     }
