@@ -76,79 +76,6 @@ namespace CHTL.GUI.BaoCao
             // Tùy chỉnh DateTimePicker
             dtpNgayBatDau.Font = new Font("Segoe UI", 12F);
             dtpNgayKetThuc.Font = new Font("Segoe UI", 12F);
-
-            // Tùy chỉnh các biểu đồ
-            CustomizeCharts();
-        }
-
-        private void CustomizeCharts()
-        {
-            // Tùy chỉnh biểu đồ chung
-            Color backColor = Color.FromArgb(236, 240, 241); // Xám nhạt
-            Color titleColor = Color.FromArgb(44, 62, 80); // Xám đậm
-            Color labelColor = Color.FromArgb(44, 62, 80); // Xám đậm
-            Font titleFont = new Font("Segoe UI", 12F, FontStyle.Bold);
-            Font labelFont = new Font("Segoe UI", 10F);
-
-            // Tùy chỉnh biểu đồ doanh thu theo ngày (cột)
-            chartDoanhThuTheoNgay.BackColor = backColor;
-            chartDoanhThuTheoNgay.ChartAreas[0].BackColor = backColor;
-            chartDoanhThuTheoNgay.Titles.Clear();
-            chartDoanhThuTheoNgay.Titles.Add(new Title("Doanh Thu Theo Ngày", Docking.Top, titleFont, titleColor));
-            chartDoanhThuTheoNgay.ChartAreas[0].AxisX.Title = "Ngày";
-            chartDoanhThuTheoNgay.ChartAreas[0].AxisX.TitleFont = labelFont;
-            chartDoanhThuTheoNgay.ChartAreas[0].AxisX.LabelStyle.Font = labelFont;
-            chartDoanhThuTheoNgay.ChartAreas[0].AxisX.LabelStyle.ForeColor = labelColor;
-            chartDoanhThuTheoNgay.ChartAreas[0].AxisY.Title = "Doanh Thu (VNĐ)";
-            chartDoanhThuTheoNgay.ChartAreas[0].AxisY.TitleFont = labelFont;
-            chartDoanhThuTheoNgay.ChartAreas[0].AxisY.LabelStyle.Font = labelFont;
-            chartDoanhThuTheoNgay.ChartAreas[0].AxisY.LabelStyle.ForeColor = labelColor;
-            chartDoanhThuTheoNgay.Legends[0].Enabled = true;
-            chartDoanhThuTheoNgay.Legends[0].Font = labelFont;
-            chartDoanhThuTheoNgay.Legends[0].ForeColor = labelColor;
-
-            // Tùy chỉnh biểu đồ số lượng hóa đơn theo ngày (đường)
-            chartHoaDonTheoNgay.BackColor = backColor;
-            chartHoaDonTheoNgay.ChartAreas[0].BackColor = backColor;
-            chartHoaDonTheoNgay.Titles.Clear();
-            chartHoaDonTheoNgay.Titles.Add(new Title("Số Lượng Hóa Đơn Theo Ngày", Docking.Top, titleFont, titleColor));
-            chartHoaDonTheoNgay.ChartAreas[0].AxisX.Title = "Ngày";
-            chartHoaDonTheoNgay.ChartAreas[0].AxisX.TitleFont = labelFont;
-            chartHoaDonTheoNgay.ChartAreas[0].AxisX.LabelStyle.Font = labelFont;
-            chartHoaDonTheoNgay.ChartAreas[0].AxisX.LabelStyle.ForeColor = labelColor;
-            chartHoaDonTheoNgay.ChartAreas[0].AxisY.Title = "Số Lượng Hóa Đơn";
-            chartHoaDonTheoNgay.ChartAreas[0].AxisY.TitleFont = labelFont;
-            chartHoaDonTheoNgay.ChartAreas[0].AxisY.LabelStyle.Font = labelFont;
-            chartHoaDonTheoNgay.ChartAreas[0].AxisY.LabelStyle.ForeColor = labelColor;
-            chartHoaDonTheoNgay.Legends[0].Enabled = true;
-            chartHoaDonTheoNgay.Legends[0].Font = labelFont;
-            chartHoaDonTheoNgay.Legends[0].ForeColor = labelColor;
-
-            // Tùy chỉnh biểu đồ số lượng sản phẩm theo danh mục (vùng)
-            chartSanPhamTheoDanhMuc.BackColor = backColor;
-            chartSanPhamTheoDanhMuc.ChartAreas[0].BackColor = backColor;
-            chartSanPhamTheoDanhMuc.Titles.Clear();
-            chartSanPhamTheoDanhMuc.Titles.Add(new Title("Số Lượng Sản Phẩm Bán Ra Theo Danh Mục", Docking.Top, titleFont, titleColor));
-            chartSanPhamTheoDanhMuc.ChartAreas[0].AxisX.Title = "Danh Mục";
-            chartSanPhamTheoDanhMuc.ChartAreas[0].AxisX.TitleFont = labelFont;
-            chartSanPhamTheoDanhMuc.ChartAreas[0].AxisX.LabelStyle.Font = labelFont;
-            chartSanPhamTheoDanhMuc.ChartAreas[0].AxisX.LabelStyle.ForeColor = labelColor;
-            chartSanPhamTheoDanhMuc.ChartAreas[0].AxisY.Title = "Số Lượng Bán Ra";
-            chartSanPhamTheoDanhMuc.ChartAreas[0].AxisY.TitleFont = labelFont;
-            chartSanPhamTheoDanhMuc.ChartAreas[0].AxisY.LabelStyle.Font = labelFont;
-            chartSanPhamTheoDanhMuc.ChartAreas[0].AxisY.LabelStyle.ForeColor = labelColor;
-            chartSanPhamTheoDanhMuc.Legends[0].Enabled = true;
-            chartSanPhamTheoDanhMuc.Legends[0].Font = labelFont;
-            chartSanPhamTheoDanhMuc.Legends[0].ForeColor = labelColor;
-
-            // Tùy chỉnh biểu đồ doanh thu theo danh mục (tròn)
-            chartDoanhThuTheoDanhMuc.BackColor = backColor;
-            chartDoanhThuTheoDanhMuc.ChartAreas[0].BackColor = backColor;
-            chartDoanhThuTheoDanhMuc.Titles.Clear();
-            chartDoanhThuTheoDanhMuc.Titles.Add(new Title("Doanh Thu Theo Danh Mục", Docking.Top, titleFont, titleColor));
-            chartDoanhThuTheoDanhMuc.Legends[0].Enabled = true;
-            chartDoanhThuTheoDanhMuc.Legends[0].Font = labelFont;
-            chartDoanhThuTheoDanhMuc.Legends[0].ForeColor = labelColor;
         }
 
         private void FormBaoCaoView_Load(object sender, EventArgs e)
@@ -172,133 +99,21 @@ namespace CHTL.GUI.BaoCao
             dgvChiTiet.DataSource = baoCao.ChiTietHoaDon;
             CustomizeDataGridView();
 
-            // Vẽ các biểu đồ
-            DrawDoanhThuTheoNgayChart();
-            DrawHoaDonTheoNgayChart();
-            DrawSanPhamTheoDanhMucChart();
-            DrawDoanhThuTheoDanhMucChart();
-        }
-
-        private void DrawDoanhThuTheoNgayChart()
-        {
-            chartDoanhThuTheoNgay.Series.Clear();
-            chartDoanhThuTheoNgay.ChartAreas.Clear();
-            chartDoanhThuTheoNgay.ChartAreas.Add(new ChartArea());
-            chartDoanhThuTheoNgay.Legends.Clear();
-            chartDoanhThuTheoNgay.Legends.Add(new Legend());
-
-            // Tính toán doanh thu theo ngày
-            var doanhThuTheoNgay = baoCao.ChiTietHoaDon
-                .GroupBy(hd => hd.NgayBan.Date)
-                .Select(g => new { Ngay = g.Key, TongTien = g.Sum(hd => hd.TongTien) })
-                .OrderBy(x => x.Ngay)
-                .ToList();
-
-            Series series = new Series("DoanhThu")
-            {
-                ChartType = SeriesChartType.Column,
-                Color = Color.FromArgb(52, 152, 219), // Xanh dương
-            };
-
-            foreach (var item in doanhThuTheoNgay)
-            {
-                series.Points.AddXY(item.Ngay.ToString("dd/MM/yyyy"), item.TongTien);
-            }
-
-            chartDoanhThuTheoNgay.Series.Add(series);
-            chartDoanhThuTheoNgay.ChartAreas[0].AxisX.Interval = 1;
-            chartDoanhThuTheoNgay.ChartAreas[0].AxisX.LabelStyle.Angle = 45; // Xoay nhãn trục X để dễ đọc
-        }
-
-        private void DrawHoaDonTheoNgayChart()
-        {
-            chartHoaDonTheoNgay.Series.Clear();
-            chartHoaDonTheoNgay.ChartAreas.Clear();
-            chartHoaDonTheoNgay.ChartAreas.Add(new ChartArea());
-            chartHoaDonTheoNgay.Legends.Clear();
-            chartHoaDonTheoNgay.Legends.Add(new Legend());
-
-            // Tính toán số lượng hóa đơn theo ngày
-            var hoaDonTheoNgay = baoCao.ChiTietHoaDon
-                .GroupBy(hd => hd.NgayBan.Date)
-                .Select(g => new { Ngay = g.Key, SoLuong = g.Count() })
-                .OrderBy(x => x.Ngay)
-                .ToList();
-
-            Series series = new Series("SoLuongHoaDon")
-            {
-                ChartType = SeriesChartType.Line,
-                Color = Color.FromArgb(231, 76, 60), // Đỏ nhạt
-                BorderWidth = 3,
-            };
-
-            foreach (var item in hoaDonTheoNgay)
-            {
-                series.Points.AddXY(item.Ngay.ToString("dd/MM/yyyy"), item.SoLuong);
-            }
-
-            chartHoaDonTheoNgay.Series.Add(series);
-            chartHoaDonTheoNgay.ChartAreas[0].AxisX.Interval = 1;
-            chartHoaDonTheoNgay.ChartAreas[0].AxisX.LabelStyle.Angle = 45; // Xoay nhãn trục X để dễ đọc
-        }
-
-        private void DrawSanPhamTheoDanhMucChart()
-        {
-            chartSanPhamTheoDanhMuc.Series.Clear();
-            chartSanPhamTheoDanhMuc.ChartAreas.Clear();
-            chartSanPhamTheoDanhMuc.ChartAreas.Add(new ChartArea());
-            chartSanPhamTheoDanhMuc.Legends.Clear();
-            chartSanPhamTheoDanhMuc.Legends.Add(new Legend());
-
-            // Tính toán số lượng sản phẩm bán ra theo danh mục
-            var sanPhamTheoDanhMuc = new Dictionary<string, int>();
-            foreach (var chiTiet in baoCao.ChiTietHoaDon)
-            {
-                foreach (var sp in chiTiet.SanPham)
-                {
-                    // Giả sử sản phẩm có thuộc tính DanhMuc (thêm vào model nếu cần)
-                    string danhMuc = sp.TenSanPham ?? "Không xác định"; // Cần thêm thuộc tính DanhMuc vào model SanPham
-                    if (sanPhamTheoDanhMuc.ContainsKey(danhMuc))
-                    {
-                        sanPhamTheoDanhMuc[danhMuc] += sp.SoLuong;
-                    }
-                    else
-                    {
-                        sanPhamTheoDanhMuc[danhMuc] = sp.SoLuong;
-                    }
-                }
-            }
-
-            Series series = new Series("SoLuongSanPham")
-            {
-                ChartType = SeriesChartType.Area,
-                Color = Color.FromArgb(46, 204, 113), // Xanh lá nhạt
-            };
-
-            foreach (var item in sanPhamTheoDanhMuc)
-            {
-                series.Points.AddXY(item.Key, item.Value);
-            }
-
-            chartSanPhamTheoDanhMuc.Series.Add(series);
-            chartSanPhamTheoDanhMuc.ChartAreas[0].AxisX.Interval = 1;
-        }
-
-        private void DrawDoanhThuTheoDanhMucChart()
-        {
-            chartDoanhThuTheoDanhMuc.Series.Clear();
-            chartDoanhThuTheoDanhMuc.ChartAreas.Clear();
-            chartDoanhThuTheoDanhMuc.ChartAreas.Add(new ChartArea());
-            chartDoanhThuTheoDanhMuc.Legends.Clear();
-            chartDoanhThuTheoDanhMuc.Legends.Add(new Legend());
+            // Vẽ biểu đồ doanh thu theo danh mục
+            chartDoanhThu.Series.Clear();
+            chartDoanhThu.ChartAreas.Clear();
+            chartDoanhThu.ChartAreas.Add(new ChartArea());
+            chartDoanhThu.BackColor = Color.FromArgb(236, 240, 241); // Xám nhạt
+            chartDoanhThu.ChartAreas[0].BackColor = Color.FromArgb(236, 240, 241);
+            chartDoanhThu.Titles.Clear();
+            chartDoanhThu.Titles.Add(new Title("Doanh Thu Theo Danh Mục", Docking.Top, new Font("Segoe UI", 14F, FontStyle.Bold), Color.FromArgb(44, 62, 80)));
 
             Series series = new Series("DoanhThu")
             {
                 ChartType = SeriesChartType.Pie,
                 IsValueShownAsLabel = true,
                 LabelForeColor = Color.FromArgb(44, 62, 80),
-                Font = new Font("Segoe UI", 10F),
-                LabelFormat = "{0:N0} VNĐ (#PERCENT)", // Hiển thị giá trị và tỷ lệ phần trăm
+                Font = new Font("Segoe UI", 10F)
             };
 
             Color[] colors = new Color[]
@@ -315,12 +130,11 @@ namespace CHTL.GUI.BaoCao
             {
                 var point = series.Points.AddXY(item.Key, item.Value);
                 series.Points[point].Color = colors[colorIndex % colors.Length];
-                series.Points[point].LegendText = $"{item.Key}: {item.Value:N0} VNĐ"; // Chú giải chi tiết
                 colorIndex++;
             }
 
-            chartDoanhThuTheoDanhMuc.Series.Add(series);
-            chartDoanhThuTheoDanhMuc.ChartAreas[0].Area3DStyle.Enable3D = true;
+            chartDoanhThu.Series.Add(series);
+            chartDoanhThu.ChartAreas[0].Area3DStyle.Enable3D = true;
         }
 
         private void CustomizeDataGridView()

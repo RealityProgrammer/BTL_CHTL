@@ -1,6 +1,5 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
-
 namespace CHTL.GUI.BaoCao
 {
     partial class FormBaoCaoView
@@ -38,14 +37,7 @@ namespace CHTL.GUI.BaoCao
             this.colTongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabBieuDo = new System.Windows.Forms.TabPage();
-            this.panelChartDoanhThuTheoNgay = new System.Windows.Forms.Panel();
-            this.chartDoanhThuTheoNgay = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panelChartHoaDonTheoNgay = new System.Windows.Forms.Panel();
-            this.chartHoaDonTheoNgay = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panelChartSanPhamTheoDanhMuc = new System.Windows.Forms.Panel();
-            this.chartSanPhamTheoDanhMuc = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panelChartDoanhThuTheoDanhMuc = new System.Windows.Forms.Panel();
-            this.chartDoanhThuTheoDanhMuc = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartDoanhThu = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dtpNgayBatDau = new Krypton.Toolkit.KryptonDateTimePicker();
             this.dtpNgayKetThuc = new Krypton.Toolkit.KryptonDateTimePicker();
             this.btnXemBaoCao = new Krypton.Toolkit.KryptonButton();
@@ -59,14 +51,7 @@ namespace CHTL.GUI.BaoCao
             this.tabChiTiet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTiet)).BeginInit();
             this.tabBieuDo.SuspendLayout();
-            this.panelChartDoanhThuTheoNgay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThuTheoNgay)).BeginInit();
-            this.panelChartHoaDonTheoNgay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartHoaDonTheoNgay)).BeginInit();
-            this.panelChartSanPhamTheoDanhMuc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartSanPhamTheoDanhMuc)).BeginInit();
-            this.panelChartDoanhThuTheoDanhMuc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThuTheoDanhMuc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -247,83 +232,21 @@ namespace CHTL.GUI.BaoCao
             // 
             // tabBieuDo
             // 
-            this.tabBieuDo.Controls.Add(this.panelChartDoanhThuTheoNgay);
-            this.tabBieuDo.Controls.Add(this.panelChartHoaDonTheoNgay);
-            this.tabBieuDo.Controls.Add(this.panelChartSanPhamTheoDanhMuc);
-            this.tabBieuDo.Controls.Add(this.panelChartDoanhThuTheoDanhMuc);
+            this.tabBieuDo.Controls.Add(this.chartDoanhThu);
             this.tabBieuDo.Location = new System.Drawing.Point(4, 34);
             this.tabBieuDo.Name = "tabBieuDo";
             this.tabBieuDo.Size = new System.Drawing.Size(922, 472);
             this.tabBieuDo.TabIndex = 2;
             this.tabBieuDo.Text = "Biểu Đồ";
             // 
-            // panelChartDoanhThuTheoNgay
+            // chartDoanhThu
             // 
-            this.panelChartDoanhThuTheoNgay.Controls.Add(this.chartDoanhThuTheoNgay);
-            this.panelChartDoanhThuTheoNgay.Location = new System.Drawing.Point(10, 10);
-            this.panelChartDoanhThuTheoNgay.Name = "panelChartDoanhThuTheoNgay";
-            this.panelChartDoanhThuTheoNgay.Size = new System.Drawing.Size(450, 230);
-            this.panelChartDoanhThuTheoNgay.TabIndex = 0;
-            // 
-            // chartDoanhThuTheoNgay
-            // 
-            this.chartDoanhThuTheoNgay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartDoanhThuTheoNgay.Location = new System.Drawing.Point(0, 0);
-            this.chartDoanhThuTheoNgay.Name = "chartDoanhThuTheoNgay";
-            this.chartDoanhThuTheoNgay.Size = new System.Drawing.Size(450, 230);
-            this.chartDoanhThuTheoNgay.TabIndex = 0;
-            this.chartDoanhThuTheoNgay.Text = "chartDoanhThuTheoNgay";
-            // 
-            // panelChartHoaDonTheoNgay
-            // 
-            this.panelChartHoaDonTheoNgay.Controls.Add(this.chartHoaDonTheoNgay);
-            this.panelChartHoaDonTheoNgay.Location = new System.Drawing.Point(470, 10);
-            this.panelChartHoaDonTheoNgay.Name = "panelChartHoaDonTheoNgay";
-            this.panelChartHoaDonTheoNgay.Size = new System.Drawing.Size(450, 230);
-            this.panelChartHoaDonTheoNgay.TabIndex = 1;
-            // 
-            // chartHoaDonTheoNgay
-            // 
-            this.chartHoaDonTheoNgay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartHoaDonTheoNgay.Location = new System.Drawing.Point(0, 0);
-            this.chartHoaDonTheoNgay.Name = "chartHoaDonTheoNgay";
-            this.chartHoaDonTheoNgay.Size = new System.Drawing.Size(450, 230);
-            this.chartHoaDonTheoNgay.TabIndex = 0;
-            this.chartHoaDonTheoNgay.Text = "chartHoaDonTheoNgay";
-            // 
-            // panelChartSanPhamTheoDanhMuc
-            // 
-            this.panelChartSanPhamTheoDanhMuc.Controls.Add(this.chartSanPhamTheoDanhMuc);
-            this.panelChartSanPhamTheoDanhMuc.Location = new System.Drawing.Point(10, 250);
-            this.panelChartSanPhamTheoDanhMuc.Name = "panelChartSanPhamTheoDanhMuc";
-            this.panelChartSanPhamTheoDanhMuc.Size = new System.Drawing.Size(450, 230);
-            this.panelChartSanPhamTheoDanhMuc.TabIndex = 2;
-            // 
-            // chartSanPhamTheoDanhMuc
-            // 
-            this.chartSanPhamTheoDanhMuc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartSanPhamTheoDanhMuc.Location = new System.Drawing.Point(0, 0);
-            this.chartSanPhamTheoDanhMuc.Name = "chartSanPhamTheoDanhMuc";
-            this.chartSanPhamTheoDanhMuc.Size = new System.Drawing.Size(450, 230);
-            this.chartSanPhamTheoDanhMuc.TabIndex = 0;
-            this.chartSanPhamTheoDanhMuc.Text = "chartSanPhamTheoDanhMuc";
-            // 
-            // panelChartDoanhThuTheoDanhMuc
-            // 
-            this.panelChartDoanhThuTheoDanhMuc.Controls.Add(this.chartDoanhThuTheoDanhMuc);
-            this.panelChartDoanhThuTheoDanhMuc.Location = new System.Drawing.Point(470, 250);
-            this.panelChartDoanhThuTheoDanhMuc.Name = "panelChartDoanhThuTheoDanhMuc";
-            this.panelChartDoanhThuTheoDanhMuc.Size = new System.Drawing.Size(450, 230);
-            this.panelChartDoanhThuTheoDanhMuc.TabIndex = 3;
-            // 
-            // chartDoanhThuTheoDanhMuc
-            // 
-            this.chartDoanhThuTheoDanhMuc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartDoanhThuTheoDanhMuc.Location = new System.Drawing.Point(0, 0);
-            this.chartDoanhThuTheoDanhMuc.Name = "chartDoanhThuTheoDanhMuc";
-            this.chartDoanhThuTheoDanhMuc.Size = new System.Drawing.Size(450, 230);
-            this.chartDoanhThuTheoDanhMuc.TabIndex = 0;
-            this.chartDoanhThuTheoDanhMuc.Text = "chartDoanhThuTheoDanhMuc";
+            this.chartDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartDoanhThu.Location = new System.Drawing.Point(0, 0);
+            this.chartDoanhThu.Name = "chartDoanhThu";
+            this.chartDoanhThu.Size = new System.Drawing.Size(922, 472);
+            this.chartDoanhThu.TabIndex = 10;
+            this.chartDoanhThu.Text = "chartDoanhThu";
             // 
             // dtpNgayBatDau
             // 
@@ -476,14 +399,7 @@ namespace CHTL.GUI.BaoCao
             this.tabChiTiet.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTiet)).EndInit();
             this.tabBieuDo.ResumeLayout(false);
-            this.panelChartDoanhThuTheoNgay.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThuTheoNgay)).EndInit();
-            this.panelChartHoaDonTheoNgay.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartHoaDonTheoNgay)).EndInit();
-            this.panelChartSanPhamTheoDanhMuc.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartSanPhamTheoDanhMuc)).EndInit();
-            this.panelChartDoanhThuTheoDanhMuc.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThuTheoDanhMuc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -497,14 +413,6 @@ namespace CHTL.GUI.BaoCao
         private System.Windows.Forms.DataGridViewTextBoxColumn colTongTien;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panelChartDoanhThuTheoNgay;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartDoanhThuTheoNgay;
-        private System.Windows.Forms.Panel panelChartHoaDonTheoNgay;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartHoaDonTheoNgay;
-        private System.Windows.Forms.Panel panelChartSanPhamTheoDanhMuc;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartSanPhamTheoDanhMuc;
-        private System.Windows.Forms.Panel panelChartDoanhThuTheoDanhMuc;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartDoanhThuTheoDanhMuc;
 
         #endregion
 
@@ -521,6 +429,7 @@ namespace CHTL.GUI.BaoCao
         private System.Windows.Forms.Label lblSanPhamBanChay;
         private System.Windows.Forms.Label lblSoLuongBanChay;
         private System.Windows.Forms.DataGridView dgvChiTiet;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartDoanhThu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
