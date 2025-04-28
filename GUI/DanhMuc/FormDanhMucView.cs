@@ -164,9 +164,10 @@ namespace CHTL.GUI.DanhMuc
 
         public override void btn_add_Click(object sender, EventArgs e)
         {
-            FormDanhMucAdd frmAdd = new FormDanhMucAdd();
-            frmAdd.ShowDialog();
-            LoadData();
+            FormDanhMucAdd formAdd = new FormDanhMucAdd();
+            // Bỏ logic mở lại form trong FormClosed, chỉ làm mới dữ liệu sau khi form đóng
+            formAdd.ShowDialog();
+            LoadData(); // Làm mới dữ liệu sau khi thêm danh mục
         }
 
         private void dgv_danh_muc_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -178,7 +178,7 @@ namespace CHTL.GUI.SanPham {
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(822, 103);
+            this.kryptonPanel1.Size = new System.Drawing.Size(824, 103);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.kryptonPanel1.TabIndex = 2;
             // 
@@ -195,9 +195,9 @@ namespace CHTL.GUI.SanPham {
             this.kryptonPanel3.Controls.Add(this.btn_close);
             this.kryptonPanel3.Controls.Add(this.btn_save);
             this.kryptonPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.kryptonPanel3.Location = new System.Drawing.Point(0, 353);
+            this.kryptonPanel3.Location = new System.Drawing.Point(0, 346);
             this.kryptonPanel3.Name = "kryptonPanel3";
-            this.kryptonPanel3.Size = new System.Drawing.Size(822, 107);
+            this.kryptonPanel3.Size = new System.Drawing.Size(824, 107);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.kryptonPanel3.TabIndex = 3;
             // 
@@ -310,7 +310,7 @@ namespace CHTL.GUI.SanPham {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 460);
+            this.ClientSize = new System.Drawing.Size(824, 453);
             this.Controls.Add(this.cbCategoryId);
             this.Controls.Add(this.dtpExpiration);
             this.Controls.Add(this.textboxSale);

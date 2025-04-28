@@ -42,7 +42,7 @@
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Size = new System.Drawing.Size(502, 103);
+            this.kryptonPanel1.Size = new System.Drawing.Size(504, 103);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
             // kryptonPanel2
@@ -51,13 +51,13 @@
             this.kryptonPanel2.Controls.Add(this.txt_ma_danh_muc);
             this.kryptonPanel2.Controls.Add(this.lbl_ten_danh_muc);
             this.kryptonPanel2.Controls.Add(this.lbl_ma_danh_muc);
-            this.kryptonPanel2.Size = new System.Drawing.Size(502, 347);
+            this.kryptonPanel2.Size = new System.Drawing.Size(504, 340);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
             // 
             // kryptonPanel3
             // 
-            this.kryptonPanel3.Location = new System.Drawing.Point(0, 343);
-            this.kryptonPanel3.Size = new System.Drawing.Size(502, 107);
+            this.kryptonPanel3.Location = new System.Drawing.Point(0, 336);
+            this.kryptonPanel3.Size = new System.Drawing.Size(504, 107);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
             // kryptonLabel1
@@ -102,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 450);
+            this.ClientSize = new System.Drawing.Size(504, 443);
             this.Name = "FormDanhMucEdit";
             this.Text = "FormDanhMucEdit";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

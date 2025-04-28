@@ -49,7 +49,7 @@
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Size = new System.Drawing.Size(767, 103);
+            this.kryptonPanel1.Size = new System.Drawing.Size(769, 103);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
             // kryptonPanel2
@@ -64,26 +64,33 @@
             this.kryptonPanel2.Controls.Add(this.kryptonLabel3);
             this.kryptonPanel2.Controls.Add(this.kryptonLabel2);
             this.kryptonPanel2.Controls.Add(this.kryptonLabel1_1);
-            this.kryptonPanel2.Size = new System.Drawing.Size(767, 407);
+            this.kryptonPanel2.Size = new System.Drawing.Size(769, 400);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
             // 
             // kryptonPanel3
             // 
-            this.kryptonPanel3.Location = new System.Drawing.Point(0, 403);
-            this.kryptonPanel3.Size = new System.Drawing.Size(767, 107);
+            this.kryptonPanel3.Location = new System.Drawing.Point(0, 396);
+            this.kryptonPanel3.Size = new System.Drawing.Size(769, 107);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonLabel1.StateCommon.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel1.Values.Text = "ADD";
             // 
             // kryptonLabel1_1
             // 
-            this.kryptonLabel1_1.Location = new System.Drawing.Point(75, 67);
-            this.kryptonLabel1_1.Name = "kryptonLabel1";
+            this.kryptonLabel1_1.Location = new System.Drawing.Point(72, 67);
+            this.kryptonLabel1_1.Name = "kryptonLabel1_1";
             this.kryptonLabel1_1.Size = new System.Drawing.Size(117, 24);
             this.kryptonLabel1_1.TabIndex = 0;
             this.kryptonLabel1_1.Values.Text = "Mã người dùng";
             // 
             // kryptonLabel2
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(75, 126);
+            this.kryptonLabel2.Location = new System.Drawing.Point(72, 126);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(114, 24);
             this.kryptonLabel2.TabIndex = 1;
@@ -91,7 +98,7 @@
             // 
             // kryptonLabel3
             // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(75, 187);
+            this.kryptonLabel3.Location = new System.Drawing.Point(72, 187);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.Size = new System.Drawing.Size(76, 24);
             this.kryptonLabel3.TabIndex = 2;
@@ -99,7 +106,7 @@
             // 
             // kryptonLabel4
             // 
-            this.kryptonLabel4.Location = new System.Drawing.Point(413, 67);
+            this.kryptonLabel4.Location = new System.Drawing.Point(410, 67);
             this.kryptonLabel4.Name = "kryptonLabel4";
             this.kryptonLabel4.Size = new System.Drawing.Size(57, 24);
             this.kryptonLabel4.TabIndex = 3;
@@ -107,7 +114,7 @@
             // 
             // kryptonLabel5
             // 
-            this.kryptonLabel5.Location = new System.Drawing.Point(413, 126);
+            this.kryptonLabel5.Location = new System.Drawing.Point(410, 126);
             this.kryptonLabel5.Name = "kryptonLabel5";
             this.kryptonLabel5.Size = new System.Drawing.Size(77, 24);
             this.kryptonLabel5.TabIndex = 4;
@@ -149,14 +156,14 @@
             "NhanVien"});
             this.cbVaiTro.Location = new System.Drawing.Point(512, 69);
             this.cbVaiTro.Name = "cbVaiTro";
-            this.cbVaiTro.Size = new System.Drawing.Size(163, 25);
+            this.cbVaiTro.Size = new System.Drawing.Size(163, 26);
             this.cbVaiTro.TabIndex = 15;
             // 
             // FormNguoiDungAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 510);
+            this.ClientSize = new System.Drawing.Size(769, 503);
             this.Name = "FormNguoiDungAdd";
             this.Text = "FormNguoiDungAdd";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
