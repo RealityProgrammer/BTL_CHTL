@@ -316,11 +316,11 @@
     <Compile Include="DanhMuc\FormDanhMucAdd.Designer.cs">
       <DependentUpon>FormDanhMucAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\DanhMucFormEdit.cs">
+    <Compile Include="DanhMuc\FormDanhMucEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\DanhMucFormEdit.Designer.cs">
-      <DependentUpon>DanhMucFormEdit.cs</DependentUpon>
+    <Compile Include="DanhMuc\FormDanhMucEdit.Designer.cs">
+      <DependentUpon>FormDanhMucEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\FormDanhMucView.cs">
       <SubType>Form</SubType>
@@ -409,8 +409,8 @@
     <EmbeddedResource Include="DanhMuc\FormDanhMucAdd.resx">
       <DependentUpon>FormDanhMucAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\DanhMucFormEdit.resx">
-      <DependentUpon>DanhMucFormEdit.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMuc\FormDanhMucEdit.resx">
+      <DependentUpon>FormDanhMucEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FormDanhMucView.resx">
       <DependentUpon>FormDanhMucView.cs</DependentUpon>

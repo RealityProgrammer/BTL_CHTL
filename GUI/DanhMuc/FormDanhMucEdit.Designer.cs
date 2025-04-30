@@ -1,6 +1,6 @@
 ﻿namespace CHTL.GUI.DanhMuc
 {
-    partial class DanhMucFormEdit
+    partial class FormDanhMucEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -103,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 443);
-            this.Name = "DanhMucFormEdit";
+            this.Name = "FormDanhMucEdit";
             this.Text = "FormDanhMucEdit";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();

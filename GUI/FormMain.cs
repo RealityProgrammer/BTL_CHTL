@@ -115,14 +115,14 @@ namespace CHTL.GUI
 
         private void btn_nguoi_dung_Click(object sender, EventArgs e)
         {
-            // FormNguoiDungView formNguoiDung = new FormNguoiDungView();
-            // ShowFormInPanel(formNguoiDung, btnNguoiDung);
+            FormNguoiDungView formNguoiDung = new FormNguoiDungView();
+            ShowFormInPanel(formNguoiDung, btnNguoiDung);
         }
 
         private void btn_danh_muc_Click(object sender, EventArgs e)
         {
-            // FormDanhMucView formDanhMuc = new FormDanhMucView();
-            // ShowFormInPanel(formDanhMuc, btnDanhMuc);
+            FormDanhMucView formDanhMuc = new FormDanhMucView();
+            ShowFormInPanel(formDanhMuc, btnDanhMuc);
         }
 
         private void btn_san_pham_Click(object sender, EventArgs e)

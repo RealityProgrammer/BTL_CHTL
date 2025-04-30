@@ -26,7 +26,7 @@ namespace CHTL.GUI.Abstracts {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DanhMuc.FormDanhMucView));
             this.panelHeaderSearch = new Krypton.Toolkit.KryptonPanel();
             this.txt_search = new Krypton.Toolkit.KryptonTextBox();
             this.labelSearch = new Krypton.Toolkit.KryptonLabel();

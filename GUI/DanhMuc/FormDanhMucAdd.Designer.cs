@@ -26,39 +26,38 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
             this.txt_ma_danh_muc = new Krypton.Toolkit.KryptonTextBox();
             this.txt_ten_danh_muc = new Krypton.Toolkit.KryptonTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.panelFooter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).BeginInit();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).BeginInit();
             this.panelBody.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelFooter)).BeginInit();
             this.SuspendLayout();
             // 
-            // kryptonPanel1
+            // panelFooter
             // 
-            this.panelHeader.Size = new System.Drawing.Size(532, 103);
+            this.panelFooter.Location = new System.Drawing.Point(0, 333);
+            this.panelFooter.Size = new System.Drawing.Size(725, 107);
+            this.panelFooter.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.Size = new System.Drawing.Size(725, 103);
             this.panelHeader.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
-            // kryptonPanel2
+            // panelBody
             // 
             this.panelBody.Controls.Add(this.txt_ten_danh_muc);
             this.panelBody.Controls.Add(this.txt_ma_danh_muc);
             this.panelBody.Controls.Add(this.kryptonLabel3);
             this.panelBody.Controls.Add(this.kryptonLabel2);
-            this.panelBody.Size = new System.Drawing.Size(532, 298);
+            this.panelBody.Size = new System.Drawing.Size(725, 337);
             this.panelBody.StateCommon.Color1 = System.Drawing.Color.White;
-            // 
-            // kryptonPanel3
-            // 
-            this.panelFooter.Location = new System.Drawing.Point(0, 294);
-            this.panelFooter.Size = new System.Drawing.Size(532, 107);
-            this.panelFooter.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
             // kryptonLabel1
             // 
@@ -102,9 +101,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 401);
+            this.ClientSize = new System.Drawing.Size(725, 440);
             this.Name = "FormDanhMucAdd";
             this.Text = "FormDanhMucAdd";
+            ((System.ComponentModel.ISupportInitialize)(this.panelFooter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).EndInit();
             this.panelHeader.ResumeLayout(false);
@@ -112,11 +112,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).EndInit();
             this.panelBody.ResumeLayout(false);
             this.panelBody.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelFooter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+        public Krypton.Toolkit.KryptonPanel panelHeader;
+        protected Krypton.Toolkit.KryptonPanel panelBody;
+        protected Krypton.Toolkit.KryptonPanel panelFooter;
 
         #endregion
 

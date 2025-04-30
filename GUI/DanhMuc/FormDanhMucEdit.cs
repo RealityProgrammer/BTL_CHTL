@@ -7,7 +7,7 @@ using Krypton.Toolkit;
 
 namespace CHTL.GUI.DanhMuc
 {
-    public partial class DanhMucFormEdit : FormEdit
+    public partial class FormDanhMucEdit : FormEdit
     {
         private XuLyDanhMuc xuLy = new XuLyDanhMuc();
         private CHTL.Models.DanhMucSanPham danhMucEdit;
@@ -23,7 +23,7 @@ namespace CHTL.GUI.DanhMuc
             }
         }
 
-        public DanhMucFormEdit()
+        public FormDanhMucEdit()
         {
             InitializeComponent();
             CustomizeForm();

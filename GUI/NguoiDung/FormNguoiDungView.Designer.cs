@@ -26,13 +26,14 @@ namespace CHTL.GUI.NguoiDung {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNguoiDungView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNguoiDungView));
             this.panelHeaderSearch = new Krypton.Toolkit.KryptonPanel();
             this.txt_search = new Krypton.Toolkit.KryptonTextBox();
             this.labelSearch = new Krypton.Toolkit.KryptonLabel();
             this.panelHeaderLeft = new Krypton.Toolkit.KryptonPanel();
+            this.btn_add = new Krypton.Toolkit.KryptonButton();
             this.labelHeader = new Krypton.Toolkit.KryptonLabel();
             this.panelHeader = new Krypton.Toolkit.KryptonPanel();
             this.separator = new Krypton.Toolkit.KryptonSeparator();
@@ -44,7 +45,6 @@ namespace CHTL.GUI.NguoiDung {
             this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btn_add = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelHeaderSearch)).BeginInit();
             this.panelHeaderSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelHeaderLeft)).BeginInit();
@@ -62,7 +62,7 @@ namespace CHTL.GUI.NguoiDung {
             this.panelHeaderSearch.Controls.Add(this.txt_search);
             this.panelHeaderSearch.Controls.Add(this.labelSearch);
             this.panelHeaderSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelHeaderSearch.Location = new System.Drawing.Point(369, 10);
+            this.panelHeaderSearch.Location = new System.Drawing.Point(498, 10);
             this.panelHeaderSearch.Name = "panelHeaderSearch";
             this.panelHeaderSearch.Size = new System.Drawing.Size(370, 115);
             this.panelHeaderSearch.StateCommon.Color1 = System.Drawing.Color.Transparent;
@@ -102,6 +102,17 @@ namespace CHTL.GUI.NguoiDung {
             this.panelHeaderLeft.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.panelHeaderLeft.TabIndex = 1;
             // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(0, 42);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(64, 64);
+            this.btn_add.TabIndex = 1;
+            this.btn_add.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btn_add.Values.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Values.Image")));
+            this.btn_add.Values.Text = "";
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
             // labelHeader
             // 
             this.labelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -120,7 +131,7 @@ namespace CHTL.GUI.NguoiDung {
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.panelHeader.Size = new System.Drawing.Size(749, 125);
+            this.panelHeader.Size = new System.Drawing.Size(878, 125);
             this.panelHeader.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelHeader.TabIndex = 0;
             // 
@@ -129,7 +140,7 @@ namespace CHTL.GUI.NguoiDung {
             this.separator.Dock = System.Windows.Forms.DockStyle.Top;
             this.separator.Location = new System.Drawing.Point(0, 125);
             this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(749, 10);
+            this.separator.Size = new System.Drawing.Size(878, 10);
             this.separator.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.separator.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
             this.separator.StateCommon.Separator.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -143,7 +154,7 @@ namespace CHTL.GUI.NguoiDung {
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(0, 135);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Size = new System.Drawing.Size(749, 352);
+            this.panelBody.Size = new System.Drawing.Size(878, 437);
             this.panelBody.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelBody.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.panelBody.TabIndex = 2;
@@ -161,7 +172,7 @@ namespace CHTL.GUI.NguoiDung {
             this.dgv_nguoi_dung.Location = new System.Drawing.Point(0, 0);
             this.dgv_nguoi_dung.Name = "dgv_nguoi_dung";
             this.dgv_nguoi_dung.RowHeadersWidth = 51;
-            this.dgv_nguoi_dung.Size = new System.Drawing.Size(749, 352);
+            this.dgv_nguoi_dung.Size = new System.Drawing.Size(878, 437);
             this.dgv_nguoi_dung.TabIndex = 5;
             this.dgv_nguoi_dung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellClick);
             // 
@@ -215,22 +226,11 @@ namespace CHTL.GUI.NguoiDung {
             this.colDelete.Text = "Xóa";
             this.colDelete.UseColumnTextForButtonValue = true;
             // 
-            // btn_add
-            // 
-            this.btn_add.Location = new System.Drawing.Point(0, 42);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(64, 64);
-            this.btn_add.TabIndex = 1;
-            this.btn_add.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btn_add.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.Values.Image")));
-            this.btn_add.Values.Text = "";
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
             // FormNguoiDungView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(749, 487);
+            this.ClientSize = new System.Drawing.Size(878, 572);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.panelHeader);
