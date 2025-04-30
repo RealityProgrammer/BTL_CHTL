@@ -113,9 +113,10 @@ namespace CHTL.GUI.DanhMuc {
         public void btn_add_Click(object sender, EventArgs e)
         {
             FormDanhMucAdd formAdd = new FormDanhMucAdd();
-            // Bỏ logic mở lại form trong FormClosed, chỉ làm mới dữ liệu sau khi form đóng
-            formAdd.ShowDialog();
-            LoadData(); // Làm mới dữ liệu sau khi thêm danh mục
+            
+            if (formAdd.ShowDialog() == DialogResult.OK) {
+                LoadData();
+            }
         }
 
         private void dgv_danh_muc_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -126,10 +127,12 @@ namespace CHTL.GUI.DanhMuc {
 
                 if (e.ColumnIndex == dgvDanhMuc.Columns["colEdit"].Index)
                 {
-                    // FormDanhMucEdit frmEdit = new FormDanhMucEdit();
-                    // frmEdit.DanhMucEdit = danhMuc;
-                    // frmEdit.ShowDialog();
-                    // LoadData();
+                    FormDanhMucEdit frmEdit = new FormDanhMucEdit();
+                    frmEdit.DanhMucEdit = danhMuc;
+
+                    if (frmEdit.ShowDialog() == DialogResult.OK) {
+                        LoadData();
+                    }
                 }
 
                 if (e.ColumnIndex == dgvDanhMuc.Columns["colDelete"].Index)

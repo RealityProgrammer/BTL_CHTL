@@ -101,12 +101,12 @@ namespace CHTL.GUI.NguoiDung {
             // 
             this.labelTitle.Location = new System.Drawing.Point(12, 28);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(345, 36);
+            this.labelTitle.Size = new System.Drawing.Size(324, 36);
             this.labelTitle.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
             this.labelTitle.StateCommon.ShortText.Color2 = System.Drawing.Color.White;
             this.labelTitle.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.TabIndex = 0;
-            this.labelTitle.Values.Text = "Thêm thông tin người dùng";
+            this.labelTitle.Values.Text = "Sửa thông tin người dùng";
             // 
             // panelBody
             // 

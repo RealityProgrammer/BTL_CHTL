@@ -310,12 +310,6 @@
       <DependentUpon>FormChiTietHoaDonView.cs</DependentUpon>
     </Compile>
     <Compile Include="Configurations.cs" />
-    <Compile Include="DanhMuc\FormDanhMucAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DanhMuc\FormDanhMucAdd.Designer.cs">
-      <DependentUpon>FormDanhMucAdd.cs</DependentUpon>
-    </Compile>
     <Compile Include="DanhMuc\FormDanhMucEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,6 +321,12 @@
     </Compile>
     <Compile Include="DanhMuc\FormDanhMucView.Designer.cs">
       <DependentUpon>FormDanhMucView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\FormDanhMucAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FormDanhMucAdd.Designer.cs">
+      <DependentUpon>FormDanhMucAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
@@ -406,14 +406,14 @@
     <EmbeddedResource Include="BaoCao\FormChiTietHoaDonView.resx">
       <DependentUpon>FormChiTietHoaDonView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\FormDanhMucAdd.resx">
-      <DependentUpon>FormDanhMucAdd.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FormDanhMucEdit.resx">
       <DependentUpon>FormDanhMucEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FormDanhMucView.resx">
       <DependentUpon>FormDanhMucView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FormDanhMucAdd.resx">
+      <DependentUpon>FormDanhMucAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>

@@ -82,9 +82,9 @@ namespace CHTL.GUI.NguoiDung {
 
         public void btn_add_Click(object sender, EventArgs e)
         {
-            FormNguoiDungAdd frmNguoiDungAdd = new FormNguoiDungAdd();
+            DanhMuc.FormDanhMucAdd frmDanhMucAdd = new DanhMuc.FormDanhMucAdd();
 
-            if (frmNguoiDungAdd.ShowDialog() == DialogResult.OK) {
+            if (frmDanhMucAdd.ShowDialog() == DialogResult.OK) {
                 LoadData(); // Refresh danh sách sau khi thêm
             }
         }
