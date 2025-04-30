@@ -1,22 +1,21 @@
-﻿namespace CHTL.GUI.Sample_Form
-{
-    partial class SampleAdd
-    {
+﻿using System.ComponentModel;
+
+namespace CHTL.GUI.Abstracts {
+    partial class FormEdit {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -26,8 +25,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -50,20 +48,20 @@
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(855, 103);
+            this.kryptonPanel1.Size = new System.Drawing.Size(713, 103);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.kryptonPanel1.TabIndex = 0;
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(148, 31);
+            this.kryptonLabel1.Location = new System.Drawing.Point(160, 31);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(74, 42);
+            this.kryptonLabel1.Size = new System.Drawing.Size(73, 42);
             this.kryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
             this.kryptonLabel1.StateCommon.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel1.TabIndex = 4;
-            this.kryptonLabel1.Values.Text = "ADD";
+            this.kryptonLabel1.TabIndex = 5;
+            this.kryptonLabel1.Values.Text = "EDIT";
             // 
             // pictureBox1
             // 
@@ -75,11 +73,10 @@
             // 
             // kryptonPanel2
             // 
-            this.kryptonPanel2.AutoSize = true;
             this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel2.Location = new System.Drawing.Point(0, 103);
             this.kryptonPanel2.Name = "kryptonPanel2";
-            this.kryptonPanel2.Size = new System.Drawing.Size(855, 388);
+            this.kryptonPanel2.Size = new System.Drawing.Size(713, 337);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
             this.kryptonPanel2.TabIndex = 1;
             // 
@@ -88,9 +85,9 @@
             this.kryptonPanel3.Controls.Add(this.btn_close);
             this.kryptonPanel3.Controls.Add(this.btn_save);
             this.kryptonPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.kryptonPanel3.Location = new System.Drawing.Point(0, 384);
+            this.kryptonPanel3.Location = new System.Drawing.Point(0, 333);
             this.kryptonPanel3.Name = "kryptonPanel3";
-            this.kryptonPanel3.Size = new System.Drawing.Size(855, 107);
+            this.kryptonPanel3.Size = new System.Drawing.Size(713, 107);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.kryptonPanel3.TabIndex = 1;
             // 
@@ -102,9 +99,7 @@
             this.btn_close.Size = new System.Drawing.Size(139, 50);
             this.btn_close.StateCommon.Back.Color1 = System.Drawing.Color.Red;
             this.btn_close.StateCommon.Back.Color2 = System.Drawing.Color.Red;
-            this.btn_close.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_close.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_close.StateCommon.Border.Rounding = 19F;
             this.btn_close.StateCommon.Border.Width = 1;
             this.btn_close.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
@@ -122,9 +117,7 @@
             this.btn_save.Size = new System.Drawing.Size(139, 50);
             this.btn_save.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_save.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_save.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_save.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_save.StateCommon.Border.Rounding = 19F;
             this.btn_save.StateCommon.Border.Width = 1;
             this.btn_save.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
@@ -134,16 +127,16 @@
             this.btn_save.Values.Text = "Save";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // SampleAdd
+            // SampleEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 491);
+            this.ClientSize = new System.Drawing.Size(713, 440);
             this.Controls.Add(this.kryptonPanel3);
             this.Controls.Add(this.kryptonPanel2);
             this.Controls.Add(this.kryptonPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "SampleAdd";
+            this.Name = "SampleEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SampleAdd";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
@@ -155,11 +148,10 @@
             this.kryptonPanel3.ResumeLayout(false);
             this.kryptonPanel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
 
         #endregion
+        
         public System.Windows.Forms.PictureBox pictureBox1;
         private Krypton.Toolkit.KryptonButton btn_close;
         private Krypton.Toolkit.KryptonButton btn_save;

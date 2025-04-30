@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 
 namespace CHTL.GUI.SanPham {
-    partial class FormSanPhamEdit {
+    partial class SanPhamFormEdit {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -327,7 +327,7 @@ namespace CHTL.GUI.SanPham {
             this.Controls.Add(kryptonLabel2);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.kryptonPanel3);
-            this.Name = "FormSanPhamEdit";
+            this.Name = "SanPhamFormEdit";
             this.Text = "FormSanPhamEdit";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);

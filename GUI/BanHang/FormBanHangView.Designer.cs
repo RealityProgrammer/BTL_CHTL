@@ -16,8 +16,13 @@ namespace CHTL.GUI.BanHang
 
         #region Windows Form Designer generated code
 
-        private void InitializeComponent()
-        {
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent() {
+            System.Windows.Forms.Panel panelHeader2;
+            System.Windows.Forms.Panel panelHeader3;
             this.flpSanPham = new System.Windows.Forms.FlowLayoutPanel();
             this.dgvChiTietHoaDon = new System.Windows.Forms.DataGridView();
             this.colTenSanPhamCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -35,17 +40,32 @@ namespace CHTL.GUI.BanHang
             this.lblNguoiBan = new Krypton.Toolkit.KryptonLabel();
             this.lblGrandTotalTitle = new Krypton.Toolkit.KryptonLabel();
             this.lblGrandTotal = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonTableLayoutPanel1 = new Krypton.Toolkit.KryptonTableLayoutPanel();
+            this.panelHeader1 = new System.Windows.Forms.Panel();
+            this.panelContent = new Krypton.Toolkit.KryptonTableLayoutPanel();
+            this.panelContent2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            panelHeader2 = new System.Windows.Forms.Panel();
+            panelHeader3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNguoiBan)).BeginInit();
+            this.kryptonTableLayoutPanel1.SuspendLayout();
+            this.panelHeader1.SuspendLayout();
+            panelHeader2.SuspendLayout();
+            panelHeader3.SuspendLayout();
+            this.panelContent.SuspendLayout();
+            this.panelContent2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flpSanPham
             // 
             this.flpSanPham.AutoScroll = true;
             this.flpSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.flpSanPham.Location = new System.Drawing.Point(30, 130);
+            this.flpSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpSanPham.Location = new System.Drawing.Point(3, 3);
             this.flpSanPham.Name = "flpSanPham";
-            this.flpSanPham.Size = new System.Drawing.Size(400, 450);
+            this.flpSanPham.Size = new System.Drawing.Size(485, 607);
             this.flpSanPham.TabIndex = 0;
             // 
             // dgvChiTietHoaDon
@@ -54,15 +74,14 @@ namespace CHTL.GUI.BanHang
             this.dgvChiTietHoaDon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.dgvChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colTenSanPhamCT,
-            this.colSoLuongCT,
-            this.colGiaBanCT,
-            this.colThanhTien});
-            this.dgvChiTietHoaDon.Location = new System.Drawing.Point(450, 130);
+                this.colTenSanPhamCT, this.colSoLuongCT, this.colGiaBanCT, this.colThanhTien
+            });
+            this.dgvChiTietHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvChiTietHoaDon.Location = new System.Drawing.Point(0, 0);
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.RowHeadersWidth = 51;
             this.dgvChiTietHoaDon.RowTemplate.Height = 30;
-            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(470, 400);
+            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(485, 607);
             this.dgvChiTietHoaDon.TabIndex = 1;
             this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellClick);
             // 
@@ -98,26 +117,24 @@ namespace CHTL.GUI.BanHang
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(30, 70);
+            this.txtSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtSearch.Location = new System.Drawing.Point(5, 32);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(250, 40);
+            this.txtSearch.Size = new System.Drawing.Size(311, 40);
             this.txtSearch.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.txtSearch.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSearch.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearch.StateCommon.Border.Rounding = 10F;
             this.txtSearch.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtSearch.TabIndex = 7;
             // 
             // dtpNgayBan
             // 
-            this.dtpNgayBan.Location = new System.Drawing.Point(300, 70);
+            this.dtpNgayBan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpNgayBan.Location = new System.Drawing.Point(5, 32);
             this.dtpNgayBan.Name = "dtpNgayBan";
-            this.dtpNgayBan.Size = new System.Drawing.Size(200, 39);
+            this.dtpNgayBan.Size = new System.Drawing.Size(311, 39);
             this.dtpNgayBan.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.dtpNgayBan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpNgayBan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.dtpNgayBan.StateCommon.Border.Rounding = 10F;
             this.dtpNgayBan.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.dtpNgayBan.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -125,17 +142,17 @@ namespace CHTL.GUI.BanHang
             // 
             // cbNguoiBan
             // 
+            this.cbNguoiBan.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbNguoiBan.DropDownWidth = 144;
             this.cbNguoiBan.Enabled = false;
             this.cbNguoiBan.Items.AddRange(new object[] {
-            "Nguyen Van A (ND001)"});
-            this.cbNguoiBan.Location = new System.Drawing.Point(520, 70);
+                "Nguyen Van A (ND001)"
+            });
+            this.cbNguoiBan.Location = new System.Drawing.Point(5, 32);
             this.cbNguoiBan.Name = "cbNguoiBan";
-            this.cbNguoiBan.Size = new System.Drawing.Size(200, 39);
+            this.cbNguoiBan.Size = new System.Drawing.Size(312, 39);
             this.cbNguoiBan.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.cbNguoiBan.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbNguoiBan.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.cbNguoiBan.StateCommon.ComboBox.Border.Rounding = 10F;
             this.cbNguoiBan.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.cbNguoiBan.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -143,15 +160,13 @@ namespace CHTL.GUI.BanHang
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(450, 550);
+            this.btnSave.Location = new System.Drawing.Point(3, 50);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(140, 40);
             this.btnSave.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnSave.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnSave.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.btnSave.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnSave.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnSave.StateCommon.Border.Rounding = 10F;
             this.btnSave.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -162,15 +177,13 @@ namespace CHTL.GUI.BanHang
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(610, 550);
+            this.btnClear.Location = new System.Drawing.Point(168, 50);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(140, 40);
             this.btnClear.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnClear.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnClear.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.btnClear.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnClear.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnClear.StateCommon.Border.Rounding = 10F;
             this.btnClear.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnClear.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -181,15 +194,13 @@ namespace CHTL.GUI.BanHang
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(780, 550);
+            this.btnAddNew.Location = new System.Drawing.Point(330, 50);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(140, 40);
             this.btnAddNew.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.btnAddNew.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.btnAddNew.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.btnAddNew.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnAddNew.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnAddNew.StateCommon.Border.Rounding = 10F;
             this.btnAddNew.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.btnAddNew.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -200,9 +211,10 @@ namespace CHTL.GUI.BanHang
             // 
             // lblSearch
             // 
-            this.lblSearch.Location = new System.Drawing.Point(30, 30);
+            this.lblSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSearch.Location = new System.Drawing.Point(5, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(103, 32);
+            this.lblSearch.Size = new System.Drawing.Size(311, 32);
             this.lblSearch.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.lblSearch.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblSearch.TabIndex = 10;
@@ -210,9 +222,10 @@ namespace CHTL.GUI.BanHang
             // 
             // lblNgayBan
             // 
-            this.lblNgayBan.Location = new System.Drawing.Point(300, 30);
+            this.lblNgayBan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblNgayBan.Location = new System.Drawing.Point(5, 0);
             this.lblNgayBan.Name = "lblNgayBan";
-            this.lblNgayBan.Size = new System.Drawing.Size(106, 32);
+            this.lblNgayBan.Size = new System.Drawing.Size(311, 32);
             this.lblNgayBan.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.lblNgayBan.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblNgayBan.TabIndex = 9;
@@ -220,9 +233,10 @@ namespace CHTL.GUI.BanHang
             // 
             // lblNguoiBan
             // 
-            this.lblNguoiBan.Location = new System.Drawing.Point(520, 30);
+            this.lblNguoiBan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblNguoiBan.Location = new System.Drawing.Point(5, 0);
             this.lblNguoiBan.Name = "lblNguoiBan";
-            this.lblNguoiBan.Size = new System.Drawing.Size(117, 32);
+            this.lblNguoiBan.Size = new System.Drawing.Size(312, 32);
             this.lblNguoiBan.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.lblNguoiBan.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblNguoiBan.TabIndex = 8;
@@ -230,7 +244,7 @@ namespace CHTL.GUI.BanHang
             // 
             // lblGrandTotalTitle
             // 
-            this.lblGrandTotalTitle.Location = new System.Drawing.Point(450, 600);
+            this.lblGrandTotalTitle.Location = new System.Drawing.Point(3, 3);
             this.lblGrandTotalTitle.Name = "lblGrandTotalTitle";
             this.lblGrandTotalTitle.Size = new System.Drawing.Size(139, 41);
             this.lblGrandTotalTitle.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
@@ -240,7 +254,7 @@ namespace CHTL.GUI.BanHang
             // 
             // lblGrandTotal
             // 
-            this.lblGrandTotal.Location = new System.Drawing.Point(600, 600);
+            this.lblGrandTotal.Location = new System.Drawing.Point(136, 3);
             this.lblGrandTotal.Name = "lblGrandTotal";
             this.lblGrandTotal.Size = new System.Drawing.Size(70, 41);
             this.lblGrandTotal.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -248,32 +262,128 @@ namespace CHTL.GUI.BanHang
             this.lblGrandTotal.TabIndex = 0;
             this.lblGrandTotal.Values.Text = "0.00";
             // 
+            // kryptonTableLayoutPanel1
+            // 
+            this.kryptonTableLayoutPanel1.ColumnCount = 3;
+            this.kryptonTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.kryptonTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
+            this.kryptonTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.kryptonTableLayoutPanel1.Controls.Add(this.panelHeader1, 0, 0);
+            this.kryptonTableLayoutPanel1.Controls.Add(panelHeader2, 1, 0);
+            this.kryptonTableLayoutPanel1.Controls.Add(panelHeader3, 2, 0);
+            this.kryptonTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonTableLayoutPanel1.Name = "kryptonTableLayoutPanel1";
+            this.kryptonTableLayoutPanel1.RowCount = 1;
+            this.kryptonTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.kryptonTableLayoutPanel1.Size = new System.Drawing.Size(982, 83);
+            this.kryptonTableLayoutPanel1.StateCommon.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonTableLayoutPanel1.StateCommon.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonTableLayoutPanel1.TabIndex = 14;
+            // 
+            // panelHeader1
+            // 
+            this.panelHeader1.Controls.Add(this.txtSearch);
+            this.panelHeader1.Controls.Add(this.lblSearch);
+            this.panelHeader1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelHeader1.Location = new System.Drawing.Point(3, 3);
+            this.panelHeader1.Name = "panelHeader1";
+            this.panelHeader1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelHeader1.Size = new System.Drawing.Size(321, 77);
+            this.panelHeader1.TabIndex = 0;
+            // 
+            // panelHeader2
+            // 
+            panelHeader2.Controls.Add(this.dtpNgayBan);
+            panelHeader2.Controls.Add(this.lblNgayBan);
+            panelHeader2.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelHeader2.Location = new System.Drawing.Point(330, 3);
+            panelHeader2.Name = "panelHeader2";
+            panelHeader2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            panelHeader2.Size = new System.Drawing.Size(321, 77);
+            panelHeader2.TabIndex = 1;
+            // 
+            // panelHeader3
+            // 
+            panelHeader3.Controls.Add(this.cbNguoiBan);
+            panelHeader3.Controls.Add(this.lblNguoiBan);
+            panelHeader3.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelHeader3.Location = new System.Drawing.Point(657, 3);
+            panelHeader3.Name = "panelHeader3";
+            panelHeader3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            panelHeader3.Size = new System.Drawing.Size(322, 77);
+            panelHeader3.TabIndex = 2;
+            // 
+            // panelContent
+            // 
+            this.panelContent.ColumnCount = 2;
+            this.panelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelContent.Controls.Add(this.flpSanPham, 0, 0);
+            this.panelContent.Controls.Add(this.panelContent2, 1, 0);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(0, 83);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.RowCount = 1;
+            this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelContent.Size = new System.Drawing.Size(982, 613);
+            this.panelContent.StateCommon.Color1 = System.Drawing.Color.Transparent;
+            this.panelContent.StateCommon.Color2 = System.Drawing.Color.Transparent;
+            this.panelContent.TabIndex = 16;
+            // 
+            // panelContent2
+            // 
+            this.panelContent2.Controls.Add(this.panel1);
+            this.panelContent2.Controls.Add(this.dgvChiTietHoaDon);
+            this.panelContent2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent2.Location = new System.Drawing.Point(494, 3);
+            this.panelContent2.Name = "panelContent2";
+            this.panelContent2.Size = new System.Drawing.Size(485, 607);
+            this.panelContent2.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblGrandTotalTitle);
+            this.panel1.Controls.Add(this.lblGrandTotal);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.btnClear);
+            this.panel1.Controls.Add(this.btnAddNew);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 512);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(485, 95);
+            this.panel1.TabIndex = 2;
+            // 
             // FormBanHangView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(934, 634);
-            this.Controls.Add(this.lblGrandTotal);
-            this.Controls.Add(this.lblGrandTotalTitle);
-            this.Controls.Add(this.btnAddNew);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.cbNguoiBan);
-            this.Controls.Add(this.dtpNgayBan);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.lblNguoiBan);
-            this.Controls.Add(this.lblNgayBan);
-            this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.dgvChiTietHoaDon);
-            this.Controls.Add(this.flpSanPham);
+            this.ClientSize = new System.Drawing.Size(982, 696);
+            this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.kryptonTableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBanHangView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNguoiBan)).EndInit();
+            this.kryptonTableLayoutPanel1.ResumeLayout(false);
+            this.panelHeader1.ResumeLayout(false);
+            this.panelHeader1.PerformLayout();
+            panelHeader2.ResumeLayout(false);
+            panelHeader2.PerformLayout();
+            panelHeader3.ResumeLayout(false);
+            panelHeader3.PerformLayout();
+            this.panelContent.ResumeLayout(false);
+            this.panelContent2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelContent2;
+        private Krypton.Toolkit.KryptonTableLayoutPanel panelContent;
+        private System.Windows.Forms.Panel panelHeader1;
+        private Krypton.Toolkit.KryptonTableLayoutPanel kryptonTableLayoutPanel1;
+
         #endregion
         private System.Windows.Forms.FlowLayoutPanel flpSanPham;
         private System.Windows.Forms.DataGridView dgvChiTietHoaDon;

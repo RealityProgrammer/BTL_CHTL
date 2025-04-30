@@ -259,6 +259,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\FormAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abstracts\FormAdd.Designer.cs">
+      <DependentUpon>FormAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abstracts\FormEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abstracts\FormEdit.Designer.cs">
+      <DependentUpon>FormEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abstracts\FormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abstracts\FormView.Designer.cs">
+      <DependentUpon>FormView.cs</DependentUpon>
+    </Compile>
     <Compile Include="AI\FormChat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,11 +316,11 @@
     <Compile Include="DanhMuc\FormDanhMucAdd.Designer.cs">
       <DependentUpon>FormDanhMucAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\FormDanhMucEdit.cs">
+    <Compile Include="DanhMuc\DanhMucFormEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\FormDanhMucEdit.Designer.cs">
-      <DependentUpon>FormDanhMucEdit.cs</DependentUpon>
+    <Compile Include="DanhMuc\DanhMucFormEdit.Designer.cs">
+      <DependentUpon>DanhMucFormEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\FormDanhMucView.cs">
       <SubType>Form</SubType>
@@ -349,35 +367,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sample_Form\SampleEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sample_Form\SampleEdit.Designer.cs">
-      <DependentUpon>SampleEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sample_Form\SampleAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sample_Form\SampleAdd.Designer.cs">
-      <DependentUpon>SampleAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sample_Form\SampleView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sample_Form\SampleView.Designer.cs">
-      <DependentUpon>SampleView.cs</DependentUpon>
-    </Compile>
     <Compile Include="SanPham\FormSanPhamAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SanPham\FormSanPhamAdd.Designer.cs">
       <DependentUpon>FormSanPhamAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="SanPham\FormSanPhamEdit.cs">
+    <Compile Include="SanPham\SanPhamFormEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SanPham\FormSanPhamEdit.Designer.cs">
-      <DependentUpon>FormSanPhamEdit.cs</DependentUpon>
+    <Compile Include="SanPham\SanPhamFormEdit.Designer.cs">
+      <DependentUpon>SanPhamFormEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="SanPham\FormSanPhamView.cs">
       <SubType>Form</SubType>
@@ -385,6 +385,12 @@
     <Compile Include="SanPham\FormSanPhamView.Designer.cs">
       <DependentUpon>FormSanPhamView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Abstracts\FormAdd.resx">
+      <DependentUpon>FormAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abstracts\FormView.resx">
+      <DependentUpon>FormView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AI\FormChat.resx">
       <DependentUpon>FormChat.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,8 +409,8 @@
     <EmbeddedResource Include="DanhMuc\FormDanhMucAdd.resx">
       <DependentUpon>FormDanhMucAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\FormDanhMucEdit.resx">
-      <DependentUpon>FormDanhMucEdit.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMuc\DanhMucFormEdit.resx">
+      <DependentUpon>DanhMucFormEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FormDanhMucView.resx">
       <DependentUpon>FormDanhMucView.cs</DependentUpon>
@@ -442,20 +448,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Sample_Form\SampleEdit.resx">
-      <DependentUpon>SampleEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sample_Form\SampleAdd.resx">
-      <DependentUpon>SampleAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sample_Form\SampleView.resx">
-      <DependentUpon>SampleView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SanPham\FormSanPhamAdd.resx">
       <DependentUpon>FormSanPhamAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SanPham\FormSanPhamEdit.resx">
-      <DependentUpon>FormSanPhamEdit.cs</DependentUpon>
+    <EmbeddedResource Include="SanPham\SanPhamFormEdit.resx">
+      <DependentUpon>SanPhamFormEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SanPham\FormSanPhamView.resx">
       <DependentUpon>FormSanPhamView.cs</DependentUpon>
@@ -490,9 +487,6 @@
       <Project>{fff6351e-c07c-4a9e-aeea-914d61cb109c}</Project>
       <Name>Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />

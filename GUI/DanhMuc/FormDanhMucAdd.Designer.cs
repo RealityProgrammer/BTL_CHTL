@@ -33,32 +33,32 @@
             this.txt_ma_danh_muc = new Krypton.Toolkit.KryptonTextBox();
             this.txt_ten_danh_muc = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
-            this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
-            this.kryptonPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).BeginInit();
+            this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelBody)).BeginInit();
+            this.panelBody.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelFooter)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Size = new System.Drawing.Size(532, 103);
-            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panelHeader.Size = new System.Drawing.Size(532, 103);
+            this.panelHeader.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
             // kryptonPanel2
             // 
-            this.kryptonPanel2.Controls.Add(this.txt_ten_danh_muc);
-            this.kryptonPanel2.Controls.Add(this.txt_ma_danh_muc);
-            this.kryptonPanel2.Controls.Add(this.kryptonLabel3);
-            this.kryptonPanel2.Controls.Add(this.kryptonLabel2);
-            this.kryptonPanel2.Size = new System.Drawing.Size(532, 298);
-            this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
+            this.panelBody.Controls.Add(this.txt_ten_danh_muc);
+            this.panelBody.Controls.Add(this.txt_ma_danh_muc);
+            this.panelBody.Controls.Add(this.kryptonLabel3);
+            this.panelBody.Controls.Add(this.kryptonLabel2);
+            this.panelBody.Size = new System.Drawing.Size(532, 298);
+            this.panelBody.StateCommon.Color1 = System.Drawing.Color.White;
             // 
             // kryptonPanel3
             // 
-            this.kryptonPanel3.Location = new System.Drawing.Point(0, 294);
-            this.kryptonPanel3.Size = new System.Drawing.Size(532, 107);
-            this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panelFooter.Location = new System.Drawing.Point(0, 294);
+            this.panelFooter.Size = new System.Drawing.Size(532, 107);
+            this.panelFooter.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
             // kryptonLabel1
             // 
@@ -106,13 +106,13 @@
             this.Name = "FormDanhMucAdd";
             this.Text = "FormDanhMucAdd";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
-            this.kryptonPanel1.ResumeLayout(false);
-            this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
-            this.kryptonPanel2.ResumeLayout(false);
-            this.kryptonPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).EndInit();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelBody)).EndInit();
+            this.panelBody.ResumeLayout(false);
+            this.panelBody.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelFooter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

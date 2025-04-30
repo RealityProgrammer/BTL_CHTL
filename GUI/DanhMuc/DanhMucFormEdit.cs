@@ -2,13 +2,12 @@
 using System.Drawing;
 using System.Windows.Forms;
 using CHTL.BUS;
-using CHTL.GUI.Sample_Form;
-using ComponentFactory.Krypton.Toolkit;
+using CHTL.GUI.Abstracts;
 using Krypton.Toolkit;
 
 namespace CHTL.GUI.DanhMuc
 {
-    public partial class FormDanhMucEdit : SampleEdit
+    public partial class DanhMucFormEdit : FormEdit
     {
         private XuLyDanhMuc xuLy = new XuLyDanhMuc();
         private CHTL.Models.DanhMucSanPham danhMucEdit;
@@ -24,7 +23,7 @@ namespace CHTL.GUI.DanhMuc
             }
         }
 
-        public FormDanhMucEdit()
+        public DanhMucFormEdit()
         {
             InitializeComponent();
             CustomizeForm();

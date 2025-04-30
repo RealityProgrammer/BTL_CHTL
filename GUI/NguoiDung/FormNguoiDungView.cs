@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using CHTL.BUS;
+using Krypton.Toolkit;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CHTL.GUI.Sample_Form;
-using CHTL.BUS;
 
-namespace CHTL.GUI.NguoiDung
-{
-    public partial class FormNguoiDungView : SampleView
-    {
+namespace CHTL.GUI.NguoiDung {
+    public partial class FormNguoiDungView : KryptonForm {
         private XuLyNguoiDung xuLy = new XuLyNguoiDung();
         public FormNguoiDungView()
         {
@@ -80,9 +72,7 @@ namespace CHTL.GUI.NguoiDung
             dgv_nguoi_dung.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
 
-
-
-        public override void txt_search_TextChanged(object sender, EventArgs e)
+        public void txt_search_TextChanged(object sender, EventArgs e)
         {
             string tuKhoa = txt_search.Text.Trim();
             var danhSach = xuLy.TimKiemNguoiDung(tuKhoa);
@@ -90,14 +80,16 @@ namespace CHTL.GUI.NguoiDung
             dgv_nguoi_dung.Columns["MatKhau"].Visible = false;
         }
 
-        public override void btn_add_Click(object sender, EventArgs e)
+        public void btn_add_Click(object sender, EventArgs e)
         {
             FormNguoiDungAdd frmNguoiDungAdd = new FormNguoiDungAdd();
-            frmNguoiDungAdd.ShowDialog();
-            LoadData(); // Refresh danh sách sau khi thêm
+
+            if (frmNguoiDungAdd.ShowDialog() == DialogResult.OK) {
+                LoadData(); // Refresh danh sách sau khi thêm
+            }
         }
 
-        private void dgv_nguoi_dung_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void kryptonDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Kiểm tra nếu click vào hàng hợp lệ
             if (e.RowIndex >= 0)
@@ -109,8 +101,10 @@ namespace CHTL.GUI.NguoiDung
                 {
                     FormNguoiDungEdit frmEdit = new FormNguoiDungEdit();
                     frmEdit.NguoiDungEdit = nguoiDung; // Truyền đối tượng người dùng để chỉnh sửa
-                    frmEdit.ShowDialog();
-                    LoadData(); // Refresh danh sách sau khi sửa
+
+                    if (frmEdit.ShowDialog() == DialogResult.OK) {
+                        LoadData(); // Refresh danh sách sau khi sửa
+                    }
                 }
 
                 // Xử lý khi click vào cột "Xóa"
@@ -136,11 +130,6 @@ namespace CHTL.GUI.NguoiDung
                     }
                 }
             }
-        }
-
-        private void FormNguoiDungView_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

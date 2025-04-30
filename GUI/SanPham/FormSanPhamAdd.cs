@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using CHTL.GUI.Sample_Form;
 using CHTL.BUS;
 using CHTL.Models;
 using CHTL.DAL;
+using CHTL.GUI.Abstracts;
 using Krypton.Toolkit;
 
 namespace CHTL.GUI.SanPham
 {
-    public partial class FormSanPhamAdd : SampleAdd
+    public partial class FormSanPhamAdd : FormAdd
     {
         private XuLySanPham xuLy = new XuLySanPham();
         private TruyCapDanhMuc truyCapDanhMuc = new TruyCapDanhMuc();
@@ -27,7 +27,7 @@ namespace CHTL.GUI.SanPham
             this.BackColor = Color.FromArgb(236, 240, 241); // Xám nhạt
 
             // Tùy chỉnh kryptonPanel1
-            kryptonPanel1.StateCommon.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
+            panelHeader.StateCommon.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
             //kryptonPanel1.StateCommon.Border.Color1 = Color.FromArgb(189, 195, 199); // Xám nhạt
             //kryptonPanel1.StateCommon.Border.DrawBorders = PaletteDrawBorders.All;
             //kryptonPanel1.StateCommon.Border.Rounding = 10F;
@@ -41,11 +41,11 @@ namespace CHTL.GUI.SanPham
             kryptonLabel1.StateCommon.ShortText.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
 
             // Tùy chỉnh kryptonPanel2
-            kryptonPanel2.StateCommon.Color1 = Color.FromArgb(236, 240, 241); // Xám nhạt
+            panelBody.StateCommon.Color1 = Color.FromArgb(236, 240, 241); // Xám nhạt
             //kryptonPanel2.StateCommon.Border.DrawBorders = PaletteDrawBorders.None;
 
             // Tùy chỉnh kryptonPanel3
-            kryptonPanel3.StateCommon.Color1 = Color.FromArgb(236, 240, 241); // Xám nhạt
+            panelFooter.StateCommon.Color1 = Color.FromArgb(236, 240, 241); // Xám nhạt
             //kryptonPanel3.StateCommon.Border.DrawBorders = PaletteDrawBorders.None;
 
             //// Tùy chỉnh các nhãn

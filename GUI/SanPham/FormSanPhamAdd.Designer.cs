@@ -41,41 +41,41 @@
             this.cbMaDanhMuc = new Krypton.Toolkit.KryptonComboBox();
             this.dtp_ngay_het_han = new Krypton.Toolkit.KryptonDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
-            this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
-            this.kryptonPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).BeginInit();
+            this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelBody)).BeginInit();
+            this.panelBody.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelFooter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMaDanhMuc)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Size = new System.Drawing.Size(804, 103);
-            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panelHeader.Size = new System.Drawing.Size(804, 103);
+            this.panelHeader.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
             // kryptonPanel2
             // 
-            this.kryptonPanel2.Controls.Add(this.dtp_ngay_het_han);
-            this.kryptonPanel2.Controls.Add(this.cbMaDanhMuc);
-            this.kryptonPanel2.Controls.Add(this.txt_so_luong_ton);
-            this.kryptonPanel2.Controls.Add(this.txt_gia_ban);
-            this.kryptonPanel2.Controls.Add(this.txt_ten_san_pham);
-            this.kryptonPanel2.Controls.Add(this.txt_ma_san_pham);
-            this.kryptonPanel2.Controls.Add(this.kryptonLabel7);
-            this.kryptonPanel2.Controls.Add(this.kryptonLabel6);
-            this.kryptonPanel2.Controls.Add(this.kryptonLabel5);
-            this.kryptonPanel2.Controls.Add(this.kryptonLabel4);
-            this.kryptonPanel2.Controls.Add(this.kryptonLabel3);
-            this.kryptonPanel2.Controls.Add(this.kryptonLabel2);
-            this.kryptonPanel2.Size = new System.Drawing.Size(804, 333);
-            this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
+            this.panelBody.Controls.Add(this.dtp_ngay_het_han);
+            this.panelBody.Controls.Add(this.cbMaDanhMuc);
+            this.panelBody.Controls.Add(this.txt_so_luong_ton);
+            this.panelBody.Controls.Add(this.txt_gia_ban);
+            this.panelBody.Controls.Add(this.txt_ten_san_pham);
+            this.panelBody.Controls.Add(this.txt_ma_san_pham);
+            this.panelBody.Controls.Add(this.kryptonLabel7);
+            this.panelBody.Controls.Add(this.kryptonLabel6);
+            this.panelBody.Controls.Add(this.kryptonLabel5);
+            this.panelBody.Controls.Add(this.kryptonLabel4);
+            this.panelBody.Controls.Add(this.kryptonLabel3);
+            this.panelBody.Controls.Add(this.kryptonLabel2);
+            this.panelBody.Size = new System.Drawing.Size(804, 333);
+            this.panelBody.StateCommon.Color1 = System.Drawing.Color.White;
             // 
             // kryptonPanel3
             // 
-            this.kryptonPanel3.Location = new System.Drawing.Point(0, 329);
-            this.kryptonPanel3.Size = new System.Drawing.Size(804, 107);
-            this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panelFooter.Location = new System.Drawing.Point(0, 329);
+            this.panelFooter.Size = new System.Drawing.Size(804, 107);
+            this.panelFooter.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             // 
             // kryptonLabel1
             // 
@@ -183,13 +183,13 @@
             this.Name = "FormSanPhamAdd";
             this.Text = "FormSanPhamAdd";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
-            this.kryptonPanel1.ResumeLayout(false);
-            this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
-            this.kryptonPanel2.ResumeLayout(false);
-            this.kryptonPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).EndInit();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelBody)).EndInit();
+            this.panelBody.ResumeLayout(false);
+            this.panelBody.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelFooter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMaDanhMuc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

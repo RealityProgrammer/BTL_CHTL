@@ -1,4 +1,5 @@
-﻿using CHTL.GUI.AI;
+﻿using CHTL.GUI.Abstracts;
+using CHTL.GUI.AI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,18 +26,18 @@ namespace CHTL.GUI
             InitializeComponent();
             LocalCustomPalette = GlobalPalette.Palette;
             PaletteMode = PaletteMode.Custom;
-            SetupButtonHover();
-            FormBanHangView formBanHang = new FormBanHangView();
-            ShowFormInPanel(formBanHang, btnBanHang);
+
+            FormNguoiDungView test = new FormNguoiDungView();
+            ShowFormInPanel(test, btnNguoiDung);
         }
 
         private void ShowFormInPanel(KryptonForm childForm, KryptonButton activeButton = null)
         {
-            kryptonPanel2.Controls.Clear();
+            panelContent.Controls.Clear();
             childForm.TopLevel = false;
             childForm.Dock = DockStyle.Fill;
-            kryptonPanel2.Controls.Add(childForm);
-            kryptonPanel2.Tag = childForm;
+            panelContent.Controls.Add(childForm);
+            panelContent.Tag = childForm;
             childForm.Show();
 
             // Cập nhật trạng thái active cho nút
@@ -114,20 +115,20 @@ namespace CHTL.GUI
 
         private void btn_nguoi_dung_Click(object sender, EventArgs e)
         {
-            FormNguoiDungView formNguoiDung = new FormNguoiDungView();
-            ShowFormInPanel(formNguoiDung, btnNguoiDung);
+            // FormNguoiDungView formNguoiDung = new FormNguoiDungView();
+            // ShowFormInPanel(formNguoiDung, btnNguoiDung);
         }
 
         private void btn_danh_muc_Click(object sender, EventArgs e)
         {
-            FormDanhMucView formDanhMuc = new FormDanhMucView();
-            ShowFormInPanel(formDanhMuc, btnDanhMuc);
+            // FormDanhMucView formDanhMuc = new FormDanhMucView();
+            // ShowFormInPanel(formDanhMuc, btnDanhMuc);
         }
 
         private void btn_san_pham_Click(object sender, EventArgs e)
         {
-            FormSanPhamView formSanPham = new FormSanPhamView();
-            ShowFormInPanel(formSanPham, btnSanPham);
+            // FormSanPhamView formSanPham = new FormSanPhamView();
+            // ShowFormInPanel(formSanPham, btnSanPham);
         }
 
         private void btn_ban_hang_Click(object sender, EventArgs e)
@@ -153,6 +154,14 @@ namespace CHTL.GUI
             FormDangNhap formLogin = new FormDangNhap();
             formLogin.Show();
             this.Close();
+        }
+        
+        private void buttonColorHighlight(object sender, EventArgs e) {
+            if (sender is KryptonButton button && button != currentActiveButton) {
+                button.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
+                button.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
+                button.StateCommon.Content.ShortText.Color1 = Color.White;
+            }
         }
     }
 }

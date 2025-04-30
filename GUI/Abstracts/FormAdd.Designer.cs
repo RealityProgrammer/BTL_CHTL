@@ -1,21 +1,21 @@
-﻿namespace CHTL.GUI.Sample_Form
-{
-    partial class SampleEdit    {
+﻿using System.ComponentModel;
+
+namespace CHTL.GUI.Abstracts {
+    partial class FormAdd {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -26,42 +26,42 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            this.panelHeader = new Krypton.Toolkit.KryptonPanel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
-            this.kryptonPanel3 = new Krypton.Toolkit.KryptonPanel();
+            this.panelBody = new Krypton.Toolkit.KryptonPanel();
+            this.panelFooter = new Krypton.Toolkit.KryptonPanel();
             this.btn_close = new Krypton.Toolkit.KryptonButton();
             this.btn_save = new Krypton.Toolkit.KryptonButton();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
-            this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).BeginInit();
+            this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).BeginInit();
-            this.kryptonPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelBody)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelFooter)).BeginInit();
+            this.panelFooter.SuspendLayout();
             this.SuspendLayout();
             // 
-            // kryptonPanel1
+            // panelHeader
             // 
-            this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
-            this.kryptonPanel1.Controls.Add(this.pictureBox1);
-            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(713, 103);
-            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.kryptonPanel1.TabIndex = 0;
+            this.panelHeader.Controls.Add(this.kryptonLabel1);
+            this.panelHeader.Controls.Add(this.pictureBox1);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(809, 103);
+            this.panelHeader.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panelHeader.TabIndex = 0;
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(160, 31);
+            this.kryptonLabel1.Location = new System.Drawing.Point(148, 31);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(73, 42);
+            this.kryptonLabel1.Size = new System.Drawing.Size(74, 42);
             this.kryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
             this.kryptonLabel1.StateCommon.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel1.TabIndex = 5;
-            this.kryptonLabel1.Values.Text = "EDIT";
+            this.kryptonLabel1.TabIndex = 4;
+            this.kryptonLabel1.Values.Text = "ADD";
             // 
             // pictureBox1
             // 
@@ -71,25 +71,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // kryptonPanel2
+            // panelBody
             // 
-            this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonPanel2.Location = new System.Drawing.Point(0, 103);
-            this.kryptonPanel2.Name = "kryptonPanel2";
-            this.kryptonPanel2.Size = new System.Drawing.Size(713, 337);
-            this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
-            this.kryptonPanel2.TabIndex = 1;
+            this.panelBody.AutoSize = true;
+            this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBody.Location = new System.Drawing.Point(0, 103);
+            this.panelBody.Name = "panelBody";
+            this.panelBody.Size = new System.Drawing.Size(809, 357);
+            this.panelBody.StateCommon.Color1 = System.Drawing.Color.White;
+            this.panelBody.TabIndex = 1;
             // 
-            // kryptonPanel3
+            // panelFooter
             // 
-            this.kryptonPanel3.Controls.Add(this.btn_close);
-            this.kryptonPanel3.Controls.Add(this.btn_save);
-            this.kryptonPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.kryptonPanel3.Location = new System.Drawing.Point(0, 333);
-            this.kryptonPanel3.Name = "kryptonPanel3";
-            this.kryptonPanel3.Size = new System.Drawing.Size(713, 107);
-            this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.kryptonPanel3.TabIndex = 1;
+            this.panelFooter.Controls.Add(this.btn_close);
+            this.panelFooter.Controls.Add(this.btn_save);
+            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelFooter.Location = new System.Drawing.Point(0, 353);
+            this.panelFooter.Name = "panelFooter";
+            this.panelFooter.Size = new System.Drawing.Size(809, 107);
+            this.panelFooter.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panelFooter.TabIndex = 1;
             // 
             // btn_close
             // 
@@ -127,36 +128,38 @@
             this.btn_save.Values.Text = "Save";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // SampleEdit
+            // FormAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 440);
-            this.Controls.Add(this.kryptonPanel3);
-            this.Controls.Add(this.kryptonPanel2);
-            this.Controls.Add(this.kryptonPanel1);
+            this.ClientSize = new System.Drawing.Size(809, 460);
+            this.Controls.Add(this.panelFooter);
+            this.Controls.Add(this.panelBody);
+            this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "SampleEdit";
+            this.Name = "FormAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SampleAdd";
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
-            this.kryptonPanel1.ResumeLayout(false);
-            this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelHeader)).EndInit();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).EndInit();
-            this.kryptonPanel3.ResumeLayout(false);
-            this.kryptonPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelBody)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelFooter)).EndInit();
+            this.panelFooter.ResumeLayout(false);
+            this.panelFooter.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
+        protected Krypton.Toolkit.KryptonPanel panelFooter;
 
         #endregion
+        
         public System.Windows.Forms.PictureBox pictureBox1;
         private Krypton.Toolkit.KryptonButton btn_close;
         private Krypton.Toolkit.KryptonButton btn_save;
-        public Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        public Krypton.Toolkit.KryptonPanel kryptonPanel2;
-        public Krypton.Toolkit.KryptonPanel kryptonPanel3;
+        public Krypton.Toolkit.KryptonPanel panelHeader;
+        protected Krypton.Toolkit.KryptonPanel panelBody;
         public Krypton.Toolkit.KryptonLabel kryptonLabel1;
     }
 }

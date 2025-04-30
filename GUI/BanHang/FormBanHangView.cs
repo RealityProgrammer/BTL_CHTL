@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using CHTL.GUI.Sample_Form;
 using CHTL.BUS;
 using CHTL.Models;
 using System.Drawing;

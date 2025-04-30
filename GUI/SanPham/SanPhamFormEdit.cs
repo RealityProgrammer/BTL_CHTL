@@ -1,5 +1,6 @@
 ﻿using CHTL.BUS;
 using CHTL.DAL;
+using CHTL.GUI.Abstracts;
 using System.Windows.Forms;
 using CHTL.Models;
 using Krypton.Toolkit;
@@ -9,7 +10,7 @@ using System.Globalization;
 
 namespace CHTL.GUI.SanPham
 {
-    public partial class FormSanPhamEdit : KryptonForm
+    public partial class SanPhamFormEdit : FormEdit
     {
         private XuLySanPham xuLy = new XuLySanPham();
         private TruyCapDanhMuc truyCapDanhMuc = new TruyCapDanhMuc();
@@ -26,7 +27,7 @@ namespace CHTL.GUI.SanPham
             }
         }
 
-        public FormSanPhamEdit()
+        public SanPhamFormEdit()
         {
             InitializeComponent();
             LocalCustomPalette = GlobalPalette.Palette;
