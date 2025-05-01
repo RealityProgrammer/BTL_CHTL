@@ -373,11 +373,11 @@
     <Compile Include="SanPham\FormSanPhamAdd.Designer.cs">
       <DependentUpon>FormSanPhamAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="SanPham\SanPhamFormEdit.cs">
+    <Compile Include="SanPham\FormSanPhamEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SanPham\SanPhamFormEdit.Designer.cs">
-      <DependentUpon>SanPhamFormEdit.cs</DependentUpon>
+    <Compile Include="SanPham\FormSanPhamEdit.Designer.cs">
+      <DependentUpon>FormSanPhamEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="SanPham\FormSanPhamView.cs">
       <SubType>Form</SubType>
@@ -451,8 +451,8 @@
     <EmbeddedResource Include="SanPham\FormSanPhamAdd.resx">
       <DependentUpon>FormSanPhamAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SanPham\SanPhamFormEdit.resx">
-      <DependentUpon>SanPhamFormEdit.cs</DependentUpon>
+    <EmbeddedResource Include="SanPham\FormSanPhamEdit.resx">
+      <DependentUpon>FormSanPhamEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SanPham\FormSanPhamView.resx">
       <DependentUpon>FormSanPhamView.cs</DependentUpon>

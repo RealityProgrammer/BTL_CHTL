@@ -23,6 +23,11 @@ namespace CHTL.GUI.BanHang
         private void InitializeComponent() {
             System.Windows.Forms.Panel panelHeader2;
             System.Windows.Forms.Panel panelHeader3;
+            Krypton.Toolkit.KryptonTableLayoutPanel tableFooter;
+            this.dtpNgayBan = new Krypton.Toolkit.KryptonDateTimePicker();
+            this.lblNgayBan = new Krypton.Toolkit.KryptonLabel();
+            this.cbNguoiBan = new Krypton.Toolkit.KryptonComboBox();
+            this.lblNguoiBan = new Krypton.Toolkit.KryptonLabel();
             this.flpSanPham = new System.Windows.Forms.FlowLayoutPanel();
             this.dgvChiTietHoaDon = new System.Windows.Forms.DataGridView();
             this.colTenSanPhamCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -30,42 +35,115 @@ namespace CHTL.GUI.BanHang
             this.colGiaBanCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new Krypton.Toolkit.KryptonTextBox();
-            this.dtpNgayBan = new Krypton.Toolkit.KryptonDateTimePicker();
-            this.cbNguoiBan = new Krypton.Toolkit.KryptonComboBox();
             this.btnSave = new Krypton.Toolkit.KryptonButton();
             this.btnClear = new Krypton.Toolkit.KryptonButton();
             this.btnAddNew = new Krypton.Toolkit.KryptonButton();
             this.lblSearch = new Krypton.Toolkit.KryptonLabel();
-            this.lblNgayBan = new Krypton.Toolkit.KryptonLabel();
-            this.lblNguoiBan = new Krypton.Toolkit.KryptonLabel();
             this.lblGrandTotalTitle = new Krypton.Toolkit.KryptonLabel();
             this.lblGrandTotal = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonTableLayoutPanel1 = new Krypton.Toolkit.KryptonTableLayoutPanel();
+            this.panelHeader = new Krypton.Toolkit.KryptonTableLayoutPanel();
             this.panelHeader1 = new System.Windows.Forms.Panel();
             this.panelContent = new Krypton.Toolkit.KryptonTableLayoutPanel();
-            this.panelContent2 = new System.Windows.Forms.Panel();
+            this.panelContentRight = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             panelHeader2 = new System.Windows.Forms.Panel();
             panelHeader3 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbNguoiBan)).BeginInit();
-            this.kryptonTableLayoutPanel1.SuspendLayout();
-            this.panelHeader1.SuspendLayout();
+            tableFooter = new Krypton.Toolkit.KryptonTableLayoutPanel();
             panelHeader2.SuspendLayout();
             panelHeader3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNguoiBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).BeginInit();
+            this.panelHeader.SuspendLayout();
+            this.panelHeader1.SuspendLayout();
             this.panelContent.SuspendLayout();
-            this.panelContent2.SuspendLayout();
+            this.panelContentRight.SuspendLayout();
             this.panel1.SuspendLayout();
+            tableFooter.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panelHeader2
+            // 
+            panelHeader2.Controls.Add(this.dtpNgayBan);
+            panelHeader2.Controls.Add(this.lblNgayBan);
+            panelHeader2.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelHeader2.Location = new System.Drawing.Point(322, 13);
+            panelHeader2.Name = "panelHeader2";
+            panelHeader2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            panelHeader2.Size = new System.Drawing.Size(304, 84);
+            panelHeader2.TabIndex = 1;
+            // 
+            // dtpNgayBan
+            // 
+            this.dtpNgayBan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpNgayBan.Location = new System.Drawing.Point(5, 32);
+            this.dtpNgayBan.Name = "dtpNgayBan";
+            this.dtpNgayBan.Size = new System.Drawing.Size(294, 39);
+            this.dtpNgayBan.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dtpNgayBan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpNgayBan.StateCommon.Border.Rounding = 10F;
+            this.dtpNgayBan.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.dtpNgayBan.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dtpNgayBan.TabIndex = 6;
+            // 
+            // lblNgayBan
+            // 
+            this.lblNgayBan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblNgayBan.Location = new System.Drawing.Point(5, 0);
+            this.lblNgayBan.Name = "lblNgayBan";
+            this.lblNgayBan.Size = new System.Drawing.Size(294, 32);
+            this.lblNgayBan.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.lblNgayBan.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblNgayBan.TabIndex = 9;
+            this.lblNgayBan.Values.Text = "Ngày bán";
+            // 
+            // panelHeader3
+            // 
+            panelHeader3.Controls.Add(this.cbNguoiBan);
+            panelHeader3.Controls.Add(this.lblNguoiBan);
+            panelHeader3.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelHeader3.Location = new System.Drawing.Point(632, 13);
+            panelHeader3.Name = "panelHeader3";
+            panelHeader3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            panelHeader3.Size = new System.Drawing.Size(305, 84);
+            panelHeader3.TabIndex = 2;
+            // 
+            // cbNguoiBan
+            // 
+            this.cbNguoiBan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbNguoiBan.DropDownWidth = 144;
+            this.cbNguoiBan.Enabled = false;
+            this.cbNguoiBan.Items.AddRange(new object[] {
+                "Nguyen Van A (ND001)"
+            });
+            this.cbNguoiBan.Location = new System.Drawing.Point(5, 32);
+            this.cbNguoiBan.Name = "cbNguoiBan";
+            this.cbNguoiBan.Size = new System.Drawing.Size(295, 39);
+            this.cbNguoiBan.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.cbNguoiBan.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbNguoiBan.StateCommon.ComboBox.Border.Rounding = 10F;
+            this.cbNguoiBan.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.cbNguoiBan.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbNguoiBan.TabIndex = 5;
+            // 
+            // lblNguoiBan
+            // 
+            this.lblNguoiBan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblNguoiBan.Location = new System.Drawing.Point(5, 0);
+            this.lblNguoiBan.Name = "lblNguoiBan";
+            this.lblNguoiBan.Size = new System.Drawing.Size(295, 32);
+            this.lblNguoiBan.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.lblNguoiBan.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblNguoiBan.TabIndex = 8;
+            this.lblNguoiBan.Values.Text = "Người bán";
             // 
             // flpSanPham
             // 
             this.flpSanPham.AutoScroll = true;
             this.flpSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.flpSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpSanPham.Location = new System.Drawing.Point(3, 3);
+            this.flpSanPham.Location = new System.Drawing.Point(13, 3);
             this.flpSanPham.Name = "flpSanPham";
-            this.flpSanPham.Size = new System.Drawing.Size(485, 607);
+            this.flpSanPham.Size = new System.Drawing.Size(459, 548);
             this.flpSanPham.TabIndex = 0;
             // 
             // dgvChiTietHoaDon
@@ -81,7 +159,7 @@ namespace CHTL.GUI.BanHang
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.RowHeadersWidth = 51;
             this.dgvChiTietHoaDon.RowTemplate.Height = 30;
-            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(485, 607);
+            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(459, 548);
             this.dgvChiTietHoaDon.TabIndex = 1;
             this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellClick);
             // 
@@ -120,49 +198,19 @@ namespace CHTL.GUI.BanHang
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtSearch.Location = new System.Drawing.Point(5, 32);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(311, 40);
+            this.txtSearch.Size = new System.Drawing.Size(293, 40);
             this.txtSearch.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.txtSearch.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearch.StateCommon.Border.Rounding = 10F;
             this.txtSearch.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtSearch.TabIndex = 7;
             // 
-            // dtpNgayBan
-            // 
-            this.dtpNgayBan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dtpNgayBan.Location = new System.Drawing.Point(5, 32);
-            this.dtpNgayBan.Name = "dtpNgayBan";
-            this.dtpNgayBan.Size = new System.Drawing.Size(311, 39);
-            this.dtpNgayBan.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.dtpNgayBan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dtpNgayBan.StateCommon.Border.Rounding = 10F;
-            this.dtpNgayBan.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.dtpNgayBan.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dtpNgayBan.TabIndex = 6;
-            // 
-            // cbNguoiBan
-            // 
-            this.cbNguoiBan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbNguoiBan.DropDownWidth = 144;
-            this.cbNguoiBan.Enabled = false;
-            this.cbNguoiBan.Items.AddRange(new object[] {
-                "Nguyen Van A (ND001)"
-            });
-            this.cbNguoiBan.Location = new System.Drawing.Point(5, 32);
-            this.cbNguoiBan.Name = "cbNguoiBan";
-            this.cbNguoiBan.Size = new System.Drawing.Size(312, 39);
-            this.cbNguoiBan.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.cbNguoiBan.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cbNguoiBan.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.cbNguoiBan.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.cbNguoiBan.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbNguoiBan.TabIndex = 5;
-            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(3, 50);
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSave.Location = new System.Drawing.Point(3, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(140, 40);
+            this.btnSave.Size = new System.Drawing.Size(126, 40);
             this.btnSave.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnSave.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnSave.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
@@ -177,9 +225,10 @@ namespace CHTL.GUI.BanHang
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(168, 50);
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClear.Location = new System.Drawing.Point(165, 3);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(140, 40);
+            this.btnClear.Size = new System.Drawing.Size(127, 40);
             this.btnClear.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnClear.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnClear.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
@@ -194,9 +243,10 @@ namespace CHTL.GUI.BanHang
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(330, 50);
+            this.btnAddNew.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddNew.Location = new System.Drawing.Point(328, 3);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(140, 40);
+            this.btnAddNew.Size = new System.Drawing.Size(128, 40);
             this.btnAddNew.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.btnAddNew.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.btnAddNew.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
@@ -214,33 +264,11 @@ namespace CHTL.GUI.BanHang
             this.lblSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblSearch.Location = new System.Drawing.Point(5, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(311, 32);
+            this.lblSearch.Size = new System.Drawing.Size(293, 32);
             this.lblSearch.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.lblSearch.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblSearch.TabIndex = 10;
             this.lblSearch.Values.Text = "Tìm kiếm";
-            // 
-            // lblNgayBan
-            // 
-            this.lblNgayBan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblNgayBan.Location = new System.Drawing.Point(5, 0);
-            this.lblNgayBan.Name = "lblNgayBan";
-            this.lblNgayBan.Size = new System.Drawing.Size(311, 32);
-            this.lblNgayBan.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.lblNgayBan.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNgayBan.TabIndex = 9;
-            this.lblNgayBan.Values.Text = "Ngày bán";
-            // 
-            // lblNguoiBan
-            // 
-            this.lblNguoiBan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblNguoiBan.Location = new System.Drawing.Point(5, 0);
-            this.lblNguoiBan.Name = "lblNguoiBan";
-            this.lblNguoiBan.Size = new System.Drawing.Size(312, 32);
-            this.lblNguoiBan.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.lblNguoiBan.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNguoiBan.TabIndex = 8;
-            this.lblNguoiBan.Values.Text = "Người bán";
             // 
             // lblGrandTotalTitle
             // 
@@ -262,57 +290,36 @@ namespace CHTL.GUI.BanHang
             this.lblGrandTotal.TabIndex = 0;
             this.lblGrandTotal.Values.Text = "0.00";
             // 
-            // kryptonTableLayoutPanel1
+            // panelHeader
             // 
-            this.kryptonTableLayoutPanel1.ColumnCount = 3;
-            this.kryptonTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
-            this.kryptonTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
-            this.kryptonTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
-            this.kryptonTableLayoutPanel1.Controls.Add(this.panelHeader1, 0, 0);
-            this.kryptonTableLayoutPanel1.Controls.Add(panelHeader2, 1, 0);
-            this.kryptonTableLayoutPanel1.Controls.Add(panelHeader3, 2, 0);
-            this.kryptonTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonTableLayoutPanel1.Name = "kryptonTableLayoutPanel1";
-            this.kryptonTableLayoutPanel1.RowCount = 1;
-            this.kryptonTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.kryptonTableLayoutPanel1.Size = new System.Drawing.Size(982, 83);
-            this.kryptonTableLayoutPanel1.StateCommon.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonTableLayoutPanel1.StateCommon.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonTableLayoutPanel1.TabIndex = 14;
+            this.panelHeader.ColumnCount = 3;
+            this.panelHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.panelHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
+            this.panelHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.panelHeader.Controls.Add(this.panelHeader1, 0, 0);
+            this.panelHeader.Controls.Add(panelHeader2, 1, 0);
+            this.panelHeader.Controls.Add(panelHeader3, 2, 0);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.panelHeader.RowCount = 1;
+            this.panelHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panelHeader.Size = new System.Drawing.Size(950, 100);
+            this.panelHeader.StateCommon.Color1 = System.Drawing.Color.Transparent;
+            this.panelHeader.StateCommon.Color2 = System.Drawing.Color.Transparent;
+            this.panelHeader.TabIndex = 14;
             // 
             // panelHeader1
             // 
             this.panelHeader1.Controls.Add(this.txtSearch);
             this.panelHeader1.Controls.Add(this.lblSearch);
             this.panelHeader1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelHeader1.Location = new System.Drawing.Point(3, 3);
+            this.panelHeader1.Location = new System.Drawing.Point(13, 13);
             this.panelHeader1.Name = "panelHeader1";
             this.panelHeader1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelHeader1.Size = new System.Drawing.Size(321, 77);
+            this.panelHeader1.Size = new System.Drawing.Size(303, 84);
             this.panelHeader1.TabIndex = 0;
-            // 
-            // panelHeader2
-            // 
-            panelHeader2.Controls.Add(this.dtpNgayBan);
-            panelHeader2.Controls.Add(this.lblNgayBan);
-            panelHeader2.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelHeader2.Location = new System.Drawing.Point(330, 3);
-            panelHeader2.Name = "panelHeader2";
-            panelHeader2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            panelHeader2.Size = new System.Drawing.Size(321, 77);
-            panelHeader2.TabIndex = 1;
-            // 
-            // panelHeader3
-            // 
-            panelHeader3.Controls.Add(this.cbNguoiBan);
-            panelHeader3.Controls.Add(this.lblNguoiBan);
-            panelHeader3.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelHeader3.Location = new System.Drawing.Point(657, 3);
-            panelHeader3.Name = "panelHeader3";
-            panelHeader3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            panelHeader3.Size = new System.Drawing.Size(322, 77);
-            panelHeader3.TabIndex = 2;
             // 
             // panelContent
             // 
@@ -320,69 +327,90 @@ namespace CHTL.GUI.BanHang
             this.panelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelContent.Controls.Add(this.flpSanPham, 0, 0);
-            this.panelContent.Controls.Add(this.panelContent2, 1, 0);
+            this.panelContent.Controls.Add(this.panelContentRight, 1, 0);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 83);
+            this.panelContent.Location = new System.Drawing.Point(0, 100);
             this.panelContent.Name = "panelContent";
+            this.panelContent.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
             this.panelContent.RowCount = 1;
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelContent.Size = new System.Drawing.Size(982, 613);
+            this.panelContent.Size = new System.Drawing.Size(950, 564);
             this.panelContent.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelContent.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.panelContent.TabIndex = 16;
             // 
-            // panelContent2
+            // panelContentRight
             // 
-            this.panelContent2.Controls.Add(this.panel1);
-            this.panelContent2.Controls.Add(this.dgvChiTietHoaDon);
-            this.panelContent2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent2.Location = new System.Drawing.Point(494, 3);
-            this.panelContent2.Name = "panelContent2";
-            this.panelContent2.Size = new System.Drawing.Size(485, 607);
-            this.panelContent2.TabIndex = 1;
+            this.panelContentRight.Controls.Add(this.panel1);
+            this.panelContentRight.Controls.Add(tableFooter);
+            this.panelContentRight.Controls.Add(this.dgvChiTietHoaDon);
+            this.panelContentRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContentRight.Location = new System.Drawing.Point(478, 3);
+            this.panelContentRight.Name = "panelContentRight";
+            this.panelContentRight.Size = new System.Drawing.Size(459, 548);
+            this.panelContentRight.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lblGrandTotalTitle);
             this.panel1.Controls.Add(this.lblGrandTotal);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnClear);
-            this.panel1.Controls.Add(this.btnAddNew);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 512);
+            this.panel1.Location = new System.Drawing.Point(0, 457);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(485, 95);
+            this.panel1.Size = new System.Drawing.Size(459, 45);
             this.panel1.TabIndex = 2;
+            // 
+            // tableFooter
+            // 
+            tableFooter.ColumnCount = 5;
+            tableFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            tableFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            tableFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
+            tableFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            tableFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            tableFooter.Controls.Add(this.btnSave, 0, 0);
+            tableFooter.Controls.Add(this.btnClear, 2, 0);
+            tableFooter.Controls.Add(this.btnAddNew, 4, 0);
+            tableFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            tableFooter.Location = new System.Drawing.Point(0, 502);
+            tableFooter.Name = "tableFooter";
+            tableFooter.RowCount = 1;
+            tableFooter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableFooter.Size = new System.Drawing.Size(459, 46);
+            tableFooter.StateCommon.Color1 = System.Drawing.Color.Transparent;
+            tableFooter.StateCommon.Color2 = System.Drawing.Color.Transparent;
+            tableFooter.TabIndex = 3;
             // 
             // FormBanHangView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(982, 696);
+            this.ClientSize = new System.Drawing.Size(950, 664);
             this.Controls.Add(this.panelContent);
-            this.Controls.Add(this.kryptonTableLayoutPanel1);
+            this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBanHangView";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbNguoiBan)).EndInit();
-            this.kryptonTableLayoutPanel1.ResumeLayout(false);
-            this.panelHeader1.ResumeLayout(false);
-            this.panelHeader1.PerformLayout();
             panelHeader2.ResumeLayout(false);
             panelHeader2.PerformLayout();
             panelHeader3.ResumeLayout(false);
             panelHeader3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNguoiBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).EndInit();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader1.ResumeLayout(false);
+            this.panelHeader1.PerformLayout();
             this.panelContent.ResumeLayout(false);
-            this.panelContent2.ResumeLayout(false);
+            this.panelContentRight.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            tableFooter.ResumeLayout(false);
             this.ResumeLayout(false);
         }
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panelContent2;
+        private System.Windows.Forms.Panel panelContentRight;
         private Krypton.Toolkit.KryptonTableLayoutPanel panelContent;
         private System.Windows.Forms.Panel panelHeader1;
-        private Krypton.Toolkit.KryptonTableLayoutPanel kryptonTableLayoutPanel1;
+        private Krypton.Toolkit.KryptonTableLayoutPanel panelHeader;
 
         #endregion
         private System.Windows.Forms.FlowLayoutPanel flpSanPham;

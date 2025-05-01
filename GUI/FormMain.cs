@@ -27,8 +27,7 @@ namespace CHTL.GUI
             LocalCustomPalette = GlobalPalette.Palette;
             PaletteMode = PaletteMode.Custom;
 
-            FormNguoiDungView test = new FormNguoiDungView();
-            ShowFormInPanel(test, btnNguoiDung);
+            ShowFormInPanel(new FormNguoiDungView(), btnNguoiDung);
         }
 
         private void ShowFormInPanel(KryptonForm childForm, KryptonButton activeButton = null)
@@ -115,38 +114,32 @@ namespace CHTL.GUI
 
         private void btn_nguoi_dung_Click(object sender, EventArgs e)
         {
-            FormNguoiDungView formNguoiDung = new FormNguoiDungView();
-            ShowFormInPanel(formNguoiDung, btnNguoiDung);
+            ShowFormInPanel(new FormNguoiDungView(), btnNguoiDung);
         }
 
         private void btn_danh_muc_Click(object sender, EventArgs e)
         {
-            FormDanhMucView formDanhMuc = new FormDanhMucView();
-            ShowFormInPanel(formDanhMuc, btnDanhMuc);
+            ShowFormInPanel(new FormDanhMucView(), btnDanhMuc);
         }
 
         private void btn_san_pham_Click(object sender, EventArgs e)
         {
-            // FormSanPhamView formSanPham = new FormSanPhamView();
-            // ShowFormInPanel(formSanPham, btnSanPham);
+            ShowFormInPanel(new FormSanPhamView(), btnSanPham);
         }
 
         private void btn_ban_hang_Click(object sender, EventArgs e)
         {
-            FormBanHangView formBanHang = new FormBanHangView();
-            ShowFormInPanel(formBanHang, btnBanHang);
+            ShowFormInPanel(new FormBanHangView(), btnBanHang);
         }
 
         private void btn_bao_cao_Click(object sender, EventArgs e)
         {
-            FormBaoCaoView formBaoCao = new FormBaoCaoView();
-            ShowFormInPanel(formBaoCao, btnBaoCao);
+            ShowFormInPanel(new FormBaoCaoView(), btnBaoCao);
         }
 
         private void btn_ai_tips_Click(object sender, EventArgs e)
         {
-            FormChat formChat = new FormChat();
-            ShowFormInPanel(formChat, btnAITips);
+            ShowFormInPanel(new FormChat(), btnAITips);
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)

@@ -2,14 +2,26 @@
 using CHTL.DAL;
 using Krypton.Toolkit;
 using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace CHTL.GUI.SanPham {
-    public partial class FormSanPhamAdd : KryptonForm {
+    public partial class FormSanPhamEdit : KryptonForm {
         private XuLySanPham xuLy = new XuLySanPham();
         private TruyCapDanhMuc truyCapDanhMuc = new TruyCapDanhMuc();
+
+        private Models.SanPham sanPhamEdit;
+        public Models.SanPham SanPhamEdit
+        {
+            get => sanPhamEdit;
+            set
+            {
+                sanPhamEdit = value;
+                NhapDuLieu();
+            }
+        }
         
-        public FormSanPhamAdd() {
+        public FormSanPhamEdit() {
             InitializeComponent();
             InitializeVaiTroComboBox();
         }
@@ -21,6 +33,25 @@ namespace CHTL.GUI.SanPham {
             cbDanhMuc.DisplayMember = "MaDanhMuc";
             cbDanhMuc.ValueMember = "MaDanhMuc";
             cbDanhMuc.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void NhapDuLieu() {
+            textboxID.Text = sanPhamEdit.MaSanPham;
+            textboxTen.Text = sanPhamEdit.TenSanPham;
+            textboxGia.Text = sanPhamEdit.GiaBan.ToString(CultureInfo.CurrentCulture);
+            cbDanhMuc.SelectedValue = sanPhamEdit.MaDanhMuc;
+            textboxSoLuongTon.Text = sanPhamEdit.SoLuongTon.ToString();
+            textboxGiamGia.Text = sanPhamEdit.GiamGia.ToString(CultureInfo.CurrentCulture);
+
+            if (sanPhamEdit.NgayHetHan.HasValue)
+            {
+                dtpNgayHetHan.Value = sanPhamEdit.NgayHetHan.Value;
+                dtpNgayHetHan.Checked = true;
+            }
+            else
+            {
+                dtpNgayHetHan.Checked = false;
+            }
         }
         
         private void btnSave_Click(object sender, EventArgs e) {
@@ -77,23 +108,19 @@ namespace CHTL.GUI.SanPham {
 
                 DateTime? ngayHetHan = dtpNgayHetHan.Checked ? (DateTime?)dtpNgayHetHan.Value : null;
 
-                // Tạo đối tượng SanPham
-                CHTL.Models.SanPham sp = new CHTL.Models.SanPham
-                {
-                    MaSanPham = textboxID.Text.Trim(),
-                    TenSanPham = textboxTen.Text.Trim(),
-                    GiaBan = giaBan,
-                    MaDanhMuc = cbDanhMuc.SelectedValue.ToString(),
-                    SoLuongTon = soLuongTon,
-                    NgayHetHan = ngayHetHan,
-                    GiamGia = giamGia,
-                };
+                // Cập nhật thông tin sản phẩm
+                sanPhamEdit.TenSanPham = textboxTen.Text.Trim();
+                sanPhamEdit.GiaBan = giaBan;
+                sanPhamEdit.MaDanhMuc = cbDanhMuc.SelectedValue.ToString();
+                sanPhamEdit.SoLuongTon = soLuongTon;
+                sanPhamEdit.NgayHetHan = ngayHetHan;
+                sanPhamEdit.GiamGia = giamGia;
 
-                // Gọi phương thức thêm sản phẩm
-                xuLy.ThemSanPham(sp);
+                // Gọi phương thức sửa sản phẩm
+                xuLy.SuaSanPham(sanPhamEdit);
 
                 // Thông báo thành công
-                MessageBox.Show("Thêm sản phẩm thành công!", "Thành công",
+                MessageBox.Show("Cập nhật sản phẩm thành công!", "Thành công",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 DialogResult = DialogResult.OK;
