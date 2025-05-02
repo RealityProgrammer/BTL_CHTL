@@ -65,7 +65,7 @@ namespace CHTL.GUI
 
         private void btn_bao_cao_Click(object sender, EventArgs e)
         {
-            FormBaoCaoView formBaoCao = new FormBaoCaoView();
+            FormBaoCaoView_Old formBaoCao = new FormBaoCaoView_Old();
             ShowFormInPanel(formBaoCao);
         }
 
