@@ -1,6 +1,6 @@
 ﻿namespace CHTL.GUI.BanHang
 {
-    partial class FormQRPayment
+    partial class FormQRPayment_Old
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -198,7 +198,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormQRPayment";
+            this.Name = "FormQRPayment_Old";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thanh toán qua mã QR";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormQRPayment_FormClosed);

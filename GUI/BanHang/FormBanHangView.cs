@@ -400,7 +400,7 @@ namespace CHTL.GUI.BanHang
 
                 bool saveReceipt = false;
 
-                using (var formQR = new FormQRPayment(maHoaDon, grandTotal))
+                using (var formQR = new FormThanhToanQR(maHoaDon, grandTotal))
                 {
                     saveReceipt = formQR.ShowDialog() == DialogResult.OK;
                 }

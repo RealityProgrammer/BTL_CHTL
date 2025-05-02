@@ -16,7 +16,7 @@ using System.Threading;
 
 namespace CHTL.GUI.BanHang
 {
-    public partial class FormQRPayment : Form
+    public partial class FormQRPayment_Old : Form
     {
         private decimal amount;
         private string maHoaDon;
@@ -24,14 +24,14 @@ namespace CHTL.GUI.BanHang
         private CancellationTokenSource _cancellationTokenSource;
         private Task _generateQRTask;
 
-        public FormQRPayment(string maHoaDon, decimal amount) {
+        public FormQRPayment_Old(string maHoaDon, decimal amount) {
             _cancellationTokenSource = new CancellationTokenSource();
             
             InitializeComponent();
             this.maHoaDon = maHoaDon;
             this.amount = amount;
 
-            _generateQRTask = GenerateAndDisplayQRCode(_cancellationTokenSource.Token);
+            // _generateQRTask = GenerateAndDisplayQRCode(_cancellationTokenSource.Token);
 
             labelLoading.Visible = true;
             pbQRCode.Visible = false;

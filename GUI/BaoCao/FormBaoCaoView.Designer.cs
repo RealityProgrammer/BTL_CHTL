@@ -33,8 +33,11 @@ namespace CHTL.GUI.BaoCao {
             Krypton.Toolkit.KryptonLabel kryptonLabel5;
             Krypton.Toolkit.KryptonLabel kryptonLabel4;
             Krypton.Toolkit.KryptonLabel kryptonLabel3;
-            this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.btnLuuBaoCao = new Krypton.Toolkit.KryptonButton();
+            this.btnXemBaoCao = new Krypton.Toolkit.KryptonButton();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.dtpLocDenNgay = new Krypton.Toolkit.KryptonDateTimePicker();
@@ -47,13 +50,14 @@ namespace CHTL.GUI.BaoCao {
             this.labelSoHoaDon = new Krypton.Toolkit.KryptonLabel();
             this.labelTongDoanhThu = new Krypton.Toolkit.KryptonLabel();
             this.tabPageChiTietHoaDon = new System.Windows.Forms.TabPage();
-            this.tabPageBieuDo = new System.Windows.Forms.TabPage();
             this.dgvChiTiet = new System.Windows.Forms.DataGridView();
             this.colMaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenNguoiBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDetails = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabPageBieuDo = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             kryptonTableLayoutPanel2 = new Krypton.Toolkit.KryptonTableLayoutPanel();
             kryptonTableLayoutPanel1 = new Krypton.Toolkit.KryptonTableLayoutPanel();
@@ -74,6 +78,8 @@ namespace CHTL.GUI.BaoCao {
             this.kryptonTableLayoutPanel3.SuspendLayout();
             this.tabPageChiTietHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTiet)).BeginInit();
+            this.tabPageBieuDo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
@@ -84,7 +90,7 @@ namespace CHTL.GUI.BaoCao {
             kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             kryptonPanel1.Name = "kryptonPanel1";
             kryptonPanel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            kryptonPanel1.Size = new System.Drawing.Size(960, 97);
+            kryptonPanel1.Size = new System.Drawing.Size(821, 97);
             kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.Transparent;
             kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.Transparent;
             kryptonPanel1.TabIndex = 0;
@@ -95,10 +101,10 @@ namespace CHTL.GUI.BaoCao {
             kryptonTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             kryptonTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             kryptonTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            kryptonTableLayoutPanel2.Controls.Add(this.kryptonButton2, 2, 1);
-            kryptonTableLayoutPanel2.Controls.Add(this.kryptonButton1, 0, 1);
+            kryptonTableLayoutPanel2.Controls.Add(this.btnLuuBaoCao, 2, 1);
+            kryptonTableLayoutPanel2.Controls.Add(this.btnXemBaoCao, 0, 1);
             kryptonTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            kryptonTableLayoutPanel2.Location = new System.Drawing.Point(609, 10);
+            kryptonTableLayoutPanel2.Location = new System.Drawing.Point(470, 10);
             kryptonTableLayoutPanel2.Name = "kryptonTableLayoutPanel2";
             kryptonTableLayoutPanel2.RowCount = 3;
             kryptonTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -109,27 +115,29 @@ namespace CHTL.GUI.BaoCao {
             kryptonTableLayoutPanel2.StateCommon.Color2 = System.Drawing.Color.Transparent;
             kryptonTableLayoutPanel2.TabIndex = 2;
             // 
-            // kryptonButton2
+            // btnLuuBaoCao
             // 
-            this.kryptonButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonButton2.Location = new System.Drawing.Point(183, 26);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(155, 34);
-            this.kryptonButton2.StateCommon.Border.Rounding = 8F;
-            this.kryptonButton2.TabIndex = 1;
-            this.kryptonButton2.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton2.Values.Text = "Lưu báo cáo";
+            this.btnLuuBaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLuuBaoCao.Location = new System.Drawing.Point(183, 26);
+            this.btnLuuBaoCao.Name = "btnLuuBaoCao";
+            this.btnLuuBaoCao.Size = new System.Drawing.Size(155, 34);
+            this.btnLuuBaoCao.StateCommon.Border.Rounding = 8F;
+            this.btnLuuBaoCao.TabIndex = 1;
+            this.btnLuuBaoCao.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnLuuBaoCao.Values.Text = "Lưu báo cáo";
+            this.btnLuuBaoCao.Click += new System.EventHandler(this.btnInBaoCao_Click);
             // 
-            // kryptonButton1
+            // btnXemBaoCao
             // 
-            this.kryptonButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonButton1.Location = new System.Drawing.Point(3, 26);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(154, 34);
-            this.kryptonButton1.StateCommon.Border.Rounding = 8F;
-            this.kryptonButton1.TabIndex = 0;
-            this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton1.Values.Text = "Xem báo cáo";
+            this.btnXemBaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXemBaoCao.Location = new System.Drawing.Point(3, 26);
+            this.btnXemBaoCao.Name = "btnXemBaoCao";
+            this.btnXemBaoCao.Size = new System.Drawing.Size(154, 34);
+            this.btnXemBaoCao.StateCommon.Border.Rounding = 8F;
+            this.btnXemBaoCao.TabIndex = 0;
+            this.btnXemBaoCao.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnXemBaoCao.Values.Text = "Xem báo cáo";
+            this.btnXemBaoCao.Click += new System.EventHandler(this.btnXemBaoCao_Click);
             // 
             // kryptonTableLayoutPanel1
             // 
@@ -183,6 +191,7 @@ namespace CHTL.GUI.BaoCao {
             this.dtpLocDenNgay.Size = new System.Drawing.Size(256, 33);
             this.dtpLocDenNgay.StateCommon.Border.Rounding = 8F;
             this.dtpLocDenNgay.TabIndex = 3;
+            this.dtpLocDenNgay.ValueChanged += new System.EventHandler(this.dtpLocDenNgay_ValueChanged);
             // 
             // dtpLocTuNgay
             // 
@@ -193,6 +202,7 @@ namespace CHTL.GUI.BaoCao {
             this.dtpLocTuNgay.StateCommon.Border.Rounding = 8F;
             this.dtpLocTuNgay.TabIndex = 2;
             this.dtpLocTuNgay.ValueNullable = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
+            this.dtpLocTuNgay.ValueChanged += new System.EventHandler(this.dtpLocTuNgay_ValueChanged);
             // 
             // kryptonPanel2
             // 
@@ -201,7 +211,7 @@ namespace CHTL.GUI.BaoCao {
             kryptonPanel2.Location = new System.Drawing.Point(0, 97);
             kryptonPanel2.Name = "kryptonPanel2";
             kryptonPanel2.Padding = new System.Windows.Forms.Padding(10);
-            kryptonPanel2.Size = new System.Drawing.Size(960, 492);
+            kryptonPanel2.Size = new System.Drawing.Size(821, 500);
             kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.Transparent;
             kryptonPanel2.StateCommon.Color2 = System.Drawing.Color.Transparent;
             kryptonPanel2.TabIndex = 1;
@@ -215,7 +225,7 @@ namespace CHTL.GUI.BaoCao {
             this.tabControl1.Location = new System.Drawing.Point(10, 10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(940, 472);
+            this.tabControl1.Size = new System.Drawing.Size(801, 480);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPageThongKe
@@ -224,7 +234,7 @@ namespace CHTL.GUI.BaoCao {
             this.tabPageThongKe.Location = new System.Drawing.Point(4, 25);
             this.tabPageThongKe.Name = "tabPageThongKe";
             this.tabPageThongKe.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageThongKe.Size = new System.Drawing.Size(887, 459);
+            this.tabPageThongKe.Size = new System.Drawing.Size(793, 451);
             this.tabPageThongKe.TabIndex = 2;
             this.tabPageThongKe.Text = "Thống kê";
             this.tabPageThongKe.UseVisualStyleBackColor = true;
@@ -236,7 +246,7 @@ namespace CHTL.GUI.BaoCao {
             this.kryptonPanel3.Location = new System.Drawing.Point(3, 3);
             this.kryptonPanel3.Name = "kryptonPanel3";
             this.kryptonPanel3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.kryptonPanel3.Size = new System.Drawing.Size(881, 453);
+            this.kryptonPanel3.Size = new System.Drawing.Size(787, 445);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.kryptonPanel3.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.kryptonPanel3.TabIndex = 3;
@@ -259,14 +269,14 @@ namespace CHTL.GUI.BaoCao {
             this.kryptonTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.kryptonTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.kryptonTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.kryptonTableLayoutPanel3.Size = new System.Drawing.Size(881, 443);
+            this.kryptonTableLayoutPanel3.Size = new System.Drawing.Size(787, 435);
             this.kryptonTableLayoutPanel3.StateCommon.Color1 = System.Drawing.Color.White;
             this.kryptonTableLayoutPanel3.StateCommon.Color2 = System.Drawing.Color.White;
             this.kryptonTableLayoutPanel3.TabIndex = 0;
             // 
             // labelSanPhamBanChay
             // 
-            this.labelSanPhamBanChay.Location = new System.Drawing.Point(443, 73);
+            this.labelSanPhamBanChay.Location = new System.Drawing.Point(396, 73);
             this.labelSanPhamBanChay.Name = "labelSanPhamBanChay";
             this.labelSanPhamBanChay.Size = new System.Drawing.Size(48, 28);
             this.labelSanPhamBanChay.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(175)))), ((int)(((byte)(228)))));
@@ -278,7 +288,7 @@ namespace CHTL.GUI.BaoCao {
             // 
             // labelSoHoaDon
             // 
-            this.labelSoHoaDon.Location = new System.Drawing.Point(443, 38);
+            this.labelSoHoaDon.Location = new System.Drawing.Point(396, 38);
             this.labelSoHoaDon.Name = "labelSoHoaDon";
             this.labelSoHoaDon.Size = new System.Drawing.Size(25, 28);
             this.labelSoHoaDon.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(175)))), ((int)(((byte)(228)))));
@@ -293,7 +303,7 @@ namespace CHTL.GUI.BaoCao {
             kryptonLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
             kryptonLabel5.Location = new System.Drawing.Point(3, 38);
             kryptonLabel5.Name = "kryptonLabel5";
-            kryptonLabel5.Size = new System.Drawing.Size(434, 29);
+            kryptonLabel5.Size = new System.Drawing.Size(387, 29);
             kryptonLabel5.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             kryptonLabel5.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             kryptonLabel5.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -306,7 +316,7 @@ namespace CHTL.GUI.BaoCao {
             kryptonLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
             kryptonLabel4.Location = new System.Drawing.Point(3, 73);
             kryptonLabel4.Name = "kryptonLabel4";
-            kryptonLabel4.Size = new System.Drawing.Size(434, 367);
+            kryptonLabel4.Size = new System.Drawing.Size(387, 359);
             kryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             kryptonLabel4.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             kryptonLabel4.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -316,7 +326,7 @@ namespace CHTL.GUI.BaoCao {
             // 
             // labelTongDoanhThu
             // 
-            this.labelTongDoanhThu.Location = new System.Drawing.Point(443, 3);
+            this.labelTongDoanhThu.Location = new System.Drawing.Point(396, 3);
             this.labelTongDoanhThu.Name = "labelTongDoanhThu";
             this.labelTongDoanhThu.Size = new System.Drawing.Size(74, 28);
             this.labelTongDoanhThu.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(175)))), ((int)(((byte)(228)))));
@@ -331,7 +341,7 @@ namespace CHTL.GUI.BaoCao {
             kryptonLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
             kryptonLabel3.Location = new System.Drawing.Point(3, 3);
             kryptonLabel3.Name = "kryptonLabel3";
-            kryptonLabel3.Size = new System.Drawing.Size(434, 29);
+            kryptonLabel3.Size = new System.Drawing.Size(387, 29);
             kryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             kryptonLabel3.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             kryptonLabel3.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -345,20 +355,10 @@ namespace CHTL.GUI.BaoCao {
             this.tabPageChiTietHoaDon.Location = new System.Drawing.Point(4, 25);
             this.tabPageChiTietHoaDon.Name = "tabPageChiTietHoaDon";
             this.tabPageChiTietHoaDon.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageChiTietHoaDon.Size = new System.Drawing.Size(932, 443);
+            this.tabPageChiTietHoaDon.Size = new System.Drawing.Size(825, 483);
             this.tabPageChiTietHoaDon.TabIndex = 1;
             this.tabPageChiTietHoaDon.Text = "Chi tiết hóa đơn";
             this.tabPageChiTietHoaDon.UseVisualStyleBackColor = true;
-            // 
-            // tabPageBieuDo
-            // 
-            this.tabPageBieuDo.Location = new System.Drawing.Point(4, 25);
-            this.tabPageBieuDo.Name = "tabPageBieuDo";
-            this.tabPageBieuDo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBieuDo.Size = new System.Drawing.Size(903, 475);
-            this.tabPageBieuDo.TabIndex = 3;
-            this.tabPageBieuDo.Text = "Biểu đồ";
-            this.tabPageBieuDo.UseVisualStyleBackColor = true;
             // 
             // dgvChiTiet
             // 
@@ -371,8 +371,9 @@ namespace CHTL.GUI.BaoCao {
             this.dgvChiTiet.Location = new System.Drawing.Point(3, 3);
             this.dgvChiTiet.Name = "dgvChiTiet";
             this.dgvChiTiet.RowHeadersWidth = 51;
-            this.dgvChiTiet.Size = new System.Drawing.Size(926, 437);
+            this.dgvChiTiet.Size = new System.Drawing.Size(819, 477);
             this.dgvChiTiet.TabIndex = 10;
+            this.dgvChiTiet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTiet_CellClick);
             // 
             // colMaHoaDon
             // 
@@ -409,15 +410,44 @@ namespace CHTL.GUI.BaoCao {
             this.colDetails.Text = "Xem";
             this.colDetails.UseColumnTextForButtonValue = true;
             // 
+            // tabPageBieuDo
+            // 
+            this.tabPageBieuDo.Controls.Add(this.chart1);
+            this.tabPageBieuDo.Location = new System.Drawing.Point(4, 25);
+            this.tabPageBieuDo.Name = "tabPageBieuDo";
+            this.tabPageBieuDo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageBieuDo.Size = new System.Drawing.Size(825, 483);
+            this.tabPageBieuDo.TabIndex = 3;
+            this.tabPageBieuDo.Text = "Biểu đồ";
+            this.tabPageBieuDo.UseVisualStyleBackColor = true;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(3, 3);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(819, 477);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chartDoanhThu";
+            // 
             // FormBaoCaoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 589);
+            this.ClientSize = new System.Drawing.Size(821, 597);
             this.Controls.Add(kryptonPanel2);
             this.Controls.Add(kryptonPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBaoCaoView";
+            this.Load += new System.EventHandler(this.FormBaoCaoView_Load);
             ((System.ComponentModel.ISupportInitialize)(kryptonPanel1)).EndInit();
             kryptonPanel1.ResumeLayout(false);
             kryptonTableLayoutPanel2.ResumeLayout(false);
@@ -433,8 +463,11 @@ namespace CHTL.GUI.BaoCao {
             this.kryptonTableLayoutPanel3.PerformLayout();
             this.tabPageChiTietHoaDon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTiet)).EndInit();
+            this.tabPageBieuDo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
         }
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataGridView dgvChiTiet;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayBan;
@@ -452,8 +485,8 @@ namespace CHTL.GUI.BaoCao {
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageThongKe;
         private System.Windows.Forms.TabPage tabPageChiTietHoaDon;
-        private Krypton.Toolkit.KryptonButton kryptonButton2;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonButton btnLuuBaoCao;
+        private Krypton.Toolkit.KryptonButton btnXemBaoCao;
         private Krypton.Toolkit.KryptonDateTimePicker dtpLocDenNgay;
         private Krypton.Toolkit.KryptonDateTimePicker dtpLocTuNgay;
 
