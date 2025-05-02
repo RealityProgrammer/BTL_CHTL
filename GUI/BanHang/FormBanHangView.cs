@@ -398,14 +398,7 @@ namespace CHTL.GUI.BanHang
                     cthd.MaHoaDon = maHoaDon;
                 }
 
-                bool saveReceipt = false;
-
-                using (var formQR = new FormThanhToanQR(maHoaDon, grandTotal))
-                {
-                    saveReceipt = formQR.ShowDialog() == DialogResult.OK;
-                }
-
-                if (saveReceipt)
+                if (new FormThanhToanQR(maHoaDon, grandTotal).ShowDialog() == DialogResult.OK)
                 {
                     xuLyHoaDon.LuuHoaDon(hoaDon, chiTietHoaDonList);
 
