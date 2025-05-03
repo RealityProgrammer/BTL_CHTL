@@ -39,18 +39,6 @@ namespace CHTL.GUI
             childForm.Show();
         }
 
-        private void btn_nguoi_dung_Click(object sender, EventArgs e)
-        {
-            // FormNguoiDungView formNguoiDung = new FormNguoiDungView();
-            // ShowFormInPanel(formNguoiDung);
-        }
-
-        private void btn_danh_muc_Click(object sender, EventArgs e)
-        {
-            // FormDanhMucView formDanhMuc = new FormDanhMucView();
-            // ShowFormInPanel(formDanhMuc);
-        }
-
         private void btn_san_pham_Click(object sender, EventArgs e)
         {
             // FormSanPhamView formSanPham = new FormSanPhamView();
@@ -65,14 +53,8 @@ namespace CHTL.GUI
 
         private void btn_bao_cao_Click(object sender, EventArgs e)
         {
-            FormBaoCaoView_Old formBaoCao = new FormBaoCaoView_Old();
+            FormBaoCaoView formBaoCao = new FormBaoCaoView();
             ShowFormInPanel(formBaoCao);
-        }
-
-        private void btn_ai_tips_Click(object sender, EventArgs e)
-        {
-            FormChat formChat = new FormChat();
-            ShowFormInPanel(formChat);
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -81,8 +63,7 @@ namespace CHTL.GUI
             FormDangNhap formLogin = new FormDangNhap();
             formLogin.Show();
 
-            // Đóng form hiện tại (FormMain)
-            this.Close();
+            Close();
         }
     }
 }

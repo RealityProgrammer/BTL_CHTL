@@ -37,7 +37,7 @@ namespace CHTL.GUI.BaoCao {
             // btnInBaoCao.BackColor = Color.Green; // Màu tím đậm
             // btnInBaoCao.ForeColor = Color.White;
             // btnInBaoCao.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-
+            
             // Tùy chỉnh TabControl
             tabControl1.BackColor = Color.FromArgb(245, 240, 255); // Màu nền tab tím nhạt hơn
             tabControl1.Font = new Font("Segoe UI", 12F, FontStyle.Underline);
@@ -65,7 +65,7 @@ namespace CHTL.GUI.BaoCao {
             CustomizeDataGridView();
 
             // Vẽ biểu đồ doanh thu theo danh mục
-            chart1.Series.Clear();
+            chartDoanhThu.Series.Clear();
             Series series = new Series("DoanhThu")
             {
                 ChartType = SeriesChartType.Pie
@@ -74,16 +74,15 @@ namespace CHTL.GUI.BaoCao {
             {
                 series.Points.AddXY(item.Key, item.Value);
             }
-            chart1.Series.Add(series);
+            chartDoanhThu.Series.Add(series);
 
             // Ensure there is at least one ChartArea
-            if (chart1.ChartAreas.Count == 0)
+            if (chartDoanhThu.ChartAreas.Count == 0)
             {
-                chart1.ChartAreas.Add(new ChartArea());
+                chartDoanhThu.ChartAreas.Add(new ChartArea());
             }
 
-            chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
-            chart1.BackColor = Color.FromArgb(245, 240, 255); // Màu nền biểu đồ tím nhạt
+            chartDoanhThu.ChartAreas[0].Area3DStyle.Enable3D = true;
         }
 
         private void CustomizeDataGridView()
