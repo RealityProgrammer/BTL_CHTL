@@ -42,9 +42,6 @@
     <Reference Include="Azure.Identity, Version=1.11.4.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
       <HintPath>..\packages\Azure.Identity.1.11.4\lib\netstandard2.0\Azure.Identity.dll</HintPath>
     </Reference>
-    <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\..\..\..\Downloads\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
-    </Reference>
     <Reference Include="Google.Apis, Version=1.69.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.69.0\lib\net462\Google.Apis.dll</HintPath>
     </Reference>
@@ -69,23 +66,20 @@
     <Reference Include="JsonSchema.Net.Generation, Version=5.0.0.0, Culture=neutral, PublicKeyToken=17ed63f672b0e278, processorArchitecture=MSIL">
       <HintPath>..\packages\JsonSchema.Net.Generation.5.0.0\lib\netstandard2.0\JsonSchema.Net.Generation.dll</HintPath>
     </Reference>
-    <Reference Include="Krypton.Docking, Version=90.25.2.55, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Docking.90.25.2.55\lib\net48\Krypton.Docking.dll</HintPath>
+    <Reference Include="Krypton.Docking, Version=95.25.4.111, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Docking.95.25.4.111\lib\net48\Krypton.Docking.dll</HintPath>
     </Reference>
-    <Reference Include="Krypton.Navigator, Version=90.25.2.55, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Navigator.90.25.2.55\lib\net48\Krypton.Navigator.dll</HintPath>
+    <Reference Include="Krypton.Navigator, Version=95.25.4.111, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Navigator.95.25.4.111\lib\net48\Krypton.Navigator.dll</HintPath>
     </Reference>
-    <Reference Include="Krypton.Ribbon, Version=90.25.2.55, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Ribbon.90.25.2.55\lib\net48\Krypton.Ribbon.dll</HintPath>
+    <Reference Include="Krypton.Ribbon, Version=95.25.4.111, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Ribbon.95.25.4.111\lib\net48\Krypton.Ribbon.dll</HintPath>
     </Reference>
-    <Reference Include="Krypton.Toolkit">
-      <HintPath>..\..\..\..\..\Downloads\Krypton-master\Krypton-master\Bin\Krypton.Toolkit.dll</HintPath>
+    <Reference Include="Krypton.Toolkit, Version=95.25.4.111, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Toolkit.95.25.4.111\lib\net48\Krypton.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="Krypton.Toolkit, Version=90.25.2.55, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.90.25.2.55\lib\net48\Krypton.Toolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="Krypton.Workspace, Version=90.25.2.55, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Workspace.90.25.2.55\lib\net48\Krypton.Workspace.dll</HintPath>
+    <Reference Include="Krypton.Workspace, Version=95.25.4.111, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Workspace.95.25.4.111\lib\net48\Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.4\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -259,24 +253,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstracts\FormAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abstracts\FormAdd.Designer.cs">
-      <DependentUpon>FormAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Abstracts\FormEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abstracts\FormEdit.Designer.cs">
-      <DependentUpon>FormEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Abstracts\FormView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abstracts\FormView.Designer.cs">
-      <DependentUpon>FormView.cs</DependentUpon>
-    </Compile>
     <Compile Include="AI\FormChat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +286,12 @@
       <DependentUpon>FormChiTietHoaDonView.cs</DependentUpon>
     </Compile>
     <Compile Include="Configurations.cs" />
+    <Compile Include="Controls\SaveOrCancelPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SaveOrCancelPanel.Designer.cs">
+      <DependentUpon>SaveOrCancelPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\FormDanhMucEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,12 +367,6 @@
     <Compile Include="SanPham\FormSanPhamView.Designer.cs">
       <DependentUpon>FormSanPhamView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Abstracts\FormAdd.resx">
-      <DependentUpon>FormAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Abstracts\FormView.resx">
-      <DependentUpon>FormView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AI\FormChat.resx">
       <DependentUpon>FormChat.cs</DependentUpon>
     </EmbeddedResource>
@@ -405,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\FormChiTietHoaDonView.resx">
       <DependentUpon>FormChiTietHoaDonView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SaveOrCancelPanel.resx">
+      <DependentUpon>SaveOrCancelPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FormDanhMucEdit.resx">
       <DependentUpon>FormDanhMucEdit.cs</DependentUpon>
@@ -491,6 +470,7 @@
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

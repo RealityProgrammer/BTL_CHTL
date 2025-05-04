@@ -41,17 +41,21 @@ namespace CHTL.GUI
             // kryptonPalette1
             // 
             this.kryptonPalette1.ButtonSpecs.FormClose.ColorMap = System.Drawing.Color.Red;
-            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color1 = Color.FromArgb(236, 240, 241); // Xám nhạt
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color2 = Color.FromArgb(236, 240, 241);
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Color1 = Color.FromArgb(189, 195, 199); // Xám trung bình
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Color2 = Color.FromArgb(189, 195, 199);
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 16F;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color1 = Color.White;
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.kryptonPalette1.UseThemeFormChromeBorderWidth = Krypton.Toolkit.InheritBool.True;
             // 
             // pictureBox1
@@ -69,8 +73,8 @@ namespace CHTL.GUI
             this.kryptonLabel1.LabelStyle = Krypton.Toolkit.LabelStyle.BoldControl;
             this.kryptonLabel1.Location = new System.Drawing.Point(500, 160);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(119, 38);
-            this.kryptonLabel1.StateCommon.ShortText.Color1 = Color.FromArgb(44, 62, 80); // Xám đậm
+            this.kryptonLabel1.Size = new System.Drawing.Size(119, 36);
+            this.kryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
             this.kryptonLabel1.TabIndex = 2;
             this.kryptonLabel1.Values.Text = "Tài khoản";
@@ -81,33 +85,42 @@ namespace CHTL.GUI
             this.kryptonLabel2.Location = new System.Drawing.Point(500, 280);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(116, 36);
-            this.kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(44, 62, 80); // Xám đậm
+            this.kryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
             this.kryptonLabel2.TabIndex = 3;
             this.kryptonLabel2.Values.Text = "Mật khẩu";
             // 
             // textboxTaiKhoan
             // 
+            this.textboxTaiKhoan.CueHint.CueHintText = "Nhập tài khoản...";
+            this.textboxTaiKhoan.CueHint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.textboxTaiKhoan.InputControlStyle = Krypton.Toolkit.InputControlStyle.Ribbon;
             this.textboxTaiKhoan.Location = new System.Drawing.Point(500, 200);
             this.textboxTaiKhoan.Name = "textboxTaiKhoan";
             this.textboxTaiKhoan.Size = new System.Drawing.Size(400, 44);
-            this.textboxTaiKhoan.StateCommon.Border.Color1 = Color.FromArgb(189, 195, 199); // Xám nhạt
-            this.textboxTaiKhoan.StateCommon.Border.Color2 = Color.FromArgb(189, 195, 199);
-            this.textboxTaiKhoan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textboxTaiKhoan.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.textboxTaiKhoan.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.textboxTaiKhoan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.textboxTaiKhoan.StateCommon.Border.Rounding = 15F;
             this.textboxTaiKhoan.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.textboxTaiKhoan.TabIndex = 4;
             // 
             // textboxMatKhau
             // 
+            this.textboxMatKhau.CueHint.CueHintText = "Nhập mật khẩu...";
+            this.textboxMatKhau.CueHint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxMatKhau.InputControlStyle = Krypton.Toolkit.InputControlStyle.Ribbon;
             this.textboxMatKhau.Location = new System.Drawing.Point(500, 320);
             this.textboxMatKhau.Name = "textboxMatKhau";
+            this.textboxMatKhau.PasswordChar = '●';
             this.textboxMatKhau.Size = new System.Drawing.Size(400, 44);
-            this.textboxMatKhau.StateCommon.Border.Color1 = Color.FromArgb(189, 195, 199); // Xám nhạt
-            this.textboxMatKhau.StateCommon.Border.Color2 = Color.FromArgb(189, 195, 199);
-            this.textboxMatKhau.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textboxMatKhau.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.textboxMatKhau.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.textboxMatKhau.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.textboxMatKhau.StateCommon.Border.Rounding = 15F;
             this.textboxMatKhau.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.textboxMatKhau.TabIndex = 5;
@@ -119,13 +132,18 @@ namespace CHTL.GUI
             this.btnDangNhap.Location = new System.Drawing.Point(500, 400);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(190, 60);
-            this.btnDangNhap.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
-            this.btnDangNhap.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
-            this.btnDangNhap.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnDangNhap.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnDangNhap.StateCommon.Border.Rounding = 15F;
-            this.btnDangNhap.StateCommon.Content.ShortText.Color1 = Color.White;
+            this.btnDangNhap.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnDangNhap.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDangNhap.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnDangNhap.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnDangNhap.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnDangNhap.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnDangNhap.TabIndex = 6;
+            this.btnDangNhap.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnDangNhap.Values.Text = "Đăng nhập";
             this.btnDangNhap.Click += new System.EventHandler(this.btn_dang_nhap_Click);
             // 
@@ -134,13 +152,18 @@ namespace CHTL.GUI
             this.btnHuy.Location = new System.Drawing.Point(710, 400);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(190, 60);
-            this.btnHuy.StateCommon.Back.Color1 = Color.FromArgb(231, 76, 60); // Đỏ nhạt
-            this.btnHuy.StateCommon.Back.Color2 = Color.FromArgb(231, 76, 60);
-            this.btnHuy.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnHuy.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnHuy.StateCommon.Border.Rounding = 15F;
-            this.btnHuy.StateCommon.Content.ShortText.Color1 = Color.White;
+            this.btnHuy.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnHuy.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnHuy.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnHuy.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnHuy.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.btnHuy.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.btnHuy.TabIndex = 7;
+            this.btnHuy.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnHuy.Values.Text = "Hủy";
             this.btnHuy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
@@ -178,8 +201,8 @@ namespace CHTL.GUI
             // 
             this.kryptonLabelDangNhap.Location = new System.Drawing.Point(500, 60);
             this.kryptonLabelDangNhap.Name = "kryptonLabelDangNhap";
-            this.kryptonLabelDangNhap.Size = new System.Drawing.Size(400, 50);
-            this.kryptonLabelDangNhap.StateCommon.ShortText.Color1 = Color.FromArgb(44, 62, 80); // Xám đậm
+            this.kryptonLabelDangNhap.Size = new System.Drawing.Size(373, 46);
+            this.kryptonLabelDangNhap.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.kryptonLabelDangNhap.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.kryptonLabelDangNhap.TabIndex = 11;
             this.kryptonLabelDangNhap.Values.Text = "ĐĂNG NHẬP HỆ THỐNG";
@@ -187,8 +210,8 @@ namespace CHTL.GUI
             // FormDangNhap
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = Color.FromArgb(236, 240, 241); // Xám nhạt
-            this.ClientSize = new System.Drawing.Size(950, 550);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.ClientSize = new System.Drawing.Size(954, 536);
             this.Controls.Add(this.kryptonLabelDangNhap);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -211,6 +234,7 @@ namespace CHTL.GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

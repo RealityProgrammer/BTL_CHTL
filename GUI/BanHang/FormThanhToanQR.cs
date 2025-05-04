@@ -24,6 +24,7 @@ namespace CHTL.GUI.BanHang {
             this.maHoaDon = maHoaDon;
             this.amount = amount;
 
+            panelFooter.SaveButton.Enabled = false;
             _generateQRTask = GenerateAndDisplayQRCode(_cancellationTokenSource.Token);
         }
         
@@ -74,7 +75,7 @@ namespace CHTL.GUI.BanHang {
                 var image = await Base64ToImage(dataResult.data.qrDataURL.Replace("data:image/png;base64,", ""), cancellationToken);
                 
                 BeginInvoke((Action)(() => {
-                    btnOK.Enabled = true;
+                    panelFooter.SaveButton.Enabled = true;
                     pbQR.Image = image;
                     labelTrangThai.Text = "Quét mã QR để thanh toán";
                 }));
@@ -98,12 +99,12 @@ namespace CHTL.GUI.BanHang {
             }
         }
         
-        private void btnOk_Click(object sender, EventArgs e) {
+        private void btnSave_Click(object sender, EventArgs e) {
             DialogResult = DialogResult.OK;
             Close();
         }
         
-        private void btnClose_Click(object sender, EventArgs e) {
+        private void btnCancel_Click(object sender, EventArgs e) {
             DialogResult = DialogResult.Cancel;
             Close();
         }

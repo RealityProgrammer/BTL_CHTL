@@ -39,18 +39,14 @@ namespace CHTL.GUI.NguoiDung {
             Krypton.Toolkit.KryptonLabel labelName;
             Krypton.Toolkit.KryptonPanel panelCell1;
             Krypton.Toolkit.KryptonLabel labelID;
-            Krypton.Toolkit.KryptonTableLayoutPanel panelFooter;
             this.labelTitle = new Krypton.Toolkit.KryptonLabel();
             this.textboxMatKhau = new Krypton.Toolkit.KryptonTextBox();
             this.textboxTenDangNhap = new Krypton.Toolkit.KryptonTextBox();
             this.cbVaiTro = new Krypton.Toolkit.KryptonComboBox();
             this.textboxTen = new Krypton.Toolkit.KryptonTextBox();
             this.textboxID = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTableLayoutPanel1 = new Krypton.Toolkit.KryptonTableLayoutPanel();
-            this.btnSave = new Krypton.Toolkit.KryptonButton();
-            this.kryptonTableLayoutPanel2 = new Krypton.Toolkit.KryptonTableLayoutPanel();
-            this.btnExit = new Krypton.Toolkit.KryptonButton();
             this.kryptonTableLayoutPanel3 = new Krypton.Toolkit.KryptonTableLayoutPanel();
+            this.saveOrCancelPanel1 = new CHTL.GUI.Controls.SaveOrCancelPanel();
             panelHeader = new Krypton.Toolkit.KryptonPanel();
             panelBody = new Krypton.Toolkit.KryptonPanel();
             tableFields = new Krypton.Toolkit.KryptonTableLayoutPanel();
@@ -64,7 +60,6 @@ namespace CHTL.GUI.NguoiDung {
             labelName = new Krypton.Toolkit.KryptonLabel();
             panelCell1 = new Krypton.Toolkit.KryptonPanel();
             labelID = new Krypton.Toolkit.KryptonLabel();
-            panelFooter = new Krypton.Toolkit.KryptonTableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(panelHeader)).BeginInit();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(panelBody)).BeginInit();
@@ -81,9 +76,6 @@ namespace CHTL.GUI.NguoiDung {
             panelCell2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(panelCell1)).BeginInit();
             panelCell1.SuspendLayout();
-            panelFooter.SuspendLayout();
-            this.kryptonTableLayoutPanel1.SuspendLayout();
-            this.kryptonTableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -92,19 +84,18 @@ namespace CHTL.GUI.NguoiDung {
             panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             panelHeader.Location = new System.Drawing.Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new System.Drawing.Size(584, 96);
-            panelHeader.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            panelHeader.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            panelHeader.Size = new System.Drawing.Size(586, 96);
+            panelHeader.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             panelHeader.TabIndex = 0;
             // 
             // labelTitle
             // 
             this.labelTitle.Location = new System.Drawing.Point(12, 28);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(324, 36);
+            this.labelTitle.Size = new System.Drawing.Size(304, 36);
             this.labelTitle.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
             this.labelTitle.StateCommon.ShortText.Color2 = System.Drawing.Color.White;
-            this.labelTitle.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Values.Text = "Sửa thông tin người dùng";
             // 
@@ -115,7 +106,7 @@ namespace CHTL.GUI.NguoiDung {
             panelBody.Location = new System.Drawing.Point(0, 96);
             panelBody.Name = "panelBody";
             panelBody.Padding = new System.Windows.Forms.Padding(15);
-            panelBody.Size = new System.Drawing.Size(584, 274);
+            panelBody.Size = new System.Drawing.Size(586, 361);
             panelBody.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelBody.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelBody.TabIndex = 1;
@@ -138,7 +129,7 @@ namespace CHTL.GUI.NguoiDung {
             tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableFields.Size = new System.Drawing.Size(554, 244);
+            tableFields.Size = new System.Drawing.Size(556, 331);
             tableFields.StateCommon.Color1 = System.Drawing.Color.Transparent;
             tableFields.StateCommon.Color2 = System.Drawing.Color.Transparent;
             tableFields.TabIndex = 1;
@@ -148,9 +139,9 @@ namespace CHTL.GUI.NguoiDung {
             kryptonPanel1.Controls.Add(this.textboxMatKhau);
             kryptonPanel1.Controls.Add(labelPassword);
             kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            kryptonPanel1.Location = new System.Drawing.Point(290, 75);
+            kryptonPanel1.Location = new System.Drawing.Point(291, 75);
             kryptonPanel1.Name = "kryptonPanel1";
-            kryptonPanel1.Size = new System.Drawing.Size(261, 66);
+            kryptonPanel1.Size = new System.Drawing.Size(262, 66);
             kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.Transparent;
             kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.Transparent;
             kryptonPanel1.TabIndex = 4;
@@ -161,7 +152,7 @@ namespace CHTL.GUI.NguoiDung {
             this.textboxMatKhau.Location = new System.Drawing.Point(0, 24);
             this.textboxMatKhau.Name = "textboxMatKhau";
             this.textboxMatKhau.ReadOnly = true;
-            this.textboxMatKhau.Size = new System.Drawing.Size(261, 33);
+            this.textboxMatKhau.Size = new System.Drawing.Size(262, 33);
             this.textboxMatKhau.StateCommon.Border.Rounding = 8F;
             this.textboxMatKhau.TabIndex = 1;
             // 
@@ -170,7 +161,7 @@ namespace CHTL.GUI.NguoiDung {
             labelPassword.Dock = System.Windows.Forms.DockStyle.Top;
             labelPassword.Location = new System.Drawing.Point(0, 0);
             labelPassword.Name = "labelPassword";
-            labelPassword.Size = new System.Drawing.Size(261, 24);
+            labelPassword.Size = new System.Drawing.Size(262, 24);
             labelPassword.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelPassword.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelPassword.TabIndex = 0;
@@ -181,9 +172,9 @@ namespace CHTL.GUI.NguoiDung {
             panelCell4.Controls.Add(this.textboxTenDangNhap);
             panelCell4.Controls.Add(labelUsername);
             panelCell4.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelCell4.Location = new System.Drawing.Point(290, 3);
+            panelCell4.Location = new System.Drawing.Point(291, 3);
             panelCell4.Name = "panelCell4";
-            panelCell4.Size = new System.Drawing.Size(261, 66);
+            panelCell4.Size = new System.Drawing.Size(262, 66);
             panelCell4.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelCell4.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelCell4.TabIndex = 3;
@@ -193,7 +184,7 @@ namespace CHTL.GUI.NguoiDung {
             this.textboxTenDangNhap.Dock = System.Windows.Forms.DockStyle.Top;
             this.textboxTenDangNhap.Location = new System.Drawing.Point(0, 24);
             this.textboxTenDangNhap.Name = "textboxTenDangNhap";
-            this.textboxTenDangNhap.Size = new System.Drawing.Size(261, 33);
+            this.textboxTenDangNhap.Size = new System.Drawing.Size(262, 33);
             this.textboxTenDangNhap.StateCommon.Border.Rounding = 8F;
             this.textboxTenDangNhap.TabIndex = 1;
             // 
@@ -202,7 +193,7 @@ namespace CHTL.GUI.NguoiDung {
             labelUsername.Dock = System.Windows.Forms.DockStyle.Top;
             labelUsername.Location = new System.Drawing.Point(0, 0);
             labelUsername.Name = "labelUsername";
-            labelUsername.Size = new System.Drawing.Size(261, 24);
+            labelUsername.Size = new System.Drawing.Size(262, 24);
             labelUsername.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelUsername.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelUsername.TabIndex = 0;
@@ -215,7 +206,7 @@ namespace CHTL.GUI.NguoiDung {
             panelCell3.Dock = System.Windows.Forms.DockStyle.Fill;
             panelCell3.Location = new System.Drawing.Point(3, 147);
             panelCell3.Name = "panelCell3";
-            panelCell3.Size = new System.Drawing.Size(261, 94);
+            panelCell3.Size = new System.Drawing.Size(262, 188);
             panelCell3.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelCell3.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelCell3.TabIndex = 2;
@@ -226,7 +217,7 @@ namespace CHTL.GUI.NguoiDung {
             this.cbVaiTro.DropDownWidth = 255;
             this.cbVaiTro.Location = new System.Drawing.Point(0, 24);
             this.cbVaiTro.Name = "cbVaiTro";
-            this.cbVaiTro.Size = new System.Drawing.Size(261, 32);
+            this.cbVaiTro.Size = new System.Drawing.Size(262, 32);
             this.cbVaiTro.StateCommon.ComboBox.Border.Rounding = 8F;
             this.cbVaiTro.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cbVaiTro.TabIndex = 1;
@@ -236,7 +227,7 @@ namespace CHTL.GUI.NguoiDung {
             labelRole.Dock = System.Windows.Forms.DockStyle.Top;
             labelRole.Location = new System.Drawing.Point(0, 0);
             labelRole.Name = "labelRole";
-            labelRole.Size = new System.Drawing.Size(261, 24);
+            labelRole.Size = new System.Drawing.Size(262, 24);
             labelRole.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelRole.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelRole.TabIndex = 0;
@@ -249,7 +240,7 @@ namespace CHTL.GUI.NguoiDung {
             panelCell2.Dock = System.Windows.Forms.DockStyle.Fill;
             panelCell2.Location = new System.Drawing.Point(3, 75);
             panelCell2.Name = "panelCell2";
-            panelCell2.Size = new System.Drawing.Size(261, 66);
+            panelCell2.Size = new System.Drawing.Size(262, 66);
             panelCell2.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelCell2.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelCell2.TabIndex = 1;
@@ -259,7 +250,7 @@ namespace CHTL.GUI.NguoiDung {
             this.textboxTen.Dock = System.Windows.Forms.DockStyle.Top;
             this.textboxTen.Location = new System.Drawing.Point(0, 24);
             this.textboxTen.Name = "textboxTen";
-            this.textboxTen.Size = new System.Drawing.Size(261, 33);
+            this.textboxTen.Size = new System.Drawing.Size(262, 33);
             this.textboxTen.StateCommon.Border.Rounding = 8F;
             this.textboxTen.TabIndex = 1;
             // 
@@ -268,7 +259,7 @@ namespace CHTL.GUI.NguoiDung {
             labelName.Dock = System.Windows.Forms.DockStyle.Top;
             labelName.Location = new System.Drawing.Point(0, 0);
             labelName.Name = "labelName";
-            labelName.Size = new System.Drawing.Size(261, 24);
+            labelName.Size = new System.Drawing.Size(262, 24);
             labelName.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelName.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelName.TabIndex = 0;
@@ -281,7 +272,7 @@ namespace CHTL.GUI.NguoiDung {
             panelCell1.Dock = System.Windows.Forms.DockStyle.Fill;
             panelCell1.Location = new System.Drawing.Point(3, 3);
             panelCell1.Name = "panelCell1";
-            panelCell1.Size = new System.Drawing.Size(261, 66);
+            panelCell1.Size = new System.Drawing.Size(262, 66);
             panelCell1.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelCell1.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelCell1.TabIndex = 0;
@@ -291,7 +282,7 @@ namespace CHTL.GUI.NguoiDung {
             this.textboxID.Dock = System.Windows.Forms.DockStyle.Top;
             this.textboxID.Location = new System.Drawing.Point(0, 24);
             this.textboxID.Name = "textboxID";
-            this.textboxID.Size = new System.Drawing.Size(261, 33);
+            this.textboxID.Size = new System.Drawing.Size(262, 33);
             this.textboxID.StateCommon.Border.Rounding = 8F;
             this.textboxID.TabIndex = 1;
             // 
@@ -300,109 +291,11 @@ namespace CHTL.GUI.NguoiDung {
             labelID.Dock = System.Windows.Forms.DockStyle.Top;
             labelID.Location = new System.Drawing.Point(0, 0);
             labelID.Name = "labelID";
-            labelID.Size = new System.Drawing.Size(261, 24);
+            labelID.Size = new System.Drawing.Size(262, 24);
             labelID.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelID.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelID.TabIndex = 0;
             labelID.Values.Text = "Mã người dùng";
-            // 
-            // panelFooter
-            // 
-            panelFooter.ColumnCount = 3;
-            panelFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            panelFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            panelFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            panelFooter.Controls.Add(this.kryptonTableLayoutPanel1, 0, 0);
-            panelFooter.Controls.Add(this.kryptonTableLayoutPanel2, 2, 0);
-            panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            panelFooter.Location = new System.Drawing.Point(0, 370);
-            panelFooter.Name = "panelFooter";
-            panelFooter.RowCount = 1;
-            panelFooter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            panelFooter.Size = new System.Drawing.Size(584, 94);
-            panelFooter.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            panelFooter.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            panelFooter.TabIndex = 0;
-            // 
-            // kryptonTableLayoutPanel1
-            // 
-            this.kryptonTableLayoutPanel1.ColumnCount = 1;
-            this.kryptonTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.kryptonTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.kryptonTableLayoutPanel1.Controls.Add(this.btnSave, 0, 1);
-            this.kryptonTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonTableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.kryptonTableLayoutPanel1.Name = "kryptonTableLayoutPanel1";
-            this.kryptonTableLayoutPanel1.RowCount = 3;
-            this.kryptonTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.kryptonTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.kryptonTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.kryptonTableLayoutPanel1.Size = new System.Drawing.Size(227, 88);
-            this.kryptonTableLayoutPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.kryptonTableLayoutPanel1.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.kryptonTableLayoutPanel1.TabIndex = 4;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSave.Location = new System.Drawing.Point(44, 23);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.Size = new System.Drawing.Size(180, 42);
-            this.btnSave.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnSave.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnSave.StateCommon.Border.Rounding = 16F;
-            this.btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSave.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSave.StateTracking.Back.Color1 = System.Drawing.Color.Lime;
-            this.btnSave.StateTracking.Back.Color2 = System.Drawing.Color.Lime;
-            this.btnSave.TabIndex = 2;
-            this.btnSave.TabStop = false;
-            this.btnSave.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnSave.Values.Text = "Lưu";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // kryptonTableLayoutPanel2
-            // 
-            this.kryptonTableLayoutPanel2.ColumnCount = 1;
-            this.kryptonTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.kryptonTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.kryptonTableLayoutPanel2.Controls.Add(this.btnExit, 0, 1);
-            this.kryptonTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonTableLayoutPanel2.Location = new System.Drawing.Point(352, 3);
-            this.kryptonTableLayoutPanel2.Name = "kryptonTableLayoutPanel2";
-            this.kryptonTableLayoutPanel2.RowCount = 3;
-            this.kryptonTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.kryptonTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.kryptonTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.kryptonTableLayoutPanel2.Size = new System.Drawing.Size(229, 88);
-            this.kryptonTableLayoutPanel2.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.kryptonTableLayoutPanel2.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.kryptonTableLayoutPanel2.TabIndex = 6;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExit.Location = new System.Drawing.Point(3, 23);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(180, 42);
-            this.btnExit.StateCommon.Border.Rounding = 16F;
-            this.btnExit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExit.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExit.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnExit.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnExit.StateTracking.Back.Color1 = System.Drawing.Color.Red;
-            this.btnExit.StateTracking.Back.Color2 = System.Drawing.Color.Red;
-            this.btnExit.TabIndex = 1;
-            this.btnExit.TabStop = false;
-            this.btnExit.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnExit.Values.Text = "Thoát";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // kryptonTableLayoutPanel3
             // 
@@ -418,17 +311,29 @@ namespace CHTL.GUI.NguoiDung {
             this.kryptonTableLayoutPanel3.Size = new System.Drawing.Size(200, 100);
             this.kryptonTableLayoutPanel3.TabIndex = 0;
             // 
+            // saveOrCancelPanel1
+            // 
+            this.saveOrCancelPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.saveOrCancelPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.saveOrCancelPanel1.Location = new System.Drawing.Point(0, 366);
+            this.saveOrCancelPanel1.Name = "saveOrCancelPanel1";
+            this.saveOrCancelPanel1.Size = new System.Drawing.Size(586, 91);
+            this.saveOrCancelPanel1.TabIndex = 2;
+            this.saveOrCancelPanel1.SaveButtonClick += new System.EventHandler(this.btnSave_Click);
+            this.saveOrCancelPanel1.CancelButtonClick += new System.EventHandler(this.btnCancel_Click);
+            // 
             // FormNguoiDungEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(584, 464);
+            this.Controls.Add(this.saveOrCancelPanel1);
             this.Controls.Add(panelBody);
-            this.Controls.Add(panelFooter);
             this.Controls.Add(panelHeader);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimumSize = new System.Drawing.Size(600, 480);
             this.Name = "FormNguoiDungEdit";
+            this.Text = "Sửa thông tin người dùng";
             ((System.ComponentModel.ISupportInitialize)(panelHeader)).EndInit();
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
@@ -451,24 +356,19 @@ namespace CHTL.GUI.NguoiDung {
             ((System.ComponentModel.ISupportInitialize)(panelCell1)).EndInit();
             panelCell1.ResumeLayout(false);
             panelCell1.PerformLayout();
-            panelFooter.ResumeLayout(false);
-            this.kryptonTableLayoutPanel1.ResumeLayout(false);
-            this.kryptonTableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
         private Krypton.Toolkit.KryptonComboBox cbVaiTro;
         private Krypton.Toolkit.KryptonTextBox textboxTenDangNhap;
         private Krypton.Toolkit.KryptonLabel labelTitle;
         private Krypton.Toolkit.KryptonTextBox textboxMatKhau;
         private Krypton.Toolkit.KryptonTextBox textboxTen;
-        private Krypton.Toolkit.KryptonLabel labelID;
         private Krypton.Toolkit.KryptonTextBox textboxID;
-        private Krypton.Toolkit.KryptonButton btnSave;
-        private Krypton.Toolkit.KryptonButton btnExit;
-        private Krypton.Toolkit.KryptonTableLayoutPanel kryptonTableLayoutPanel2;
-        private Krypton.Toolkit.KryptonTableLayoutPanel kryptonTableLayoutPanel1;
         private Krypton.Toolkit.KryptonTableLayoutPanel kryptonTableLayoutPanel3;
 
         #endregion
+
+        private Controls.SaveOrCancelPanel saveOrCancelPanel1;
     }
 }

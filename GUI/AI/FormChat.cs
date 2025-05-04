@@ -17,7 +17,7 @@ namespace CHTL.GUI.AI
         public FormChat()
         {
             InitializeComponent();
-            LocalCustomPalette = GlobalPalette.Palette;
+            LocalCustomPalette = CHTL.GUI.GlobalPalette.Palette;
             PaletteMode = PaletteMode.Custom;
 
             _ai = new GoogleAI(Configurations.GetValue("AI:GeminiKey"));

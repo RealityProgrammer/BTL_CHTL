@@ -59,11 +59,8 @@ namespace CHTL.GUI
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            // Hiển thị lại form đăng nhập
-            FormDangNhap formLogin = new FormDangNhap();
-            formLogin.Show();
-
             Close();
+            Program.LoginForm.Show();
         }
     }
 }

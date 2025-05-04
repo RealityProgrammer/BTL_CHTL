@@ -4,6 +4,7 @@ using Krypton.Toolkit;
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -26,21 +27,34 @@ namespace CHTL.GUI.BaoCao {
 
         private void CustomizeForm()
         {
-            // Tùy chỉnh nút Xem Báo Cáo
-            // btnXemBaoCao.FlatAppearance.BorderSize = 0;
-            // btnXemBaoCao.BackColor = Color.Red; // Màu tím trung bình
-            // btnXemBaoCao.ForeColor = Color.White;
-            // btnXemBaoCao.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            //
-            // // Tùy chỉnh nút In Báo Cáo
-            // btnInBaoCao.FlatAppearance.BorderSize = 0;
-            // btnInBaoCao.BackColor = Color.Green; // Màu tím đậm
-            // btnInBaoCao.ForeColor = Color.White;
-            // btnInBaoCao.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            
             // Tùy chỉnh TabControl
-            tabControl1.BackColor = Color.FromArgb(245, 240, 255); // Màu nền tab tím nhạt hơn
-            tabControl1.Font = new Font("Segoe UI", 12F, FontStyle.Underline);
+            tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
+            tabControl1.SizeMode = TabSizeMode.Fixed;
+            tabControl1.ItemSize = new Size(150, 30);
+            tabControl1.DrawItem += (s, e) => {
+                var tabPage = tabControl1.TabPages[e.Index];
+                var g = e.Graphics;
+                var textSize = g.MeasureString(tabPage.Text, tabPage.Font);
+                var rect = e.Bounds;
+                var isSelected = e.Index == tabControl1.SelectedIndex;
+
+                // Nền tab
+                using (var brush = new SolidBrush(isSelected ? Color.FromArgb(52, 152, 219) : Color.FromArgb(189, 195, 199))) {
+                    g.FillRectangle(brush, rect);
+                }
+
+                // Viền tab
+                using (var pen = new Pen(Color.FromArgb(189, 195, 199), 1)) {
+                    g.DrawRectangle(pen, rect);
+                }
+
+                // Văn bản
+                using (var brush = new SolidBrush(isSelected ? Color.White : Color.FromArgb(44, 62, 80))) {
+                    g.DrawString(tabPage.Text, tabPage.Font, brush,
+                        rect.X + (rect.Width - textSize.Width) / 2,
+                        rect.Y + (rect.Height - textSize.Height) / 2);
+                }
+            };
         }
 
         private void FormBaoCaoView_Load(object sender, EventArgs e)
@@ -87,35 +101,28 @@ namespace CHTL.GUI.BaoCao {
 
         private void CustomizeDataGridView()
         {
-            //dgvChiTiet.BackgroundColor = Color.FromArgb(245, 240, 255); // Màu nền tím nhạt
-            dgvChiTiet.BackgroundColor = Color.White; // Màu nền tím nhạt
+            dgvChiTiet.BackgroundColor = Color.FromArgb(236, 240, 241); // Xám nhạt
             dgvChiTiet.BorderStyle = BorderStyle.None;
             dgvChiTiet.EnableHeadersVisualStyles = false;
 
             // Tùy chỉnh header
-            dgvChiTiet.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 0, 64);
+            dgvChiTiet.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219); // Xanh dương
             dgvChiTiet.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvChiTiet.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             dgvChiTiet.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvChiTiet.ColumnHeadersHeight = 40;
 
             // Tùy chỉnh hàng
             dgvChiTiet.RowsDefaultCellStyle.BackColor = Color.White;
-            dgvChiTiet.RowsDefaultCellStyle.ForeColor = Color.FromArgb(75, 0, 130); // Màu tím đậm
-            dgvChiTiet.RowsDefaultCellStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
-            dgvChiTiet.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(186, 85, 211); // Màu tím nhạt khi chọn
+            dgvChiTiet.RowsDefaultCellStyle.ForeColor = Color.FromArgb(44, 62, 80); // Xám đậm
+            dgvChiTiet.RowsDefaultCellStyle.Font = new Font("Segoe UI", 11F);
+            dgvChiTiet.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219);
             dgvChiTiet.RowsDefaultCellStyle.SelectionForeColor = Color.White;
 
             // Hàng xen kẽ
-            dgvChiTiet.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 235, 255); // Màu tím nhạt hơn
+            dgvChiTiet.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(247, 249, 250); // Xám rất nhạt
 
-            // Tùy chỉnh cột
-            for (int i = 0; i < dgvChiTiet.Columns.Count; i++)
-            {
-                DataGridViewColumn column = dgvChiTiet.Columns[i];
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            }
-
-            dgvChiTiet.GridColor = Color.FromArgb(200, 200, 200);
+            dgvChiTiet.GridColor = Color.FromArgb(189, 195, 199); // Xám nhạt
             dgvChiTiet.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
 

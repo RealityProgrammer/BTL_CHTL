@@ -26,7 +26,7 @@ namespace CHTL.GUI.NguoiDung {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanPham.FormSanPhamView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNguoiDungView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeaderSearch = new Krypton.Toolkit.KryptonPanel();
@@ -62,7 +62,7 @@ namespace CHTL.GUI.NguoiDung {
             this.panelHeaderSearch.Controls.Add(this.txt_search);
             this.panelHeaderSearch.Controls.Add(this.labelSearch);
             this.panelHeaderSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelHeaderSearch.Location = new System.Drawing.Point(498, 10);
+            this.panelHeaderSearch.Location = new System.Drawing.Point(434, 10);
             this.panelHeaderSearch.Name = "panelHeaderSearch";
             this.panelHeaderSearch.Size = new System.Drawing.Size(370, 115);
             this.panelHeaderSearch.StateCommon.Color1 = System.Drawing.Color.Transparent;
@@ -76,7 +76,7 @@ namespace CHTL.GUI.NguoiDung {
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(370, 44);
             this.txt_search.StateCommon.Border.Rounding = 8F;
-            this.txt_search.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_search.TabIndex = 3;
             this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             // 
@@ -86,7 +86,7 @@ namespace CHTL.GUI.NguoiDung {
             this.labelSearch.Location = new System.Drawing.Point(0, 0);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(370, 36);
-            this.labelSearch.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearch.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSearch.TabIndex = 2;
             this.labelSearch.Values.Text = "Tìm kiếm";
             // 
@@ -107,6 +107,8 @@ namespace CHTL.GUI.NguoiDung {
             this.btn_add.Location = new System.Drawing.Point(0, 42);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(64, 64);
+            this.btn_add.StateCommon.Back.Draw = Krypton.Toolkit.InheritBool.False;
+            this.btn_add.StateCommon.Border.Draw = Krypton.Toolkit.InheritBool.False;
             this.btn_add.TabIndex = 1;
             this.btn_add.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btn_add.Values.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Values.Image")));
@@ -118,8 +120,8 @@ namespace CHTL.GUI.NguoiDung {
             this.labelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelHeader.Location = new System.Drawing.Point(0, 0);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(314, 36);
-            this.labelHeader.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Size = new System.Drawing.Size(314, 42);
+            this.labelHeader.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeader.TabIndex = 0;
             this.labelHeader.Values.Text = "Thông tin người dùng";
             // 
@@ -131,7 +133,7 @@ namespace CHTL.GUI.NguoiDung {
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.panelHeader.Size = new System.Drawing.Size(878, 125);
+            this.panelHeader.Size = new System.Drawing.Size(814, 125);
             this.panelHeader.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelHeader.TabIndex = 0;
             // 
@@ -140,7 +142,7 @@ namespace CHTL.GUI.NguoiDung {
             this.separator.Dock = System.Windows.Forms.DockStyle.Top;
             this.separator.Location = new System.Drawing.Point(0, 125);
             this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(878, 10);
+            this.separator.Size = new System.Drawing.Size(814, 10);
             this.separator.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.separator.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
             this.separator.StateCommon.Separator.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -154,7 +156,7 @@ namespace CHTL.GUI.NguoiDung {
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(0, 135);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Size = new System.Drawing.Size(878, 437);
+            this.panelBody.Size = new System.Drawing.Size(814, 373);
             this.panelBody.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelBody.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.panelBody.TabIndex = 2;
@@ -166,13 +168,17 @@ namespace CHTL.GUI.NguoiDung {
             this.dgv_nguoi_dung.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_nguoi_dung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_nguoi_dung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-                this.colMaNguoiDung, this.colTenDangNhap, this.colVaiTro, this.colHoTen, this.colEdit, this.colDelete
-            });
+            this.colMaNguoiDung,
+            this.colTenDangNhap,
+            this.colVaiTro,
+            this.colHoTen,
+            this.colEdit,
+            this.colDelete});
             this.dgv_nguoi_dung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_nguoi_dung.Location = new System.Drawing.Point(0, 0);
             this.dgv_nguoi_dung.Name = "dgv_nguoi_dung";
             this.dgv_nguoi_dung.RowHeadersWidth = 51;
-            this.dgv_nguoi_dung.Size = new System.Drawing.Size(878, 437);
+            this.dgv_nguoi_dung.Size = new System.Drawing.Size(814, 373);
             this.dgv_nguoi_dung.TabIndex = 5;
             this.dgv_nguoi_dung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellClick);
             // 
@@ -230,7 +236,7 @@ namespace CHTL.GUI.NguoiDung {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(878, 572);
+            this.ClientSize = new System.Drawing.Size(814, 508);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.panelHeader);
@@ -250,6 +256,7 @@ namespace CHTL.GUI.NguoiDung {
             this.panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nguoi_dung)).EndInit();
             this.ResumeLayout(false);
+
         }
         private Krypton.Toolkit.KryptonButton btn_add;
         private System.Windows.Forms.DataGridView dgv_nguoi_dung;

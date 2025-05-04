@@ -64,7 +64,7 @@ namespace CHTL.GUI.SanPham {
             this.panelHeaderSearch.Controls.Add(this.txt_search);
             this.panelHeaderSearch.Controls.Add(this.labelSearch);
             this.panelHeaderSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelHeaderSearch.Location = new System.Drawing.Point(545, 10);
+            this.panelHeaderSearch.Location = new System.Drawing.Point(497, 10);
             this.panelHeaderSearch.Name = "panelHeaderSearch";
             this.panelHeaderSearch.Size = new System.Drawing.Size(370, 115);
             this.panelHeaderSearch.StateCommon.Color1 = System.Drawing.Color.Transparent;
@@ -78,7 +78,7 @@ namespace CHTL.GUI.SanPham {
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(370, 44);
             this.txt_search.StateCommon.Border.Rounding = 8F;
-            this.txt_search.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.txt_search.TabIndex = 3;
             this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             // 
@@ -88,7 +88,7 @@ namespace CHTL.GUI.SanPham {
             this.labelSearch.Location = new System.Drawing.Point(0, 0);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(370, 36);
-            this.labelSearch.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearch.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.labelSearch.TabIndex = 2;
             this.labelSearch.Values.Text = "Tìm kiếm";
             // 
@@ -109,6 +109,8 @@ namespace CHTL.GUI.SanPham {
             this.btn_add.Location = new System.Drawing.Point(0, 42);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(64, 64);
+            this.btn_add.StateCommon.Back.Draw = Krypton.Toolkit.InheritBool.False;
+            this.btn_add.StateCommon.Border.Draw = Krypton.Toolkit.InheritBool.False;
             this.btn_add.TabIndex = 1;
             this.btn_add.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btn_add.Values.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Values.Image")));
@@ -120,8 +122,8 @@ namespace CHTL.GUI.SanPham {
             this.labelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelHeader.Location = new System.Drawing.Point(0, 0);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(314, 36);
-            this.labelHeader.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Size = new System.Drawing.Size(314, 42);
+            this.labelHeader.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.labelHeader.TabIndex = 0;
             this.labelHeader.Values.Text = "Thông tin sản phẩm";
             // 
@@ -133,7 +135,7 @@ namespace CHTL.GUI.SanPham {
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.panelHeader.Size = new System.Drawing.Size(925, 125);
+            this.panelHeader.Size = new System.Drawing.Size(877, 125);
             this.panelHeader.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelHeader.TabIndex = 0;
             // 
@@ -142,7 +144,7 @@ namespace CHTL.GUI.SanPham {
             this.separator.Dock = System.Windows.Forms.DockStyle.Top;
             this.separator.Location = new System.Drawing.Point(0, 125);
             this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(925, 10);
+            this.separator.Size = new System.Drawing.Size(877, 10);
             this.separator.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.separator.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
             this.separator.StateCommon.Separator.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -156,7 +158,7 @@ namespace CHTL.GUI.SanPham {
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(0, 135);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Size = new System.Drawing.Size(925, 376);
+            this.panelBody.Size = new System.Drawing.Size(877, 328);
             this.panelBody.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelBody.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.panelBody.TabIndex = 2;
@@ -167,14 +169,22 @@ namespace CHTL.GUI.SanPham {
             this.dgv_san_pham.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.dgv_san_pham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_san_pham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-                this.colMaSanPham, this.colTenSanPham, this.colMaDanhMuc, this.colSoLuongTon, this.colNgayHetHan, this.colGiaBan, this.colGiamGia, this.colGiaBanCuoiCung, this.colEdit, this.colDelete
-            });
+            this.colMaSanPham,
+            this.colTenSanPham,
+            this.colMaDanhMuc,
+            this.colSoLuongTon,
+            this.colNgayHetHan,
+            this.colGiaBan,
+            this.colGiamGia,
+            this.colGiaBanCuoiCung,
+            this.colEdit,
+            this.colDelete});
             this.dgv_san_pham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_san_pham.Location = new System.Drawing.Point(0, 0);
             this.dgv_san_pham.Name = "dgv_san_pham";
             this.dgv_san_pham.RowHeadersWidth = 51;
             this.dgv_san_pham.RowTemplate.Height = 30;
-            this.dgv_san_pham.Size = new System.Drawing.Size(925, 376);
+            this.dgv_san_pham.Size = new System.Drawing.Size(877, 328);
             this.dgv_san_pham.TabIndex = 6;
             this.dgv_san_pham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_san_pham_CellClick);
             // 
@@ -183,6 +193,7 @@ namespace CHTL.GUI.SanPham {
             this.colMaSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colMaSanPham.DataPropertyName = "MaSanPham";
             this.colMaSanPham.HeaderText = "Mã sản phẩm";
+            this.colMaSanPham.MinimumWidth = 6;
             this.colMaSanPham.Name = "colMaSanPham";
             this.colMaSanPham.Width = 120;
             // 
@@ -190,48 +201,56 @@ namespace CHTL.GUI.SanPham {
             // 
             this.colTenSanPham.DataPropertyName = "TenSanPham";
             this.colTenSanPham.HeaderText = "Tên sản phẩm";
+            this.colTenSanPham.MinimumWidth = 6;
             this.colTenSanPham.Name = "colTenSanPham";
             // 
             // colMaDanhMuc
             // 
             this.colMaDanhMuc.DataPropertyName = "MaDanhMuc";
             this.colMaDanhMuc.HeaderText = "Mã danh mục";
+            this.colMaDanhMuc.MinimumWidth = 6;
             this.colMaDanhMuc.Name = "colMaDanhMuc";
             // 
             // colSoLuongTon
             // 
             this.colSoLuongTon.DataPropertyName = "SoLuongTon";
             this.colSoLuongTon.HeaderText = "Số lượng tồn";
+            this.colSoLuongTon.MinimumWidth = 6;
             this.colSoLuongTon.Name = "colSoLuongTon";
             // 
             // colNgayHetHan
             // 
             this.colNgayHetHan.DataPropertyName = "NgayHetHan";
             this.colNgayHetHan.HeaderText = "Ngày hết hạn";
+            this.colNgayHetHan.MinimumWidth = 6;
             this.colNgayHetHan.Name = "colNgayHetHan";
             // 
             // colGiaBan
             // 
             this.colGiaBan.DataPropertyName = "GiaBan";
             this.colGiaBan.HeaderText = "Giá bán";
+            this.colGiaBan.MinimumWidth = 6;
             this.colGiaBan.Name = "colGiaBan";
             // 
             // colGiamGia
             // 
             this.colGiamGia.DataPropertyName = "GiamGia";
             this.colGiamGia.HeaderText = "Giảm giá";
+            this.colGiamGia.MinimumWidth = 6;
             this.colGiamGia.Name = "colGiamGia";
             // 
             // colGiaBanCuoiCung
             // 
             this.colGiaBanCuoiCung.DataPropertyName = "GiaBanCuoiCung";
             this.colGiaBanCuoiCung.HeaderText = "Giá bán cuối cùng";
+            this.colGiaBanCuoiCung.MinimumWidth = 6;
             this.colGiaBanCuoiCung.Name = "colGiaBanCuoiCung";
             this.colGiaBanCuoiCung.ReadOnly = true;
             // 
             // colEdit
             // 
             this.colEdit.HeaderText = "Sửa";
+            this.colEdit.MinimumWidth = 6;
             this.colEdit.Name = "colEdit";
             this.colEdit.Text = "Sửa";
             this.colEdit.UseColumnTextForButtonValue = true;
@@ -239,6 +258,7 @@ namespace CHTL.GUI.SanPham {
             // colDelete
             // 
             this.colDelete.HeaderText = "Xóa";
+            this.colDelete.MinimumWidth = 6;
             this.colDelete.Name = "colDelete";
             this.colDelete.Text = "Xóa";
             this.colDelete.UseColumnTextForButtonValue = true;
@@ -247,7 +267,7 @@ namespace CHTL.GUI.SanPham {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(925, 511);
+            this.ClientSize = new System.Drawing.Size(877, 463);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.panelHeader);
@@ -267,6 +287,7 @@ namespace CHTL.GUI.SanPham {
             this.panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_san_pham)).EndInit();
             this.ResumeLayout(false);
+
         }
         private System.Windows.Forms.DataGridView dgv_san_pham;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaSanPham;

@@ -1,5 +1,4 @@
-﻿using CHTL.GUI.Abstracts;
-using CHTL.GUI.AI;
+﻿using CHTL.GUI.AI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -144,9 +143,8 @@ namespace CHTL.GUI
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            FormDangNhap formLogin = new FormDangNhap();
-            formLogin.Show();
-            this.Close();
+            Close();
+            Program.LoginForm.Show();
         }
         
         private void buttonColorHighlight(object sender, EventArgs e) {

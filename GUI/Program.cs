@@ -3,7 +3,9 @@ using System.Windows.Forms;
 using Krypton.Toolkit;
 
 namespace CHTL.GUI {
-    static class Program {
+    internal static class Program {
+        public static FormDangNhap LoginForm { get; private set; }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -11,7 +13,7 @@ namespace CHTL.GUI {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDangNhap());
+            Application.Run(LoginForm = new FormDangNhap());
            
         }
     }

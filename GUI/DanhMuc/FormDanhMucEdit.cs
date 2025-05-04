@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using CHTL.BUS;
-using CHTL.GUI.Abstracts;
 using Krypton.Toolkit;
 
 namespace CHTL.GUI.DanhMuc
@@ -78,7 +77,7 @@ namespace CHTL.GUI.DanhMuc
             }
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
