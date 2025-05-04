@@ -390,7 +390,7 @@ namespace CHTL.GUI.BanHang
                     MaHoaDon = maHoaDon,
                     MaNguoiDung = CHTL.Models.Auth.Session.MaNguoiDung,
                     NgayBan = dtpNgayBan.Value,
-                    TongTien = grandTotal
+                    TongTien = grandTotal,
                 };
 
                 foreach (var cthd in chiTietHoaDonList)
