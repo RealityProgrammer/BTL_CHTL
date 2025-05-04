@@ -31,6 +31,7 @@ namespace CHTL.GUI
             CHTL.Models.NguoiDung nguoiDung = xuLy.DangNhap(taiKhoan, matKhau);
             if (nguoiDung != null)
             {
+                CHTL.Models.Auth.Session.MaNguoiDung = nguoiDung.MaNguoiDung;
                 switch (nguoiDung.VaiTro)
                 {
                     case "Admin":

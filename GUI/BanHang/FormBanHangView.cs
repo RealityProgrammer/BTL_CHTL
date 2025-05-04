@@ -90,7 +90,7 @@ namespace CHTL.GUI.BanHang
                     Margin = new Padding(10)
                 };
                 panel.MouseEnter += (s, e) => panel.BackColor = Color.FromArgb(234, 242, 251); // Xanh nhạt  
-                //panel.MouseLeave += (s, e) => panel.BackColor = Color.White;
+                panel.MouseLeave += (s, e) => panel.BackColor = Color.White;
 
                 var lblTen = new Label
                 {
@@ -135,11 +135,11 @@ namespace CHTL.GUI.BanHang
                     btnThem.StateCommon.Back.Color1 = Color.FromArgb(41, 128, 185); // Xanh đậm  
                     btnThem.StateCommon.Back.Color2 = Color.FromArgb(41, 128, 185);
                 };
-                //btnThem.MouseLeave += (s, e) =>
-                //{
-                //    btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
-                //    btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
-                //};
+                btnThem.MouseLeave += (s, e) =>
+                {
+                    btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
+                    btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
+                };
                 btnThem.Click += BtnThem_Click;
 
                 panel.Controls.Add(lblTen);
@@ -221,10 +221,18 @@ namespace CHTL.GUI.BanHang
                         Text = "Thêm",
                         Location = new Point(10, 95),
                         Size = new Size(160, 35),
-                        //StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219),
-                        //StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219),
-                        //StateCommon.Content.ShortText.Color1 = Color.White,
-                        //StateCommon.Content.ShortText.Font = new Font("Segoe UI", 9F, FontStyle.Bold),
+                        StateCommon = {
+                        Back = {
+                            Color1 = Color.FromArgb(52, 152, 219),
+                            Color2 = Color.FromArgb(52, 152, 219)
+                        },
+                        Content = {
+                            ShortText = {
+                                Color1 = Color.White,
+                                Font = new Font("Segoe UI", 9F, FontStyle.Bold)
+                            }
+                        }
+                    },
                         Tag = sp
                     };
                     btnThem.MouseEnter += (s2, e2) =>
@@ -232,11 +240,11 @@ namespace CHTL.GUI.BanHang
                         btnThem.StateCommon.Back.Color1 = Color.FromArgb(41, 128, 185);
                         btnThem.StateCommon.Back.Color2 = Color.FromArgb(41, 128, 185);
                     };
-                    //btnThem.MouseLeave += (s2, e2) =>
-                    //{
-                    //    btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
-                    //    btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
-                    //};
+                    btnThem.MouseLeave += (s2, e2) =>
+                    {
+                        btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
+                        btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
+                    };
                     btnThem.Click += BtnThem_Click;
 
                     panel.Controls.Add(lblTen);
@@ -308,7 +316,7 @@ namespace CHTL.GUI.BanHang
                         existingItem.SoLuong--;
                         return;
                     }
-                    existingItem.DonGia = sanPham.GiaBan * existingItem.SoLuong;
+                    //existingItem.DonGia = sanPham.GiaBan * existingItem.SoLuong;
                 }
                 else
                 {
@@ -337,9 +345,10 @@ namespace CHTL.GUI.BanHang
                     TenSanPham = sp?.TenSanPham,
                     SoLuong = cthd.SoLuong,
                     GiaBan = sp?.GiaBan,
-                    ThanhTien = cthd.DonGia
+                    ThanhTien = cthd.DonGia * cthd.SoLuong
                 };
             }).ToList();
+            dgvChiTietHoaDon.DataSource = null;
             dgvChiTietHoaDon.DataSource = displayList;
 
             if (!dgvChiTietHoaDon.Columns.Contains("colReduce"))
@@ -368,7 +377,7 @@ namespace CHTL.GUI.BanHang
                 dgvChiTietHoaDon.Columns.Add(colDelete);
             }
 
-            grandTotal = chiTietHoaDonList.Sum(x => x.DonGia);
+            grandTotal = chiTietHoaDonList.Sum(x => x.DonGia * x.SoLuong);
             lblGrandTotal.Text = grandTotal.ToString("N2");
         }
 
@@ -383,6 +392,7 @@ namespace CHTL.GUI.BanHang
 
             try
             {
+
                 string maHoaDon = "HD" + DateTime.Now.ToString("yyyyMMddHHmmss");
 
                 var hoaDon = new HoaDon
@@ -495,7 +505,7 @@ namespace CHTL.GUI.BanHang
                     if (cthd.SoLuong > 1)
                     {
                         cthd.SoLuong--;
-                        cthd.DonGia = sanPham.GiaBan * cthd.SoLuong;
+                        //cthd.DonGia = sanPham.GiaBan * cthd.SoLuong;
                         UpdateChiTietHoaDon();
                     }
                     else

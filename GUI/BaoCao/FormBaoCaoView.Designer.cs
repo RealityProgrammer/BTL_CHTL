@@ -386,7 +386,7 @@ namespace CHTL.GUI.BaoCao {
             this.tabPageChiTietHoaDon.Location = new System.Drawing.Point(4, 25);
             this.tabPageChiTietHoaDon.Name = "tabPageChiTietHoaDon";
             this.tabPageChiTietHoaDon.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageChiTietHoaDon.Size = new System.Drawing.Size(953, 382);
+            this.tabPageChiTietHoaDon.Size = new System.Drawing.Size(937, 366);
             this.tabPageChiTietHoaDon.TabIndex = 1;
             this.tabPageChiTietHoaDon.Text = "Chi tiết hóa đơn";
             this.tabPageChiTietHoaDon.UseVisualStyleBackColor = true;
@@ -421,7 +421,7 @@ namespace CHTL.GUI.BaoCao {
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             this.dgvChiTiet.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvChiTiet.Size = new System.Drawing.Size(947, 376);
+            this.dgvChiTiet.Size = new System.Drawing.Size(931, 360);
             this.dgvChiTiet.TabIndex = 10;
             this.dgvChiTiet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTiet_CellClick);
             // 

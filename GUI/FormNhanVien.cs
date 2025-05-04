@@ -26,7 +26,7 @@ namespace CHTL.GUI
             InitializeComponent();
             LocalCustomPalette = GlobalPalette.Palette;
             PaletteMode = PaletteMode.Custom;
-            ShowFormInPanel(new FormBanHangView(), btnBanHang);
+            ShowFormInPanel(new FormSanPhamView(), btnSanPham);
 
             //ShowFormInPanel(new FormNguoiDungView(), btnNguoiDung);
         }
