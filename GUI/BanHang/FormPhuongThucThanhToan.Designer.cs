@@ -79,14 +79,16 @@ namespace CHTL.GUI.BanHang {
             this.btnQR.Margin = new System.Windows.Forms.Padding(0);
             this.btnQR.Name = "btnQR";
             this.btnQR.Size = new System.Drawing.Size(218, 37);
+            this.btnQR.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnQR.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnQR.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.btnQR.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
             this.btnQR.StateCommon.Border.Draw = Krypton.Toolkit.InheritBool.True;
             this.btnQR.StateCommon.Border.Rounding = 16F;
             this.btnQR.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnQR.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnQR.StateNormal.Back.Color1 = System.Drawing.Color.Lime;
-            this.btnQR.StateNormal.Back.Color2 = System.Drawing.Color.Lime;
+            this.btnQR.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnQR.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnQR.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(181)))), ((int)(((byte)(0)))));
             this.btnQR.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(181)))), ((int)(((byte)(0)))));
             this.btnQR.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(0)))));
@@ -109,8 +111,8 @@ namespace CHTL.GUI.BanHang {
             this.btnCash.StateCommon.Border.Rounding = 16F;
             this.btnCash.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnCash.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCash.StateNormal.Back.Color1 = System.Drawing.Color.Lime;
-            this.btnCash.StateNormal.Back.Color2 = System.Drawing.Color.Lime;
+            this.btnCash.StateNormal.Back.Color1 = System.Drawing.Color.LimeGreen;
+            this.btnCash.StateNormal.Back.Color2 = System.Drawing.Color.LimeGreen;
             this.btnCash.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(181)))), ((int)(((byte)(0)))));
             this.btnCash.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(181)))), ((int)(((byte)(0)))));
             this.btnCash.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(0)))));
@@ -148,6 +150,7 @@ namespace CHTL.GUI.BanHang {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(384, 284);
             this.Controls.Add(kryptonTableLayoutPanel1);
             this.Controls.Add(label1);
@@ -157,6 +160,10 @@ namespace CHTL.GUI.BanHang {
             this.Name = "FormPhuongThucThanhToan";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.StateCommon.Border.Width = 5;
             kryptonTableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

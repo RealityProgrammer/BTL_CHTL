@@ -63,7 +63,7 @@ namespace CHTL.GUI.DanhMuc {
             panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             panelHeader.Location = new System.Drawing.Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new System.Drawing.Size(586, 96);
+            panelHeader.Size = new System.Drawing.Size(588, 96);
             panelHeader.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             panelHeader.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             panelHeader.TabIndex = 0;
@@ -86,7 +86,7 @@ namespace CHTL.GUI.DanhMuc {
             panelBody.Location = new System.Drawing.Point(0, 96);
             panelBody.Name = "panelBody";
             panelBody.Padding = new System.Windows.Forms.Padding(15);
-            panelBody.Size = new System.Drawing.Size(586, 361);
+            panelBody.Size = new System.Drawing.Size(588, 354);
             panelBody.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelBody.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelBody.TabIndex = 1;
@@ -106,7 +106,7 @@ namespace CHTL.GUI.DanhMuc {
             tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 331F));
             tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 331F));
-            tableFields.Size = new System.Drawing.Size(556, 331);
+            tableFields.Size = new System.Drawing.Size(558, 324);
             tableFields.StateCommon.Color1 = System.Drawing.Color.Transparent;
             tableFields.StateCommon.Color2 = System.Drawing.Color.Transparent;
             tableFields.TabIndex = 1;
@@ -116,9 +116,9 @@ namespace CHTL.GUI.DanhMuc {
             panelCell4.Controls.Add(this.textboxTen);
             panelCell4.Controls.Add(labelUsername);
             panelCell4.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelCell4.Location = new System.Drawing.Point(291, 3);
+            panelCell4.Location = new System.Drawing.Point(292, 3);
             panelCell4.Name = "panelCell4";
-            panelCell4.Size = new System.Drawing.Size(262, 325);
+            panelCell4.Size = new System.Drawing.Size(263, 318);
             panelCell4.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelCell4.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelCell4.TabIndex = 3;
@@ -128,7 +128,7 @@ namespace CHTL.GUI.DanhMuc {
             this.textboxTen.Dock = System.Windows.Forms.DockStyle.Top;
             this.textboxTen.Location = new System.Drawing.Point(0, 24);
             this.textboxTen.Name = "textboxTen";
-            this.textboxTen.Size = new System.Drawing.Size(262, 33);
+            this.textboxTen.Size = new System.Drawing.Size(263, 33);
             this.textboxTen.StateCommon.Border.Rounding = 8F;
             this.textboxTen.TabIndex = 1;
             // 
@@ -137,7 +137,7 @@ namespace CHTL.GUI.DanhMuc {
             labelUsername.Dock = System.Windows.Forms.DockStyle.Top;
             labelUsername.Location = new System.Drawing.Point(0, 0);
             labelUsername.Name = "labelUsername";
-            labelUsername.Size = new System.Drawing.Size(262, 24);
+            labelUsername.Size = new System.Drawing.Size(263, 24);
             labelUsername.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelUsername.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelUsername.TabIndex = 0;
@@ -150,7 +150,7 @@ namespace CHTL.GUI.DanhMuc {
             panelCell1.Dock = System.Windows.Forms.DockStyle.Fill;
             panelCell1.Location = new System.Drawing.Point(3, 3);
             panelCell1.Name = "panelCell1";
-            panelCell1.Size = new System.Drawing.Size(262, 325);
+            panelCell1.Size = new System.Drawing.Size(263, 318);
             panelCell1.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelCell1.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelCell1.TabIndex = 0;
@@ -160,7 +160,7 @@ namespace CHTL.GUI.DanhMuc {
             this.textboxID.Dock = System.Windows.Forms.DockStyle.Top;
             this.textboxID.Location = new System.Drawing.Point(0, 24);
             this.textboxID.Name = "textboxID";
-            this.textboxID.Size = new System.Drawing.Size(262, 33);
+            this.textboxID.Size = new System.Drawing.Size(263, 33);
             this.textboxID.StateCommon.Border.Rounding = 8F;
             this.textboxID.TabIndex = 1;
             // 
@@ -169,7 +169,7 @@ namespace CHTL.GUI.DanhMuc {
             labelID.Dock = System.Windows.Forms.DockStyle.Top;
             labelID.Location = new System.Drawing.Point(0, 0);
             labelID.Name = "labelID";
-            labelID.Size = new System.Drawing.Size(262, 24);
+            labelID.Size = new System.Drawing.Size(263, 24);
             labelID.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelID.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelID.TabIndex = 0;
@@ -193,9 +193,9 @@ namespace CHTL.GUI.DanhMuc {
             // 
             panelFooter.BackColor = System.Drawing.Color.Transparent;
             panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            panelFooter.Location = new System.Drawing.Point(0, 365);
+            panelFooter.Location = new System.Drawing.Point(0, 358);
             panelFooter.Name = "panelFooter";
-            panelFooter.Size = new System.Drawing.Size(586, 92);
+            panelFooter.Size = new System.Drawing.Size(588, 92);
             panelFooter.TabIndex = 2;
             panelFooter.SaveButtonClick += new System.EventHandler(this.btnSave_Click);
             panelFooter.CancelButtonClick += new System.EventHandler(this.btnCancel_Click);
@@ -204,13 +204,14 @@ namespace CHTL.GUI.DanhMuc {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(584, 464);
+            this.ClientSize = new System.Drawing.Size(588, 450);
             this.Controls.Add(panelFooter);
             this.Controls.Add(panelBody);
             this.Controls.Add(panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimumSize = new System.Drawing.Size(600, 480);
             this.Name = "FormDanhMucAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm danh mục";
             ((System.ComponentModel.ISupportInitialize)(panelHeader)).EndInit();
             panelHeader.ResumeLayout(false);

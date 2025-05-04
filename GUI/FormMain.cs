@@ -27,7 +27,7 @@ namespace CHTL.GUI
             LocalCustomPalette = GlobalPalette.Palette;
             PaletteMode = PaletteMode.Custom;
 
-            ShowFormInPanel(new FormNguoiDungView(), btnNguoiDung);
+            ShowFormInPanel(new FormBaoCaoView(), btnBaoCao);
         }
 
         private void ShowFormInPanel(KryptonForm childForm, KryptonButton activeButton = null)

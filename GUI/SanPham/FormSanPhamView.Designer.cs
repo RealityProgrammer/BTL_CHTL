@@ -64,7 +64,7 @@ namespace CHTL.GUI.SanPham {
             this.panelHeaderSearch.Controls.Add(this.txt_search);
             this.panelHeaderSearch.Controls.Add(this.labelSearch);
             this.panelHeaderSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelHeaderSearch.Location = new System.Drawing.Point(497, 10);
+            this.panelHeaderSearch.Location = new System.Drawing.Point(481, 10);
             this.panelHeaderSearch.Name = "panelHeaderSearch";
             this.panelHeaderSearch.Size = new System.Drawing.Size(370, 115);
             this.panelHeaderSearch.StateCommon.Color1 = System.Drawing.Color.Transparent;
@@ -135,7 +135,7 @@ namespace CHTL.GUI.SanPham {
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.panelHeader.Size = new System.Drawing.Size(877, 125);
+            this.panelHeader.Size = new System.Drawing.Size(861, 125);
             this.panelHeader.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelHeader.TabIndex = 0;
             // 
@@ -144,7 +144,7 @@ namespace CHTL.GUI.SanPham {
             this.separator.Dock = System.Windows.Forms.DockStyle.Top;
             this.separator.Location = new System.Drawing.Point(0, 125);
             this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(877, 10);
+            this.separator.Size = new System.Drawing.Size(861, 10);
             this.separator.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.separator.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
             this.separator.StateCommon.Separator.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -158,7 +158,7 @@ namespace CHTL.GUI.SanPham {
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(0, 135);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Size = new System.Drawing.Size(877, 328);
+            this.panelBody.Size = new System.Drawing.Size(861, 312);
             this.panelBody.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelBody.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.panelBody.TabIndex = 2;
@@ -184,7 +184,7 @@ namespace CHTL.GUI.SanPham {
             this.dgv_san_pham.Name = "dgv_san_pham";
             this.dgv_san_pham.RowHeadersWidth = 51;
             this.dgv_san_pham.RowTemplate.Height = 30;
-            this.dgv_san_pham.Size = new System.Drawing.Size(877, 328);
+            this.dgv_san_pham.Size = new System.Drawing.Size(861, 312);
             this.dgv_san_pham.TabIndex = 6;
             this.dgv_san_pham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_san_pham_CellClick);
             // 
@@ -267,7 +267,7 @@ namespace CHTL.GUI.SanPham {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(877, 463);
+            this.ClientSize = new System.Drawing.Size(861, 447);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.panelHeader);

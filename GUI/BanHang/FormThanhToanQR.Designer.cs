@@ -47,14 +47,14 @@ namespace CHTL.GUI.BanHang {
             panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             panel1.Location = new System.Drawing.Point(0, 59);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(464, 367);
+            panel1.Size = new System.Drawing.Size(464, 365);
             panel1.TabIndex = 2;
             // 
             // labelTrangThai
             // 
             this.labelTrangThai.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelTrangThai.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTrangThai.Location = new System.Drawing.Point(0, 247);
+            this.labelTrangThai.Location = new System.Drawing.Point(0, 245);
             this.labelTrangThai.Name = "labelTrangThai";
             this.labelTrangThai.Size = new System.Drawing.Size(464, 25);
             this.labelTrangThai.TabIndex = 0;
@@ -65,7 +65,7 @@ namespace CHTL.GUI.BanHang {
             // 
             this.panelFooter.BackColor = System.Drawing.Color.Transparent;
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 272);
+            this.panelFooter.Location = new System.Drawing.Point(0, 270);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(464, 95);
             this.panelFooter.TabIndex = 4;
@@ -85,7 +85,7 @@ namespace CHTL.GUI.BanHang {
             kryptonTableLayoutPanel2.RowCount = 1;
             kryptonTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             kryptonTableLayoutPanel2.Size = new System.Drawing.Size(464, 244);
-            kryptonTableLayoutPanel2.StateCommon.Color1 = System.Drawing.Color.Transparent;
+            kryptonTableLayoutPanel2.StateCommon.Color1 = System.Drawing.Color.White;
             kryptonTableLayoutPanel2.StateCommon.Color2 = System.Drawing.Color.Transparent;
             kryptonTableLayoutPanel2.TabIndex = 2;
             // 
@@ -115,14 +115,19 @@ namespace CHTL.GUI.BanHang {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(464, 426);
             this.Controls.Add(panel1);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximumSize = new System.Drawing.Size(480, 480);
             this.MinimumSize = new System.Drawing.Size(480, 480);
             this.Name = "FormThanhToanQR";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.Text = "Thanh toán QR";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormThanhToanQR_FormClosed);
             panel1.ResumeLayout(false);

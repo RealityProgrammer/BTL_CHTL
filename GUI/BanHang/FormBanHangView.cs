@@ -90,7 +90,7 @@ namespace CHTL.GUI.BanHang
                     Margin = new Padding(10)
                 };
                 panel.MouseEnter += (s, e) => panel.BackColor = Color.FromArgb(234, 242, 251); // Xanh nhạt  
-                panel.MouseLeave += (s, e) => panel.BackColor = Color.White;
+                //panel.MouseLeave += (s, e) => panel.BackColor = Color.White;
 
                 var lblTen = new Label
                 {
@@ -135,11 +135,11 @@ namespace CHTL.GUI.BanHang
                     btnThem.StateCommon.Back.Color1 = Color.FromArgb(41, 128, 185); // Xanh đậm  
                     btnThem.StateCommon.Back.Color2 = Color.FromArgb(41, 128, 185);
                 };
-                btnThem.MouseLeave += (s, e) =>
-                {
-                    btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
-                    btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
-                };
+                //btnThem.MouseLeave += (s, e) =>
+                //{
+                //    btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
+                //    btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
+                //};
                 btnThem.Click += BtnThem_Click;
 
                 panel.Controls.Add(lblTen);
@@ -232,11 +232,11 @@ namespace CHTL.GUI.BanHang
                         btnThem.StateCommon.Back.Color1 = Color.FromArgb(41, 128, 185);
                         btnThem.StateCommon.Back.Color2 = Color.FromArgb(41, 128, 185);
                     };
-                    btnThem.MouseLeave += (s2, e2) =>
-                    {
-                        btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
-                        btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
-                    };
+                    //btnThem.MouseLeave += (s2, e2) =>
+                    //{
+                    //    btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
+                    //    btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
+                    //};
                     btnThem.Click += BtnThem_Click;
 
                     panel.Controls.Add(lblTen);
