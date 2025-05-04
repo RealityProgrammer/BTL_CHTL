@@ -103,8 +103,8 @@ namespace CHTL.GUI.DanhMuc {
             tableFields.Name = "tableFields";
             tableFields.RowCount = 1;
             tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 338F));
-            tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 338F));
+            tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 331F));
+            tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 331F));
             tableFields.Size = new System.Drawing.Size(556, 331);
             tableFields.StateCommon.Color1 = System.Drawing.Color.Transparent;
             tableFields.StateCommon.Color2 = System.Drawing.Color.Transparent;
@@ -203,13 +203,14 @@ namespace CHTL.GUI.DanhMuc {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(584, 464);
+            this.ClientSize = new System.Drawing.Size(586, 457);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(panelBody);
             this.Controls.Add(panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimumSize = new System.Drawing.Size(600, 480);
             this.Name = "FormDanhMucEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sửa danh mục";
             ((System.ComponentModel.ISupportInitialize)(panelHeader)).EndInit();
             panelHeader.ResumeLayout(false);

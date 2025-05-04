@@ -405,13 +405,14 @@ namespace CHTL.GUI.SanPham {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(664, 504);
+            this.ClientSize = new System.Drawing.Size(666, 497);
             this.Controls.Add(this.saveOrCancelPanel1);
             this.Controls.Add(panelBody);
             this.Controls.Add(panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimumSize = new System.Drawing.Size(680, 520);
             this.Name = "FormSanPhamEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sửa sản phẩm";
             ((System.ComponentModel.ISupportInitialize)(panelHeader)).EndInit();
             panelHeader.ResumeLayout(false);

@@ -326,13 +326,14 @@ namespace CHTL.GUI.NguoiDung {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(584, 464);
+            this.ClientSize = new System.Drawing.Size(586, 457);
             this.Controls.Add(this.saveOrCancelPanel1);
             this.Controls.Add(panelBody);
             this.Controls.Add(panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimumSize = new System.Drawing.Size(600, 480);
             this.Name = "FormNguoiDungEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sửa thông tin người dùng";
             ((System.ComponentModel.ISupportInitialize)(panelHeader)).EndInit();
             panelHeader.ResumeLayout(false);
