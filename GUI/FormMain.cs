@@ -19,7 +19,8 @@ namespace CHTL.GUI
     public partial class FormMain : KryptonForm
     {
         private KryptonButton currentActiveButton;
-
+        private bool _logout;
+        
         public FormMain()
         {
             InitializeComponent();
@@ -143,8 +144,8 @@ namespace CHTL.GUI
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
+            _logout = true;
             Close();
-            Program.LoginForm.Show();
         }
         
         private void buttonColorHighlight(object sender, EventArgs e) {
@@ -152,6 +153,14 @@ namespace CHTL.GUI
                 button.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
                 button.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
                 button.StateCommon.Content.ShortText.Color1 = Color.White;
+            }
+        }
+        
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e) {
+            if (_logout) {
+                Program.LoginForm.Show();
+            } else if (e.CloseReason == CloseReason.UserClosing) {
+                Program.LoginForm.Close();
             }
         }
     }

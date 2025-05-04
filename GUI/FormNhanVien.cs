@@ -17,8 +17,9 @@ using Krypton.Toolkit;
 
 namespace CHTL.GUI
 {
-    public partial class FormNhanVien : KryptonForm
-    {
+    public partial class FormNhanVien : KryptonForm {
+        private bool _logout;
+        
         public FormNhanVien()
         {
             InitializeComponent();
@@ -59,8 +60,15 @@ namespace CHTL.GUI
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
+            _logout = true;
             Close();
-            Program.LoginForm.Show();
+        }
+        private void FormNhanVien_FormClosed(object sender, FormClosedEventArgs e) {
+            if (_logout) {
+                Program.LoginForm.Show();
+            } else if (e.CloseReason == CloseReason.UserClosing) {
+                Program.LoginForm.Close();
+            }
         }
     }
 }
