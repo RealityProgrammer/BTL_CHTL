@@ -35,7 +35,7 @@ namespace CHTL.GUI.AI
             this.textboxTinNhan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textboxTinNhan.Location = new System.Drawing.Point(3, 3);
             this.textboxTinNhan.Name = "textboxTinNhan";
-            this.textboxTinNhan.Size = new System.Drawing.Size(896, 38);
+            this.textboxTinNhan.Size = new System.Drawing.Size(864, 38);
             this.textboxTinNhan.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.textboxTinNhan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -48,7 +48,7 @@ namespace CHTL.GUI.AI
             // btnGui
             // 
             this.btnGui.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnGui.Location = new System.Drawing.Point(920, 3);
+            this.btnGui.Location = new System.Drawing.Point(888, 3);
             this.btnGui.Name = "btnGui";
             this.btnGui.Size = new System.Drawing.Size(74, 38);
             this.btnGui.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -73,7 +73,7 @@ namespace CHTL.GUI.AI
             this.containerConversation.Location = new System.Drawing.Point(10, 10);
             this.containerConversation.Name = "containerConversation";
             this.containerConversation.Padding = new System.Windows.Forms.Padding(10);
-            this.containerConversation.Size = new System.Drawing.Size(1017, 491);
+            this.containerConversation.Size = new System.Drawing.Size(985, 459);
             this.containerConversation.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.containerConversation.TabIndex = 4;
             // 
@@ -101,10 +101,10 @@ namespace CHTL.GUI.AI
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.panel1.Controls.Add(this.kryptonTableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(10, 501);
+            this.panel1.Location = new System.Drawing.Point(10, 469);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(1017, 64);
+            this.panel1.Size = new System.Drawing.Size(985, 64);
             this.panel1.TabIndex = 1;
             // 
             // kryptonTableLayoutPanel1
@@ -120,7 +120,7 @@ namespace CHTL.GUI.AI
             this.kryptonTableLayoutPanel1.Name = "kryptonTableLayoutPanel1";
             this.kryptonTableLayoutPanel1.RowCount = 1;
             this.kryptonTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.kryptonTableLayoutPanel1.Size = new System.Drawing.Size(997, 44);
+            this.kryptonTableLayoutPanel1.Size = new System.Drawing.Size(965, 44);
             this.kryptonTableLayoutPanel1.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.kryptonTableLayoutPanel1.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.kryptonTableLayoutPanel1.TabIndex = 0;
@@ -130,7 +130,7 @@ namespace CHTL.GUI.AI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(1037, 575);
+            this.ClientSize = new System.Drawing.Size(1005, 543);
             this.Controls.Add(this.containerConversation);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnClose);

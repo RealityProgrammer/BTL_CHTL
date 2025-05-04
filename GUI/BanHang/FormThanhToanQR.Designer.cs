@@ -122,6 +122,7 @@ namespace CHTL.GUI.BanHang {
             this.MaximumSize = new System.Drawing.Size(480, 480);
             this.MinimumSize = new System.Drawing.Size(480, 480);
             this.Name = "FormThanhToanQR";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thanh toán QR";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormThanhToanQR_FormClosed);
             panel1.ResumeLayout(false);

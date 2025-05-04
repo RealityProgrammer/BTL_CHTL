@@ -392,22 +392,26 @@ namespace CHTL.GUI.BanHang
                     NgayBan = dtpNgayBan.Value,
                     TongTien = grandTotal,
                 };
-
+                
                 foreach (var cthd in chiTietHoaDonList)
                 {
                     cthd.MaHoaDon = maHoaDon;
                 }
 
-                if (new FormThanhToanQR(maHoaDon, grandTotal).ShowDialog() == DialogResult.OK)
-                {
-                    xuLyHoaDon.LuuHoaDon(hoaDon, chiTietHoaDonList);
+                FormPhuongThucThanhToan form = new FormPhuongThucThanhToan(maHoaDon, grandTotal);
+                DialogResult result = form.ShowDialog();
 
-                    KryptonMessageBox.Show("Lưu hóa đơn thành công!", "Thành công",
-                        KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                if (result == DialogResult.OK) {
+                    if (form.PaymentForm.ShowDialog() == DialogResult.OK) {
+                        xuLyHoaDon.LuuHoaDon(hoaDon, chiTietHoaDonList);
 
-                    chiTietHoaDonList.Clear();
-                    UpdateChiTietHoaDon();
-                    LoadSanPham();
+                        KryptonMessageBox.Show("Lưu hóa đơn thành công!", "Thành công",
+                            KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+
+                        chiTietHoaDonList.Clear();
+                        UpdateChiTietHoaDon();
+                        LoadSanPham();
+                    }
                 }
             }
             catch (Exception ex)

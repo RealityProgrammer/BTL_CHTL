@@ -267,11 +267,23 @@
     <Compile Include="BanHang\FormBanHangView.Designer.cs">
       <DependentUpon>FormBanHangView.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\FormPhuongThucThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\FormPhuongThucThanhToan.Designer.cs">
+      <DependentUpon>FormPhuongThucThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="BanHang\FormThanhToanQR.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BanHang\FormThanhToanQR.Designer.cs">
       <DependentUpon>FormThanhToanQR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang\FormThanhToanTienMat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\FormThanhToanTienMat.Designer.cs">
+      <DependentUpon>FormThanhToanTienMat.cs</DependentUpon>
     </Compile>
     <Compile Include="BaoCao\FormBaoCaoView.cs">
       <SubType>Form</SubType>
@@ -373,8 +385,14 @@
     <EmbeddedResource Include="BanHang\FormBanHangView.resx">
       <DependentUpon>FormBanHangView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\FormPhuongThucThanhToan.resx">
+      <DependentUpon>FormPhuongThucThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BanHang\FormThanhToanQR.resx">
       <DependentUpon>FormThanhToanQR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\FormThanhToanTienMat.resx">
+      <DependentUpon>FormThanhToanTienMat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\FormBaoCaoView.resx">
       <DependentUpon>FormBaoCaoView.cs</DependentUpon>
