@@ -29,31 +29,76 @@ namespace CHTL.GUI.AI
 
         private void CustomizeForm()
         {
-            this.BackColor = Color.FromArgb(236, 240, 241); // Xám nhạt
+            // Cập nhật màu sắc theo theme cửa hàng
+            this.BackColor = Color.FromArgb(255, 255, 255); // Nền trắng
 
-            // Tùy chỉnh containerConversation
-            containerConversation.StateCommon.Color1 = Color.FromArgb(236, 240, 241); // Xám nhạt
-            //containerConversation.StateCommon.Border.DrawBorders = PaletteDrawBorders.None;
+            // Container chat
+            containerConversation.StateCommon.Color1 = Color.FromArgb(255, 255, 255);
+            containerConversation.AutoScroll = true;
 
-            // Tùy chỉnh panel1
-            panel1.BackColor = Color.FromArgb(236, 240, 241); // Xám nhạt
+            // Panel input
+            panel1.BackColor = Color.FromArgb(240, 240, 240);
 
-            // Tùy chỉnh textboxTinNhan
-            textboxTinNhan.StateCommon.Border.Color1 = Color.FromArgb(189, 195, 199); // Xám nhạt
+            // Textbox nhập tin nhắn
+            textboxTinNhan.StateCommon.Border.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
             textboxTinNhan.StateCommon.Border.DrawBorders = PaletteDrawBorders.All;
-            textboxTinNhan.StateCommon.Border.Rounding = 10F;
-            textboxTinNhan.StateCommon.Content.Color1 = Color.FromArgb(44, 62, 80); // Xám đậm
+            textboxTinNhan.StateCommon.Border.Rounding = 20F;
+            textboxTinNhan.StateCommon.Content.Color1 = Color.FromArgb(44, 62, 80);
             textboxTinNhan.StateCommon.Content.Font = new Font("Segoe UI", 11F);
 
-            // Thêm tiêu đề phụ
+            // Nút gửi
+            btnGui.StateCommon.Back.Color1 = Color.FromArgb(46, 204, 113); // Xanh lá
+            btnGui.StateCommon.Back.Color2 = Color.FromArgb(39, 174, 96);
+            btnGui.StateCommon.Border.DrawBorders = PaletteDrawBorders.None;
+            btnGui.StateCommon.Border.Rounding = 10F;
+            btnGui.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnGui.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+
+            // Thêm avatar và tiêu đề
+            AddChatHeader();
+        }
+
+        private void AddChatHeader()
+        {
+            // Panel header
+            KryptonPanel headerPanel = new KryptonPanel
+            {
+                Height = 60,
+                Dock = DockStyle.Top,
+                StateCommon = { Color1 = Color.FromArgb(52, 152, 219) }
+            };
+
+            // Avatar AI
+            PictureBox avatar = new PictureBox
+            {
+                //Image = Properties.Resources.AIAvatar, // Thêm hình ảnh vào Resources
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Size = new Size(40, 40),
+                Location = new Point(15, 10)
+            };
+
+            // Tiêu đề
             KryptonLabel lblTitle = new KryptonLabel
             {
-                Location = new Point(10, 10),
-                Size = new Size(780, 30),
-                StateCommon = { ShortText = { Color1 = Color.FromArgb(44, 62, 80), Font = new Font("Segoe UI", 12F, FontStyle.Bold) } },
-                Text = "Chat Với AI"
+                Text = "Trợ lý AI Cửa Hàng Tiện Lợi",
+                StateCommon = {
+            ShortText = {
+                Color1 = Color.White,
+                Font = new Font("Segoe UI", 14F, FontStyle.Bold),
+                TextH = PaletteRelativeAlign.Near
+            }
+        },
+                Location = new Point(70, 15),
+                Size = new Size(300, 30)
             };
-            containerConversation.Controls.Add(lblTitle);
+
+            headerPanel.Controls.Add(avatar);
+            headerPanel.Controls.Add(lblTitle);
+            containerConversation.Controls.Add(headerPanel);
+
+            // Thêm lời chào ban đầu từ AI
+            isUserMessage = false;
+            TaoBongChat("Xin chào! Tôi là trợ lý AI của cửa hàng. Tôi có thể giúp gì cho bạn hôm nay?");
         }
 
         private void LoadConversation()
