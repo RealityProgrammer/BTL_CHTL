@@ -6,50 +6,44 @@ using System.Windows.Forms;
 
 namespace CHTL.GUI.SanPham {
     public partial class FormSanPhamAdd : KryptonForm {
-        private XuLySanPham xuLy = new XuLySanPham();
-        private TruyCapDanhMuc truyCapDanhMuc = new TruyCapDanhMuc();
-        
+        private readonly TruyCapDanhMuc truyCapDanhMuc = new TruyCapDanhMuc();
+        private readonly XuLySanPham xuLy = new XuLySanPham();
+
         public FormSanPhamAdd() {
             InitializeComponent();
             InitializeVaiTroComboBox();
         }
-        
-        private void InitializeVaiTroComboBox()
-        {
+
+        private void InitializeVaiTroComboBox() {
             var danhMucList = truyCapDanhMuc.LayDanhSachDanhMuc();
             cbDanhMuc.DataSource = danhMucList;
             cbDanhMuc.DisplayMember = "MaDanhMuc";
             cbDanhMuc.ValueMember = "MaDanhMuc";
             cbDanhMuc.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        
+
         private void btnSave_Click(object sender, EventArgs e) {
-            try
-            {
+            try {
                 // Kiểm tra dữ liệu đầu vào
-                if (string.IsNullOrWhiteSpace(textboxID.Text))
-                {
+                if (string.IsNullOrWhiteSpace(textboxID.Text)) {
                     MessageBox.Show("Mã sản phẩm không được để trống!", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (string.IsNullOrWhiteSpace(textboxTen.Text))
-                {
+                if (string.IsNullOrWhiteSpace(textboxTen.Text)) {
                     MessageBox.Show("Tên sản phẩm không được để trống!", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (!decimal.TryParse(textboxGia.Text, out decimal giaBan) || giaBan < 0)
-                {
+                if (!decimal.TryParse(textboxGia.Text, out decimal giaBan) || giaBan < 0) {
                     MessageBox.Show("Giá bán không hợp lệ! Vui lòng nhập số không âm.", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                
-                if (!decimal.TryParse(textboxGiamGia.Text, out decimal giamGia) || giamGia < 0)
-                {
+
+                if (!decimal.TryParse(textboxGiamGia.Text, out decimal giamGia) || giamGia < 0) {
                     MessageBox.Show("Giảm giá không hợp lệ! Vui lòng nhập số không âm.", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -61,25 +55,22 @@ namespace CHTL.GUI.SanPham {
                     return;
                 }
 
-                if (cbDanhMuc.SelectedValue == null)
-                {
+                if (cbDanhMuc.SelectedValue == null) {
                     MessageBox.Show("Vui lòng chọn mã danh mục!", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (!int.TryParse(textboxSoLuongTon.Text, out int soLuongTon) || soLuongTon < 0)
-                {
+                if (!int.TryParse(textboxSoLuongTon.Text, out int soLuongTon) || soLuongTon < 0) {
                     MessageBox.Show("Số lượng tồn không hợp lệ! Vui lòng nhập số không âm.", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                DateTime? ngayHetHan = dtpNgayHetHan.Checked ? (DateTime?)dtpNgayHetHan.Value : null;
+                var ngayHetHan = dtpNgayHetHan.Checked ? (DateTime?)dtpNgayHetHan.Value : null;
 
                 // Tạo đối tượng SanPham
-                CHTL.Models.SanPham sp = new CHTL.Models.SanPham
-                {
+                var sp = new Models.SanPham {
                     MaSanPham = textboxID.Text.Trim(),
                     TenSanPham = textboxTen.Text.Trim(),
                     GiaBan = giaBan,
@@ -98,14 +89,12 @@ namespace CHTL.GUI.SanPham {
 
                 DialogResult = DialogResult.OK;
                 Close();
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void btnCancel_Click(object sender, EventArgs e) {
             DialogResult = DialogResult.Cancel;
             Close();

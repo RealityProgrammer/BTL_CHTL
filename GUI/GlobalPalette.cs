@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Krypton.Toolkit;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Krypton.Toolkit;
 
-namespace CHTL.GUI
-{
-    public static class GlobalPalette
-    {
+namespace CHTL.GUI {
+    public static class GlobalPalette {
         public static KryptonCustomPaletteBase Palette { get; } = CreatePalette();
-        private static KryptonCustomPaletteBase CreatePalette()
-        {
+        private static KryptonCustomPaletteBase CreatePalette() {
             var palette = new KryptonCustomPaletteBase();
 
             // Màu nền form

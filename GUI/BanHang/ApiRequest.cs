@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CHTL.GUI.BanHang
-{
-    public class ApiRequest
-    {
+﻿namespace CHTL.GUI.BanHang {
+    public class ApiRequest {
         // TODO: Rename when merging with main
         public int acqId { get; set; }
         public string accountNo { get; set; }

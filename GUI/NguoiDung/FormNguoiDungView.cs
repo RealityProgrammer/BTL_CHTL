@@ -6,9 +6,8 @@ using System.Windows.Forms;
 
 namespace CHTL.GUI.NguoiDung {
     public partial class FormNguoiDungView : KryptonForm {
-        private XuLyNguoiDung xuLy = new XuLyNguoiDung();
-        public FormNguoiDungView()
-        {
+        private readonly XuLyNguoiDung xuLy = new XuLyNguoiDung();
+        public FormNguoiDungView() {
             InitializeComponent();
             LoadData();
             CustomizeDataGridView(); // Gọi phương thức tùy chỉnh giao diện
@@ -19,16 +18,14 @@ namespace CHTL.GUI.NguoiDung {
             btn_add.MouseLeave += (s, e) => btn_add.BackColor = Color.FromArgb(243, 156, 18); // Quay lại cam
         }
 
-        private void LoadData()
-        {
+        private void LoadData() {
             var danhSach = xuLy.LayDanhSachNguoiDung();
             dgv_nguoi_dung.DataSource = danhSach;
             dgv_nguoi_dung.Columns["MatKhau"].Visible = false;
         }
 
         // Phương thức tùy chỉnh giao diện DataGridView
-        private void CustomizeDataGridView()
-        {
+        private void CustomizeDataGridView() {
             // Tùy chỉnh màu nền và viền
             dgv_nguoi_dung.BackgroundColor = Color.FromArgb(236, 240, 241); // Xám nhạt
             dgv_nguoi_dung.BorderStyle = BorderStyle.Fixed3D; // Bỏ viền mặc định
@@ -51,16 +48,14 @@ namespace CHTL.GUI.NguoiDung {
             dgv_nguoi_dung.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245); // Màu nền xen kẽ
 
             // Tùy chỉnh cột "Sửa" và "Xóa"
-            foreach (DataGridViewColumn column in dgv_nguoi_dung.Columns)
-            {
-                if (column.Name == "colEdit")
-                {
+            foreach (DataGridViewColumn column in dgv_nguoi_dung.Columns) {
+                if (column.Name == "colEdit") {
                     column.DefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219); // Xanh dương
                     column.DefaultCellStyle.ForeColor = Color.White;
                     column.DefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
                 }
-                if (column.Name == "colDelete")
-                {
+
+                if (column.Name == "colDelete") {
                     column.DefaultCellStyle.BackColor = Color.FromArgb(231, 76, 60); // Đỏ
                     column.DefaultCellStyle.ForeColor = Color.White;
                     column.DefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
@@ -72,34 +67,29 @@ namespace CHTL.GUI.NguoiDung {
             dgv_nguoi_dung.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
 
-        public void txt_search_TextChanged(object sender, EventArgs e)
-        {
+        public void txt_search_TextChanged(object sender, EventArgs e) {
             string tuKhoa = txt_search.Text.Trim();
             var danhSach = xuLy.TimKiemNguoiDung(tuKhoa);
             dgv_nguoi_dung.DataSource = danhSach;
             dgv_nguoi_dung.Columns["MatKhau"].Visible = false;
         }
 
-        public void btn_add_Click(object sender, EventArgs e)
-        {
-            NguoiDung.FormNguoiDungAdd frmNguoiDungAdd = new NguoiDung.FormNguoiDungAdd();
+        public void btn_add_Click(object sender, EventArgs e) {
+            var frmNguoiDungAdd = new FormNguoiDungAdd();
 
             if (frmNguoiDungAdd.ShowDialog() == DialogResult.OK) {
                 LoadData(); // Refresh danh sách sau khi thêm
             }
         }
 
-        private void kryptonDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void kryptonDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) {
             // Kiểm tra nếu click vào hàng hợp lệ
-            if (e.RowIndex >= 0)
-            {
-                var nguoiDung = dgv_nguoi_dung.Rows[e.RowIndex].DataBoundItem as CHTL.Models.NguoiDung;
+            if (e.RowIndex >= 0) {
+                var nguoiDung = dgv_nguoi_dung.Rows[e.RowIndex].DataBoundItem as Models.NguoiDung;
 
                 // Xử lý khi click vào cột "Sửa"
-                if (e.ColumnIndex == dgv_nguoi_dung.Columns["colEdit"].Index)
-                {
-                    FormNguoiDungEdit frmEdit = new FormNguoiDungEdit();
+                if (e.ColumnIndex == dgv_nguoi_dung.Columns["colEdit"].Index) {
+                    var frmEdit = new FormNguoiDungEdit();
                     frmEdit.NguoiDungEdit = nguoiDung; // Truyền đối tượng người dùng để chỉnh sửa
 
                     if (frmEdit.ShowDialog() == DialogResult.OK) {
@@ -108,22 +98,17 @@ namespace CHTL.GUI.NguoiDung {
                 }
 
                 // Xử lý khi click vào cột "Xóa"
-                if (e.ColumnIndex == dgv_nguoi_dung.Columns["colDelete"].Index)
-                {
-                    var result = MessageBox.Show($"Bạn có chắc muốn xóa người dùng {nguoiDung.HoTen}?",
+                if (e.ColumnIndex == dgv_nguoi_dung.Columns["colDelete"].Index) {
+                    DialogResult result = MessageBox.Show($"Bạn có chắc muốn xóa người dùng {nguoiDung.HoTen}?",
                         "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (result == DialogResult.Yes)
-                    {
-                        try
-                        {
+                    if (result == DialogResult.Yes) {
+                        try {
                             xuLy.XoaNguoiDung(nguoiDung.MaNguoiDung);
                             MessageBox.Show("Xóa người dùng thành công!", "Thành công",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LoadData(); // Refresh danh sách sau khi xóa
-                        }
-                        catch (Exception ex)
-                        {
+                        } catch (Exception ex) {
                             MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }

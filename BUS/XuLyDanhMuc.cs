@@ -1,53 +1,43 @@
-﻿using System;
+﻿using CHTL.DAL;
+using CHTL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CHTL.Models;
 
-namespace CHTL.BUS
-{
-    public class XuLyDanhMuc
-    {
-        private DAL.TruyCapDanhMuc truyCap = new DAL.TruyCapDanhMuc();
+namespace CHTL.BUS {
+    public class XuLyDanhMuc {
+        private readonly TruyCapDanhMuc truyCap = new TruyCapDanhMuc();
 
-        public List<DanhMucSanPham> LayDanhSachDanhMuc()
-        {
-            return truyCap.LayDanhSachDanhMuc();
-        }
+        public List<DanhMucSanPham> LayDanhSachDanhMuc() => truyCap.LayDanhSachDanhMuc();
 
-        public void ThemDanhMuc(DanhMucSanPham dm)
-        {
+        public void ThemDanhMuc(DanhMucSanPham dm) {
             var danhSach = LayDanhSachDanhMuc();
-            if (danhSach.Any(x => x.MaDanhMuc == dm.MaDanhMuc))
-            {
-                throw new System.Exception("Mã danh mục đã tồn tại!");
+
+            if (danhSach.Any(x => x.MaDanhMuc == dm.MaDanhMuc)) {
+                throw new Exception("Mã danh mục đã tồn tại!");
             }
-            if (danhSach.Any(x => x.TenDanhMuc == dm.TenDanhMuc))
-            {
-                throw new System.Exception("Tên danh mục đã tồn tại!");
+
+            if (danhSach.Any(x => x.TenDanhMuc == dm.TenDanhMuc)) {
+                throw new Exception("Tên danh mục đã tồn tại!");
             }
+
             truyCap.ThemDanhMuc(dm);
         }
 
-        public void SuaDanhMuc(DanhMucSanPham dm)
-        {
+        public void SuaDanhMuc(DanhMucSanPham dm) {
             var danhSach = LayDanhSachDanhMuc();
-            if (danhSach.Any(x => x.TenDanhMuc == dm.TenDanhMuc && x.MaDanhMuc != dm.MaDanhMuc))
-            {
-                throw new System.Exception("Tên danh mục đã tồn tại!");
+
+            if (danhSach.Any(x => x.TenDanhMuc == dm.TenDanhMuc && x.MaDanhMuc != dm.MaDanhMuc)) {
+                throw new Exception("Tên danh mục đã tồn tại!");
             }
+
             truyCap.SuaDanhMuc(dm);
         }
 
-        public void XoaDanhMuc(string maDanhMuc)
-        {
+        public void XoaDanhMuc(string maDanhMuc) {
             truyCap.XoaDanhMuc(maDanhMuc);
         }
 
-        public List<DanhMucSanPham> TimKiemDanhMuc(string tuKhoa)
-        {
-            return truyCap.TimKiemDanhMuc(tuKhoa);
-        }
+        public List<DanhMucSanPham> TimKiemDanhMuc(string tuKhoa) => truyCap.TimKiemDanhMuc(tuKhoa);
     }
 }

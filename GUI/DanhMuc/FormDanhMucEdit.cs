@@ -1,56 +1,46 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using CHTL.BUS;
+﻿using CHTL.BUS;
+using CHTL.Models;
 using Krypton.Toolkit;
+using System;
+using System.Windows.Forms;
 
-namespace CHTL.GUI.DanhMuc
-{
-    public partial class FormDanhMucEdit : KryptonForm
-    {
-        private XuLyDanhMuc xuLy = new XuLyDanhMuc();
-        private Models.DanhMucSanPham danhMucEdit;
-        private bool isClosing = false; // Biến kiểm soát trạng thái đóng form
+namespace CHTL.GUI.DanhMuc {
+    public partial class FormDanhMucEdit : KryptonForm {
+        private readonly bool isClosing = false; // Biến kiểm soát trạng thái đóng form
+        private readonly XuLyDanhMuc xuLy = new XuLyDanhMuc();
+        private DanhMucSanPham danhMucEdit;
 
-        public Models.DanhMucSanPham DanhMucEdit {
+        public FormDanhMucEdit() {
+            InitializeComponent();
+        }
+
+        public DanhMucSanPham DanhMucEdit {
             get => danhMucEdit;
-            set
-            {
+            set {
                 danhMucEdit = value;
                 LoadDataToForm();
             }
         }
 
-        public FormDanhMucEdit()
-        {
-            InitializeComponent();
-        }
-        
-        private void LoadDataToForm()
-        {
-            if (danhMucEdit != null)
-            {
+        private void LoadDataToForm() {
+            if (danhMucEdit != null) {
                 textboxID.Text = danhMucEdit.MaDanhMuc;
                 textboxTen.Text = danhMucEdit.TenDanhMuc;
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
+        private void btnSave_Click(object sender, EventArgs e) {
             if (isClosing) return; // Tránh gọi lại nếu đang đóng
 
-            try
-            {
+            try {
                 // Kiểm tra dữ liệu đầu vào
-                if (string.IsNullOrWhiteSpace(textboxID.Text))
-                {
+                if (string.IsNullOrWhiteSpace(textboxID.Text)) {
                     MessageBox.Show("Mã danh mục không được để trống!", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (string.IsNullOrWhiteSpace(textboxTen.Text))
-                {
+                if (string.IsNullOrWhiteSpace(textboxTen.Text)) {
                     MessageBox.Show("Tên danh mục không được để trống!", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -69,16 +59,13 @@ namespace CHTL.GUI.DanhMuc
                 // Đóng form
                 DialogResult = DialogResult.OK;
                 Close();
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
+        private void btnCancel_Click(object sender, EventArgs e) {
             DialogResult = DialogResult.Cancel;
             Close();
         }

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Krypton.Toolkit;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Krypton.Toolkit;
 
 namespace CHTL.GUI.BanHang {
     public partial class FormThanhToanTienMat : KryptonForm {
@@ -20,7 +14,6 @@ namespace CHTL.GUI.BanHang {
             txtKhachDua.TextChanged += txtKhachDua_TextChanged;
         }
 
-      
 
         private void panelFooter_CancelButtonClick(object sender, EventArgs e) {
             DialogResult = DialogResult.Cancel;
@@ -32,24 +25,19 @@ namespace CHTL.GUI.BanHang {
             Close();
         }
 
-        private void txtKhachDua_TextChanged(object sender, EventArgs e)
-        {
-            if (decimal.TryParse(txtKhachDua.Text, out decimal tienKhachDua))
-            {
+        private void txtKhachDua_TextChanged(object sender, EventArgs e) {
+            if (decimal.TryParse(txtKhachDua.Text, out decimal tienKhachDua)) {
                 decimal tienThua = tienKhachDua - grandTotal;
                 lblTienThua.Text = $"Tiền thừa: {tienThua:N2} VNĐ";
                 lblTienThua.ForeColor = tienThua >= 0 ? Color.FromArgb(52, 152, 219) : Color.FromArgb(231, 76, 60);
 
                 // Kiểm tra số tiền có đủ không
-                if (tienKhachDua < grandTotal)
-                {
+                if (tienKhachDua < grandTotal) {
                     lblTienThua.Text += " (Không đủ)";
-                    
+
                 }
-                
-            }
-            else
-            {
+
+            } else {
                 lblTienThua.Text = "Tiền thừa: 0.00 VNĐ";
                 lblTienThua.ForeColor = Color.FromArgb(52, 152, 219);
             }

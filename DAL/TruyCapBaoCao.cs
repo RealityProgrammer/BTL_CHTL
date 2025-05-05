@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CHTL.Models;
 using Microsoft.Data.SqlClient;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using CHTL.Models;
 
-namespace CHTL.DAL
-{
-    public class TruyCapBaoCao
-    {
-
-        Database db = new Database();
-        public BaoCao LayBaoCao(DateTime ngayBatDau, DateTime ngayKetThuc)
-        {
-            BaoCao baoCao = new BaoCao
-            {
+namespace CHTL.DAL {
+    public class TruyCapBaoCao {
+        private readonly Database db = new Database();
+        public BaoCao LayBaoCao(DateTime ngayBatDau, DateTime ngayKetThuc) {
+            var baoCao = new BaoCao {
                 NgayBatDau = ngayBatDau,
-                NgayKetThuc = ngayKetThuc
+                NgayKetThuc = ngayKetThuc,
             };
 
-            using (SqlConnection conn = db.GetConnection())
-            {
+            using (SqlConnection conn = db.GetConnection()) {
                 conn.Open();
 
                 // 1. Tính tổng doanh thu và số lượng hóa đơn
@@ -27,14 +21,13 @@ namespace CHTL.DAL
                     SELECT SUM(TongTien) AS TongDoanhThu, COUNT(*) AS TongSoHoaDon
                     FROM HoaDon
                     WHERE NgayBan BETWEEN @NgayBatDau AND @NgayKetThuc";
-                using (SqlCommand cmd = new SqlCommand(queryTong, conn))
-                {
+
+                using (var cmd = new SqlCommand(queryTong, conn)) {
                     cmd.Parameters.AddWithValue("@NgayBatDau", ngayBatDau);
                     cmd.Parameters.AddWithValue("@NgayKetThuc", ngayKetThuc);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                        if (reader.Read()) {
                             baoCao.TongDoanhThu = reader["TongDoanhThu"] != DBNull.Value ? Convert.ToDecimal(reader["TongDoanhThu"]) : 0;
                             baoCao.TongSoHoaDon = reader["TongSoHoaDon"] != DBNull.Value ? Convert.ToInt32(reader["TongSoHoaDon"]) : 0;
                         }
@@ -50,14 +43,13 @@ namespace CHTL.DAL
                     WHERE hd.NgayBan BETWEEN @NgayBatDau AND @NgayKetThuc
                     GROUP BY sp.TenSanPham
                     ORDER BY SoLuongBan DESC";
-                using (SqlCommand cmd = new SqlCommand(querySanPhamBanChay, conn))
-                {
+
+                using (var cmd = new SqlCommand(querySanPhamBanChay, conn)) {
                     cmd.Parameters.AddWithValue("@NgayBatDau", ngayBatDau);
                     cmd.Parameters.AddWithValue("@NgayKetThuc", ngayKetThuc);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                        if (reader.Read()) {
                             baoCao.SanPhamBanChay = reader["TenSanPham"].ToString();
                             baoCao.SoLuongBanChay = Convert.ToInt32(reader["SoLuongBan"]);
                         }
@@ -73,14 +65,13 @@ namespace CHTL.DAL
                     JOIN HoaDon hd ON ct.MaHoaDon = hd.MaHoaDon
                     WHERE hd.NgayBan BETWEEN @NgayBatDau AND @NgayKetThuc
                     GROUP BY dm.TenDanhMuc";
-                using (SqlCommand cmd = new SqlCommand(queryDoanhThuTheoDanhMuc, conn))
-                {
+
+                using (var cmd = new SqlCommand(queryDoanhThuTheoDanhMuc, conn)) {
                     cmd.Parameters.AddWithValue("@NgayBatDau", ngayBatDau);
                     cmd.Parameters.AddWithValue("@NgayKetThuc", ngayKetThuc);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                        while (reader.Read()) {
                             string tenDanhMuc = reader["TenDanhMuc"].ToString();
                             decimal doanhThu = reader["DoanhThu"] != DBNull.Value ? Convert.ToDecimal(reader["DoanhThu"]) : 0;
                             baoCao.DoanhThuTheoDanhMuc.Add(tenDanhMuc, doanhThu);
@@ -98,34 +89,33 @@ namespace CHTL.DAL
                     JOIN SanPham sp ON ct.MaSanPham = sp.MaSanPham
                     WHERE hd.NgayBan BETWEEN @NgayBatDau AND @NgayKetThuc
                     ORDER BY hd.NgayBan";
-                using (SqlCommand cmd = new SqlCommand(queryChiTiet, conn))
-                {
+
+                using (var cmd = new SqlCommand(queryChiTiet, conn)) {
                     cmd.Parameters.AddWithValue("@NgayBatDau", ngayBatDau);
                     cmd.Parameters.AddWithValue("@NgayKetThuc", ngayKetThuc);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        Dictionary<string, ChiTietBaoCao> chiTietDict = new Dictionary<string, ChiTietBaoCao>();
-                        while (reader.Read())
-                        {
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                        var chiTietDict = new Dictionary<string, ChiTietBaoCao>();
+
+                        while (reader.Read()) {
                             string maHoaDon = reader["MaHoaDon"].ToString();
-                            if (!chiTietDict.ContainsKey(maHoaDon))
-                            {
-                                chiTietDict[maHoaDon] = new ChiTietBaoCao
-                                {
+
+                            if (!chiTietDict.ContainsKey(maHoaDon)) {
+                                chiTietDict[maHoaDon] = new ChiTietBaoCao {
                                     MaHoaDon = maHoaDon,
                                     NgayBan = Convert.ToDateTime(reader["NgayBan"]),
                                     TenNguoiDung = reader["HoTen"].ToString(),
-                                    TongTien = Convert.ToDecimal(reader["TongTien"])
+                                    TongTien = Convert.ToDecimal(reader["TongTien"]),
                                 };
                             }
 
-                            chiTietDict[maHoaDon].SanPham.Add(new SanPhamBan
-                            {
+                            chiTietDict[maHoaDon].SanPham.Add(new SanPhamBan {
                                 TenSanPham = reader["TenSanPham"].ToString(),
                                 SoLuong = Convert.ToInt32(reader["SoLuong"]),
-                                DonGia = Convert.ToDecimal(reader["DonGia"])
+                                DonGia = Convert.ToDecimal(reader["DonGia"]),
                             });
                         }
+
                         baoCao.ChiTietHoaDon = chiTietDict.Values.ToList();
                     }
                 }

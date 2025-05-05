@@ -1,18 +1,16 @@
-﻿using Microsoft.Data.SqlClient;
-using CHTL.Models;
+﻿using CHTL.Models;
+using Microsoft.Data.SqlClient;
 
 namespace CHTL.DAL {
     public class TruyCapHoaDon {
-        private Database db = new Database();
+        private readonly Database db = new Database();
 
-        public void ThemHoaDon(HoaDon hd)
-        {
-            using (SqlConnection conn = db.GetConnection())
-            {
+        public void ThemHoaDon(HoaDon hd) {
+            using (SqlConnection conn = db.GetConnection()) {
                 conn.Open();
                 string query = "INSERT INTO HoaDon (MaHoaDon, MaNguoiDung, NgayBan, TongTien) " +
                                "VALUES (@MaHoaDon, @MaNguoiDung, @NgayBan, @TongTien)";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                var cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaHoaDon", hd.MaHoaDon);
                 cmd.Parameters.AddWithValue("@MaNguoiDung", hd.MaNguoiDung);
                 cmd.Parameters.AddWithValue("@NgayBan", hd.NgayBan);
@@ -21,14 +19,12 @@ namespace CHTL.DAL {
             }
         }
 
-        public void ThemChiTietHoaDon(ChiTietHoaDon cthd)
-        {
-            using (SqlConnection conn = db.GetConnection())
-            {
+        public void ThemChiTietHoaDon(ChiTietHoaDon cthd) {
+            using (SqlConnection conn = db.GetConnection()) {
                 conn.Open();
                 string query = "INSERT INTO ChiTietHoaDon (MaChiTiet, MaHoaDon, MaSanPham, SoLuong, DonGia) " +
                                "VALUES (@MaChiTiet, @MaHoaDon, @MaSanPham, @SoLuong, @DonGia)";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                var cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaChiTiet", cthd.MaChiTiet);
                 cmd.Parameters.AddWithValue("@MaHoaDon", cthd.MaHoaDon);
                 cmd.Parameters.AddWithValue("@MaSanPham", cthd.MaSanPham);

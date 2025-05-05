@@ -1,25 +1,23 @@
-﻿using System.Collections.Generic;
-using System;
-using CHTL.DAL;
+﻿using CHTL.DAL;
 using CHTL.Models;
+using System;
+using System.Collections.Generic;
 
 namespace CHTL.BUS {
     public class XuLyHoaDon {
-        private TruyCapHoaDon truyCapHoaDon = new TruyCapHoaDon();
-        private TruyCapSanPham truyCapSanPham = new TruyCapSanPham();
+        private readonly TruyCapHoaDon truyCapHoaDon = new TruyCapHoaDon();
+        private readonly TruyCapSanPham truyCapSanPham = new TruyCapSanPham();
 
-        public void LuuHoaDon(HoaDon hd, List<ChiTietHoaDon> chiTietList)
-        {
+        public void LuuHoaDon(HoaDon hd, List<ChiTietHoaDon> chiTietList) {
             // Kiểm tra số lượng tồn trước khi lưu hóa đơn
-            foreach (var cthd in chiTietList)
-            {
-                var sanPham = truyCapSanPham.LaySanPhamTheoMa(cthd.MaSanPham);
-                if (sanPham == null)
-                {
+            foreach (ChiTietHoaDon cthd in chiTietList) {
+                SanPham sanPham = truyCapSanPham.LaySanPhamTheoMa(cthd.MaSanPham);
+
+                if (sanPham == null) {
                     throw new Exception($"Sản phẩm {cthd.MaSanPham} không tồn tại!");
                 }
-                if (sanPham.SoLuongTon < cthd.SoLuong)
-                {
+
+                if (sanPham.SoLuongTon < cthd.SoLuong) {
                     throw new Exception($"Sản phẩm {sanPham.TenSanPham} không đủ số lượng tồn (còn {sanPham.SoLuongTon})!");
                 }
             }
@@ -28,8 +26,7 @@ namespace CHTL.BUS {
             truyCapHoaDon.ThemHoaDon(hd);
 
             // Lưu chi tiết hóa đơn
-            foreach (var cthd in chiTietList)
-            {
+            foreach (ChiTietHoaDon cthd in chiTietList) {
                 truyCapHoaDon.ThemChiTietHoaDon(cthd);
                 // Cập nhật số lượng tồn
                 truyCapSanPham.CapNhatSoLuongTon(cthd.MaSanPham, cthd.SoLuong);
