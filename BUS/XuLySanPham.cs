@@ -10,6 +10,7 @@ namespace CHTL.BUS {
         private readonly TruyCapDanhMuc truyCapDanhMuc = new TruyCapDanhMuc();
 
         public List<SanPham> LayDanhSachSanPham() => truyCap.LayDanhSachSanPham();
+        public List<SanPham> LayDanhSachSanPham(string danhMuc) => truyCap.LayDanhSachSanPham(danhMuc);
 
         public void ThemSanPham(SanPham sp) {
             var danhSach = LayDanhSachSanPham();

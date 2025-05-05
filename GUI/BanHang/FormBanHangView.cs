@@ -1,28 +1,31 @@
 ﻿using CHTL.BUS;
 using CHTL.DAL;
+using CHTL.GUI.Controls;
 using CHTL.Models;
 using CHTL.Models.Auth;
 using Krypton.Toolkit;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace CHTL.GUI.BanHang {
     public partial class FormBanHangView : KryptonForm {
+        private readonly TruyCapDanhMuc truyCapDanhMuc = new TruyCapDanhMuc();
         private readonly List<ChiTietHoaDon> chiTietHoaDonList = new List<ChiTietHoaDon>();
         private readonly TruyCapSanPham truyCapSanPham = new TruyCapSanPham();
         private readonly XuLyHoaDon xuLyHoaDon = new XuLyHoaDon();
         private readonly XuLySanPham xuLySanPham = new XuLySanPham();
         private decimal grandTotal;
+        private DanhMucSanPham danhMucSanPham;
 
         public FormBanHangView() {
             InitializeComponent();
             ConfigureDataGridView();
-            LoadSanPham();
+            LoadDanhMuc(truyCapDanhMuc.LayDanhSachDanhMuc());
             dtpNgayBan.Value = DateTime.Now;
-            SetupSearchBox();
         }
 
         private void ConfigureDataGridView() {
@@ -67,167 +70,57 @@ namespace CHTL.GUI.BanHang {
             }
         }
 
-        private void LoadSanPham() {
-            flpSanPham.Controls.Clear();
-            var danhSach = xuLySanPham.LayDanhSachSanPham();
+        private void LoadDanhMuc(IReadOnlyList<DanhMucSanPham> danhSach) {
+            panelContentLeft.Controls.Clear();
 
-            foreach (Models.SanPham sp in danhSach) {
-                var panel = new Panel {
-                    Size = new Size(180, 140),
-                    BackColor = Color.White,
-                    Margin = new Padding(10),
+            foreach (var danhMuc in danhSach) {
+                ButtonDanhMucBanHang button = new ButtonDanhMucBanHang {
+                    Text = danhMuc.TenDanhMuc,
+                    Dock = DockStyle.Top,
+                    Tag = danhMuc,
                 };
-                panel.MouseEnter += (s, e) => panel.BackColor = Color.FromArgb(234, 242, 251); // Xanh nhạt  
-                panel.MouseLeave += (s, e) => panel.BackColor = Color.White;
+                button.Click += ButtonDanhMucClick;
 
-                var lblTen = new Label {
-                    Text = sp.TenSanPham,
-                    Location = new Point(10, 10),
-                    Size = new Size(160, 40),
-                    Font = new Font("Segoe UI", 10F, FontStyle.Bold),
-                    ForeColor = Color.FromArgb(44, 62, 80), // Xám đậm  
-                };
-
-                var lblGia = new Label {
-                    Text = $"Giá: {sp.GiaBan:N2}",
-                    Location = new Point(10, 50),
-                    Size = new Size(160, 20),
-                    Font = new Font("Segoe UI", 9F),
-                    ForeColor = Color.FromArgb(127, 140, 141), // Xám trung  
-                };
-
-                var lblTon = new Label {
-                    Text = $"Tồn: {sp.SoLuongTon}",
-                    Location = new Point(10, 70),
-                    Size = new Size(160, 20),
-                    Font = new Font("Segoe UI", 9F),
-                    ForeColor = Color.FromArgb(127, 140, 141),
-                };
-
-                var btnThem = new KryptonButton {
-                    Text = "Thêm",
-                    Location = new Point(10, 95),
-                    Size = new Size(160, 35),
-                };
-                btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương  
-                btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
-                btnThem.StateCommon.Content.ShortText.Color1 = Color.White;
-                btnThem.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-                btnThem.Tag = sp;
-                btnThem.MouseEnter += (s, e) => {
-                    btnThem.StateCommon.Back.Color1 = Color.FromArgb(41, 128, 185); // Xanh đậm  
-                    btnThem.StateCommon.Back.Color2 = Color.FromArgb(41, 128, 185);
-                };
-                btnThem.MouseLeave += (s, e) => {
-                    btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
-                    btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
-                };
-                btnThem.Click += BtnThem_Click;
-
-                panel.Controls.Add(lblTen);
-                panel.Controls.Add(lblGia);
-                panel.Controls.Add(lblTon);
-                panel.Controls.Add(btnThem);
-                flpSanPham.Controls.Add(panel);
+                panelContentLeft.Controls.Add(button);
             }
         }
 
-        private void SetupSearchBox() {
-            txtSearch.Text = "Tìm kiếm sản phẩm...";
-            txtSearch.StateCommon.Content.Color1 = Color.FromArgb(149, 165, 166); // Xám nhạt
-            txtSearch.Enter += (s, e) => {
-                if (txtSearch.Text == "Tìm kiếm sản phẩm...") {
-                    txtSearch.Text = "";
-                    txtSearch.StateCommon.Content.Color1 = Color.FromArgb(44, 62, 80); // Xám đậm
-                    txtSearch.StateCommon.Border.Color1 = Color.FromArgb(52, 152, 219); // Viền xanh dương
-                }
+        private void ButtonDanhMucClick(object sender, EventArgs e) {
+            DanhMucSanPham danhMuc = ((Control)sender).Parent.Tag as DanhMucSanPham;
+
+            danhMucSanPham = danhMuc;
+            LoadSanPham(xuLySanPham.LayDanhSachSanPham(danhMucSanPham.MaDanhMuc));
+            txtSearch.Clear();
+        }
+
+        private void LoadSanPham(IReadOnlyCollection<Models.SanPham> danhSach) {
+            Debug.Assert(danhMucSanPham != null);
+
+            panelContentLeft.Controls.Clear();
+
+            PanelSanPhamBanHang panel = new PanelSanPhamBanHang {
+                DanhSachSanPham = danhSach,
+                TenDanhMuc = danhMucSanPham.TenDanhMuc,
             };
-            txtSearch.Leave += (s, e) => {
-                if (string.IsNullOrWhiteSpace(txtSearch.Text)) {
-                    txtSearch.Text = "Tìm kiếm sản phẩm...";
-                    txtSearch.StateCommon.Content.Color1 = Color.FromArgb(149, 165, 166);
-                    txtSearch.StateCommon.Border.Color1 = Color.FromArgb(189, 195, 199); // Viền xám nhạt
-                }
+            panel.ThemSanPhamClick += BtnThem_Click;
+            panel.ButtonQuayLai.Click += (_, __) => {
+                danhMucSanPham = null;
+                txtSearch.Clear();
+                LoadDanhMuc(truyCapDanhMuc.LayDanhSachDanhMuc());
             };
-            txtSearch.TextChanged += (s, e) => {
-                string tuKhoa = txtSearch.Text.Trim();
-                if (tuKhoa == "Tìm kiếm sản phẩm...") tuKhoa = "";
-                var danhSach = xuLySanPham.TimKiemSanPham(tuKhoa);
-                flpSanPham.Controls.Clear();
 
-                foreach (Models.SanPham sp in danhSach) {
-                    var panel = new Panel {
-                        Size = new Size(180, 140),
-                        BackColor = Color.White,
-                        Margin = new Padding(10),
-                    };
-                    panel.MouseEnter += (s2, e2) => panel.BackColor = Color.FromArgb(234, 242, 251);
-                    panel.MouseLeave += (s2, e2) => panel.BackColor = Color.White;
-
-                    var lblTen = new Label {
-                        Text = sp.TenSanPham,
-                        Location = new Point(10, 10),
-                        Size = new Size(160, 40),
-                        Font = new Font("Segoe UI", 10F, FontStyle.Bold),
-                        ForeColor = Color.FromArgb(44, 62, 80),
-                    };
-
-                    var lblGia = new Label {
-                        Text = $"Giá: {sp.GiaBan:N2}",
-                        Location = new Point(10, 50),
-                        Size = new Size(160, 20),
-                        Font = new Font("Segoe UI", 9F),
-                        ForeColor = Color.FromArgb(127, 140, 141),
-                    };
-
-                    var lblTon = new Label {
-                        Text = $"Tồn: {sp.SoLuongTon}",
-                        Location = new Point(10, 70),
-                        Size = new Size(160, 20),
-                        Font = new Font("Segoe UI", 9F),
-                        ForeColor = Color.FromArgb(127, 140, 141),
-                    };
-
-                    var btnThem = new KryptonButton {
-                        Text = "Thêm",
-                        Location = new Point(10, 95),
-                        Size = new Size(160, 35),
-                        StateCommon = {
-                            Back = {
-                                Color1 = Color.FromArgb(52, 152, 219),
-                                Color2 = Color.FromArgb(52, 152, 219),
-                            },
-                            Content = {
-                                ShortText = {
-                                    Color1 = Color.White,
-                                    Font = new Font("Segoe UI", 9F, FontStyle.Bold),
-                                },
-                            },
-                        },
-                        Tag = sp,
-                    };
-                    btnThem.MouseEnter += (s2, e2) => {
-                        btnThem.StateCommon.Back.Color1 = Color.FromArgb(41, 128, 185);
-                        btnThem.StateCommon.Back.Color2 = Color.FromArgb(41, 128, 185);
-                    };
-                    btnThem.MouseLeave += (s2, e2) => {
-                        btnThem.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219);
-                        btnThem.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
-                    };
-                    btnThem.Click += BtnThem_Click;
-
-                    panel.Controls.Add(lblTen);
-                    panel.Controls.Add(lblGia);
-                    panel.Controls.Add(lblTon);
-                    panel.Controls.Add(btnThem);
-                    flpSanPham.Controls.Add(panel);
-                }
-            };
+            panelContentLeft.Controls.Add(panel);
         }
 
         private void BtnThem_Click(object sender, EventArgs e) {
-            if (!((sender as KryptonButton)?.Tag is Models.SanPham sanPham)) return;
-            
+            // SanPhamBanHang
+            // ╚═══ KryptonTableLayoutPanel
+            //      ╚═══ KryptonButton (= sender)
+
+            if (!(((sender as KryptonButton)?.Parent as KryptonTableLayoutPanel)?.Parent is SanPhamBanHang spbh)) return;
+
+            Models.SanPham sanPham = spbh.SanPham;
+
             if (sanPham.SoLuongTon <= 0) {
                 KryptonMessageBox.Show($"Sản phẩm {sanPham.TenSanPham} đã hết hàng!", "Thông báo",
                     KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Warning);
@@ -310,7 +203,7 @@ namespace CHTL.GUI.BanHang {
 
                         chiTietHoaDonList.Clear();
                         UpdateChiTietHoaDon();
-                        LoadSanPham();
+                        // LoadSanPham();
                     }
                 }
             } catch (Exception ex) {
@@ -324,13 +217,13 @@ namespace CHTL.GUI.BanHang {
             UpdateChiTietHoaDon();
         }
 
-        private void btnAddNew_Click(object sender, EventArgs e) {
+        private void btnLamMoi_Click(object sender, EventArgs e) {
             chiTietHoaDonList.Clear();
             UpdateChiTietHoaDon();
-            txtSearch.Text = "Tìm kiếm sản phẩm...";
+            txtSearch.Clear();
             txtSearch.StateCommon.Content.Color1 = Color.FromArgb(149, 165, 166);
             dtpNgayBan.Value = DateTime.Now;
-            LoadSanPham();
+            // LoadSanPham();
         }
 
         private void dgvChiTietHoaDon_CellMouseEnter(object sender, DataGridViewCellEventArgs e) {
@@ -386,6 +279,16 @@ namespace CHTL.GUI.BanHang {
                             "Thông báo", KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
                     }
                 }
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e) {
+            if (danhMucSanPham == null) {
+                // Tìm kiếm danh mục
+                LoadDanhMuc(truyCapDanhMuc.TimKiemDanhMuc(txtSearch.Text));
+            } else {
+                // Tìm kiếm sản phẩm
+                LoadSanPham(truyCapSanPham.TimKiemSanPham(txtSearch.Text, danhMucSanPham.MaDanhMuc));
             }
         }
     }
