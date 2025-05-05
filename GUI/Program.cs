@@ -2,15 +2,18 @@
 using System.Windows.Forms;
 
 namespace CHTL.GUI {
-    static class Program {
+    internal static class Program {
+        public static FormDangNhap LoginForm { get; private set; }
+
         /// <summary>
-        /// The main entry point for the application.
+        ///     The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main() {
+        private static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDangNhap());
+            Application.Run(LoginForm = new FormDangNhap());
+
         }
     }
 }
