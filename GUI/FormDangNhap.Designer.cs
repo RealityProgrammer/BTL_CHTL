@@ -215,7 +215,7 @@ namespace CHTL.GUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(954, 536);
+            this.ClientSize = new System.Drawing.Size(958, 599);
             this.Controls.Add(this.kryptonLabelDangNhap);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);

@@ -98,7 +98,7 @@ namespace CHTL.GUI.SanPham {
             panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             panelHeader.Location = new System.Drawing.Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new System.Drawing.Size(604, 96);
+            panelHeader.Size = new System.Drawing.Size(606, 96);
             panelHeader.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             panelHeader.TabIndex = 0;
             // 
@@ -120,7 +120,7 @@ namespace CHTL.GUI.SanPham {
             panelBody.Location = new System.Drawing.Point(0, 96);
             panelBody.Name = "panelBody";
             panelBody.Padding = new System.Windows.Forms.Padding(15);
-            panelBody.Size = new System.Drawing.Size(604, 394);
+            panelBody.Size = new System.Drawing.Size(606, 387);
             panelBody.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelBody.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelBody.TabIndex = 1;
@@ -146,7 +146,7 @@ namespace CHTL.GUI.SanPham {
             tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableFields.Size = new System.Drawing.Size(574, 364);
+            tableFields.Size = new System.Drawing.Size(576, 357);
             tableFields.StateCommon.Color1 = System.Drawing.Color.Transparent;
             tableFields.StateCommon.Color2 = System.Drawing.Color.Transparent;
             tableFields.TabIndex = 1;
@@ -156,9 +156,9 @@ namespace CHTL.GUI.SanPham {
             kryptonPanel3.Controls.Add(this.textboxGiamGia);
             kryptonPanel3.Controls.Add(labelGiamGia);
             kryptonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            kryptonPanel3.Location = new System.Drawing.Point(300, 75);
+            kryptonPanel3.Location = new System.Drawing.Point(301, 75);
             kryptonPanel3.Name = "kryptonPanel3";
-            kryptonPanel3.Size = new System.Drawing.Size(271, 66);
+            kryptonPanel3.Size = new System.Drawing.Size(272, 66);
             kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.Transparent;
             kryptonPanel3.StateCommon.Color2 = System.Drawing.Color.Transparent;
             kryptonPanel3.TabIndex = 6;
@@ -168,7 +168,7 @@ namespace CHTL.GUI.SanPham {
             this.textboxGiamGia.Dock = System.Windows.Forms.DockStyle.Top;
             this.textboxGiamGia.Location = new System.Drawing.Point(0, 24);
             this.textboxGiamGia.Name = "textboxGiamGia";
-            this.textboxGiamGia.Size = new System.Drawing.Size(271, 33);
+            this.textboxGiamGia.Size = new System.Drawing.Size(272, 33);
             this.textboxGiamGia.StateCommon.Border.Rounding = 8F;
             this.textboxGiamGia.TabIndex = 1;
             // 
@@ -177,7 +177,7 @@ namespace CHTL.GUI.SanPham {
             labelGiamGia.Dock = System.Windows.Forms.DockStyle.Top;
             labelGiamGia.Location = new System.Drawing.Point(0, 0);
             labelGiamGia.Name = "labelGiamGia";
-            labelGiamGia.Size = new System.Drawing.Size(271, 24);
+            labelGiamGia.Size = new System.Drawing.Size(272, 24);
             labelGiamGia.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelGiamGia.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelGiamGia.TabIndex = 0;
@@ -190,7 +190,7 @@ namespace CHTL.GUI.SanPham {
             kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             kryptonPanel2.Location = new System.Drawing.Point(3, 219);
             kryptonPanel2.Name = "kryptonPanel2";
-            kryptonPanel2.Size = new System.Drawing.Size(271, 156);
+            kryptonPanel2.Size = new System.Drawing.Size(272, 156);
             kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.Transparent;
             kryptonPanel2.StateCommon.Color2 = System.Drawing.Color.Transparent;
             kryptonPanel2.TabIndex = 5;
@@ -200,7 +200,7 @@ namespace CHTL.GUI.SanPham {
             this.dtpNgayHetHan.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtpNgayHetHan.Location = new System.Drawing.Point(0, 24);
             this.dtpNgayHetHan.Name = "dtpNgayHetHan";
-            this.dtpNgayHetHan.Size = new System.Drawing.Size(271, 31);
+            this.dtpNgayHetHan.Size = new System.Drawing.Size(272, 31);
             this.dtpNgayHetHan.StateCommon.Border.Rounding = 8F;
             this.dtpNgayHetHan.TabIndex = 1;
             // 
@@ -209,7 +209,7 @@ namespace CHTL.GUI.SanPham {
             labelNgayHetHan.Dock = System.Windows.Forms.DockStyle.Top;
             labelNgayHetHan.Location = new System.Drawing.Point(0, 0);
             labelNgayHetHan.Name = "labelNgayHetHan";
-            labelNgayHetHan.Size = new System.Drawing.Size(271, 24);
+            labelNgayHetHan.Size = new System.Drawing.Size(272, 24);
             labelNgayHetHan.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelNgayHetHan.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelNgayHetHan.TabIndex = 0;
@@ -220,9 +220,9 @@ namespace CHTL.GUI.SanPham {
             kryptonPanel1.Controls.Add(this.textboxSoLuongTon);
             kryptonPanel1.Controls.Add(labelSoLuongTon);
             kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            kryptonPanel1.Location = new System.Drawing.Point(300, 147);
+            kryptonPanel1.Location = new System.Drawing.Point(301, 147);
             kryptonPanel1.Name = "kryptonPanel1";
-            kryptonPanel1.Size = new System.Drawing.Size(271, 66);
+            kryptonPanel1.Size = new System.Drawing.Size(272, 66);
             kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.Transparent;
             kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.Transparent;
             kryptonPanel1.TabIndex = 4;
@@ -232,7 +232,7 @@ namespace CHTL.GUI.SanPham {
             this.textboxSoLuongTon.Dock = System.Windows.Forms.DockStyle.Top;
             this.textboxSoLuongTon.Location = new System.Drawing.Point(0, 24);
             this.textboxSoLuongTon.Name = "textboxSoLuongTon";
-            this.textboxSoLuongTon.Size = new System.Drawing.Size(271, 33);
+            this.textboxSoLuongTon.Size = new System.Drawing.Size(272, 33);
             this.textboxSoLuongTon.StateCommon.Border.Rounding = 8F;
             this.textboxSoLuongTon.TabIndex = 1;
             // 
@@ -241,7 +241,7 @@ namespace CHTL.GUI.SanPham {
             labelSoLuongTon.Dock = System.Windows.Forms.DockStyle.Top;
             labelSoLuongTon.Location = new System.Drawing.Point(0, 0);
             labelSoLuongTon.Name = "labelSoLuongTon";
-            labelSoLuongTon.Size = new System.Drawing.Size(271, 24);
+            labelSoLuongTon.Size = new System.Drawing.Size(272, 24);
             labelSoLuongTon.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelSoLuongTon.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelSoLuongTon.TabIndex = 0;
@@ -252,9 +252,9 @@ namespace CHTL.GUI.SanPham {
             panelCell4.Controls.Add(this.textboxGia);
             panelCell4.Controls.Add(labelGia);
             panelCell4.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelCell4.Location = new System.Drawing.Point(300, 3);
+            panelCell4.Location = new System.Drawing.Point(301, 3);
             panelCell4.Name = "panelCell4";
-            panelCell4.Size = new System.Drawing.Size(271, 66);
+            panelCell4.Size = new System.Drawing.Size(272, 66);
             panelCell4.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelCell4.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelCell4.TabIndex = 3;
@@ -264,7 +264,7 @@ namespace CHTL.GUI.SanPham {
             this.textboxGia.Dock = System.Windows.Forms.DockStyle.Top;
             this.textboxGia.Location = new System.Drawing.Point(0, 24);
             this.textboxGia.Name = "textboxGia";
-            this.textboxGia.Size = new System.Drawing.Size(271, 33);
+            this.textboxGia.Size = new System.Drawing.Size(272, 33);
             this.textboxGia.StateCommon.Border.Rounding = 8F;
             this.textboxGia.TabIndex = 1;
             // 
@@ -273,7 +273,7 @@ namespace CHTL.GUI.SanPham {
             labelGia.Dock = System.Windows.Forms.DockStyle.Top;
             labelGia.Location = new System.Drawing.Point(0, 0);
             labelGia.Name = "labelGia";
-            labelGia.Size = new System.Drawing.Size(271, 24);
+            labelGia.Size = new System.Drawing.Size(272, 24);
             labelGia.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelGia.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelGia.TabIndex = 0;
@@ -286,7 +286,7 @@ namespace CHTL.GUI.SanPham {
             panelCell3.Dock = System.Windows.Forms.DockStyle.Fill;
             panelCell3.Location = new System.Drawing.Point(3, 147);
             panelCell3.Name = "panelCell3";
-            panelCell3.Size = new System.Drawing.Size(271, 66);
+            panelCell3.Size = new System.Drawing.Size(272, 66);
             panelCell3.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelCell3.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelCell3.TabIndex = 2;
@@ -297,7 +297,7 @@ namespace CHTL.GUI.SanPham {
             this.cbDanhMuc.DropDownWidth = 255;
             this.cbDanhMuc.Location = new System.Drawing.Point(0, 24);
             this.cbDanhMuc.Name = "cbDanhMuc";
-            this.cbDanhMuc.Size = new System.Drawing.Size(271, 32);
+            this.cbDanhMuc.Size = new System.Drawing.Size(272, 32);
             this.cbDanhMuc.StateCommon.ComboBox.Border.Rounding = 8F;
             this.cbDanhMuc.TabIndex = 1;
             // 
@@ -306,7 +306,7 @@ namespace CHTL.GUI.SanPham {
             labelDanhMuc.Dock = System.Windows.Forms.DockStyle.Top;
             labelDanhMuc.Location = new System.Drawing.Point(0, 0);
             labelDanhMuc.Name = "labelDanhMuc";
-            labelDanhMuc.Size = new System.Drawing.Size(271, 24);
+            labelDanhMuc.Size = new System.Drawing.Size(272, 24);
             labelDanhMuc.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelDanhMuc.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelDanhMuc.TabIndex = 0;
@@ -319,7 +319,7 @@ namespace CHTL.GUI.SanPham {
             panelCell2.Dock = System.Windows.Forms.DockStyle.Fill;
             panelCell2.Location = new System.Drawing.Point(3, 75);
             panelCell2.Name = "panelCell2";
-            panelCell2.Size = new System.Drawing.Size(271, 66);
+            panelCell2.Size = new System.Drawing.Size(272, 66);
             panelCell2.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelCell2.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelCell2.TabIndex = 1;
@@ -329,7 +329,7 @@ namespace CHTL.GUI.SanPham {
             this.textboxTen.Dock = System.Windows.Forms.DockStyle.Top;
             this.textboxTen.Location = new System.Drawing.Point(0, 24);
             this.textboxTen.Name = "textboxTen";
-            this.textboxTen.Size = new System.Drawing.Size(271, 33);
+            this.textboxTen.Size = new System.Drawing.Size(272, 33);
             this.textboxTen.StateCommon.Border.Rounding = 8F;
             this.textboxTen.TabIndex = 1;
             // 
@@ -338,7 +338,7 @@ namespace CHTL.GUI.SanPham {
             labelName.Dock = System.Windows.Forms.DockStyle.Top;
             labelName.Location = new System.Drawing.Point(0, 0);
             labelName.Name = "labelName";
-            labelName.Size = new System.Drawing.Size(271, 24);
+            labelName.Size = new System.Drawing.Size(272, 24);
             labelName.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelName.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelName.TabIndex = 0;
@@ -351,7 +351,7 @@ namespace CHTL.GUI.SanPham {
             panelCell1.Dock = System.Windows.Forms.DockStyle.Fill;
             panelCell1.Location = new System.Drawing.Point(3, 3);
             panelCell1.Name = "panelCell1";
-            panelCell1.Size = new System.Drawing.Size(271, 66);
+            panelCell1.Size = new System.Drawing.Size(272, 66);
             panelCell1.StateCommon.Color1 = System.Drawing.Color.Transparent;
             panelCell1.StateCommon.Color2 = System.Drawing.Color.Transparent;
             panelCell1.TabIndex = 0;
@@ -361,7 +361,7 @@ namespace CHTL.GUI.SanPham {
             this.textboxID.Dock = System.Windows.Forms.DockStyle.Top;
             this.textboxID.Location = new System.Drawing.Point(0, 24);
             this.textboxID.Name = "textboxID";
-            this.textboxID.Size = new System.Drawing.Size(271, 33);
+            this.textboxID.Size = new System.Drawing.Size(272, 33);
             this.textboxID.StateCommon.Border.Rounding = 8F;
             this.textboxID.TabIndex = 1;
             // 
@@ -370,7 +370,7 @@ namespace CHTL.GUI.SanPham {
             labelID.Dock = System.Windows.Forms.DockStyle.Top;
             labelID.Location = new System.Drawing.Point(0, 0);
             labelID.Name = "labelID";
-            labelID.Size = new System.Drawing.Size(271, 24);
+            labelID.Size = new System.Drawing.Size(272, 24);
             labelID.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelID.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelID.TabIndex = 0;
@@ -394,9 +394,9 @@ namespace CHTL.GUI.SanPham {
             // 
             this.saveOrCancelPanel1.BackColor = System.Drawing.Color.Transparent;
             this.saveOrCancelPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.saveOrCancelPanel1.Location = new System.Drawing.Point(0, 399);
+            this.saveOrCancelPanel1.Location = new System.Drawing.Point(0, 392);
             this.saveOrCancelPanel1.Name = "saveOrCancelPanel1";
-            this.saveOrCancelPanel1.Size = new System.Drawing.Size(604, 91);
+            this.saveOrCancelPanel1.Size = new System.Drawing.Size(606, 91);
             this.saveOrCancelPanel1.TabIndex = 3;
             this.saveOrCancelPanel1.SaveButtonClick += new System.EventHandler(this.btnSave_Click);
             this.saveOrCancelPanel1.CancelButtonClick += new System.EventHandler(this.btnCancel_Click);
@@ -405,7 +405,7 @@ namespace CHTL.GUI.SanPham {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(604, 490);
+            this.ClientSize = new System.Drawing.Size(606, 483);
             this.Controls.Add(this.saveOrCancelPanel1);
             this.Controls.Add(panelBody);
             this.Controls.Add(panelHeader);
