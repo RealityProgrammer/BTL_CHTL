@@ -14,13 +14,13 @@ namespace CHTL.DAL {
 
                 string query = "SELECT * FROM DanhMucSanPham";
                 using (var cmd = new SqlCommand(query, conn)) {
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read()) {
-                        danhSach.Add(new DanhMucSanPham {
-                            MaDanhMuc = reader["MaDanhMuc"].ToString(),
-                            TenDanhMuc = reader["TenDanhMuc"].ToString(),
-                        });
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                        while (reader.Read()) {
+                            danhSach.Add(new DanhMucSanPham {
+                                MaDanhMuc = reader["MaDanhMuc"].ToString(),
+                                TenDanhMuc = reader["TenDanhMuc"].ToString(),
+                            });
+                        }
                     }
                 }
             }
@@ -75,12 +75,14 @@ namespace CHTL.DAL {
                 string query = "SELECT * FROM DanhMucSanPham WHERE MaDanhMuc LIKE @TuKhoa OR TenDanhMuc LIKE @TuKhoa";
                 using (var cmd = new SqlCommand(query, conn)) {
                     cmd.Parameters.AddWithValue("@TuKhoa", "%" + tuKhoa + "%");
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read()) {
-                        danhSach.Add(new DanhMucSanPham {
-                            MaDanhMuc = reader["MaDanhMuc"].ToString(),
-                            TenDanhMuc = reader["TenDanhMuc"].ToString(),
-                        });
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                        while (reader.Read()) {
+                            danhSach.Add(new DanhMucSanPham {
+                                MaDanhMuc = reader["MaDanhMuc"].ToString(),
+                                TenDanhMuc = reader["TenDanhMuc"].ToString(),
+                            });
+                        }
                     }
                 }
             }

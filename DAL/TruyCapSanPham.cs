@@ -12,19 +12,21 @@ namespace CHTL.DAL {
 
             using (SqlConnection conn = db.GetConnection()) {
                 conn.Open();
+
                 string query = "SELECT * FROM SanPham";
                 using (var cmd = new SqlCommand(query, conn)) {
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read()) {
-                        danhSach.Add(new SanPham {
-                            MaSanPham = reader["MaSanPham"].ToString(),
-                            TenSanPham = reader["TenSanPham"].ToString(),
-                            GiaBan = Convert.ToDecimal(reader["GiaBan"]),
-                            GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
-                            MaDanhMuc = reader["MaDanhMuc"].ToString(),
-                            SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
-                            NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"],
-                        });
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                        while (reader.Read()) {
+                            danhSach.Add(new SanPham {
+                                MaSanPham = reader["MaSanPham"].ToString(),
+                                TenSanPham = reader["TenSanPham"].ToString(),
+                                GiaBan = Convert.ToDecimal(reader["GiaBan"]),
+                                GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
+                                MaDanhMuc = reader["MaDanhMuc"].ToString(),
+                                SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
+                                NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"],
+                            });
+                        }
                     }
                 }
             }
@@ -37,21 +39,23 @@ namespace CHTL.DAL {
 
             using (SqlConnection conn = db.GetConnection()) {
                 conn.Open();
+
                 string query = "SELECT * FROM SanPham WHERE MaDanhMuc = @MaDanhMuc";
                 using (var cmd = new SqlCommand(query, conn)) {
                     cmd.Parameters.AddWithValue("@MaDanhMuc", danhMuc);
 
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read()) {
-                        danhSach.Add(new SanPham {
-                            MaSanPham = reader["MaSanPham"].ToString(),
-                            TenSanPham = reader["TenSanPham"].ToString(),
-                            GiaBan = Convert.ToDecimal(reader["GiaBan"]),
-                            GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
-                            MaDanhMuc = reader["MaDanhMuc"].ToString(),
-                            SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
-                            NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"],
-                        });
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                        while (reader.Read()) {
+                            danhSach.Add(new SanPham {
+                                MaSanPham = reader["MaSanPham"].ToString(),
+                                TenSanPham = reader["TenSanPham"].ToString(),
+                                GiaBan = Convert.ToDecimal(reader["GiaBan"]),
+                                GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
+                                MaDanhMuc = reader["MaDanhMuc"].ToString(),
+                                SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
+                                NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"],
+                            });
+                        }
                     }
                 }
             }
@@ -62,6 +66,7 @@ namespace CHTL.DAL {
         public void ThemSanPham(SanPham sp) {
             using (SqlConnection conn = db.GetConnection()) {
                 conn.Open();
+
                 string query = "INSERT INTO SanPham (MaSanPham, TenSanPham, GiaBan, GiamGia, MaDanhMuc, SoLuongTon, NgayHetHan) " +
                                "VALUES (@MaSanPham, @TenSanPham, @GiaBan, @GiamGia, @MaDanhMuc, @SoLuongTon, @NgayHetHan)";
                 using (var cmd = new SqlCommand(query, conn)) {
@@ -81,27 +86,32 @@ namespace CHTL.DAL {
         public void SuaSanPham(SanPham sp) {
             using (SqlConnection conn = db.GetConnection()) {
                 conn.Open();
+
                 string query = "UPDATE SanPham SET TenSanPham = @TenSanPham, GiaBan = @GiaBan, GiamGia = @GiamGia, MaDanhMuc = @MaDanhMuc, " +
                                "SoLuongTon = @SoLuongTon, NgayHetHan = @NgayHetHan WHERE MaSanPham = @MaSanPham";
-                var cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
-                cmd.Parameters.AddWithValue("@TenSanPham", sp.TenSanPham);
-                cmd.Parameters.AddWithValue("@GiaBan", sp.GiaBan);
-                cmd.Parameters.AddWithValue("@GiamGia", sp.GiamGia);
-                cmd.Parameters.AddWithValue("@MaDanhMuc", sp.MaDanhMuc);
-                cmd.Parameters.AddWithValue("@SoLuongTon", sp.SoLuongTon);
-                cmd.Parameters.AddWithValue("@NgayHetHan", sp.NgayHetHan.HasValue ? (object)sp.NgayHetHan.Value : DBNull.Value);
-                cmd.ExecuteNonQuery();
+                using (var cmd = new SqlCommand(query, conn)) {
+                    cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
+                    cmd.Parameters.AddWithValue("@TenSanPham", sp.TenSanPham);
+                    cmd.Parameters.AddWithValue("@GiaBan", sp.GiaBan);
+                    cmd.Parameters.AddWithValue("@GiamGia", sp.GiamGia);
+                    cmd.Parameters.AddWithValue("@MaDanhMuc", sp.MaDanhMuc);
+                    cmd.Parameters.AddWithValue("@SoLuongTon", sp.SoLuongTon);
+                    cmd.Parameters.AddWithValue("@NgayHetHan", sp.NgayHetHan.HasValue ? (object)sp.NgayHetHan.Value : DBNull.Value);
+                    
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
 
         public void XoaSanPham(string maSanPham) {
             using (SqlConnection conn = db.GetConnection()) {
                 conn.Open();
+                
                 string query = "DELETE FROM SanPham WHERE MaSanPham = @MaSanPham";
-                var cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@MaSanPham", maSanPham);
-                cmd.ExecuteNonQuery();
+                using (var cmd = new SqlCommand(query, conn)) {
+                    cmd.Parameters.AddWithValue("@MaSanPham", maSanPham);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
 
@@ -110,20 +120,24 @@ namespace CHTL.DAL {
 
             using (SqlConnection conn = db.GetConnection()) {
                 conn.Open();
+                
                 string query = "SELECT * FROM SanPham WHERE MaSanPham LIKE @TuKhoa OR TenSanPham LIKE @TuKhoa";
-                var cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@TuKhoa", "%" + tuKhoa + "%");
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read()) {
-                    danhSach.Add(new SanPham {
-                        MaSanPham = reader["MaSanPham"].ToString(),
-                        TenSanPham = reader["TenSanPham"].ToString(),
-                        GiaBan = Convert.ToDecimal(reader["GiaBan"]),
-                        GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
-                        MaDanhMuc = reader["MaDanhMuc"].ToString(),
-                        SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
-                        NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"],
-                    });
+                using (var cmd = new SqlCommand(query, conn)) {
+                    cmd.Parameters.AddWithValue("@TuKhoa", "%" + tuKhoa + "%");
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                        while (reader.Read()) {
+                            danhSach.Add(new SanPham {
+                                MaSanPham = reader["MaSanPham"].ToString(),
+                                TenSanPham = reader["TenSanPham"].ToString(),
+                                GiaBan = Convert.ToDecimal(reader["GiaBan"]),
+                                GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
+                                MaDanhMuc = reader["MaDanhMuc"].ToString(),
+                                SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
+                                NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"],
+                            });
+                        }
+                    }
                 }
             }
 
@@ -141,17 +155,18 @@ namespace CHTL.DAL {
                     cmd.Parameters.AddWithValue("@TuKhoa", "%" + tuKhoa + "%");
                     cmd.Parameters.AddWithValue("@MaDanhMuc", maDanhMuc);
 
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read()) {
-                        danhSach.Add(new SanPham {
-                            MaSanPham = reader["MaSanPham"].ToString(),
-                            TenSanPham = reader["TenSanPham"].ToString(),
-                            GiaBan = Convert.ToDecimal(reader["GiaBan"]),
-                            GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
-                            MaDanhMuc = reader["MaDanhMuc"].ToString(),
-                            SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
-                            NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"],
-                        });
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                        while (reader.Read()) {
+                            danhSach.Add(new SanPham {
+                                MaSanPham = reader["MaSanPham"].ToString(),
+                                TenSanPham = reader["TenSanPham"].ToString(),
+                                GiaBan = Convert.ToDecimal(reader["GiaBan"]),
+                                GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
+                                MaDanhMuc = reader["MaDanhMuc"].ToString(),
+                                SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
+                                NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"],
+                            });
+                        }
                     }
                 }
             }
@@ -162,11 +177,14 @@ namespace CHTL.DAL {
         public void CapNhatSoLuongTon(string maSanPham, int soLuongMua) {
             using (SqlConnection conn = db.GetConnection()) {
                 conn.Open();
+                
                 string query = "UPDATE SanPham SET SoLuongTon = SoLuongTon - @SoLuongMua WHERE MaSanPham = @MaSanPham";
-                var cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@SoLuongMua", soLuongMua);
-                cmd.Parameters.AddWithValue("@MaSanPham", maSanPham);
-                cmd.ExecuteNonQuery();
+                using (var cmd = new SqlCommand(query, conn)) {
+                    cmd.Parameters.AddWithValue("@SoLuongMua", soLuongMua);
+                    cmd.Parameters.AddWithValue("@MaSanPham", maSanPham);
+
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
 
@@ -175,21 +193,24 @@ namespace CHTL.DAL {
 
             using (SqlConnection conn = db.GetConnection()) {
                 conn.Open();
-                string query = "SELECT * FROM SanPham WHERE MaSanPham = @MaSanPham";
-                var cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@MaSanPham", maSanPham);
-                SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read()) {
-                    sp = new SanPham {
-                        MaSanPham = reader["MaSanPham"].ToString(),
-                        TenSanPham = reader["TenSanPham"].ToString(),
-                        GiaBan = Convert.ToDecimal(reader["GiaBan"]),
-                        GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
-                        MaDanhMuc = reader["MaDanhMuc"].ToString(),
-                        SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
-                        NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"],
-                    };
+                string query = "SELECT * FROM SanPham WHERE MaSanPham = @MaSanPham";
+                using (var cmd = new SqlCommand(query, conn)) {
+                    cmd.Parameters.AddWithValue("@MaSanPham", maSanPham);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) {
+                        if (reader.Read()) {
+                            sp = new SanPham {
+                                MaSanPham = reader["MaSanPham"].ToString(),
+                                TenSanPham = reader["TenSanPham"].ToString(),
+                                GiaBan = Convert.ToDecimal(reader["GiaBan"]),
+                                GiamGia = Convert.ToDecimal(reader["GiamGia"] == DBNull.Value ? 0 : reader["GiamGia"]),
+                                MaDanhMuc = reader["MaDanhMuc"].ToString(),
+                                SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
+                                NgayHetHan = reader["NgayHetHan"] == DBNull.Value ? null : (DateTime?)reader["NgayHetHan"],
+                            };
+                        }
+                    }
                 }
             }
 
