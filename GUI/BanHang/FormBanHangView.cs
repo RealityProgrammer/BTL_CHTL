@@ -23,7 +23,6 @@ namespace CHTL.GUI.BanHang {
             LoadSanPham();
             dtpNgayBan.Value = DateTime.Now;
             SetupSearchBox();
-            SetupButtonHover();
         }
 
         private void ConfigureDataGridView() {
@@ -226,71 +225,39 @@ namespace CHTL.GUI.BanHang {
             };
         }
 
-        private void SetupButtonHover() {
-            btnSave.MouseEnter += (s, e) => {
-                btnSave.StateCommon.Back.Color1 = Color.FromArgb(41, 128, 185); // Xanh đậm
-                btnSave.StateCommon.Back.Color2 = Color.FromArgb(41, 128, 185);
-            };
-            btnSave.MouseLeave += (s, e) => {
-                btnSave.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
-                btnSave.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
-            };
-
-            btnClear.MouseEnter += (s, e) => {
-                btnClear.StateCommon.Back.Color1 = Color.FromArgb(192, 57, 43); // Đỏ đậm
-                btnClear.StateCommon.Back.Color2 = Color.FromArgb(192, 57, 43);
-            };
-            btnClear.MouseLeave += (s, e) => {
-                btnClear.StateCommon.Back.Color1 = Color.FromArgb(231, 76, 60); // Đỏ nhạt
-                btnClear.StateCommon.Back.Color2 = Color.FromArgb(231, 76, 60);
-            };
-
-            btnAddNew.MouseEnter += (s, e) => {
-                btnAddNew.StateCommon.Back.Color1 = Color.FromArgb(149, 165, 166); // Xám đậm
-                btnAddNew.StateCommon.Back.Color2 = Color.FromArgb(149, 165, 166);
-            };
-            btnAddNew.MouseLeave += (s, e) => {
-                btnAddNew.StateCommon.Back.Color1 = Color.FromArgb(189, 195, 199); // Xám nhạt
-                btnAddNew.StateCommon.Back.Color2 = Color.FromArgb(189, 195, 199);
-            };
-        }
-
         private void BtnThem_Click(object sender, EventArgs e) {
-            var btn = sender as KryptonButton;
-            var sanPham = btn.Tag as Models.SanPham;
+            if (!((sender as KryptonButton)?.Tag is Models.SanPham sanPham)) return;
+            
+            if (sanPham.SoLuongTon <= 0) {
+                KryptonMessageBox.Show($"Sản phẩm {sanPham.TenSanPham} đã hết hàng!", "Thông báo",
+                    KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Warning);
+                return;
+            }
 
-            if (sanPham != null) {
-                if (sanPham.SoLuongTon <= 0) {
-                    KryptonMessageBox.Show($"Sản phẩm {sanPham.TenSanPham} đã hết hàng!", "Thông báo",
-                        KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Warning);
+            ChiTietHoaDon existingItem = chiTietHoaDonList.FirstOrDefault(x => x.MaSanPham == sanPham.MaSanPham);
+
+            if (existingItem != null) {
+                existingItem.SoLuong++;
+
+                if (existingItem.SoLuong > sanPham.SoLuongTon) {
+                    KryptonMessageBox.Show($"Sản phẩm {sanPham.TenSanPham} không đủ số lượng tồn (còn {sanPham.SoLuongTon})!",
+                        "Thông báo", KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Warning);
+                    existingItem.SoLuong--;
                     return;
                 }
-
-                ChiTietHoaDon existingItem = chiTietHoaDonList.FirstOrDefault(x => x.MaSanPham == sanPham.MaSanPham);
-
-                if (existingItem != null) {
-                    existingItem.SoLuong++;
-
-                    if (existingItem.SoLuong > sanPham.SoLuongTon) {
-                        KryptonMessageBox.Show($"Sản phẩm {sanPham.TenSanPham} không đủ số lượng tồn (còn {sanPham.SoLuongTon})!",
-                            "Thông báo", KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Warning);
-                        existingItem.SoLuong--;
-                        return;
-                    }
-                    //existingItem.DonGia = sanPham.GiaBan * existingItem.SoLuong;
-                } else {
-                    var cthd = new ChiTietHoaDon {
-                        MaChiTiet = Guid.NewGuid().ToString(),
-                        MaHoaDon = "",
-                        MaSanPham = sanPham.MaSanPham,
-                        SoLuong = 1,
-                        DonGia = sanPham.GiaBan,
-                    };
-                    chiTietHoaDonList.Add(cthd);
-                }
-
-                UpdateChiTietHoaDon();
+                //existingItem.DonGia = sanPham.GiaBan * existingItem.SoLuong;
+            } else {
+                var cthd = new ChiTietHoaDon {
+                    MaChiTiet = Guid.NewGuid().ToString(),
+                    MaHoaDon = "",
+                    MaSanPham = sanPham.MaSanPham,
+                    SoLuong = 1,
+                    DonGia = sanPham.GiaBan,
+                };
+                chiTietHoaDonList.Add(cthd);
             }
+
+            UpdateChiTietHoaDon();
         }
 
         private void UpdateChiTietHoaDon() {
@@ -303,30 +270,7 @@ namespace CHTL.GUI.BanHang {
                     ThanhTien = cthd.DonGia * cthd.SoLuong,
                 };
             }).ToList();
-            dgvChiTietHoaDon.DataSource = null;
             dgvChiTietHoaDon.DataSource = displayList;
-
-            if (!dgvChiTietHoaDon.Columns.Contains("colReduce")) {
-                var colReduce = new DataGridViewButtonColumn {
-                    Name = "colReduce",
-                    HeaderText = "",
-                    Text = "Giảm",
-                    UseColumnTextForButtonValue = true,
-                    Width = 80,
-                };
-                dgvChiTietHoaDon.Columns.Add(colReduce);
-            }
-
-            if (!dgvChiTietHoaDon.Columns.Contains("colDelete")) {
-                var colDelete = new DataGridViewButtonColumn {
-                    Name = "colDelete",
-                    HeaderText = "",
-                    Text = "Xóa",
-                    UseColumnTextForButtonValue = true,
-                    Width = 80,
-                };
-                dgvChiTietHoaDon.Columns.Add(colDelete);
-            }
 
             grandTotal = chiTietHoaDonList.Sum(x => x.DonGia * x.SoLuong);
             lblGrandTotal.Text = grandTotal.ToString("N2");
