@@ -23,7 +23,8 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDangNhap));
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
@@ -154,6 +155,7 @@
             this.btnHuy.TabIndex = 7;
             this.btnHuy.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnHuy.Values.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // pictureBox2
             // 
@@ -205,7 +207,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(983, 573);
+            this.ClientSize = new System.Drawing.Size(995, 531);
             this.Controls.Add(this.labelDangNhap);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);

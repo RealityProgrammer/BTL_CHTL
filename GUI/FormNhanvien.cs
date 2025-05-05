@@ -16,9 +16,9 @@ using Krypton.Toolkit;
 
 namespace CHTL.GUI
 {
-    public partial class FormMain : KryptonForm
+    public partial class FormNhanvien : KryptonForm
     {
-        public FormMain()
+        public FormNhanvien()
         {
             InitializeComponent();
             LocalCustomPalette = GlobalPalette.Palette;
@@ -34,18 +34,6 @@ namespace CHTL.GUI
             kryptonPanel2.Controls.Add(childForm);
             kryptonPanel2.Tag = childForm;
             childForm.Show();
-        }
-
-        private void btn_nguoi_dung_Click(object sender, EventArgs e)
-        {
-            FormNguoiDungView formNguoiDung = new FormNguoiDungView();
-            ShowFormInPanel(formNguoiDung);
-        }
-
-        private void btn_danh_muc_Click(object sender, EventArgs e)
-        {
-            FormDanhMucView formDanhMuc = new FormDanhMucView();
-            ShowFormInPanel(formDanhMuc);
         }
 
         private void btn_san_pham_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using CHTL.BUS;
 using Krypton.Toolkit;
 using CHTL.Models;
@@ -14,42 +15,52 @@ namespace CHTL.GUI {
 
         private void btn_dang_nhap_Click(object sender, System.EventArgs e)
         {
-            //string taiKhoan = txt_tai_khoan.Text.Trim();
-            //string matKhau = txt_mat_khau.Text.Trim();
+            string taiKhoan = textboxTaiKhoan.Text.Trim();
+            string matKhau = textboxMatKhau.Text.Trim();
 
-            //if (string.IsNullOrEmpty(taiKhoan) || string.IsNullOrEmpty(matKhau))
-            //{
-            //    ShowErrorMessage("Vui lòng nhập đầy đủ tài khoản và mật khẩu!");
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(taiKhoan) || taiKhoan == "Nhập tài khoản..." ||
+                string.IsNullOrEmpty(matKhau) || matKhau == "Nhập mật khẩu...")
+            {
+                ShowErrorMessage("Vui lòng nhập đầy đủ tài khoản và mật khẩu!");
+                return;
+            }
 
-            //CHTL.Models.NguoiDung nguoiDung = xuLy.DangNhap(taiKhoan, matKhau);
-            //if (nguoiDung != null)
-            //{
-            //    this.Hide();
-            //    FormMain formMain = new FormMain();
-            //    formMain.Show();
-            //}
-            //else
-            //{
-            //    ShowErrorMessage("Tài khoản hoặc mật khẩu không đúng!");
-            //}
-            this.Hide();
-               FormMain formMain = new FormMain();
-               formMain.Show();
+            CHTL.Models.NguoiDung nguoiDung = xuLy.DangNhap(taiKhoan, matKhau);
+            if (nguoiDung != null)
+            {
+                Models.Auth.Session.MaNguoiDung = nguoiDung.MaNguoiDung;
+                switch (nguoiDung.VaiTro)
+                {
+                    case "Admin":
+                        FormMain formMain = new FormMain();
+                        formMain.Show();
+                        Hide();
+                        break;
+                    case "NhanVien":
+                        FormNhanvien formNhanVien = new FormNhanvien();
+                        formNhanVien.Show();
+                        Hide();
+                        break;
+                    default:
+                        ShowErrorMessage("Vai trò không hợp lệ!");
+                        break;
+                }
+            }
+            else
+            {
+                ShowErrorMessage("Tài khoản hoặc mật khẩu không đúng!");
+            }
         }
+        
 
         private void ShowErrorMessage(string message) {
             KryptonMessageBox.Show(message, "Lỗi đăng nhập", KryptonMessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button1, 0, null, false, null);
-            // KryptonMessageBox.Show(message, "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error); // Removed showCtrlCopy parameter
         }
+        
 
-        private void txt_mat_khau_KeyDown(object sender, KeyEventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btn_dang_nhap_Click(sender, e);
-            }
+            Application.Exit();
         }
     }
 }

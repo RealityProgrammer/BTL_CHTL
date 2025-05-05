@@ -47,7 +47,7 @@ namespace CHTL.DAL {
                     {
                         MaNguoiDung = reader["MaNguoiDung"].ToString(),
                         TenDangNhap = reader["TenDangNhap"].ToString(),
-                        //MatKhau = reader["MatKhau"].ToString(),
+                        MatKhau = reader["MatKhau"].ToString(),
                         VaiTro = reader["VaiTro"].ToString(),
                         HoTen = reader["HoTen"].ToString()
                     });

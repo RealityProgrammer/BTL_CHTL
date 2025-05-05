@@ -1,6 +1,6 @@
 ﻿namespace CHTL.GUI
 {
-    partial class FormMain
+    partial class FormNhanvien
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanvien));
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.btnDangXuat = new Krypton.Toolkit.KryptonButton();
             this.btnBaoCao = new Krypton.Toolkit.KryptonButton();
             this.btnBanHang = new Krypton.Toolkit.KryptonButton();
             this.btnSanPham = new Krypton.Toolkit.KryptonButton();
-            this.btnDanhMuc = new Krypton.Toolkit.KryptonButton();
-            this.btnNguoiDung = new Krypton.Toolkit.KryptonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
@@ -53,8 +51,6 @@
             this.kryptonPanel1.Controls.Add(this.btnBaoCao);
             this.kryptonPanel1.Controls.Add(this.btnBanHang);
             this.kryptonPanel1.Controls.Add(this.btnSanPham);
-            this.kryptonPanel1.Controls.Add(this.btnDanhMuc);
-            this.kryptonPanel1.Controls.Add(this.btnNguoiDung);
             this.kryptonPanel1.Controls.Add(this.pictureBox1);
             this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
             resources.ApplyResources(this.kryptonPanel1, "kryptonPanel1");
@@ -127,38 +123,6 @@
             this.btnSanPham.Values.Text = resources.GetString("btnSanPham.Values.Text");
             this.btnSanPham.Click += new System.EventHandler(this.btn_san_pham_Click);
             // 
-            // btnDanhMuc
-            // 
-            resources.ApplyResources(this.btnDanhMuc, "btnDanhMuc");
-            this.btnDanhMuc.Name = "btnDanhMuc";
-            this.btnDanhMuc.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnDanhMuc.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnDanhMuc.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDanhMuc.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDanhMuc.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnDanhMuc.StateCommon.Border.Rounding = 18F;
-            this.btnDanhMuc.StateCommon.Border.Width = 1;
-            this.btnDanhMuc.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhMuc.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnDanhMuc.Values.Text = resources.GetString("btnDanhMuc.Values.Text");
-            this.btnDanhMuc.Click += new System.EventHandler(this.btn_danh_muc_Click);
-            // 
-            // btnNguoiDung
-            // 
-            resources.ApplyResources(this.btnNguoiDung, "btnNguoiDung");
-            this.btnNguoiDung.Name = "btnNguoiDung";
-            this.btnNguoiDung.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnNguoiDung.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnNguoiDung.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNguoiDung.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNguoiDung.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) | Krypton.Toolkit.PaletteDrawBorders.Left) | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnNguoiDung.StateCommon.Border.Rounding = 18F;
-            this.btnNguoiDung.StateCommon.Border.Width = 1;
-            this.btnNguoiDung.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNguoiDung.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnNguoiDung.Values.Text = resources.GetString("btnNguoiDung.Values.Text");
-            this.btnNguoiDung.Click += new System.EventHandler(this.btn_nguoi_dung_Click);
-            // 
             // pictureBox1
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
@@ -185,7 +149,7 @@
             this.kryptonPalette1.PanelStyles.PanelCommon.StateCommon.Draw = Krypton.Toolkit.InheritBool.True;
             this.kryptonPalette1.UseThemeFormChromeBorderWidth = Krypton.Toolkit.InheritBool.True;
             // 
-            // FormMain
+            // FormNhanvien
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -193,7 +157,7 @@
             this.Controls.Add(this.kryptonPanel1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "FormMain";
+            this.Name = "FormNhanvien";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
@@ -211,8 +175,6 @@
         private Krypton.Toolkit.KryptonButton btnBaoCao;
         private Krypton.Toolkit.KryptonButton btnBanHang;
         private Krypton.Toolkit.KryptonButton btnSanPham;
-        private Krypton.Toolkit.KryptonButton btnDanhMuc;
-        private Krypton.Toolkit.KryptonButton btnNguoiDung;
         private Krypton.Toolkit.KryptonButton btnDangXuat;
     }
 }

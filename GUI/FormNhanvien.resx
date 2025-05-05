@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnDangXuat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 492</value>
+    <value>35, 474</value>
   </data>
   <data name="btnDangXuat.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 48</value>
@@ -150,7 +150,7 @@
     <value>True</value>
   </data>
   <data name="btnBaoCao.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 422</value>
+    <value>35, 371</value>
   </data>
   <data name="btnBaoCao.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 48</value>
@@ -177,7 +177,7 @@
     <value>True</value>
   </data>
   <data name="btnBanHang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 351</value>
+    <value>35, 268</value>
   </data>
   <data name="btnBanHang.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 48</value>
@@ -204,7 +204,7 @@
     <value>True</value>
   </data>
   <data name="btnSanPham.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 277</value>
+    <value>35, 172</value>
   </data>
   <data name="btnSanPham.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 48</value>
@@ -226,60 +226,6 @@
   </data>
   <data name="&gt;&gt;btnSanPham.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="btnDanhMuc.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnDanhMuc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 211</value>
-  </data>
-  <data name="btnDanhMuc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 48</value>
-  </data>
-  <data name="btnDanhMuc.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnDanhMuc.Values.Text" xml:space="preserve">
-    <value>Danh mục</value>
-  </data>
-  <data name="&gt;&gt;btnDanhMuc.Name" xml:space="preserve">
-    <value>btnDanhMuc</value>
-  </data>
-  <data name="&gt;&gt;btnDanhMuc.Type" xml:space="preserve">
-    <value>Krypton.Toolkit.KryptonButton, Krypton.Toolkit, Version=90.25.2.55, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
-  </data>
-  <data name="&gt;&gt;btnDanhMuc.Parent" xml:space="preserve">
-    <value>kryptonPanel1</value>
-  </data>
-  <data name="&gt;&gt;btnDanhMuc.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnNguoiDung.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnNguoiDung.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 148</value>
-  </data>
-  <data name="btnNguoiDung.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 48</value>
-  </data>
-  <data name="btnNguoiDung.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnNguoiDung.Values.Text" xml:space="preserve">
-    <value>Người dùng</value>
-  </data>
-  <data name="&gt;&gt;btnNguoiDung.Name" xml:space="preserve">
-    <value>btnNguoiDung</value>
-  </data>
-  <data name="&gt;&gt;btnNguoiDung.Type" xml:space="preserve">
-    <value>Krypton.Toolkit.KryptonButton, Krypton.Toolkit, Version=90.25.2.55, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
-  </data>
-  <data name="&gt;&gt;btnNguoiDung.Parent" xml:space="preserve">
-    <value>kryptonPanel1</value>
-  </data>
-  <data name="&gt;&gt;btnNguoiDung.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1752,7 +1698,7 @@
     <value>kryptonPanel1</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="kryptonLabel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>68, 93</value>
@@ -1776,7 +1722,7 @@
     <value>kryptonPanel1</value>
   </data>
   <data name="&gt;&gt;kryptonLabel1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="kryptonPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -1785,7 +1731,7 @@
     <value>0, 0</value>
   </data>
   <data name="kryptonPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 639</value>
+    <value>246, 672</value>
   </data>
   <data name="kryptonPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1809,7 +1755,7 @@
     <value>246, 0</value>
   </data>
   <data name="kryptonPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1082, 639</value>
+    <value>1100, 672</value>
   </data>
   <data name="kryptonPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1839,7 +1785,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1328, 639</value>
+    <value>1346, 672</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -1854,7 +1800,7 @@
     <value>Krypton.Toolkit.KryptonCustomPaletteBase, Krypton.Toolkit, Version=90.25.2.55, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FormMain</value>
+    <value>FormNhanvien</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>Krypton.Toolkit.KryptonForm, Krypton.Toolkit, Version=90.25.2.55, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>

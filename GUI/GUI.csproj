@@ -256,12 +256,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AI\FormChat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AI\FormChat.Designer.cs">
-      <DependentUpon>FormChat.cs</DependentUpon>
-    </Compile>
     <Compile Include="BanHang\ApiRequest.cs" />
     <Compile Include="BanHang\ApiResponse.cs" />
     <Compile Include="BanHang\FormBanHangView.cs">
@@ -312,6 +306,12 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhanvien.Designer.cs">
+      <DependentUpon>FormNhanvien.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalPalette.cs" />
     <Compile Include="NguoiDung\FormNguoiDungAdd.cs">
@@ -370,9 +370,6 @@
     <Compile Include="SanPham\FormSanPhamView.Designer.cs">
       <DependentUpon>FormSanPhamView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AI\FormChat.resx">
-      <DependentUpon>FormChat.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BanHang\FormBanHangView.resx">
       <DependentUpon>FormBanHangView.cs</DependentUpon>
     </EmbeddedResource>
@@ -399,6 +396,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhanvien.dje.resx">
+      <DependentUpon>FormNhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhanvien.resx">
+      <DependentUpon>FormNhanvien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NguoiDung\FormNguoiDungAdd.resx">
       <DependentUpon>FormNguoiDungAdd.cs</DependentUpon>
