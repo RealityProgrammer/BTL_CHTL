@@ -31,14 +31,14 @@ namespace CHTL.GUI.BanHang {
         private async Task GenerateAndDisplayQRCode(CancellationToken cancellationToken) {
             try {
                 // Tạo yêu cầu API VietQR
-                var apiRequest = new ApiRequest {
-                    acqId = 970422, // Mã BIN của MB Bank
-                    accountNo = "0976341968", // Số tài khoản
-                    accountName = "HOANG MINH THANH", // Thay bằng tên chủ tài khoản thực tế
-                    amount = (int)amount, // Số tiền (chuyển thành số nguyên)
-                    addInfo = $"Thanh toan hoa don {maHoaDon}", // Nội dung thanh toán
-                    format = "text",
-                    template = "compact",
+                var apiRequest = new QRPaymentRequest {
+                    AcquireID = 970422, // Mã BIN của MB Bank
+                    AccountNumber = "0976341968", // Số tài khoản
+                    AccountName = "HOANG MINH THANH", // Thay bằng tên chủ tài khoản thực tế
+                    Amount = (int)amount, // Số tiền (chuyển thành số nguyên)
+                    AdditionalInfo = $"Thanh toan hoa don {maHoaDon}", // Nội dung thanh toán
+                    Format = "text",
+                    Template = "compact",
                 };
 
                 // Serialize yêu cầu thành JSON
@@ -61,16 +61,16 @@ namespace CHTL.GUI.BanHang {
                 }
 
                 // Deserialize phản hồi
-                ApiResponse dataResult = JsonConvert.DeserializeObject<ApiResponse>(response.Content);
+                QRPaymentResponse dataResult = JsonConvert.DeserializeObject<QRPaymentResponse>(response.Content);
 
-                if (dataResult.code != "00") {
-                    MessageBox.Show($"Lỗi từ API VietQR: {dataResult.desc}", "Lỗi",
+                if (dataResult.Code != "00") {
+                    MessageBox.Show($"Lỗi từ API VietQR: {dataResult.Description}", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 // Chuyển base64 thành hình ảnh và hiển thị
-                Image image = await Base64ToImage(dataResult.data.qrDataURL.Replace("data:image/png;base64,", ""), cancellationToken);
+                Image image = await Base64ToImage(dataResult.Data.QRDataUrl.Replace("data:image/png;base64,", ""), cancellationToken);
 
                 BeginInvoke((Action)(() => {
                     panelFooter.SaveButton.Enabled = true;

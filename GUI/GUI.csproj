@@ -259,8 +259,8 @@
         <Compile Include="AI\FormChat.Designer.cs">
             <DependentUpon>FormChat.cs</DependentUpon>
         </Compile>
-        <Compile Include="BanHang\ApiRequest.cs"/>
-        <Compile Include="BanHang\ApiResponse.cs"/>
+        <Compile Include="BanHang\QRPaymentRequest.cs" />
+        <Compile Include="BanHang\QRPaymentResponse.cs" />
         <Compile Include="BanHang\FormBanHangView.cs">
             <SubType>Form</SubType>
         </Compile>
