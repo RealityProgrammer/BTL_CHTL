@@ -13,30 +13,30 @@ namespace CHTL.BUS {
         public List<NguoiDung> LayDanhSachNguoiDung() => truyCap.LayDanhSachNguoiDung();
 
         public void ThemNguoiDung(NguoiDung nd) {
-            var danhSach = LayDanhSachNguoiDung();
+            foreach (var nguoiDung in LayDanhSachNguoiDung()) {
+                if (nguoiDung.TenDangNhap == nd.TenDangNhap) {
+                    throw new Exception("Tên đăng nhập đã tồn tại!");
+                }
 
-            if (danhSach.Any(x => x.TenDangNhap == nd.TenDangNhap)) {
-                throw new Exception("Tên đăng nhập đã tồn tại!");
-            }
-
-            if (danhSach.Any(x => x.MaNguoiDung == nd.MaNguoiDung)) {
-                throw new Exception("Mã người dùng đã tồn tại!");
+                if (nguoiDung.MaNguoiDung == nd.MaNguoiDung) {
+                    throw new Exception("Mã người dùng đã tồn tại!");
+                }
             }
 
             truyCap.ThemNguoiDung(nd);
         }
 
         public void SuaNguoiDung(NguoiDung nd) {
-            var danhSach = LayDanhSachNguoiDung();
+            foreach (var nguoiDung in LayDanhSachNguoiDung()) {
+                // Kiểm tra trùng TenDangNhap với người dùng khác (trừ chính người dùng đang sửa)
+                if (nguoiDung.TenDangNhap == nd.TenDangNhap && nguoiDung.MaNguoiDung != nd.MaNguoiDung) {
+                    throw new Exception("Tên đăng nhập đã tồn tại!");
+                }
 
-            // Kiểm tra trùng TenDangNhap với người dùng khác (trừ chính người dùng đang sửa)
-            if (danhSach.Any(x => x.TenDangNhap == nd.TenDangNhap && x.MaNguoiDung != nd.MaNguoiDung)) {
-                throw new Exception("Tên đăng nhập đã tồn tại!");
-            }
-
-            // Kiểm tra trùng MaNguoiDung với người dùng khác
-            if (danhSach.Any(x => x.MaNguoiDung == nd.MaNguoiDung && x.MaNguoiDung != nd.MaNguoiDung)) {
-                throw new Exception("Mã người dùng đã tồn tại!");
+                // Kiểm tra trùng MaNguoiDung với người dùng khác
+                if (nguoiDung.MaNguoiDung == nd.MaNguoiDung && nguoiDung.MaNguoiDung != nd.MaNguoiDung) {
+                    throw new Exception("Mã người dùng đã tồn tại!");
+                }
             }
 
             truyCap.SuaNguoiDung(nd);

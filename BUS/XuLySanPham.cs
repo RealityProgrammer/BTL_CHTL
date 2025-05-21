@@ -13,20 +13,18 @@ namespace CHTL.BUS {
         public List<SanPham> LayDanhSachSanPham(string danhMuc) => truyCap.LayDanhSachSanPham(danhMuc);
 
         public void ThemSanPham(SanPham sp) {
-            var danhSach = LayDanhSachSanPham();
+            foreach (var sanPham in LayDanhSachSanPham()) {
+                if (sanPham.MaSanPham == sp.MaSanPham) {
+                    throw new Exception("Mã sản phẩm đã tồn tại!");
+                }
 
-            if (danhSach.Any(x => x.MaSanPham == sp.MaSanPham)) {
-                throw new Exception("Mã sản phẩm đã tồn tại!");
-            }
-
-            if (danhSach.Any(x => x.TenSanPham == sp.TenSanPham)) {
-                throw new Exception("Tên sản phẩm đã tồn tại!");
+                if (sanPham.TenSanPham == sp.TenSanPham) {
+                    throw new Exception("Tên sản phẩm đã tồn tại!");
+                }
             }
 
             // Kiểm tra MaDanhMuc có tồn tại không
-            var danhMucList = truyCapDanhMuc.LayDanhSachDanhMuc();
-
-            if (!danhMucList.Any(dm => dm.MaDanhMuc == sp.MaDanhMuc)) {
+            if (truyCapDanhMuc.LayDanhSachDanhMuc().All(dm => dm.MaDanhMuc != sp.MaDanhMuc)) {
                 throw new Exception("Mã danh mục không tồn tại!");
             }
 
@@ -34,16 +32,14 @@ namespace CHTL.BUS {
         }
 
         public void SuaSanPham(SanPham sp) {
-            var danhSach = LayDanhSachSanPham();
-
-            if (danhSach.Any(x => x.TenSanPham == sp.TenSanPham && x.MaSanPham != sp.MaSanPham)) {
-                throw new Exception("Tên sản phẩm đã tồn tại!");
+            foreach (var sanPham in LayDanhSachSanPham()) {
+                if (sanPham.TenSanPham == sp.TenSanPham && sanPham.MaSanPham != sp.MaSanPham) {
+                    throw new Exception("Tên sản phẩm đã tồn tại!");
+                }
             }
 
             // Kiểm tra MaDanhMuc có tồn tại không
-            var danhMucList = truyCapDanhMuc.LayDanhSachDanhMuc();
-
-            if (!danhMucList.Any(dm => dm.MaDanhMuc == sp.MaDanhMuc)) {
+            if (truyCapDanhMuc.LayDanhSachDanhMuc().All(dm => dm.MaDanhMuc != sp.MaDanhMuc)) {
                 throw new Exception("Mã danh mục không tồn tại!");
             }
 
