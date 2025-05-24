@@ -90,7 +90,10 @@ namespace CHTL.GUI.AI {
 
         private async Task GenerateAIAnswer(string prompt) {
             try {
-                GenerateContentResponse response = await _model.GenerateContent(prompt);
+                // TODO: Access database here.
+                string injectedPromp = $"You are a convinience store agent that assists employee !...!. Here is the user prompt: '{prompt}'. Answer in user's language.";
+                
+                GenerateContentResponse response = await _model.GenerateContent(injectedPromp);
                 BeginInvoke(new Action(() => {
                     TaoBongChat(false, response.Text.Trim());
                 }));

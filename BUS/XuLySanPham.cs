@@ -42,7 +42,7 @@ namespace CHTL.BUS {
             if (truyCapDanhMuc.LayDanhSachDanhMuc().All(dm => dm.MaDanhMuc != sp.MaDanhMuc)) {
                 throw new Exception("Mã danh mục không tồn tại!");
             }
-
+            
             truyCap.SuaSanPham(sp);
         }
 

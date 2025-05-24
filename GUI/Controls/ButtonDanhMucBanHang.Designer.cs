@@ -28,11 +28,12 @@
             // 
             // button
             // 
-            this.button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button.AutoSize = true;
+            this.button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button.Location = new System.Drawing.Point(0, 0);
             this.button.Margin = new System.Windows.Forms.Padding(0);
             this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(502, 48);
+            this.button.Size = new System.Drawing.Size(54, 41);
             this.button.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.button.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
             this.button.StateCommon.Border.Rounding = 16F;
@@ -43,12 +44,11 @@
             this.button.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.button.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.button.StateNormal.Border.Rounding = 16F;
             this.button.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(111)))), ((int)(((byte)(158)))));
             this.button.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(111)))), ((int)(((byte)(158)))));
-            this.button.StatePressed.Border.Rounding = 16F;
             this.button.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.button.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.button.StateTracking.Border.Rounding = 16F;
             this.button.TabIndex = 1;
             this.button.TabStop = false;
             this.button.Values.DropDownArrowColor = System.Drawing.Color.Empty;
@@ -58,13 +58,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.button);
             this.DoubleBuffered = true;
             this.Name = "ButtonDanhMucBanHang";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.Size = new System.Drawing.Size(502, 56);
+            this.Size = new System.Drawing.Size(54, 49);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

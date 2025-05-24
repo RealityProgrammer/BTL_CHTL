@@ -39,7 +39,7 @@ namespace CHTL.GUI.AI
             this.textboxTinNhan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textboxTinNhan.Location = new System.Drawing.Point(3, 3);
             this.textboxTinNhan.Name = "textboxTinNhan";
-            this.textboxTinNhan.Size = new System.Drawing.Size(608, 38);
+            this.textboxTinNhan.Size = new System.Drawing.Size(576, 38);
             this.textboxTinNhan.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.textboxTinNhan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -52,7 +52,7 @@ namespace CHTL.GUI.AI
             // btnGui
             // 
             this.btnGui.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnGui.Location = new System.Drawing.Point(632, 3);
+            this.btnGui.Location = new System.Drawing.Point(600, 3);
             this.btnGui.Name = "btnGui";
             this.btnGui.Size = new System.Drawing.Size(74, 38);
             this.btnGui.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -77,7 +77,7 @@ namespace CHTL.GUI.AI
             this.containerConversation.Location = new System.Drawing.Point(10, 70);
             this.containerConversation.Name = "containerConversation";
             this.containerConversation.Padding = new System.Windows.Forms.Padding(5);
-            this.containerConversation.Size = new System.Drawing.Size(729, 287);
+            this.containerConversation.Size = new System.Drawing.Size(697, 255);
             this.containerConversation.StateCommon.Color1 = System.Drawing.Color.White;
             this.containerConversation.TabIndex = 4;
             // 
@@ -86,10 +86,10 @@ namespace CHTL.GUI.AI
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.Controls.Add(this.kryptonTableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(10, 357);
+            this.panel1.Location = new System.Drawing.Point(10, 325);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(729, 64);
+            this.panel1.Size = new System.Drawing.Size(697, 64);
             this.panel1.TabIndex = 1;
             // 
             // kryptonTableLayoutPanel1
@@ -105,7 +105,7 @@ namespace CHTL.GUI.AI
             this.kryptonTableLayoutPanel1.Name = "kryptonTableLayoutPanel1";
             this.kryptonTableLayoutPanel1.RowCount = 1;
             this.kryptonTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.kryptonTableLayoutPanel1.Size = new System.Drawing.Size(709, 44);
+            this.kryptonTableLayoutPanel1.Size = new System.Drawing.Size(677, 44);
             this.kryptonTableLayoutPanel1.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.kryptonTableLayoutPanel1.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.kryptonTableLayoutPanel1.TabIndex = 0;
@@ -123,7 +123,7 @@ namespace CHTL.GUI.AI
             this.kryptonTableLayoutPanel2.Name = "kryptonTableLayoutPanel2";
             this.kryptonTableLayoutPanel2.RowCount = 1;
             this.kryptonTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.kryptonTableLayoutPanel2.Size = new System.Drawing.Size(729, 60);
+            this.kryptonTableLayoutPanel2.Size = new System.Drawing.Size(697, 60);
             this.kryptonTableLayoutPanel2.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.kryptonTableLayoutPanel2.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.kryptonTableLayoutPanel2.TabIndex = 5;
@@ -138,7 +138,7 @@ namespace CHTL.GUI.AI
             this.label1.Location = new System.Drawing.Point(60, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 10, 0, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(669, 35);
+            this.label1.Size = new System.Drawing.Size(637, 35);
             this.label1.TabIndex = 1;
             this.label1.Text = "Trợ lý AI Cửa Hàng Tiện Lợi";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -158,7 +158,7 @@ namespace CHTL.GUI.AI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(749, 431);
+            this.ClientSize = new System.Drawing.Size(717, 399);
             this.Controls.Add(this.containerConversation);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.kryptonTableLayoutPanel2);

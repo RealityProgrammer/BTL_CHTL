@@ -245,7 +245,7 @@ namespace CHTL.GUI.SanPham {
             labelSoLuongTon.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             labelSoLuongTon.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             labelSoLuongTon.TabIndex = 0;
-            labelSoLuongTon.Values.Text = "Số lượng tồn";
+            labelSoLuongTon.Values.Text = "Số lượng";
             // 
             // panelCell4
             // 

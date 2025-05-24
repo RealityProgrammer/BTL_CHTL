@@ -41,39 +41,6 @@ namespace CHTL.GUI {
             }
         }
 
-        private void SetupButtonHover() {
-            var buttons = new[] {
-                btnNguoiDung, btnDanhMuc, btnSanPham, btnBanHang, btnBaoCao, btnAITips, btnDangXuat,
-            };
-
-            foreach (KryptonButton btn in buttons) {
-                btn.MouseEnter += (s, e) => {
-                    if (btn != currentActiveButton) {
-                        btn.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
-                        btn.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);
-                        btn.StateCommon.Content.ShortText.Color1 = Color.White;
-                    }
-                };
-                btn.MouseLeave += (s, e) => {
-                    if (btn != currentActiveButton) {
-                        ResetButtonStyle(btn);
-                    }
-                };
-            }
-
-            // Đặc biệt cho btnDangXuat
-            btnDangXuat.MouseEnter += (s, e) => {
-                btnDangXuat.StateCommon.Back.Color1 = Color.FromArgb(192, 57, 43); // Đỏ đậm
-                btnDangXuat.StateCommon.Back.Color2 = Color.FromArgb(192, 57, 43);
-                btnDangXuat.StateCommon.Content.ShortText.Color1 = Color.White;
-            };
-            btnDangXuat.MouseLeave += (s, e) => {
-                btnDangXuat.StateCommon.Back.Color1 = Color.FromArgb(231, 76, 60); // Đỏ nhạt
-                btnDangXuat.StateCommon.Back.Color2 = Color.FromArgb(231, 76, 60);
-                btnDangXuat.StateCommon.Content.ShortText.Color1 = Color.White;
-            };
-        }
-
         private void SetActiveButtonStyle(KryptonButton btn) {
             btn.StateCommon.Back.Color1 = Color.FromArgb(52, 152, 219); // Xanh dương
             btn.StateCommon.Back.Color2 = Color.FromArgb(52, 152, 219);

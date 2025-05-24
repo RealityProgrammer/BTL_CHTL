@@ -73,16 +73,53 @@ namespace CHTL.GUI.BanHang {
         private void LoadDanhMuc(IReadOnlyList<DanhMucSanPham> danhSach) {
             panelContentLeft.Controls.Clear();
 
+            FlowLayoutPanel flp = new FlowLayoutPanel {
+                Dock = DockStyle.Fill,
+            };
+
             foreach (var danhMuc in danhSach) {
+                int index = Math.Abs(danhMuc.TenDanhMuc.GetHashCode() % GlobalPalette.ButtonBanHangPalettes.Count);
+                var palette = GlobalPalette.ButtonBanHangPalettes[index];
+
                 ButtonDanhMucBanHang button = new ButtonDanhMucBanHang {
                     Text = danhMuc.TenDanhMuc,
                     Dock = DockStyle.Top,
                     Tag = danhMuc,
+                    Button = {
+                        StateCommon = {
+                            Content = {
+                                ShortText = {
+                                    Color1 = palette.TextColor,
+                                    Color2 = palette.TextColor,
+                                },
+                            },
+                        },
+                        StateNormal = {
+                            Back = {
+                                Color1 = palette.NormalColor,
+                                Color2 = palette.NormalColor,
+                            },
+                        },
+                        StateTracking = {
+                            Back = {
+                                Color1 = palette.HoverColor,
+                                Color2 = palette.HoverColor,
+                            },
+                        },
+                        StatePressed = {
+                            Back = {
+                                Color1 = palette.PressColor,
+                                Color2 = palette.PressColor,
+                            },
+                        },
+                    },
                 };
                 button.Click += ButtonDanhMucClick;
 
-                panelContentLeft.Controls.Add(button);
+                flp.Controls.Add(button);
             }
+
+            panelContentLeft.Controls.Add(flp);
         }
 
         private void ButtonDanhMucClick(object sender, EventArgs e) {

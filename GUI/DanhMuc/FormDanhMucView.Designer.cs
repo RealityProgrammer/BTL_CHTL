@@ -61,7 +61,7 @@ namespace CHTL.GUI.DanhMuc {
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.panelHeader.Size = new System.Drawing.Size(710, 121);
+            this.panelHeader.Size = new System.Drawing.Size(959, 121);
             this.panelHeader.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelHeader.TabIndex = 0;
             // 
@@ -70,7 +70,7 @@ namespace CHTL.GUI.DanhMuc {
             this.panelHeaderSearch.Controls.Add(this.txt_search);
             this.panelHeaderSearch.Controls.Add(this.labelSearch);
             this.panelHeaderSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelHeaderSearch.Location = new System.Drawing.Point(330, 10);
+            this.panelHeaderSearch.Location = new System.Drawing.Point(579, 10);
             this.panelHeaderSearch.Name = "panelHeaderSearch";
             this.panelHeaderSearch.Size = new System.Drawing.Size(370, 111);
             this.panelHeaderSearch.StateCommon.Color1 = System.Drawing.Color.Transparent;
@@ -138,7 +138,7 @@ namespace CHTL.GUI.DanhMuc {
             this.separator.Dock = System.Windows.Forms.DockStyle.Top;
             this.separator.Location = new System.Drawing.Point(0, 121);
             this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(710, 10);
+            this.separator.Size = new System.Drawing.Size(959, 10);
             this.separator.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.separator.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
             this.separator.StateCommon.Separator.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -152,7 +152,7 @@ namespace CHTL.GUI.DanhMuc {
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(0, 131);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Size = new System.Drawing.Size(710, 160);
+            this.panelBody.Size = new System.Drawing.Size(959, 475);
             this.panelBody.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelBody.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.panelBody.TabIndex = 2;
@@ -163,16 +163,14 @@ namespace CHTL.GUI.DanhMuc {
             this.dgvDanhMuc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.dgvDanhMuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhMuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaDanhMuc,
-            this.colTenDanhMuc,
-            this.colEdit,
-            this.colDelete});
+                this.colMaDanhMuc, this.colTenDanhMuc, this.colEdit, this.colDelete
+            });
             this.dgvDanhMuc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhMuc.Location = new System.Drawing.Point(0, 0);
             this.dgvDanhMuc.Name = "dgvDanhMuc";
             this.dgvDanhMuc.RowHeadersWidth = 51;
             this.dgvDanhMuc.RowTemplate.Height = 30;
-            this.dgvDanhMuc.Size = new System.Drawing.Size(710, 160);
+            this.dgvDanhMuc.Size = new System.Drawing.Size(959, 475);
             this.dgvDanhMuc.TabIndex = 6;
             this.dgvDanhMuc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danh_muc_CellClick);
             this.dgvDanhMuc.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danh_muc_CellMouseEnter);
@@ -214,7 +212,7 @@ namespace CHTL.GUI.DanhMuc {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(710, 291);
+            this.ClientSize = new System.Drawing.Size(959, 606);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.panelHeader);
@@ -234,7 +232,6 @@ namespace CHTL.GUI.DanhMuc {
             this.panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhMuc)).EndInit();
             this.ResumeLayout(false);
-
         }
         private Krypton.Toolkit.KryptonPanel panelHeaderLeft;
         private Krypton.Toolkit.KryptonButton btn_add;
