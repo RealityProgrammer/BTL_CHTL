@@ -19,7 +19,9 @@ namespace CHTL.GUI.BanHang {
         private readonly XuLyHoaDon xuLyHoaDon = new XuLyHoaDon();
         private readonly XuLySanPham xuLySanPham = new XuLySanPham();
         private decimal grandTotal;
-        private DanhMucSanPham danhMucSanPham;
+
+        private bool productsMode = false;
+        private DanhMucSanPham selectedCategory;
 
         public FormBanHangView() {
             InitializeComponent();
@@ -71,77 +73,48 @@ namespace CHTL.GUI.BanHang {
         }
 
         private void LoadDanhMuc(IReadOnlyList<DanhMucSanPham> danhSach) {
+            productsMode = false;
+            selectedCategory = null;
+
             panelContentLeft.Controls.Clear();
 
-            FlowLayoutPanel flp = new FlowLayoutPanel {
+            PanelDanhSachDanhMuc panel = new PanelDanhSachDanhMuc {
+                DanhSachDanhMuc = danhSach,
                 Dock = DockStyle.Fill,
             };
+            panel.DanhMucClick += ButtonDanhMucClick;
 
-            foreach (var danhMuc in danhSach) {
-                int index = Math.Abs(danhMuc.TenDanhMuc.GetHashCode() % GlobalPalette.ButtonBanHangPalettes.Count);
-                var palette = GlobalPalette.ButtonBanHangPalettes[index];
-
-                ButtonDanhMucBanHang button = new ButtonDanhMucBanHang {
-                    Text = danhMuc.TenDanhMuc,
-                    Dock = DockStyle.Top,
-                    Tag = danhMuc,
-                    Button = {
-                        StateCommon = {
-                            Content = {
-                                ShortText = {
-                                    Color1 = palette.TextColor,
-                                    Color2 = palette.TextColor,
-                                },
-                            },
-                        },
-                        StateNormal = {
-                            Back = {
-                                Color1 = palette.NormalColor,
-                                Color2 = palette.NormalColor,
-                            },
-                        },
-                        StateTracking = {
-                            Back = {
-                                Color1 = palette.HoverColor,
-                                Color2 = palette.HoverColor,
-                            },
-                        },
-                        StatePressed = {
-                            Back = {
-                                Color1 = palette.PressColor,
-                                Color2 = palette.PressColor,
-                            },
-                        },
-                    },
-                };
-                button.Click += ButtonDanhMucClick;
-
-                flp.Controls.Add(button);
-            }
-
-            panelContentLeft.Controls.Add(flp);
+            panelContentLeft.Controls.Add(panel);
         }
 
         private void ButtonDanhMucClick(object sender, EventArgs e) {
             DanhMucSanPham danhMuc = ((Control)sender).Parent.Tag as DanhMucSanPham;
 
-            danhMucSanPham = danhMuc;
-            LoadSanPham(xuLySanPham.LayDanhSachSanPham(danhMucSanPham.MaDanhMuc));
+            if (danhMuc == null) {
+                LoadSanPham("Tất cả", xuLySanPham.LayDanhSachSanPham());
+            } else {
+                LoadSanPham($"{danhMuc.TenDanhMuc} ({danhMuc.MaDanhMuc})", xuLySanPham.LayDanhSachSanPham(danhMuc.MaDanhMuc));
+            }
+
+            selectedCategory = danhMuc;
+
             txtSearch.Clear();
         }
 
-        private void LoadSanPham(IReadOnlyCollection<Models.SanPham> danhSach) {
-            Debug.Assert(danhMucSanPham != null);
-
+        private void LoadSanPham(string displayCategoryName, IReadOnlyCollection<Models.SanPham> products) {
+            productsMode = true;
             panelContentLeft.Controls.Clear();
 
-            PanelSanPhamBanHang panel = new PanelSanPhamBanHang {
-                DanhSachSanPham = danhSach,
-                TenDanhMuc = danhMucSanPham.TenDanhMuc,
+            PanelSanPhamBanHang panel;
+
+            panel = new PanelSanPhamBanHang {
+                DanhSachSanPham = products,
+                TenDanhMuc = displayCategoryName,
+                Dock = DockStyle.Fill,
             };
+
             panel.ThemSanPhamClick += BtnThem_Click;
             panel.ButtonQuayLai.Click += (_, __) => {
-                danhMucSanPham = null;
                 txtSearch.Clear();
                 LoadDanhMuc(truyCapDanhMuc.LayDanhSachDanhMuc());
             };
@@ -320,12 +293,16 @@ namespace CHTL.GUI.BanHang {
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e) {
-            if (danhMucSanPham == null) {
+            if (productsMode) {
+                // Tìm kiếm sản phẩm
+                if (selectedCategory == null) {
+                    LoadSanPham("Tất cả", xuLySanPham.LayDanhSachSanPham());
+                } else {
+                    LoadSanPham($"{selectedCategory.TenDanhMuc} ({selectedCategory.MaDanhMuc})", xuLySanPham.LayDanhSachSanPham(selectedCategory.MaDanhMuc));
+                }
+            } else {
                 // Tìm kiếm danh mục
                 LoadDanhMuc(truyCapDanhMuc.TimKiemDanhMuc(txtSearch.Text));
-            } else {
-                // Tìm kiếm sản phẩm
-                LoadSanPham(truyCapSanPham.TimKiemSanPham(txtSearch.Text, danhMucSanPham.MaDanhMuc));
             }
         }
     }

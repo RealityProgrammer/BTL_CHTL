@@ -304,6 +304,12 @@
     <Compile Include="Controls\ButtonDanhMucBanHang.Designer.cs">
       <DependentUpon>ButtonDanhMucBanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PanelDanhSachDanhMuc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PanelDanhSachDanhMuc.Designer.cs">
+      <DependentUpon>PanelDanhSachDanhMuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PanelSanPhamBanHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -420,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ButtonDanhMucBanHang.resx">
       <DependentUpon>ButtonDanhMucBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PanelDanhSachDanhMuc.resx">
+      <DependentUpon>PanelDanhSachDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PanelSanPhamBanHang.resx">
       <DependentUpon>PanelSanPhamBanHang.cs</DependentUpon>

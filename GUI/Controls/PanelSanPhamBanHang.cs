@@ -34,14 +34,14 @@ namespace CHTL.GUI.Controls {
             flpContent.Controls.Clear();
 
             foreach (var sanPham in _danhSachSanPham) {
-                SanPhamBanHang gui = new SanPhamBanHang {
+                SanPhamBanHang sp = new SanPhamBanHang {
                     SanPham = sanPham,
                 };
-                gui.AddButton.Click += (sender, e) => {
+                sp.AddButton.Click += (sender, e) => {
                     ThemSanPhamClick?.Invoke(sender, e);
                 };
 
-                flpContent.Controls.Add(gui);
+                flpContent.Controls.Add(sp);
             }
         }
     }

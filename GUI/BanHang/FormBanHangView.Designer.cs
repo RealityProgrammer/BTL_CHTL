@@ -45,7 +45,6 @@ namespace CHTL.GUI.BanHang
             this.panelContent = new Krypton.Toolkit.KryptonTableLayoutPanel();
             this.panelContentRight = new System.Windows.Forms.Panel();
             this.panelContentLeft = new Krypton.Toolkit.KryptonPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             panelHeader2 = new System.Windows.Forms.Panel();
             lblNgayBan = new Krypton.Toolkit.KryptonLabel();
             tableFooter = new Krypton.Toolkit.KryptonTableLayoutPanel();
@@ -61,7 +60,6 @@ namespace CHTL.GUI.BanHang
             this.panelContent.SuspendLayout();
             this.panelContentRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelContentLeft)).BeginInit();
-            this.panelContentLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader2
@@ -69,10 +67,10 @@ namespace CHTL.GUI.BanHang
             panelHeader2.Controls.Add(this.dtpNgayBan);
             panelHeader2.Controls.Add(lblNgayBan);
             panelHeader2.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelHeader2.Location = new System.Drawing.Point(538, 13);
+            panelHeader2.Location = new System.Drawing.Point(514, 13);
             panelHeader2.Name = "panelHeader2";
             panelHeader2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            panelHeader2.Size = new System.Drawing.Size(520, 84);
+            panelHeader2.Size = new System.Drawing.Size(496, 84);
             panelHeader2.TabIndex = 1;
             // 
             // dtpNgayBan
@@ -80,7 +78,7 @@ namespace CHTL.GUI.BanHang
             this.dtpNgayBan.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtpNgayBan.Location = new System.Drawing.Point(5, 32);
             this.dtpNgayBan.Name = "dtpNgayBan";
-            this.dtpNgayBan.Size = new System.Drawing.Size(510, 39);
+            this.dtpNgayBan.Size = new System.Drawing.Size(486, 39);
             this.dtpNgayBan.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.dtpNgayBan.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -95,7 +93,7 @@ namespace CHTL.GUI.BanHang
             lblNgayBan.Dock = System.Windows.Forms.DockStyle.Top;
             lblNgayBan.Location = new System.Drawing.Point(5, 0);
             lblNgayBan.Name = "lblNgayBan";
-            lblNgayBan.Size = new System.Drawing.Size(510, 32);
+            lblNgayBan.Size = new System.Drawing.Size(486, 32);
             lblNgayBan.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             lblNgayBan.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             lblNgayBan.TabIndex = 9;
@@ -113,11 +111,11 @@ namespace CHTL.GUI.BanHang
             tableFooter.Controls.Add(this.btnClear, 2, 0);
             tableFooter.Controls.Add(this.btnLamMoi, 4, 0);
             tableFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            tableFooter.Location = new System.Drawing.Point(0, 329);
+            tableFooter.Location = new System.Drawing.Point(0, 281);
             tableFooter.Name = "tableFooter";
             tableFooter.RowCount = 1;
             tableFooter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableFooter.Size = new System.Drawing.Size(520, 46);
+            tableFooter.Size = new System.Drawing.Size(496, 46);
             tableFooter.StateCommon.Color1 = System.Drawing.Color.Transparent;
             tableFooter.StateCommon.Color2 = System.Drawing.Color.Transparent;
             tableFooter.TabIndex = 3;
@@ -127,7 +125,7 @@ namespace CHTL.GUI.BanHang
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSave.Location = new System.Drawing.Point(3, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(147, 40);
+            this.btnSave.Size = new System.Drawing.Size(139, 40);
             this.btnSave.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.btnSave.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
             this.btnSave.StateCommon.Border.Rounding = 10F;
@@ -147,9 +145,9 @@ namespace CHTL.GUI.BanHang
             // btnClear
             // 
             this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnClear.Location = new System.Drawing.Point(186, 3);
+            this.btnClear.Location = new System.Drawing.Point(178, 3);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(147, 40);
+            this.btnClear.Size = new System.Drawing.Size(139, 40);
             this.btnClear.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.btnClear.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
             this.btnClear.StateCommon.Border.Rounding = 10F;
@@ -169,9 +167,9 @@ namespace CHTL.GUI.BanHang
             // btnLamMoi
             // 
             this.btnLamMoi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLamMoi.Location = new System.Drawing.Point(369, 3);
+            this.btnLamMoi.Location = new System.Drawing.Point(353, 3);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(148, 40);
+            this.btnLamMoi.Size = new System.Drawing.Size(140, 40);
             this.btnLamMoi.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.btnLamMoi.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
             this.btnLamMoi.StateCommon.Border.Rounding = 10F;
@@ -193,7 +191,7 @@ namespace CHTL.GUI.BanHang
             lblSearch.Dock = System.Windows.Forms.DockStyle.Top;
             lblSearch.Location = new System.Drawing.Point(5, 0);
             lblSearch.Name = "lblSearch";
-            lblSearch.Size = new System.Drawing.Size(509, 32);
+            lblSearch.Size = new System.Drawing.Size(485, 32);
             lblSearch.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             lblSearch.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             lblSearch.TabIndex = 10;
@@ -214,9 +212,9 @@ namespace CHTL.GUI.BanHang
             panel1.Controls.Add(lblGrandTotalTitle);
             panel1.Controls.Add(this.lblGrandTotal);
             panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            panel1.Location = new System.Drawing.Point(0, 284);
+            panel1.Location = new System.Drawing.Point(0, 236);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(520, 45);
+            panel1.Size = new System.Drawing.Size(496, 45);
             panel1.TabIndex = 2;
             // 
             // lblGrandTotal
@@ -246,7 +244,7 @@ namespace CHTL.GUI.BanHang
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.RowHeadersWidth = 51;
             this.dgvChiTietHoaDon.RowTemplate.Height = 30;
-            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(520, 375);
+            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(496, 327);
             this.dgvChiTietHoaDon.TabIndex = 1;
             this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellClick);
             this.dgvChiTietHoaDon.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellMouseEnter);
@@ -303,7 +301,7 @@ namespace CHTL.GUI.BanHang
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtSearch.Location = new System.Drawing.Point(5, 32);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(509, 40);
+            this.txtSearch.Size = new System.Drawing.Size(485, 40);
             this.txtSearch.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.txtSearch.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -326,7 +324,7 @@ namespace CHTL.GUI.BanHang
             this.panelHeader.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.panelHeader.RowCount = 1;
             this.panelHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelHeader.Size = new System.Drawing.Size(1071, 100);
+            this.panelHeader.Size = new System.Drawing.Size(1023, 100);
             this.panelHeader.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelHeader.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.panelHeader.TabIndex = 14;
@@ -339,7 +337,7 @@ namespace CHTL.GUI.BanHang
             this.panelHeader1.Location = new System.Drawing.Point(13, 13);
             this.panelHeader1.Name = "panelHeader1";
             this.panelHeader1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelHeader1.Size = new System.Drawing.Size(519, 84);
+            this.panelHeader1.Size = new System.Drawing.Size(495, 84);
             this.panelHeader1.TabIndex = 0;
             // 
             // panelContent
@@ -355,7 +353,7 @@ namespace CHTL.GUI.BanHang
             this.panelContent.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
             this.panelContent.RowCount = 1;
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelContent.Size = new System.Drawing.Size(1071, 391);
+            this.panelContent.Size = new System.Drawing.Size(1023, 343);
             this.panelContent.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelContent.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.panelContent.TabIndex = 16;
@@ -366,35 +364,27 @@ namespace CHTL.GUI.BanHang
             this.panelContentRight.Controls.Add(tableFooter);
             this.panelContentRight.Controls.Add(this.dgvChiTietHoaDon);
             this.panelContentRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContentRight.Location = new System.Drawing.Point(538, 3);
+            this.panelContentRight.Location = new System.Drawing.Point(514, 3);
             this.panelContentRight.Name = "panelContentRight";
-            this.panelContentRight.Size = new System.Drawing.Size(520, 375);
+            this.panelContentRight.Size = new System.Drawing.Size(496, 327);
             this.panelContentRight.TabIndex = 1;
             // 
             // panelContentLeft
             // 
             this.panelContentLeft.AutoScroll = true;
-            this.panelContentLeft.Controls.Add(this.flowLayoutPanel1);
             this.panelContentLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContentLeft.Location = new System.Drawing.Point(13, 3);
             this.panelContentLeft.Name = "panelContentLeft";
-            this.panelContentLeft.Size = new System.Drawing.Size(519, 375);
+            this.panelContentLeft.Size = new System.Drawing.Size(495, 327);
             this.panelContentLeft.StateCommon.Color1 = System.Drawing.Color.Transparent;
             this.panelContentLeft.StateCommon.Color2 = System.Drawing.Color.Transparent;
             this.panelContentLeft.TabIndex = 2;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(41, 26);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(403, 303);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // FormBanHangView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(1071, 491);
+            this.ClientSize = new System.Drawing.Size(1023, 443);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -411,7 +401,6 @@ namespace CHTL.GUI.BanHang
             this.panelContent.ResumeLayout(false);
             this.panelContentRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelContentLeft)).EndInit();
-            this.panelContentLeft.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -435,6 +424,5 @@ namespace CHTL.GUI.BanHang
         private Krypton.Toolkit.KryptonButton btnLamMoi;
         private Krypton.Toolkit.KryptonLabel lblGrandTotal;
         private Krypton.Toolkit.KryptonPanel panelContentLeft;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
